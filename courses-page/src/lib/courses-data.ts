@@ -53,7 +53,6 @@ export interface Course {
   certificate: string;
   rating: number;
   students: string;
-  heroIcon: string;
   programHighlights: ProgramHighlight[];
   aboutCourse: string[];
   directorQuote: { text: string; author: string };
@@ -81,7 +80,6 @@ export const courses: Course[] = [
     certificate: "Upon Completion",
     rating: 4.9,
     students: "1.8K",
-    heroIcon: "Shield",
     programHighlights: [
       { icon: "FlaskConical", title: "Hands-On Lab Environment", description: "Access to state-of-the-art virtual labs with real-world security scenarios and tools including Kali Linux, Metasploit, and Wireshark" },
       { icon: "UserCheck", title: "Industry Expert Mentors", description: "Learn directly from cybersecurity professionals with 15+ years of experience in enterprise security and ethical hacking" },
@@ -159,7 +157,6 @@ export const courses: Course[] = [
     certificate: "Upon Completion",
     rating: 4.8,
     students: "2.5K",
-    heroIcon: "LineChart",
     programHighlights: [
       { icon: "Database", title: "Real-World Datasets", description: "Work with actual industry datasets from finance, healthcare, e-commerce, and social media domains" },
       { icon: "Brain", title: "AI/ML Deep Dives", description: "Master deep learning frameworks including TensorFlow, PyTorch, and Keras with hands-on neural network projects" },
@@ -237,7 +234,6 @@ export const courses: Course[] = [
     certificate: "Upon Completion",
     rating: 4.9,
     students: "3.2K",
-    heroIcon: "Rocket",
     programHighlights: [
       { icon: "Users", title: "Real User Research", description: "Master user interviews, usability testing, and jobs-to-be-done framework with live research projects" },
       { icon: "LayoutDashboard", title: "Product Strategy", description: "Learn to define vision, set OKRs, prioritize roadmaps, and align stakeholders across the organization" },
@@ -310,7 +306,6 @@ export const courses: Course[] = [
     certificate: "Upon Completion",
     rating: 4.7,
     students: "1.5K",
-    heroIcon: "Cloud",
     programHighlights: [
       { icon: "Cloud", title: "Live AWS Environment", description: "Each student gets a sandboxed AWS account with $300 in credits to build and test architectures in a real cloud environment" },
       { icon: "Server", title: "Architecture Design", description: "Design high-availability, fault-tolerant, and cost-optimized architectures using AWS Well-Architected Framework principles" },
@@ -384,7 +379,6 @@ export const courses: Course[] = [
     certificate: "Upon Completion",
     rating: 4.8,
     students: "980",
-    heroIcon: "Brain",
     programHighlights: [
       { icon: "Cpu", title: "Production ML Systems", description: "Design and implement ML systems that handle real-time inference at scale using TensorFlow Serving, Triton, and Ray" },
       { icon: "Database", title: "Feature Stores & Data Pipelines", description: "Build robust data pipelines with Apache Kafka, Airflow, and Feast feature store for consistent ML feature serving" },
@@ -459,7 +453,6 @@ export const courses: Course[] = [
     certificate: "Upon Completion",
     rating: 4.6,
     students: "4.1K",
-    heroIcon: "Megaphone",
     programHighlights: [
       { icon: "BarChart2", title: "Live Campaign Management", description: "Run real campaigns with provided ad budgets on Google, Meta, and LinkedIn — learn from actual performance data" },
       { icon: "Search", title: "Advanced SEO & Content", description: "Master technical SEO, content strategy, link building, and SEO analytics to drive sustainable organic growth" },
@@ -533,7 +526,6 @@ export const courses: Course[] = [
     certificate: "Upon Completion",
     rating: 4.9,
     students: "5.4K",
-    heroIcon: "Code",
     programHighlights: [
       { icon: "Code", title: "Modern Tech Stack", description: "Master React 19, Next.js, TypeScript, Node.js, Express, PostgreSQL, MongoDB, and Redis — the exact stack used by top companies" },
       { icon: "GitBranch", title: "Real Project Portfolio", description: "Build 8+ complete, deployed projects that demonstrate real-world development skills to employers and freelance clients" },

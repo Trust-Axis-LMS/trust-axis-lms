@@ -1,0 +1,63 @@
+<svg width="800" height="620" viewBox="0 0 800 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="620" rx="36" fill="url(#bg)" />
+  <rect x="34" y="34" width="732" height="552" rx="28" fill="url(#panel)" stroke="rgba(255,255,255,0.18)" />
+  <circle cx="690" cy="118" r="118" fill="url(#glow)" opacity="0.75" />
+  <circle cx="664" cy="474" r="92" fill="url(#glow2)" opacity="0.4" />
+
+  <rect x="78" y="88" width="250" height="146" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" />
+  <rect x="106" y="116" width="72" height="72" rx="18" fill="rgba(255,255,255,0.12)" />
+  <rect x="204" y="122" width="88" height="12" rx="6" fill="rgba(255,255,255,0.9)" />
+  <rect x="204" y="150" width="74" height="10" rx="5" fill="rgba(255,255,255,0.55)" />
+  <rect x="204" y="172" width="58" height="10" rx="5" fill="rgba(255,255,255,0.45)" />
+
+  <rect x="374" y="88" width="348" height="196" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" />
+  <rect x="408" y="126" width="122" height="14" rx="7" fill="rgba(255,255,255,0.92)" />
+  <rect x="408" y="154" width="202" height="10" rx="5" fill="rgba(255,255,255,0.45)" />
+  <rect x="408" y="180" width="174" height="10" rx="5" fill="rgba(255,255,255,0.35)" />
+  <rect x="408" y="228" width="102" height="18" rx="9" fill="#FFFFFF" opacity="0.2" />
+
+  <rect x="78" y="274" width="644" height="262" rx="28" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+  <rect x="110" y="310" width="280" height="192" rx="22" fill="rgba(255,255,255,0.92)" />
+  <rect x="110" y="310" width="280" height="70" rx="22" fill="url(#cardBand)" />
+  <rect x="424" y="310" width="266" height="192" rx="22" fill="rgba(255,255,255,0.9)" />
+  <rect x="424" y="310" width="266" height="70" rx="22" fill="url(#cardBand2)" />
+
+  <rect x="140" y="408" width="94" height="16" rx="8" fill="#DDE7F2" />
+  <rect x="140" y="436" width="186" height="12" rx="6" fill="#7E8A98" opacity="0.9" />
+  <rect x="140" y="458" width="132" height="12" rx="6" fill="#9CA9B7" />
+  <rect x="454" y="408" width="86" height="16" rx="8" fill="#DDE7F2" />
+  <rect x="454" y="436" width="162" height="12" rx="6" fill="#7E8A98" opacity="0.9" />
+  <rect x="454" y="458" width="122" height="12" rx="6" fill="#9CA9B7" />
+
+  <rect x="140" y="332" width="44" height="44" rx="12" fill="rgba(255,255,255,0.18)" />
+  <rect x="462" y="332" width="44" height="44" rx="12" fill="rgba(255,255,255,0.18)" />
+
+  <defs>
+    <linearGradient id="bg" x1="61" y1="36" x2="724" y2="571" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAF3FF" />
+      <stop offset="0.36" stop-color="#F7FAFF" />
+      <stop offset="1" stop-color="#E3EEFF" />
+    </linearGradient>
+    <linearGradient id="panel" x1="62" y1="57" x2="704" y2="551" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E3249" />
+      <stop offset="0.46" stop-color="#214F8D" />
+      <stop offset="1" stop-color="#6BA7FF" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(690 118) rotate(90) scale(118)">
+      <stop stop-color="#DDEBFF" />
+      <stop offset="1" stop-color="#DDEBFF" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(664 474) rotate(90) scale(92)">
+      <stop stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="cardBand" x1="110" y1="310" x2="390" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16324E" />
+      <stop offset="1" stop-color="#2F7DE6" />
+    </linearGradient>
+    <linearGradient id="cardBand2" x1="424" y1="310" x2="690" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#267AF3" />
+      <stop offset="1" stop-color="#1B3651" />
+    </linearGradient>
+  </defs>
+</svg>

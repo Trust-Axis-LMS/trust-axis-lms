@@ -1,15 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const closeMenu = () => setIsMenuOpen(false);
+
+    const navigateToSection = (sectionId: string) => {
+        closeMenu();
+
+        if (pathname === "/") {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+            window.history.replaceState(null, "", `#${sectionId}`);
+            return;
+        }
+
+        window.location.href = `/#${sectionId}`;
+    };
 
     return (
         <header className="sticky top-0 z-50 w-full border-b bg-white border-gray-100">
@@ -31,18 +47,16 @@ export function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex items-center gap-10 text-sm font-medium absolute left-1/2 -translate-x-1/2 text-gray-500">
-                    <Link href="#about" onClick={closeMenu} className="hover:text-black transition-colors tracking-widest text-[11px] font-bold uppercase">About Us</Link>
-                    <Link href="#courses" onClick={closeMenu} className="hover:text-black transition-colors tracking-widest text-[11px] font-bold uppercase">Courses</Link>
-                    <Link href="#resources" onClick={closeMenu} className="hover:text-black transition-colors tracking-widest text-[11px] font-bold uppercase">Resources</Link>
-                    <Link href="#contact" onClick={closeMenu} className="hover:text-black transition-colors tracking-widest text-[11px] font-bold uppercase">Contact Us</Link>
+                    <button type="button" onClick={() => navigateToSection("about")} className="hover:text-black transition-colors tracking-widest text-[11px] font-bold uppercase">About Us</button>
+                    <button type="button" onClick={() => navigateToSection("courses")} className="hover:text-black transition-colors tracking-widest text-[11px] font-bold uppercase">Courses</button>
+                    <button type="button" onClick={() => navigateToSection("resources")} className="hover:text-black transition-colors tracking-widest text-[11px] font-bold uppercase">Resources</button>
+                    <button type="button" onClick={() => navigateToSection("contact")} className="hover:text-black transition-colors tracking-widest text-[11px] font-bold uppercase">Contact Us</button>
                 </nav>
 
                 <div className="hidden lg:flex items-center">
                     <Button
                         className="tracking-widest text-xs font-bold px-8 h-12 bg-black text-white rounded-sm hover:bg-black/90 uppercase"
-                        onClick={() => {
-                            window.location.href = "#contact";
-                        }}
+                        onClick={() => navigateToSection("contact")}
                     >
                         Book Consultation
                     </Button>
@@ -65,25 +79,22 @@ export function Header() {
                 isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0 border-transparent"
             )}>
                 <nav className="flex flex-col container mx-auto px-6 py-4 space-y-4">
-                    <Link href="#about" onClick={closeMenu} className="text-[13px] font-bold uppercase tracking-widest text-gray-600 hover:text-black py-3 border-b border-gray-50 flex items-center justify-between">
+                    <button type="button" onClick={() => navigateToSection("about")} className="text-[13px] font-bold uppercase tracking-widest text-gray-600 hover:text-black py-3 border-b border-gray-50 flex items-center justify-between text-left">
                         <span>About Us</span>
-                    </Link>
-                    <Link href="#courses" onClick={closeMenu} className="text-[13px] font-bold uppercase tracking-widest text-gray-600 hover:text-black py-3 border-b border-gray-50 flex items-center justify-between">
+                    </button>
+                    <button type="button" onClick={() => navigateToSection("courses")} className="text-[13px] font-bold uppercase tracking-widest text-gray-600 hover:text-black py-3 border-b border-gray-50 flex items-center justify-between text-left">
                         <span>Courses</span>
-                    </Link>
-                    <Link href="#resources" onClick={closeMenu} className="text-[13px] font-bold uppercase tracking-widest text-gray-600 hover:text-black py-3 border-b border-gray-50 flex items-center justify-between">
+                    </button>
+                    <button type="button" onClick={() => navigateToSection("resources")} className="text-[13px] font-bold uppercase tracking-widest text-gray-600 hover:text-black py-3 border-b border-gray-50 flex items-center justify-between text-left">
                         <span>Resources</span>
-                    </Link>
-                    <Link href="#contact" onClick={closeMenu} className="text-[13px] font-bold uppercase tracking-widest text-gray-600 hover:text-black py-3 mb-2 flex items-center justify-between">
+                    </button>
+                    <button type="button" onClick={() => navigateToSection("contact")} className="text-[13px] font-bold uppercase tracking-widest text-gray-600 hover:text-black py-3 mb-2 flex items-center justify-between text-left">
                         <span>Contact Us</span>
-                    </Link>
+                    </button>
 
                     <Button
                         className="w-full tracking-widest text-xs font-bold h-12 bg-black text-white rounded-sm hover:bg-black/90 uppercase mb-4"
-                        onClick={() => {
-                            window.location.href = "#contact";
-                            closeMenu();
-                        }}
+                        onClick={() => navigateToSection("contact")}
                     >
                         Book Consultation
                     </Button>

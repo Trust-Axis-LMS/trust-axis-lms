@@ -1,4 +1,5 @@
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { Badge } from "@/components/ui/badge";
@@ -7,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Users, Search, Filter, Code, LineChart, Shield, Library, Newspaper, FileText, Clock, Star, ArrowRight, Twitter, Linkedin, Facebook, Instagram, UserCircle, Briefcase } from "lucide-react";
+import { Users, Search, Filter, Code, LineChart, Shield, Library, Newspaper, FileText, Clock, Star, ArrowRight, Twitter, Linkedin, UserCircle, Briefcase } from "lucide-react";
 
 export default function Home() {
   return (
@@ -201,7 +202,7 @@ export default function Home() {
                 <CardContent className="p-5 md:p-8 flex flex-col flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-[#212529] mb-2 md:mb-3 tracking-tight">Blogs</h3>
                   <p className="text-sm md:text-[15px] text-[#6C757D] mb-6 md:mb-8 flex-1 leading-relaxed">Stay updated with the latest developments in technology, business, and education from our expert authors.</p>
-                  <a href="#" className="font-bold flex items-center text-[#212529] hover:text-blue-600 transition-colors uppercase tracking-widest text-[10px] md:text-[11px]">
+                  <a href="/resources/blogs" className="font-bold flex items-center text-[#212529] hover:text-blue-600 transition-colors uppercase tracking-widest text-[10px] md:text-[11px]">
                     Explore Blogs <ArrowRight className="ml-2 h-3.5 w-3.5 md:h-4 md:w-4" />
                   </a>
                 </CardContent>
@@ -215,7 +216,7 @@ export default function Home() {
                 <CardContent className="p-5 md:p-8 flex flex-col flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-[#212529] mb-2 md:mb-3 tracking-tight">Articles</h3>
                   <p className="text-sm md:text-[15px] text-[#6C757D] mb-6 md:mb-8 flex-1 leading-relaxed">Deep-dive articles on technical topics, career guidance, and practical skill development strategies.</p>
-                  <a href="#" className="font-bold flex items-center text-[#212529] hover:text-blue-600 transition-colors uppercase tracking-widest text-[10px] md:text-[11px]">
+                  <a href="/resources/articles" className="font-bold flex items-center text-[#212529] hover:text-blue-600 transition-colors uppercase tracking-widest text-[10px] md:text-[11px]">
                     Read Articles <ArrowRight className="ml-2 h-3.5 w-3.5 md:h-4 md:w-4" />
                   </a>
                 </CardContent>
@@ -229,7 +230,7 @@ export default function Home() {
                 <CardContent className="p-5 md:p-8 flex flex-col flex-1">
                   <h3 className="text-xl md:text-2xl font-bold text-[#212529] mb-2 md:mb-3 tracking-tight">Research & Reports</h3>
                   <p className="text-sm md:text-[15px] text-[#6C757D] mb-6 md:mb-8 flex-1 leading-relaxed">Comprehensive research papers and industry reports for in-depth learning and analysis.</p>
-                  <a href="#" className="font-bold flex items-center text-[#212529] hover:text-blue-600 transition-colors uppercase tracking-widest text-[10px] md:text-[11px]">
+                  <a href="/resources/whitepapers" className="font-bold flex items-center text-[#212529] hover:text-blue-600 transition-colors uppercase tracking-widest text-[10px] md:text-[11px]">
                     Download Papers <ArrowRight className="ml-2 h-3.5 w-3.5 md:h-4 md:w-4" />
                   </a>
                 </CardContent>
@@ -367,65 +368,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black text-white pt-16 md:pt-20 pb-8 border-t border-black">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 mb-16 md:mb-20">
-            <div className="col-span-1 md:col-span-2 space-y-6">
-              <div className="flex items-center gap-3 md:gap-4">
-                <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center bg-white text-black font-bold text-base md:text-lg rounded-sm tracking-tighter">
-                  TA
-                </div>
-                <span className="text-xl md:text-2xl font-bold tracking-tight">Trust Axis</span>
-              </div>
-              <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed max-w-sm">
-                Empowering professionals with industry-leading education and career advancement opportunities.
-              </p>
-            </div>
-
-            <div className="col-span-1 md:col-span-2 grid grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-bold text-white mb-5 md:mb-6 uppercase tracking-widest text-[10px] md:text-[11px]">Programs</h4>
-                <ul className="space-y-3 md:space-y-4 text-sm text-gray-400 font-medium">
-                  <li><a href="#" className="hover:text-white transition-colors">Data Science</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Product Management</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Cybersecurity</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Cloud Computing</a></li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-white mb-5 md:mb-6 uppercase tracking-widest text-[10px] md:text-[11px]">Company</h4>
-                <ul className="space-y-3 md:space-y-4 text-sm text-gray-400 font-medium">
-                  <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="col-span-1 md:col-span-1 md:ml-auto">
-              <h4 className="font-bold text-white mb-5 md:mb-6 uppercase tracking-widest text-[10px] md:text-[11px]">Connect</h4>
-              <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors"><Facebook className="h-5 w-5 md:h-5 md:w-5" /></a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors"><Twitter className="h-5 w-5 md:h-5 md:w-5" /></a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors"><Linkedin className="h-5 w-5 md:h-5 md:w-5" /></a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors"><Instagram className="h-5 w-5 md:h-5 md:w-5" /></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] md:text-[13px] text-gray-500 font-semibold tracking-wide text-center md:text-left">
-            <p>© 2026 Trust Axis. All rights reserved.</p>
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

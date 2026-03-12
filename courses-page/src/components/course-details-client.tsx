@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   CheckCircle,
-  Download,
   ArrowRight,
   Clock,
   Monitor,
@@ -173,18 +172,11 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
             <a
-              href="#contact"
+              href="https://trust-axis-frontend.vercel.app/#contact"
               className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-sm bg-black text-white font-bold text-sm uppercase tracking-widest hover:bg-black/80 transition-colors"
             >
               Enroll Now <ArrowRight className="h-4 w-4" />
             </a>
-            <button
-              onClick={() => alert("Brochure PDF coming soon!")}
-              className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-sm border-2 border-[#212529] text-[#212529] font-bold text-sm uppercase tracking-widest hover:bg-gray-50 transition-colors"
-            >
-              <Download className="h-4 w-4" />
-              Download Brochure
-            </button>
           </div>
 
           {/* Stats Row */}
@@ -569,13 +561,6 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
             >
               Enroll Now <ArrowRight className="h-4 w-4" />
             </a>
-            <button
-              onClick={() => alert("Brochure PDF coming soon!")}
-              className="inline-flex items-center justify-center gap-2 px-10 h-14 rounded-sm border border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors"
-            >
-              <Download className="h-4 w-4" />
-              Download Brochure
-            </button>
           </div>
           <div className="mt-10 flex justify-center">
             <Link
