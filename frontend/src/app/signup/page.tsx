@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Eye, EyeOff, AlertCircle } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 
@@ -17,8 +17,11 @@ function GoogleIcon() {
   );
 }
 
-export default function SignupPage() {
+function SignupForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const callbackURL = searchParams.get("callbackURL");
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,13 +43,13 @@ export default function SignupPage() {
       setError(error.message ?? "Signup failed. Please try again.");
       setLoading(false);
     } else {
-      router.push("/onboarding");
+      router.push(`/onboarding${callbackURL ? `?callbackURL=${encodeURIComponent(callbackURL)}` : ""}`);
     }
   };
 
   const handleGoogle = async () => {
     setGoogleLoading(true);
-    await authClient.signIn.social({ provider: "google", callbackURL: "/onboarding" });
+    await authClient.signIn.social({ provider: "google", callbackURL: `/onboarding${callbackURL ? `?callbackURL=${encodeURIComponent(callbackURL)}` : ""}` });
   };
 
   return (
@@ -152,5 +155,13 @@ export default function SignupPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SignupPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">Loading...</div>}>
+      <SignupForm />
+    </Suspense>
   );
 }

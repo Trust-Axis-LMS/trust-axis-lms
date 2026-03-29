@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, LogOut, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSession, signOut } from "@/lib/auth-client";
-import { MAIN_SITE_URL } from "@/lib/url";
+import { MAIN_SITE_URL, COURSES_SITE_URL } from "@/lib/url";
 
 // ─── Auth Buttons (Copied from frontend) ───────────────────────────────────────
 function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
@@ -113,13 +113,13 @@ function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
   return (
     <div className={cn("flex items-center gap-6", isMobile && "w-full justify-between")}>
       <Link
-        href={`${MAIN_SITE_URL}/login`}
+        href={`${MAIN_SITE_URL}/login?callbackURL=${encodeURIComponent(COURSES_SITE_URL)}`}
         className="text-[12px] font-semibold text-gray-500 hover:text-black transition-colors uppercase tracking-widest"
       >
         Login
       </Link>
       <Link
-        href={`${MAIN_SITE_URL}/signup`}
+        href={`${MAIN_SITE_URL}/signup?callbackURL=${encodeURIComponent(COURSES_SITE_URL)}`}
         className={cn(
           "px-6 h-[40px] text-[12px] font-bold text-white bg-black hover:bg-black/90 rounded-full transition-all shadow-md hover:shadow-lg active:scale-95 uppercase tracking-widest flex items-center justify-center shrink-0",
           isMobile && "flex-1 ml-4"

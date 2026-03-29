@@ -47,10 +47,13 @@ export const auth = betterAuth({
     },
   },
 
-  // Advanced settings to configure UUID generation instead of random strings
+  // Advanced settings to configure UUID generation and cross-subdomain sessions
   advanced: {
     database: {
       generateId: "uuid",
+    },
+    crossSubDomainCookies: {
+      enabled: true,
     },
   },
 });

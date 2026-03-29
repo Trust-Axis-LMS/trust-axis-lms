@@ -132,7 +132,7 @@ function RadioCard({ label, emoji, desc, selected, onClick }: { label: string; e
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
-export default function OnboardingClient() {
+export default function OnboardingClient({ callbackURL = "/" }: { callbackURL?: string }) {
   const router = useRouter();
   const { data: session } = useSession();
   const [step, setStep] = useState(1);
@@ -174,7 +174,7 @@ export default function OnboardingClient() {
         }),
       });
       if (!res.ok) throw new Error("Failed to save profile");
-      router.push("/");
+      router.push(callbackURL);
     } catch (e) {
       setError("Something went wrong. Please try again.");
     } finally {
@@ -346,7 +346,7 @@ export default function OnboardingClient() {
           {step === 1 && (
             <button
               type="button"
-              onClick={() => router.push("/")}
+              onClick={() => router.push(callbackURL)}
               className="mt-4 text-center text-sm text-gray-400 hover:text-gray-600 transition-colors"
             >
               Skip for now
