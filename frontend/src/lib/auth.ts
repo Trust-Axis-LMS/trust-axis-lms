@@ -54,6 +54,12 @@ export const auth = betterAuth({
     },
     crossSubDomainCookies: {
       enabled: true,
+      domain: process.env.NODE_ENV === "production" ? ".trustacg.com" : undefined,
+    },
+    defaultCookieAttributes: {
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      secure: process.env.NODE_ENV === "production",
+      domain: process.env.NODE_ENV === "production" ? ".trustacg.com" : undefined,
     },
   },
 });
