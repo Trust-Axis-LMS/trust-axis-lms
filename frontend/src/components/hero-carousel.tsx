@@ -135,37 +135,55 @@ export function HeroCarousel() {
                 </CarouselContent>
             </Carousel>
 
-            {/* Side Navigation Arrows — left */}
+            {/* Side Navigation Arrows — Desktop only */}
             <button
                 onClick={scrollPrev}
                 aria-label="Previous slide"
-                className="absolute left-3 lg:left-5 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full border border-white/30 lg:border-white/40 bg-white/20 lg:bg-white/70 backdrop-blur-md hover:bg-white/30 lg:hover:bg-white/90 text-white lg:text-[#212529] shadow-lg transition-all hover:scale-105"
+                className="hidden lg:flex absolute left-5 top-1/2 -translate-y-1/2 z-30 items-center justify-center h-12 w-12 rounded-full border border-white/40 bg-white/70 backdrop-blur-md hover:bg-white/90 text-[#212529] shadow-lg transition-all hover:scale-105"
             >
-                <ChevronLeft className="h-5 w-5 lg:h-6 lg:w-6" />
+                <ChevronLeft className="h-6 w-6" />
             </button>
 
-            {/* Side Navigation Arrows — right */}
             <button
                 onClick={scrollNext}
                 aria-label="Next slide"
-                className="absolute right-3 lg:right-5 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full border border-white/30 lg:border-white/40 bg-white/20 lg:bg-white/70 backdrop-blur-md hover:bg-white/30 lg:hover:bg-white/90 text-white lg:text-[#212529] shadow-lg transition-all hover:scale-105"
+                className="hidden lg:flex absolute right-5 top-1/2 -translate-y-1/2 z-30 items-center justify-center h-12 w-12 rounded-full border border-white/40 bg-white/70 backdrop-blur-md hover:bg-white/90 text-[#212529] shadow-lg transition-all hover:scale-105"
             >
-                <ChevronRight className="h-5 w-5 lg:h-6 lg:w-6" />
+                <ChevronRight className="h-6 w-6" />
             </button>
 
-            {/* Dot Indicators at bottom */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 lg:gap-3 p-2 lg:p-0 bg-white/10 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none rounded-2xl lg:rounded-none border border-white/30 lg:border-transparent shadow-lg lg:shadow-none z-20">
-                {heroSlides.map((_, i) => (
-                    <button
-                        key={i}
-                        aria-label={`Go to slide ${i + 1}`}
-                        onClick={() => api?.scrollTo(i)}
-                        className={cn(
-                            "h-2 lg:h-3 transition-all duration-300 rounded-full",
-                            current === i ? "w-6 lg:w-8 bg-white lg:bg-primary" : "w-2 lg:w-3 bg-white/40 lg:bg-gray-300 hover:bg-white/60 lg:hover:bg-gray-400"
-                        )}
-                    />
-                ))}
+            {/* Controls at bottom (Mobile: Arrows + Dots, Desktop: Dots only) */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 p-1.5 lg:p-0 bg-white/10 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none rounded-full lg:rounded-none border border-white/30 lg:border-transparent shadow-lg lg:shadow-none z-20">
+                
+                <button
+                    onClick={scrollPrev}
+                    aria-label="Previous slide"
+                    className="lg:hidden flex items-center justify-center h-7 w-7 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all"
+                >
+                    <ChevronLeft className="h-4 w-4 z-10" />
+                </button>
+
+                <div className="flex gap-2 lg:gap-3 px-1">
+                    {heroSlides.map((_, i) => (
+                        <button
+                            key={i}
+                            aria-label={`Go to slide ${i + 1}`}
+                            onClick={() => api?.scrollTo(i)}
+                            className={cn(
+                                "h-2 lg:h-3 transition-all duration-300 rounded-full",
+                                current === i ? "w-6 lg:w-8 bg-white lg:bg-primary" : "w-2 lg:w-3 bg-white/40 lg:bg-gray-300 hover:bg-white/60 lg:hover:bg-gray-400"
+                            )}
+                        />
+                    ))}
+                </div>
+
+                <button
+                    onClick={scrollNext}
+                    aria-label="Next slide"
+                    className="lg:hidden flex items-center justify-center h-7 w-7 rounded-full bg-white/20 text-white hover:bg-white/30 transition-all"
+                >
+                    <ChevronRight className="h-4 w-4 z-10" />
+                </button>
             </div>
         </section>
     );

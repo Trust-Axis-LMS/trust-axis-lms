@@ -9,7 +9,7 @@ import { useSession, signOut } from "@/lib/auth-client";
 import { MAIN_SITE_URL } from "@/lib/url";
 
 // ─── Auth Buttons (Copied from frontend) ───────────────────────────────────────
-function AuthSection() {
+function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
   const { data: session, isPending } = useSession();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +19,43 @@ function AuthSection() {
   }
 
   if (session?.user) {
+    if (isMobile) {
+      return (
+        <div className="flex flex-col space-y-1 w-full pb-2">
+          <div className="flex items-center gap-3 px-2 py-3 mb-2 rounded-lg bg-[#F8FAFC] border border-[#E5E7EB]">
+            <div className="w-10 h-10 rounded-full bg-blue-100 overflow-hidden text-blue-700 flex items-center justify-center text-sm font-bold shrink-0">
+              {session.user.image ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img src={session.user.image} alt={session.user.name ?? "User"} className="w-full h-full object-cover" />
+              ) : (
+                session.user.name?.charAt(0).toUpperCase() ?? "U"
+              )}
+            </div>
+            <div className="flex flex-col flex-1 min-w-0">
+              <span className="text-sm font-bold text-[#212529] truncate">{session.user.name}</span>
+              <span className="text-xs font-medium text-[#6C757D] truncate">{session.user.email}</span>
+            </div>
+          </div>
+          
+          <Link
+            href={`${MAIN_SITE_URL}/profile`}
+            className="flex items-center gap-2 px-2 py-3 text-sm font-bold uppercase tracking-widest text-[#4A5568] hover:text-[#212529] transition-colors"
+          >
+            <User size={16} /> My Profile
+          </Link>
+          <button
+            onClick={async () => {
+              await signOut();
+              router.push("/");
+            }}
+            className="w-full flex items-center gap-2 px-2 py-3 text-sm font-bold uppercase tracking-widest text-red-600 hover:text-red-700 transition-colors"
+          >
+            <LogOut size={16} /> Sign Out
+          </button>
+        </div>
+      );
+    }
+
     return (
       <div className="relative">
         <button
@@ -43,14 +80,14 @@ function AuthSection() {
           <>
             <div className="fixed inset-0 z-40" onClick={() => setMenuOpen(false)} />
             <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5 z-50">
-              <div className="px-4 py-2.5 border-b border-gray-50">
-                <p className="text-sm font-semibold text-gray-900 truncate">{session.user.name}</p>
-                <p className="text-xs text-gray-500 truncate">{session.user.email}</p>
+              <div className="px-4 py-3 border-b border-gray-50 bg-[#F8FAFC]/50">
+                <p className="text-sm font-bold text-gray-900 truncate">{session.user.name}</p>
+                <p className="text-xs font-medium text-gray-500 truncate">{session.user.email}</p>
               </div>
               <Link
                 href={`${MAIN_SITE_URL}/profile`}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors mt-1"
               >
                 <User size={15} />
                 My Profile
@@ -61,7 +98,7 @@ function AuthSection() {
                   setMenuOpen(false);
                   router.push("/");
                 }}
-                className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 transition-colors mb-1"
               >
                 <LogOut size={15} />
                 Sign Out
@@ -74,7 +111,7 @@ function AuthSection() {
   }
 
   return (
-    <div className="flex items-center gap-6">
+    <div className={cn("flex items-center gap-6", isMobile && "w-full justify-between")}>
       <Link
         href={`${MAIN_SITE_URL}/login`}
         className="text-[12px] font-semibold text-gray-500 hover:text-black transition-colors uppercase tracking-widest"
@@ -83,7 +120,10 @@ function AuthSection() {
       </Link>
       <Link
         href={`${MAIN_SITE_URL}/signup`}
-        className="px-6 h-[40px] text-[12px] font-bold text-white bg-black hover:bg-black/90 rounded-full transition-all shadow-md hover:shadow-lg active:scale-95 uppercase tracking-widest flex items-center justify-center shrink-0"
+        className={cn(
+          "px-6 h-[40px] text-[12px] font-bold text-white bg-black hover:bg-black/90 rounded-full transition-all shadow-md hover:shadow-lg active:scale-95 uppercase tracking-widest flex items-center justify-center shrink-0",
+          isMobile && "flex-1 ml-4"
+        )}
       >
         Sign Up
       </Link>
@@ -166,7 +206,7 @@ export function Header() {
           ))}
 
           <div className="pt-4 border-t border-gray-100 flex justify-center">
-            <AuthSection />
+            <AuthSection isMobile={true} />
           </div>
         </nav>
       </div>
