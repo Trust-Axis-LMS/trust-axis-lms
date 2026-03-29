@@ -102,6 +102,6 @@ Each vertical (e.g., GRC, Fintech) includes:
 ---
 
 ## 8. Security & Compliance
-*   **Authentication:** Secure OAuth/JWT-based login.
+*   **Authentication:** Secure OAuth/JWT-based login via Supabase Auth.
 *   **Authorization:** Role-Based Access Control (RBAC) for Admin/Trainer/Student.
 *   **Data Protection:** Encryption at rest and in transit; secure form validation.

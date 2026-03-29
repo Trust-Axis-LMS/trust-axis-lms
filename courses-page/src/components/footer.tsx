@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { MAIN_SITE_URL } from "@/lib/url";
 
 export function Footer() {
   return (
@@ -69,7 +70,7 @@ export function Footer() {
               <ul className="space-y-3 md:space-y-4 text-sm text-gray-400 font-medium">
                 <li>
                   <a
-                    href="https://trust-axis-frontend.vercel.app/#about"
+                    href={`${MAIN_SITE_URL}/#about`}
                     className="hover:text-white transition-colors"
                   >
                     About Us
@@ -82,7 +83,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://trust-axis-frontend.vercel.app/#resources"
+                    href={`${MAIN_SITE_URL}/#resources`}
                     className="hover:text-white transition-colors"
                   >
                     Blog
@@ -90,7 +91,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://trust-axis-frontend.vercel.app/#contact"
+                    href={`${MAIN_SITE_URL}/#contact`}
                     className="hover:text-white transition-colors"
                   >
                     Contact

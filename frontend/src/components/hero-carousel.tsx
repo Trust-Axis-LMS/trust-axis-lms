@@ -2,11 +2,12 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
-import { ArrowRight, GraduationCap, Library, Users } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import { ArrowRight, GraduationCap, Library, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const heroSlides = [
     {
@@ -16,8 +17,8 @@ const heroSlides = [
         icon: GraduationCap,
         imageLabel: "Program Preview Image",
         imageSub: "Professional Learning Environment",
-        btn1: "Explore Programs",
-        btn2: "View Catalog"
+        btn1: { label: "Explore Programs", href: "/#courses" },
+        btn2: { label: "View Catalog", href: "/#courses" }
     },
     {
         badge: "Learning Resources",
@@ -26,18 +27,18 @@ const heroSlides = [
         icon: Library,
         imageLabel: "Resource Preview",
         imageSub: "Curated Knowledge Base",
-        btn1: "Read Articles",
-        btn2: "View Resources"
+        btn1: { label: "Read Articles", href: "/resources" },
+        btn2: { label: "View Resources", href: "/resources" }
     },
     {
-        badge: "Community",
-        title: "Join Top Professionals",
-        description: "Connect with like-minded individuals, share experiences, and grow your network within our global community",
+        badge: "Consultancy",
+        title: "Expert Guidance & Consultancy",
+        description: "Connect with seasoned professionals who can guide your team through complex technical and leadership challenges",
         icon: Users,
-        imageLabel: "Community Preview",
-        imageSub: "Global Network of Learners",
-        btn1: "Join Now",
-        btn2: "Learn More"
+        imageLabel: "Consultancy Preview",
+        imageSub: "Global Network of Experts",
+        btn1: { label: "Explore Consultancies", href: "/consultancy" },
+        btn2: { label: "Learn More", href: "/consultancy" }
     }
 ];
 
@@ -57,11 +58,15 @@ export function HeroCarousel() {
         });
     }, [api]);
 
+    const scrollPrev = useCallback(() => api?.scrollPrev(), [api]);
+    const scrollNext = useCallback(() => api?.scrollNext(), [api]);
+
     return (
         <section className="bg-[#18181B] lg:bg-white overflow-hidden border-b border-[#F4F4F5] relative h-[calc(100dvh-90px)] lg:h-auto lg:max-h-none lg:min-h-0">
             <Carousel
                 setApi={setApi}
                 plugins={[plugin.current]}
+                opts={{ loop: true }}
                 className="w-full h-full lg:h-auto relative group"
                 onMouseEnter={plugin.current.stop}
                 onMouseLeave={plugin.current.reset}
@@ -96,12 +101,16 @@ export function HeroCarousel() {
                                             </p>
 
                                             <div className="flex flex-col sm:flex-row gap-3 pt-3 lg:pt-4">
-                                                <Button size="lg" className="h-[52px] w-full sm:w-auto lg:h-14 px-6 lg:px-8 text-[13px] lg:text-base uppercase tracking-wider font-bold rounded-md bg-white text-black lg:bg-primary lg:text-white hover:bg-white/90 lg:hover:bg-primary/90 shadow-lg lg:shadow-none">
-                                                    {slide.btn1} <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
-                                                </Button>
-                                                <Button variant="outline" size="lg" className="h-[52px] w-full sm:w-auto lg:h-14 px-6 lg:px-8 text-[13px] lg:text-base uppercase tracking-wider font-bold rounded-md border border-white/20 lg:border-2 lg:border-black/10 text-white lg:text-[#212529] hover:bg-white/10 lg:hover:bg-[#F4F4F5] bg-transparent lg:bg-transparent shadow-lg lg:shadow-none">
-                                                    {slide.btn2}
-                                                </Button>
+                                                <Link href={slide.btn1.href} className="w-full sm:w-auto">
+                                                    <Button size="lg" className="h-[52px] w-full lg:h-14 px-6 lg:px-8 text-[13px] lg:text-base uppercase tracking-wider font-bold rounded-md bg-white text-black lg:bg-primary lg:text-white hover:bg-white/90 lg:hover:bg-primary/90 shadow-lg lg:shadow-none">
+                                                        {slide.btn1.label} <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
+                                                    </Button>
+                                                </Link>
+                                                <Link href={slide.btn2.href} className="w-full sm:w-auto">
+                                                    <Button variant="outline" size="lg" className="h-[52px] w-full lg:h-14 px-6 lg:px-8 text-[13px] lg:text-base uppercase tracking-wider font-bold rounded-md border border-white/20 lg:border-2 lg:border-black/10 text-white lg:text-[#212529] hover:bg-white/10 lg:hover:bg-[#F4F4F5] bg-transparent lg:bg-transparent shadow-lg lg:shadow-none">
+                                                        {slide.btn2.label}
+                                                    </Button>
+                                                </Link>
                                             </div>
                                         </div>
 
@@ -124,28 +133,40 @@ export function HeroCarousel() {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-
-                {/* Navigation Overlays */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center justify-between lg:justify-center w-full px-4 sm:px-6 lg:w-auto lg:px-0 lg:gap-6 z-20">
-                    <CarouselPrevious className="static translate-y-0 h-10 w-10 lg:h-12 lg:w-12 rounded-full lg:rounded-none border border-white/30 lg:border-0 bg-white/10 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none hover:bg-white/20 lg:hover:bg-transparent text-white lg:text-black shadow-lg lg:shadow-none lg:drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] hover:scale-110 transition-all [&_svg]:h-5 [&_svg]:w-5 lg:[&_svg]:h-6 lg:[&_svg]:w-6" variant="ghost" />
-
-                    <div className="flex gap-2 lg:gap-3 p-2 lg:p-0 bg-white/10 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none rounded-2xl lg:rounded-none border border-white/30 lg:border-transparent shadow-lg lg:shadow-none transition-all duration-300">
-                        {heroSlides.map((_, i) => (
-                            <button
-                                key={i}
-                                aria-label={`Go to slide ${i + 1}`}
-                                onClick={() => api?.scrollTo(i)}
-                                className={cn(
-                                    "h-2 lg:h-3 transition-all duration-300 rounded-full",
-                                    current === i ? "w-6 lg:w-8 bg-white lg:bg-primary" : "w-2 lg:w-3 bg-white/40 lg:bg-gray-300 hover:bg-white/60 lg:hover:bg-gray-400"
-                                )}
-                            />
-                        ))}
-                    </div>
-
-                    <CarouselNext className="static translate-y-0 h-10 w-10 lg:h-12 lg:w-12 rounded-full lg:rounded-none border border-white/30 lg:border-0 bg-white/10 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none hover:bg-white/20 lg:hover:bg-transparent text-white lg:text-black shadow-lg lg:shadow-none lg:drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)] hover:scale-110 transition-all [&_svg]:h-5 [&_svg]:w-5 lg:[&_svg]:h-6 lg:[&_svg]:w-6" variant="ghost" />
-                </div>
             </Carousel>
+
+            {/* Side Navigation Arrows — left */}
+            <button
+                onClick={scrollPrev}
+                aria-label="Previous slide"
+                className="absolute left-3 lg:left-5 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full border border-white/30 lg:border-white/40 bg-white/20 lg:bg-white/70 backdrop-blur-md hover:bg-white/30 lg:hover:bg-white/90 text-white lg:text-[#212529] shadow-lg transition-all hover:scale-105"
+            >
+                <ChevronLeft className="h-5 w-5 lg:h-6 lg:w-6" />
+            </button>
+
+            {/* Side Navigation Arrows — right */}
+            <button
+                onClick={scrollNext}
+                aria-label="Next slide"
+                className="absolute right-3 lg:right-5 top-1/2 -translate-y-1/2 z-30 flex items-center justify-center h-10 w-10 lg:h-12 lg:w-12 rounded-full border border-white/30 lg:border-white/40 bg-white/20 lg:bg-white/70 backdrop-blur-md hover:bg-white/30 lg:hover:bg-white/90 text-white lg:text-[#212529] shadow-lg transition-all hover:scale-105"
+            >
+                <ChevronRight className="h-5 w-5 lg:h-6 lg:w-6" />
+            </button>
+
+            {/* Dot Indicators at bottom */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 lg:gap-3 p-2 lg:p-0 bg-white/10 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none rounded-2xl lg:rounded-none border border-white/30 lg:border-transparent shadow-lg lg:shadow-none z-20">
+                {heroSlides.map((_, i) => (
+                    <button
+                        key={i}
+                        aria-label={`Go to slide ${i + 1}`}
+                        onClick={() => api?.scrollTo(i)}
+                        className={cn(
+                            "h-2 lg:h-3 transition-all duration-300 rounded-full",
+                            current === i ? "w-6 lg:w-8 bg-white lg:bg-primary" : "w-2 lg:w-3 bg-white/40 lg:bg-gray-300 hover:bg-white/60 lg:hover:bg-gray-400"
+                        )}
+                    />
+                ))}
+            </div>
         </section>
     );
 }

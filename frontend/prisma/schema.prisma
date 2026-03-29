@@ -1,0 +1,124 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas  = ["auth", "public"]
+}
+
+// ─── Better Auth Tables ──────────────────────────────────────────────────────
+
+model User {
+  id            String   @id @default(uuid()) @db.Uuid
+  name          String?
+  email         String   @unique
+  emailVerified Boolean  @default(false) @map("email_verified")
+  image         String?  @map("avatar_url")
+  role          String   @default("student")
+  rewardPoints  Int      @default(0) @map("reward_points")
+  rewardTier    String   @default("bronze") @map("reward_tier")
+  lastLoginAt   DateTime? @map("last_login_at") @db.Timestamptz(6)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt     DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  studentProfile StudentProfile?
+  sessions       Session[]
+  accounts       Account[]
+  
+
+  @@map("users")
+  @@schema("public")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  expiresAt DateTime @map("expires_at")
+  token     String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+  userId    String   @map("user_id") @db.Uuid
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("session")
+  @@schema("public")
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String    @map("account_id")
+  providerId            String    @map("provider_id")
+  userId                String    @map("user_id") @db.Uuid
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?   @map("access_token")
+  refreshToken          String?   @map("refresh_token")
+  idToken               String?   @map("id_token")
+  accessTokenExpiresAt  DateTime? @map("access_token_expires_at")
+  refreshTokenExpiresAt DateTime? @map("refresh_token_expires_at")
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+
+  @@map("account")
+  @@schema("public")
+}
+
+model Verification {
+  id         String    @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime  @map("expires_at")
+  createdAt  DateTime? @default(now()) @map("created_at")
+  updatedAt  DateTime? @updatedAt @map("updated_at")
+
+  @@map("verification")
+  @@schema("public")
+}
+
+// ─── Custom Student Profile ──────────────────────────────────────────────────
+
+model StudentProfile {
+  id                   String       @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  userId               String       @unique @map("user_id") @db.Uuid
+  user                 User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  phone                String?
+  currentStatus        String?      @map("current_status")
+  areaOfInterest       String[]     @map("area_of_interest")
+  goal                 String[]
+  onboardingDone       Boolean      @default(false) @map("onboarding_done")
+
+  educationLevel       String?      @map("education_level")
+  degree               String?
+  college              String?
+  graduationYear       Int?         @map("graduation_year")
+
+  currentCompany       String?      @map("current_company")
+  jobRole              String?      @map("job_role")
+  yearsExperience      Int?         @map("years_experience")
+
+  skillsKnown          String[]     @map("skills_known")
+  toolsKnown           String[]     @map("tools_known")
+  skillLevel           String?      @map("skill_level")
+
+  targetJobRole        String?      @map("target_job_role")
+  targetCompanies      String[]     @map("target_companies")
+  expectedSalary       String?      @map("expected_salary")
+  resumeUrl            String?      @map("resume_url")
+  linkedinUrl          String?      @map("linkedin_url")
+
+  studyHoursPerWeek    Int?         @map("study_hours_per_week")
+  learningMode         String?      @map("learning_mode")
+
+  createdAt            DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt            DateTime     @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@map("student_profiles")
+  @@schema("public")
+}
+
+

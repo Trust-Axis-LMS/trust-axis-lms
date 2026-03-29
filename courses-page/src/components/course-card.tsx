@@ -20,6 +20,10 @@ export function CourseCard({ course }: CourseCardProps) {
           categoryMeta.bandClassName
         )}
       >
+        {course.thumbnailUrl && (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img src={course.thumbnailUrl} alt={course.title} className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-500" />
+        )}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_34%)]" />
         <div className="absolute -right-8 top-6 h-24 w-24 rounded-full border border-white/10 bg-white/10" />
         <div className="absolute left-10 top-4 h-16 w-16 rounded-full border border-white/10 bg-white/5 blur-2xl" />

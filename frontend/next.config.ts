@@ -1,14 +1,9 @@
 import type { NextConfig } from "next";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const configDir = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
-  reactCompiler: true,
-  turbopack: {
-    root: configDir,
-  },
+  // Disable React Compiler in development to drastically reduce HMR memory use/lag
+  // Only enable it during production builds where speed/V8 limits don't overlap with IDEs
+  reactCompiler: process.env.NODE_ENV === "production" ? true : false,
 };
 
 export default nextConfig;

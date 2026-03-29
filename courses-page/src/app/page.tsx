@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, BookOpen, Search } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -34,6 +34,19 @@ export default function CoursesPage() {
     setSelectedCategory("All");
   };
 
+  // Scroll to top of catalog section when filters change
+  useEffect(() => {
+    const catalogSection = document.getElementById("catalog-grid");
+    if (catalogSection) {
+      const headerHeight = 90; // Approximate header height for courses-page
+      const elementPosition = catalogSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - headerHeight - 20, // 20px buffer
+        behavior: "smooth"
+      });
+    }
+  }, [selectedCategory]);
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
@@ -53,7 +66,7 @@ export default function CoursesPage() {
                 </Badge>
 
                 <div className="space-y-6">
-                  <h1 className="max-w-[14ch] text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-foreground md:text-5xl lg:text-[3.8rem]">
+                  <h1 className="max-w-[22ch] text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-foreground md:text-5xl lg:text-[3.8rem]">
                     Structured Programs for Technical and Leadership Teams.
                   </h1>
                   <p className="max-w-[720px] text-base leading-8 text-muted md:text-lg">
@@ -113,9 +126,6 @@ export default function CoursesPage() {
                     <p className="text-2xl font-bold tracking-tight text-foreground">
                       Course Catalogue
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-muted">
-                      Browse Categories
-                    </p>
                   </div>
 
                   <nav className="mt-5 space-y-2" aria-label="Course categories">
@@ -158,10 +168,7 @@ export default function CoursesPage() {
 
               <div className="min-w-0">
                 <div className="lg:hidden">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-muted">
-                    Browse Categories
-                  </p>
-                  <div className="mt-4 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  <div className="mt-0 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                     <div className="flex min-w-max gap-2 pb-1">
                       {categories.map((category) => {
                         const categoryMeta = getCourseCategoryMeta(category);
@@ -196,26 +203,18 @@ export default function CoursesPage() {
                   </div>
 
                   <div className="mt-5 flex flex-col gap-3 text-sm md:flex-row md:items-center md:justify-between">
-                    <p className="font-medium text-muted">
-                      {filteredCourses.length === 0
-                        ? "No programs found"
-                        : `${filteredCourses.length} program${filteredCourses.length !== 1 ? "s" : ""} found`}
-                      {selectedCategory !== "All" && ` in ${selectedCategory}`}
-                      {searchQuery && ` for "${searchQuery}"`}
-                    </p>
-
                     {(searchQuery || selectedCategory !== "All") && (
                       <button
                         onClick={resetFilters}
-                        className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted transition-colors hover:text-foreground"
+                        className="text-[11px] font-bold uppercase tracking-[0.16em] text-muted transition-colors hover:text-foreground ml-auto"
                       >
                         Clear Filters
                       </button>
                     )}
                   </div>
 
-                  <div className="mt-5 lg:sticky lg:top-[114px] lg:z-30">
-                    <div className="rounded-md border border-border bg-white/96 p-3 shadow-[0_8px_28px_rgba(33,37,41,0.06)] backdrop-blur supports-[backdrop-filter]:bg-white/90 md:p-3.5">
+                  <div className="mt-5 lg:z-10">
+                    <div className="rounded-md border border-border bg-white p-3 shadow-sm md:p-3.5">
                       <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
                         <div className="inline-flex h-10 items-center rounded-sm border border-border bg-secondary px-3 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground">
                           {activeCategoryLabel}

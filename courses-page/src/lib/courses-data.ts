@@ -53,6 +53,7 @@ export interface Course {
   certificate: string;
   rating: number;
   students: string;
+  thumbnailUrl?: string;
   programHighlights: ProgramHighlight[];
   aboutCourse: string[];
   directorQuote: { text: string; author: string };
@@ -65,229 +66,184 @@ export interface Course {
 
 export const courses: Course[] = [
   {
-    slug: "advanced-cybersecurity-program",
+    slug: "cdpse",
     category: "Cybersecurity",
-    title: "Advanced Information Security & Cybersecurity Program",
-    subtitle: "Become a certified cybersecurity expert with hands-on labs and industry mentorship",
+    title: "CDPSE – Certified Data Privacy Solutions Engineer",
+    subtitle: "Focuses on data privacy governance, privacy program implementation, and data protection.",
     highlights: [
-      "Comprehensive 10-month program designed to transform you into a cybersecurity expert with hands-on experience in threat detection, incident response, and security architecture",
-      "Industry-recognized certification preparation including CEH, CISSP, and CompTIA Security+ with expert mentorship from leading security professionals",
-      "Real-world capstone projects involving penetration testing, security audits, and incident management scenarios used by Fortune 500 companies",
+      "Focuses on data privacy governance, privacy program implementation, and data protection.",
+      "Covers privacy frameworks, data protection regulations, and privacy engineering.",
+      "Helps professionals implement privacy programs and data protection controls."
     ],
-    duration: "10 Months",
-    mode: "Online",
-    weeklyHours: "15-20 hrs",
-    certificate: "Upon Completion",
-    rating: 4.9,
-    students: "1.8K",
-    programHighlights: [
-      { icon: "FlaskConical", title: "Hands-On Lab Environment", description: "Access to state-of-the-art virtual labs with real-world security scenarios and tools including Kali Linux, Metasploit, and Wireshark" },
-      { icon: "UserCheck", title: "Industry Expert Mentors", description: "Learn directly from cybersecurity professionals with 15+ years of experience in enterprise security and ethical hacking" },
-      { icon: "Award", title: "Multiple Certifications", description: "Preparation for CEH, CISSP, CompTIA Security+, and CISM certifications with dedicated exam prep modules" },
-      { icon: "Briefcase", title: "Career Support", description: "Dedicated career services including resume building, interview preparation, and job placement assistance with partner companies" },
-      { icon: "FolderKanban", title: "Capstone Projects", description: "Work on 3 major projects including penetration testing, security infrastructure design, and incident response planning" },
-      { icon: "Users", title: "Community Access", description: "Join an exclusive network of 5,000+ cybersecurity professionals and alumni for ongoing learning and collaboration" },
-    ],
-    aboutCourse: [
-      "The Advanced Information Security & Cybersecurity Program is a comprehensive, industry-aligned curriculum designed to prepare you for a successful career in cybersecurity. This program combines theoretical knowledge with extensive hands-on practice to ensure you develop both the technical skills and strategic thinking required in today's threat landscape.",
-      "Throughout this 10-month journey, you'll master essential cybersecurity domains including network security, application security, cloud security, incident response, and security governance. Our curriculum is continuously updated to reflect the latest threats, technologies, and industry best practices, ensuring you stay ahead in this rapidly evolving field.",
-      "The program features a unique blend of live instructor-led sessions, self-paced learning modules, and practical lab exercises. You'll work with industry-standard tools and technologies, participate in capture-the-flag competitions, and complete real-world projects that mirror the challenges faced by security professionals in enterprise environments.",
-    ],
-    directorQuote: {
-      text: "This program is designed for professionals who are serious about building a career in cybersecurity. Our graduates have gone on to secure positions at leading technology companies, financial institutions, and government agencies worldwide.",
-      author: "Dr. James Patterson, Program Director",
-    },
-    objectives: [
-      { number: 1, title: "Identify and Analyze Security Threats", description: "Recognize various types of cyber threats, vulnerabilities, and attack vectors affecting modern systems and networks" },
-      { number: 2, title: "Implement Security Controls", description: "Design and deploy comprehensive security solutions including firewalls, IDS/IPS, and endpoint protection systems" },
-      { number: 3, title: "Conduct Penetration Testing", description: "Perform ethical hacking and penetration testing using industry-standard methodologies and tools" },
-      { number: 4, title: "Manage Security Incidents", description: "Develop and execute incident response plans, conduct forensic analysis, and manage security breaches effectively" },
-      { number: 5, title: "Ensure Compliance", description: "Understand and implement security frameworks including ISO 27001, NIST, PCI-DSS, and GDPR requirements" },
-      { number: 6, title: "Secure Cloud Infrastructure", description: "Implement security best practices for AWS, Azure, and GCP cloud environments and containerized applications" },
-    ],
-    curriculum: [
-      { number: 1, title: "Fundamentals of Information Security", duration: "4 weeks", modules: 8, subtopics: [{ title: "Introduction to Cybersecurity and CIA Triad" }, { title: "Security Principles and Risk Management" }, { title: "Cryptography Basics and PKI" }, { title: "Security Policies and Procedures" }] },
-      { number: 2, title: "Network Security", duration: "6 weeks", modules: 12, subtopics: [{ title: "TCP/IP Protocol Suite and Network Architecture" }, { title: "Firewalls, IDS/IPS Configuration" }, { title: "VPN and Secure Tunneling Protocols" }, { title: "Wireless Network Security" }] },
-      { number: 3, title: "Ethical Hacking & Penetration Testing", duration: "8 weeks", modules: 15, subtopics: [{ title: "Reconnaissance and Information Gathering" }, { title: "Vulnerability Scanning and Analysis" }, { title: "Exploitation Techniques with Metasploit" }, { title: "Post-Exploitation and Reporting" }] },
-      { number: 4, title: "Application Security", duration: "5 weeks", modules: 10, subtopics: [{ title: "OWASP Top 10 Vulnerabilities" }, { title: "Secure Coding Practices" }, { title: "Web Application Penetration Testing" }, { title: "API Security Testing" }] },
-      { number: 5, title: "Cloud Security", duration: "4 weeks", modules: 8, subtopics: [{ title: "Cloud Security Architecture" }, { title: "AWS/Azure/GCP Security Services" }, { title: "Container and Kubernetes Security" }, { title: "DevSecOps Principles" }] },
-      { number: 6, title: "Incident Response & Forensics", duration: "6 weeks", modules: 11, subtopics: [{ title: "Incident Response Lifecycle" }, { title: "Digital Forensics Fundamentals" }, { title: "Memory and Disk Analysis" }, { title: "Malware Analysis Techniques" }] },
-      { number: 7, title: "Security Governance & Compliance", duration: "3 weeks", modules: 6, subtopics: [{ title: "ISO 27001 Implementation" }, { title: "NIST Cybersecurity Framework" }, { title: "GDPR and PCI-DSS Compliance" }] },
-      { number: 8, title: "Capstone Project & Certification Prep", duration: "4 weeks", modules: 0, subtopics: [{ title: "Enterprise Security Audit Project" }, { title: "CEH Exam Preparation" }, { title: "CISSP Domain Review" }, { title: "CompTIA Security+ Mock Exams" }] },
-    ],
-    targetAudience: [
-      { icon: "Code", title: "IT Professionals", description: "System administrators and IT professionals looking to transition into cybersecurity roles" },
-      { icon: "GraduationCap", title: "Recent Graduates", description: "Computer science and engineering graduates seeking specialized cybersecurity expertise" },
-      { icon: "Shield", title: "Security Enthusiasts", description: "Individuals passionate about cybersecurity who want to formalize their skills with certifications" },
-      { icon: "Briefcase", title: "Career Changers", description: "Professionals from other industries who want to pivot into the high-demand cybersecurity field" },
-    ],
-    examDetails: [
-      { name: "Certified Ethical Hacker (CEH)", provider: "EC-Council", passScore: "70%", prepIncluded: true },
-      { name: "CompTIA Security+", provider: "CompTIA", passScore: "750/900", prepIncluded: true },
-      { name: "CISSP", provider: "ISC²", passScore: "700/1000", prepIncluded: true },
-    ],
-    toolsCovered: [
-      { name: "Kali Linux", icon: "Terminal", category: "OS" },
-      { name: "Metasploit", icon: "Zap", category: "Exploitation" },
-      { name: "Wireshark", icon: "Activity", category: "Analysis" },
-      { name: "Burp Suite", icon: "Search", category: "Web Security" },
-      { name: "Nmap", icon: "Network", category: "Scanning" },
-      { name: "Splunk", icon: "BarChart2", category: "SIEM" },
-      { name: "Snort", icon: "Bell", category: "IDS" },
-      { name: "Nessus", icon: "ScanSearch", category: "Vulnerability" },
-      { name: "John the Ripper", icon: "Lock", category: "Password" },
-      { name: "Autopsy", icon: "FolderSearch", category: "Forensics" },
-      { name: "OpenVAS", icon: "ShieldCheck", category: "Scanning" },
-      { name: "Aircrack-ng", icon: "Wifi", category: "Wireless" },
-    ],
-  },
-  {
-    slug: "advanced-data-analytics-program",
-    category: "Data Science",
-    title: "Advanced Data Analytics & Machine Learning Program",
-    subtitle: "Master data science, ML engineering, and AI with real-world projects",
-    highlights: [
-      "Comprehensive 6-month program covering data analysis, machine learning, deep learning, and business intelligence with hands-on Python projects",
-      "Work with real datasets from Fortune 500 companies and build a portfolio of 5+ end-to-end ML projects ready to showcase to employers",
-      "Industry-recognized certification preparation for Google Data Analytics, IBM Data Science, and AWS Machine Learning Specialty",
-    ],
-    duration: "6 Months",
-    mode: "Online",
-    weeklyHours: "12-15 hrs",
+    duration: "Flexible",
+    mode: "Online / Hybrid",
+    weeklyHours: "10-15 hrs",
     certificate: "Upon Completion",
     rating: 4.8,
-    students: "2.5K",
+    students: "1.2K",
+    thumbnailUrl: "/images/courses/cdpse.webp",
     programHighlights: [
-      { icon: "Database", title: "Real-World Datasets", description: "Work with actual industry datasets from finance, healthcare, e-commerce, and social media domains" },
-      { icon: "Brain", title: "AI/ML Deep Dives", description: "Master deep learning frameworks including TensorFlow, PyTorch, and Keras with hands-on neural network projects" },
-      { icon: "Award", title: "Google & IBM Certifications", description: "Earn industry-recognized credentials from Google, IBM, and AWS upon program completion" },
-      { icon: "Briefcase", title: "Portfolio Building", description: "Graduate with 5+ deployed ML projects and a professional data science portfolio on GitHub" },
-      { icon: "BarChart2", title: "Business Intelligence", description: "Master Tableau, Power BI, and advanced SQL for creating executive-level dashboards and reports" },
-      { icon: "Users", title: "Mentorship Network", description: "1-on-1 mentorship sessions with senior data scientists from Google, Meta, and leading analytics firms" },
+      { icon: "Shield", title: "Data Privacy Governance Training", description: "Comprehensive training on data privacy governance." },
+      { icon: "Briefcase", title: "Privacy Program Implementation", description: "Learn how to implement privacy programs effectively." },
+      { icon: "Lock", title: "Data Protection and Privacy Engineering", description: "Understand data protection and privacy engineering." },
+      { icon: "Activity", title: "Privacy Risk Management", description: "Learn how to manage privacy risks." },
+      { icon: "CheckSquare", title: "Regulatory Compliance Training", description: "Training on regulatory compliance." },
+      { icon: "Award", title: "Globally Recognized Privacy Certification", description: "Earn a globally recognized privacy certification." }
     ],
     aboutCourse: [
-      "The Advanced Data Analytics & Machine Learning Program is designed to transform you from a data beginner into a confident data scientist capable of building production-grade ML systems. Our curriculum balances theoretical foundations with extensive practical application, ensuring you're job-ready from day one.",
-      "You'll progress from Python fundamentals and statistical analysis through to advanced deep learning and MLOps, covering the complete lifecycle of a data science project. Every module is built around solving real business problems with real data — no toy datasets, no contrived examples.",
-      "By the end of this program, you'll have a strong portfolio of end-to-end projects, proficiency in the most in-demand tools and frameworks, and the confidence to ace technical interviews at top technology companies.",
+      "The CDPSE course focuses on data privacy governance, privacy program implementation, and data protection strategies. It covers privacy frameworks, regulatory compliance, privacy engineering, and data protection controls."
     ],
     directorQuote: {
-      text: "Data science is not just about algorithms — it's about telling stories with data that drive business decisions. Our program teaches you both the technical depth and business acumen needed to excel in this field.",
-      author: "Dr. Emily Rodriguez, Program Director",
+      text: "This program is designed for professionals who are serious about data privacy and protection.",
+      author: "Trust Axis Leadership"
     },
     objectives: [
-      { number: 1, title: "Master Python for Data Science", description: "Build proficiency in Python, NumPy, Pandas, and scientific computing for data manipulation and analysis" },
-      { number: 2, title: "Apply Statistical Analysis", description: "Apply statistical methods, hypothesis testing, and probability theory to real-world business problems" },
-      { number: 3, title: "Build Machine Learning Models", description: "Train, evaluate, and deploy supervised and unsupervised ML models using scikit-learn and advanced frameworks" },
-      { number: 4, title: "Develop Deep Learning Systems", description: "Design and train neural networks for computer vision, NLP, and time-series forecasting using TensorFlow and PyTorch" },
-      { number: 5, title: "Create Data Visualizations", description: "Build compelling dashboards and data stories using Matplotlib, Seaborn, Tableau, and Power BI" },
-      { number: 6, title: "Deploy ML in Production", description: "Package and deploy ML models as APIs, implement MLOps pipelines, and monitor model performance in production" },
+      { number: 1, title: "Implement Data Privacy Programs", description: "Learn how to implement data privacy programs." },
+      { number: 2, title: "Manage Privacy Risks", description: "Learn how to manage privacy risks." },
+      { number: 3, title: "Ensure Data Protection Compliance", description: "Learn how to ensure data protection compliance." },
+      { number: 4, title: "Implement Privacy Controls", description: "Learn how to implement privacy controls." },
+      { number: 5, title: "Manage Personal Data Protection", description: "Learn how to manage personal data protection." },
+      { number: 6, title: "Develop Privacy Governance Frameworks", description: "Learn how to develop privacy governance frameworks." }
     ],
     curriculum: [
-      { number: 1, title: "Python & Data Foundations", duration: "3 weeks", modules: 8, subtopics: [{ title: "Python Programming Fundamentals" }, { title: "NumPy and Pandas for Data Analysis" }, { title: "Data Cleaning and Preprocessing" }, { title: "Exploratory Data Analysis (EDA)" }] },
-      { number: 2, title: "Statistics & Probability", duration: "3 weeks", modules: 7, subtopics: [{ title: "Descriptive Statistics and Distributions" }, { title: "Hypothesis Testing and p-values" }, { title: "Bayesian Statistics" }, { title: "A/B Testing Design" }] },
-      { number: 3, title: "Machine Learning Fundamentals", duration: "5 weeks", modules: 10, subtopics: [{ title: "Supervised Learning: Regression & Classification" }, { title: "Model Evaluation and Cross-Validation" }, { title: "Feature Engineering and Selection" }, { title: "Ensemble Methods: Random Forest, XGBoost" }] },
-      { number: 4, title: "Deep Learning & Neural Networks", duration: "5 weeks", modules: 10, subtopics: [{ title: "Neural Network Architecture Design" }, { title: "Convolutional Neural Networks (CNN)" }, { title: "Recurrent Neural Networks (RNN/LSTM)" }, { title: "Transformer Models and Attention" }] },
-      { number: 5, title: "Data Visualization & BI", duration: "3 weeks", modules: 6, subtopics: [{ title: "Advanced Matplotlib and Seaborn" }, { title: "Tableau Dashboard Design" }, { title: "Power BI for Business Analytics" }] },
-      { number: 6, title: "Big Data & Cloud Analytics", duration: "3 weeks", modules: 6, subtopics: [{ title: "Spark and Distributed Computing" }, { title: "AWS SageMaker for ML" }, { title: "Google BigQuery and DataFlow" }] },
-      { number: 7, title: "NLP & Computer Vision", duration: "4 weeks", modules: 8, subtopics: [{ title: "Text Preprocessing and Embeddings" }, { title: "Sentiment Analysis and Named Entity Recognition" }, { title: "Object Detection with YOLO" }, { title: "Image Segmentation" }] },
-      { number: 8, title: "MLOps & Capstone Project", duration: "4 weeks", modules: 0, subtopics: [{ title: "Model Deployment with FastAPI" }, { title: "MLflow and Experiment Tracking" }, { title: "CI/CD for Machine Learning" }, { title: "Capstone Project Presentation" }] },
+      { number: 1, title: "Privacy Governance", duration: "Flexible", modules: 3, subtopics: [{ title: "Privacy Frameworks" }, { title: "Privacy Policies" }, { title: "Governance Structure" }] },
+      { number: 2, title: "Privacy Risk Management", duration: "Flexible", modules: 3, subtopics: [{ title: "Privacy Risk Assessment" }, { title: "Risk Mitigation" }, { title: "Monitoring" }] },
+      { number: 3, title: "Privacy Engineering", duration: "Flexible", modules: 3, subtopics: [{ title: "Data Protection Controls" }, { title: "Encryption" }, { title: "Access Control" }] },
+      { number: 4, title: "Compliance", duration: "Flexible", modules: 3, subtopics: [{ title: "GDPR" }, { title: "Data Protection Laws" }, { title: "Privacy Audits" }] }
     ],
     targetAudience: [
-      { icon: "Code", title: "Software Developers", description: "Developers looking to pivot into data science and machine learning engineering" },
-      { icon: "BarChart2", title: "Business Analysts", description: "Analysts wanting to level up from Excel to Python-driven data science and predictive analytics" },
-      { icon: "GraduationCap", title: "STEM Graduates", description: "Mathematics, statistics, or engineering graduates entering the data science workforce" },
-      { icon: "Briefcase", title: "Product Managers", description: "PMs seeking data literacy to make more evidence-based product decisions" },
+      { icon: "Users", title: "IT Professionals", description: "IT professionals looking to specialize in data privacy." },
+      { icon: "Briefcase", title: "Privacy Officers", description: "Privacy officers aiming to enhance their skills." }
     ],
     examDetails: [
-      { name: "Google Data Analytics Certificate", provider: "Google", passScore: "80%", prepIncluded: true },
-      { name: "IBM Data Science Professional", provider: "IBM", passScore: "75%", prepIncluded: true },
-      { name: "AWS Machine Learning Specialty", provider: "Amazon Web Services", passScore: "72%", prepIncluded: false },
+      { name: "CDPSE Certification Exam", provider: "ISACA", passScore: "450/800", prepIncluded: true }
     ],
     toolsCovered: [
-      { name: "Python", icon: "Code", category: "Language" },
-      { name: "TensorFlow", icon: "Brain", category: "Deep Learning" },
-      { name: "PyTorch", icon: "Flame", category: "Deep Learning" },
-      { name: "Scikit-learn", icon: "Cog", category: "ML" },
-      { name: "Pandas", icon: "Table", category: "Data" },
-      { name: "Tableau", icon: "BarChart2", category: "BI" },
-      { name: "Power BI", icon: "PieChart", category: "BI" },
-      { name: "Spark", icon: "Zap", category: "Big Data" },
-      { name: "AWS SageMaker", icon: "Cloud", category: "MLOps" },
-      { name: "MLflow", icon: "Activity", category: "MLOps" },
-      { name: "Jupyter", icon: "BookOpen", category: "IDE" },
-      { name: "Docker", icon: "Box", category: "Deployment" },
+      { name: "GDPR", icon: "BookOpen", category: "Framework" },
+      { name: "Data Privacy Frameworks", icon: "Layers", category: "Framework" },
+      { name: "Privacy Risk Framework", icon: "Activity", category: "Framework" },
+      { name: "Data Protection Controls", icon: "Lock", category: "Controls" },
+      { name: "Privacy Governance Framework", icon: "Shield", category: "Governance" }
     ],
   },
   {
-    slug: "product-management-program",
+    slug: "iso-20000",
     category: "Business",
-    title: "Product Management Fundamentals to Advanced",
-    subtitle: "Launch and scale products from ideation to market with expert PM frameworks",
+    title: "ISO/IEC 20000 Lead Implementer",
+    subtitle: "Focuses on IT Service Management Systems implementation.",
     highlights: [
-      "8-month comprehensive program covering the full product lifecycle from user research and ideation to launch, growth, and monetization strategies",
-      "Work on live product case studies from companies like Airbnb, Spotify, and Uber — build a PM portfolio that stands out in interviews",
-      "Earn certificates recognized by top tech companies and gain access to a global network of 3,000+ product leaders",
+      "Focuses on IT Service Management Systems implementation.",
+      "Covers IT service delivery, incident management, and service improvement.",
+      "Helps implement ISO 20000 compliant IT service management systems."
     ],
-    duration: "8 Months",
-    mode: "Online + Live Sessions",
-    weeklyHours: "10-12 hrs",
+    duration: "Flexible",
+    mode: "Online / Hybrid",
+    weeklyHours: "10-15 hrs",
     certificate: "Upon Completion",
-    rating: 4.9,
-    students: "3.2K",
+    rating: 4.7,
+    students: "1.1K",
     programHighlights: [
-      { icon: "Users", title: "Real User Research", description: "Master user interviews, usability testing, and jobs-to-be-done framework with live research projects" },
-      { icon: "LayoutDashboard", title: "Product Strategy", description: "Learn to define vision, set OKRs, prioritize roadmaps, and align stakeholders across the organization" },
-      { icon: "LineChart", title: "Data-Driven Decisions", description: "Use SQL, Amplitude, and Mixpanel to drive product decisions with behavioral analytics and A/B testing" },
-      { icon: "Code", title: "Technical Fluency", description: "Develop enough technical depth to collaborate effectively with engineering teams on APIs, system design, and trade-offs" },
-      { icon: "Megaphone", title: "Go-to-Market Strategy", description: "Build comprehensive GTM plans, pricing strategies, and launch playbooks that maximize product adoption" },
-      { icon: "Award", title: "PM Certification", description: "Earn a recognized Product Management certificate and prepare for interviews at FAANG companies" },
+      { icon: "Layers", title: "IT Service Management System Implementation", description: "Learn to implement IT Service Management Systems." },
+      { icon: "Activity", title: "IT Service Delivery and Operations Management", description: "Manage IT service delivery and operations efficiently." },
+      { icon: "AlertTriangle", title: "Incident and Problem Management Training", description: "Comprehensive training on incident and problem management." },
+      { icon: "Network", title: "ITSM Framework Integration", description: "Learn to integrate ITSM frameworks effectively." },
+      { icon: "Award", title: "Globally Recognized ITSM Certification", description: "Earn a globally recognized ITSM certification." },
+      { icon: "TrendingUp", title: "Service Improvement and Governance Training", description: "Training on service improvement and governance." }
     ],
     aboutCourse: [
-      "The Product Management Fundamentals to Advanced program is built for aspiring PMs and current practitioners who want to master the craft of building products that users love and businesses scale. You'll learn from former PMs at Google, Amazon, and Stripe who bring real product war stories into every session.",
-      "This program doesn't just teach frameworks — it puts you in the seat of a PM with live product challenges, group sprints, and stakeholder roleplay simulations. You'll leave with a complete product playbook and portfolio that demonstrates your ability to think, communicate, and execute like a seasoned PM.",
-      "From writing your first PRD to presenting a roadmap to a C-suite, every skill you develop here is immediately applicable. Our curriculum is designed to be ruthlessly practical, removing the fluff and focusing on what actually matters in real product roles.",
+      "The ISO 20000 Lead Implementer course focuses on implementing IT Service Management Systems and improving IT service delivery."
     ],
     directorQuote: {
-      text: "Great product management is about making the right bets at the right time with limited information. This program teaches you the frameworks, the instincts, and the communication skills to do exactly that.",
-      author: "Sarah Mitchell, Program Director & Former Google PM",
+      text: "This program is essential for professionals aiming to standardize IT services.",
+      author: "Trust Axis Leadership"
     },
     objectives: [
-      { number: 1, title: "Define Product Vision & Strategy", description: "Craft compelling product visions, set measurable OKRs, and build north-star metrics that align the entire organization" },
-      { number: 2, title: "Conduct User Research", description: "Design and execute user interviews, surveys, and usability studies to uncover genuine user needs and pain points" },
-      { number: 3, title: "Prioritize & Build Roadmaps", description: "Apply frameworks like RICE, MoSCoW, and impact-effort matrices to make principled product prioritization decisions" },
-      { number: 4, title: "Write Exceptional PRDs", description: "Document product requirements clearly for engineering, design, and stakeholders with structured specification templates" },
-      { number: 5, title: "Launch & Measure Products", description: "Design and execute product launches, set up analytics, run A/B tests, and iterate based on data and user feedback" },
-      { number: 6, title: "Lead Cross-Functional Teams", description: "Develop the influence, communication, and stakeholder management skills needed to align engineering, design, and business" },
+      { number: 1, title: "Implement ITSMS Framework", description: "Learn to implement ITSMS framework." },
+      { number: 2, title: "Manage IT Services", description: "Learn to manage IT services effectively." },
+      { number: 3, title: "Implement Incident Management", description: "Learn to implement incident management processes." },
+      { number: 4, title: "Improve IT Services", description: "Focus on continuous improvement of IT services." },
+      { number: 5, title: "Ensure Compliance", description: "Ensure compliance with ISO 20000 standards." },
+      { number: 6, title: "Integrate IT Governance Frameworks", description: "Integrate IT governance frameworks seamlessly." }
     ],
     curriculum: [
-      { number: 1, title: "PM Fundamentals & Mindset", duration: "3 weeks", modules: 6, subtopics: [{ title: "What PMs Do: Roles and Responsibilities" }, { title: "Product Thinking and Mental Models" }, { title: "The Product Lifecycle" }, { title: "Types of PMs: B2B, B2C, Platform, Growth" }] },
-      { number: 2, title: "User Research & Discovery", duration: "4 weeks", modules: 8, subtopics: [{ title: "User Interview Design and Facilitation" }, { title: "Jobs-to-be-Done Framework" }, { title: "Competitive Analysis" }, { title: "Persona Development" }] },
-      { number: 3, title: "Product Strategy & Vision", duration: "4 weeks", modules: 8, subtopics: [{ title: "Product Vision and Mission Statements" }, { title: "OKR Setting and Alignment" }, { title: "Market Sizing (TAM/SAM/SOM)" }, { title: "Competitive Positioning" }] },
-      { number: 4, title: "Roadmapping & Prioritization", duration: "3 weeks", modules: 7, subtopics: [{ title: "Roadmap Formats and Tools" }, { title: "RICE and MoSCoW Frameworks" }, { title: "Stakeholder Alignment Workshops" }] },
-      { number: 5, title: "Design & Prototyping", duration: "3 weeks", modules: 6, subtopics: [{ title: "UX Fundamentals for PMs" }, { title: "Figma Prototyping" }, { title: "Design Sprints" }] },
-      { number: 6, title: "Metrics & Analytics", duration: "4 weeks", modules: 8, subtopics: [{ title: "North Star Metrics and KPIs" }, { title: "SQL for PMs" }, { title: "A/B Testing and Statistical Significance" }, { title: "Cohort Analysis and Retention" }] },
-      { number: 7, title: "Go-to-Market & Launch", duration: "3 weeks", modules: 6, subtopics: [{ title: "GTM Strategy Frameworks" }, { title: "Pricing Strategy" }, { title: "Launch Playbook Creation" }] },
-      { number: 8, title: "PM Interviews & Capstone", duration: "4 weeks", modules: 0, subtopics: [{ title: "FAANG PM Interview Prep" }, { title: "Product Design Interview Questions" }, { title: "Estimation Questions" }, { title: "Capstone Product Pitch" }] },
+      { number: 1, title: "ITSMS Fundamentals", duration: "Flexible", modules: 3, subtopics: [{ title: "ISO 20000 Overview" }, { title: "ITSMS Scope" }, { title: "Service Management" }] },
+      { number: 2, title: "Service Management Processes", duration: "Flexible", modules: 3, subtopics: [{ title: "Incident Management" }, { title: "Problem Management" }, { title: "Change Management" }] },
+      { number: 3, title: "Service Delivery", duration: "Flexible", modules: 3, subtopics: [{ title: "Service Level Management" }, { title: "Service Reporting" }, { title: "Service Monitoring" }] },
+      { number: 4, title: "Continuous Improvement", duration: "Flexible", modules: 3, subtopics: [{ title: "Service Improvement" }, { title: "Audits" }, { title: "Compliance" }] }
     ],
     targetAudience: [
-      { icon: "Code", title: "Software Developers", description: "Engineers who want to transition from building to defining what gets built" },
-      { icon: "Users", title: "Business Analysts", description: "BAs and consultants seeking to move into strategic product roles at tech companies" },
-      { icon: "GraduationCap", title: "MBA Graduates", description: "Business school graduates targeting Associate PM or PM roles at top technology companies" },
-      { icon: "Megaphone", title: "Marketing Professionals", description: "Marketers who understand customers deeply and want to apply that insight to product strategy" },
+      { icon: "Users", title: "IT Managers", description: "IT Managers responsible for service delivery." },
+      { icon: "CheckSquare", title: "Quality Consultants", description: "Consultants focusing on IT service quality." }
     ],
     examDetails: [
-      { name: "Certified Product Manager (CPM)", provider: "AIPMM", passScore: "70%", prepIncluded: true },
-      { name: "Product Management Certificate", provider: "Trust Axis", passScore: "80%", prepIncluded: true },
+      { name: "ISO 20000 Lead Implementer Exam", provider: "PECB", passScore: "70%", prepIncluded: true }
     ],
     toolsCovered: [
-      { name: "Figma", icon: "Pen", category: "Design" },
-      { name: "Jira", icon: "LayoutDashboard", category: "Planning" },
-      { name: "Amplitude", icon: "Activity", category: "Analytics" },
-      { name: "Mixpanel", icon: "BarChart2", category: "Analytics" },
-      { name: "Notion", icon: "FileText", category: "Documentation" },
-      { name: "SQL", icon: "Database", category: "Data" },
-      { name: "Miro", icon: "Layers", category: "Collaboration" },
-      { name: "Linear", icon: "CheckSquare", category: "Planning" },
+      { name: "ISO 20000", icon: "BookOpen", category: "Standard" },
+      { name: "ITIL", icon: "Layers", category: "Framework" },
+      { name: "COBIT", icon: "Shield", category: "Framework" },
+      { name: "IT Service Management Framework", icon: "Network", category: "Framework" }
+    ],
+  },
+  {
+    slug: "cism",
+    category: "Cybersecurity",
+    title: "CISM – Certified Information Security Manager",
+    subtitle: "Focuses on security governance, risk management, and security program management.",
+    highlights: [
+      "Focuses on security governance, risk management, and security program management.",
+      "Designed for cybersecurity leaders and managers.",
+      "Helps professionals manage enterprise security programs."
+    ],
+    duration: "Flexible",
+    mode: "Online / Hybrid",
+    weeklyHours: "10-15 hrs",
+    certificate: "Upon Completion",
+    rating: 4.8,
+    students: "1.5K",
+    thumbnailUrl: "/images/courses/cism.png",
+    programHighlights: [
+      { icon: "Shield", title: "Security Governance Training", description: "Training on security governance principles." },
+      { icon: "Activity", title: "Risk Management and Compliance", description: "Learn risk management and compliance best practices." },
+      { icon: "Briefcase", title: "Security Program Management", description: "Manage enterprise-wide security programs." },
+      { icon: "Users", title: "Incident Management Leadership", description: "Leadership skills for managing security incidents." },
+      { icon: "Award", title: "Globally Recognized Certification", description: "Achieve a globally recognized security certification." },
+      { icon: "GraduationCap", title: "Leadership and Management Focused Course", description: "Focused on leadership and management in security." }
+    ],
+    aboutCourse: [
+      "The CISM course focuses on information security governance, risk management, and enterprise security program management. It prepares professionals for leadership roles in cybersecurity management."
+    ],
+    directorQuote: {
+      text: "This program equips leaders to manage and govern enterprise information security programs.",
+      author: "Trust Axis Leadership"
+    },
+    objectives: [
+      { number: 1, title: "Develop Security Governance Programs", description: "Develop and implement security governance programs." },
+      { number: 2, title: "Manage Security Risks", description: "Identify and manage enterprise security risks." },
+      { number: 3, title: "Develop Security Programs", description: "Develop comprehensive security programs." },
+      { number: 4, title: "Manage Security Incidents", description: "Manage and respond to security incidents effectively." },
+      { number: 5, title: "Ensure Compliance", description: "Ensure compliance with security standards and regulations." },
+      { number: 6, title: "Align Security with Business Goals", description: "Align security initiatives with broader business goals." }
+    ],
+    curriculum: [
+      { number: 1, title: "Security Governance", duration: "Flexible", modules: 3, subtopics: [{ title: "Governance Frameworks" }, { title: "Policies" }, { title: "Strategy" }] },
+      { number: 2, title: "Risk Management", duration: "Flexible", modules: 3, subtopics: [{ title: "Risk Assessment" }, { title: "Risk Treatment" }, { title: "Risk Monitoring" }] },
+      { number: 3, title: "Security Program Development", duration: "Flexible", modules: 3, subtopics: [{ title: "Program Management" }, { title: "Metrics" }, { title: "Governance" }] },
+      { number: 4, title: "Incident Management", duration: "Flexible", modules: 3, subtopics: [{ title: "Incident Response" }, { title: "Business Continuity" }, { title: "Disaster Recovery" }] }
+    ],
+    targetAudience: [
+      { icon: "Shield", title: "Security Leaders", description: "Current and aspiring information security leaders." },
+      { icon: "Briefcase", title: "IT Managers", description: "IT managers seeking to enhance security practices." }
+    ],
+    examDetails: [
+      { name: "CISM Certification Exam", provider: "ISACA", passScore: "450/800", prepIncluded: true }
+    ],
+    toolsCovered: [
+      { name: "ISACA CISM Framework", icon: "BookOpen", category: "Framework" },
+      { name: "ISO 27001", icon: "Shield", category: "Standard" },
+      { name: "NIST", icon: "Layers", category: "Framework" },
+      { name: "COBIT", icon: "Briefcase", category: "Framework" },
+      { name: "Risk Management Framework", icon: "Activity", category: "Framework" }
     ],
   },
   {
