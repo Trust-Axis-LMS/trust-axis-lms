@@ -2,10 +2,10 @@ import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "./prisma";
 
-import { COURSES_SITE_URL } from "./url";
+import { COURSES_SITE_URL, MAIN_SITE_URL } from "./url";
 
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL,
+  baseURL: process.env.BETTER_AUTH_URL || MAIN_SITE_URL,
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
