@@ -125,9 +125,9 @@ export default function LoginPage() {
                 </button>
               </div>
               <div className="flex justify-end mt-1.5">
-                <Link href="/forgot-password" className="text-sm text-gray-500 hover:text-gray-700 underline-offset-2 hover:underline">
+                <button type="button" onClick={() => alert("Password reset functionality is not yet available.")} className="text-sm text-gray-500 hover:text-gray-700 underline-offset-2 hover:underline">
                   Forgot Password?
-                </Link>
+                </button>
               </div>
             </div>
 
