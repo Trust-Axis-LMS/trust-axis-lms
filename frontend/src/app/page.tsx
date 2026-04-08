@@ -11,33 +11,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Clock, Monitor, Award, CheckCircle, Search, Filter, ArrowRight, LineChart, Brain, Shield, Globe, Code, GraduationCap, Users, TrendingUp, Library, Newspaper, FileText, ChevronLeft, ChevronRight, UserCircle, Briefcase, Linkedin, Twitter, BookOpen } from "lucide-react";
+import { Clock, Monitor, Award, CheckCircle, Search, Filter, ArrowRight, LineChart, Brain, Shield, Globe, Code, GraduationCap, Users, TrendingUp, Library, Newspaper, FileText, ChevronLeft, ChevronRight, UserCircle, Briefcase, Linkedin, Twitter, BookOpen, Cloud } from "lucide-react";
 import { COURSES_SITE_URL } from "@/lib/url";
 
 // ─── Course Data ──────────────────────────────────────────────────────────────
 const allCourses = [
   {
-    slug: "advanced-data-analytics",
-    title: "Advanced Data Analytics",
-    category: "Data Science",
-    description: "Master data analysis, visualization, and machine learning techniques from industry experts.",
-    duration: "6 Months",
-    mode: "Online",
-    icon: LineChart,
-  },
-  {
-    slug: "product-management",
-    title: "Product Management",
-    category: "Business",
-    description: "Learn to build and launch successful products from ideation to market rollout.",
-    duration: "8 Months",
-    mode: "Hybrid",
-    icon: Brain,
-  },
-  {
     slug: "cdpse",
-    title: "CDPSE – Certified Data Privacy Solutions Engineer",
-    category: "Cybersecurity",
+    title: "ISACA - CDPSE - Certified Data Privacy Solutions Engineer",
+    category: "Data Privacy",
     description: "Focuses on data privacy governance, privacy program implementation, and data protection.",
     duration: "Flexible",
     mode: "Online / Hybrid",
@@ -45,25 +27,55 @@ const allCourses = [
     image: "/images/courses/cdpse.webp",
   },
   {
-    slug: "iso-20000",
-    title: "ISO/IEC 20000 Lead Implementer",
-    category: "Business",
-    description: "Focuses on IT Service Management Systems implementation and IT service delivery.",
+    slug: "iso-27001-lead-implementer",
+    title: "PECB - ISO/IEC 27001 Lead Implementer",
+    category: "Cybersecurity Management",
+    description: "Master the implementation of an Information Security Management System (ISMS).",
     duration: "Flexible",
     mode: "Online / Hybrid",
-    icon: Globe,
+    icon: Shield,
+    image: "",
+  },
+  {
+    slug: "ccsk",
+    title: "CSA - Certificate of Cloud Security Knowledge",
+    category: "Cloud Security",
+    description: "Ensure the security of cloud computing environments with globally recognized standards.",
+    duration: "Flexible",
+    mode: "Online / Hybrid",
+    icon: Cloud,
     image: "",
   },
   {
     slug: "cism",
-    title: "CISM – Certified Information Security Manager",
-    category: "Cybersecurity",
+    title: "ISACA - CISM - Certified Information Security Manager",
+    category: "Cybersecurity Management",
     description: "Focuses on security governance, risk management, and security program management.",
     duration: "Flexible",
     mode: "Online / Hybrid",
     icon: Code,
     image: "/images/courses/cism.png",
   },
+  {
+    slug: "cobit-2019-foundation",
+    title: "ISACA COBIT 2019 Foundation",
+    category: "Governance, Risk and Compliance",
+    description: "Understand the context, benefits, and key concepts of the COBIT framework.",
+    duration: "Flexible",
+    mode: "Online / Hybrid",
+    icon: Briefcase,
+    image: "",
+  },
+  {
+    slug: "ceh",
+    title: "C|EH - Certified Ethical Hacker",
+    category: "Offensive Security",
+    description: "Learn to think like a hacker and defend against advanced threats.",
+    duration: "Flexible",
+    mode: "Online",
+    icon: Brain,
+    image: "",
+  }
 ];
 
 // ─── Testimonials ─────────────────────────────────────────────────────────────

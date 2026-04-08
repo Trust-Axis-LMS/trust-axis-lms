@@ -23,6 +23,7 @@ function LoginForm() {
   const searchParams = useSearchParams();
   const callbackURL = searchParams.get("callbackURL") || "/";
 
+  const [activeTab, setActiveTab] = useState<"student" | "trainer">("student");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPw, setShowPw] = useState(false);
@@ -48,6 +49,11 @@ function LoginForm() {
     await authClient.signIn.social({ provider: "google", callbackURL });
   };
 
+  const handleTrainerSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Trainer registration request submitted to Trust Axis team.");
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
@@ -60,100 +66,179 @@ function LoginForm() {
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 space-y-6">
           <div className="space-y-1">
-            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Sign in</h1>
-            <p className="text-sm text-gray-500">Welcome back — let's get you learning.</p>
+            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+              {activeTab === "student" ? "Sign in" : "Partner with Us"}
+            </h1>
+            <p className="text-sm text-gray-500">
+              {activeTab === "student" ? "Welcome back — let's get you learning." : "Join our elite network of industry trainers."}
+            </p>
           </div>
 
-          {/* Google OAuth */}
-          <button
-            type="button"
-            onClick={handleGoogle}
-            disabled={googleLoading}
-            className="w-full flex items-center justify-center gap-3 h-12 rounded-xl border-2 border-gray-200 bg-white text-gray-900 font-semibold text-sm hover:border-gray-300 hover:bg-gray-50 transition-all disabled:opacity-60"
-          >
-            {googleLoading ? (
-              <div className="w-5 h-5 border-2 border-gray-300 border-t-gray-700 rounded-full animate-spin" />
-            ) : (
-              <GoogleIcon />
-            )}
-            Sign in with Google
-          </button>
-
-          {/* Divider */}
-          <div className="flex items-center gap-3">
-            <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs text-gray-400 font-medium uppercase tracking-widest">or</span>
-            <div className="flex-1 h-px bg-gray-200" />
-          </div>
-
-          {/* Error */}
-          {error && (
-            <div className="flex items-center gap-2 p-3 rounded-lg bg-red-50 border border-red-100 text-red-600 text-sm">
-              <AlertCircle size={16} className="shrink-0" />
-              {error}
-            </div>
-          )}
-
-          {/* Form */}
-          <form onSubmit={handleLogin} className="space-y-4">
-            {/* Email */}
-            <div>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="name@example.com"
-                className="w-full h-12 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-blue-500 focus:bg-white transition-all"
-              />
-            </div>
-
-            {/* Password */}
-            <div>
-              <div className="relative">
-                <input
-                  type={showPw ? "text" : "password"}
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
-                  className="w-full h-12 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 pr-10 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-blue-500 focus:bg-white transition-all"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPw(!showPw)}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  {showPw ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
-              </div>
-              <div className="flex justify-end mt-1.5">
-                <button type="button" onClick={() => alert("Password reset functionality is not yet available.")} className="text-sm text-gray-500 hover:text-gray-700 underline-offset-2 hover:underline">
-                  Forgot Password?
-                </button>
-              </div>
-            </div>
-
-            {/* Submit */}
+          {/* Tabs */}
+          <div className="flex rounded-lg bg-gray-100 p-1">
             <button
-              type="submit"
-              disabled={loading}
-              className="w-full h-13 rounded-xl bg-[#007BFF] hover:bg-[#0056b3] text-white font-bold text-base tracking-wide transition-all shadow-sm shadow-blue-500/20 disabled:opacity-70 flex items-center justify-center gap-2 mt-2"
-              style={{ height: "52px" }}
+              type="button"
+              onClick={() => setActiveTab("student")}
+              className={`flex-1 rounded-md py-2 text-sm font-semibold transition-all ${
+                activeTab === "student"
+                  ? "bg-white text-gray-900 shadow-sm"
+                  : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+              }`}
             >
-              {loading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              ) : "Sign In"}
+              Student
             </button>
-          </form>
+            <button
+              type="button"
+              onClick={() => setActiveTab("trainer")}
+              className={`flex-1 rounded-md py-2 text-sm font-semibold transition-all ${
+                activeTab === "trainer"
+                  ? "bg-white text-gray-900 shadow-sm"
+                  : "text-gray-500 hover:text-gray-700 hover:bg-gray-200/50"
+              }`}
+            >
+              Trainer
+            </button>
+          </div>
 
-          {/* Sign up link */}
-          <p className="text-center text-sm text-gray-600">
-            Not a member?{" "}
-            <Link href="/signup" className="text-[#007BFF] font-semibold hover:underline underline-offset-2">
-              Sign up
-            </Link>
-          </p>
+          {activeTab === "student" ? (
+            <>
+              {/* Google OAuth */}
+              <button
+                type="button"
+                onClick={handleGoogle}
+                disabled={googleLoading}
+                className="w-full flex items-center justify-center gap-3 h-12 rounded-xl border-2 border-gray-200 bg-white text-gray-900 font-semibold text-sm hover:border-gray-300 hover:bg-gray-50 transition-all disabled:opacity-60"
+              >
+                {googleLoading ? (
+                  <div className="w-5 h-5 border-2 border-gray-300 border-t-gray-700 rounded-full animate-spin" />
+                ) : (
+                  <GoogleIcon />
+                )}
+                Sign in with Google
+              </button>
+
+              {/* Divider */}
+              <div className="flex items-center gap-3">
+                <div className="flex-1 h-px bg-gray-200" />
+                <span className="text-xs text-gray-400 font-medium uppercase tracking-widest">or</span>
+                <div className="flex-1 h-px bg-gray-200" />
+              </div>
+
+              {/* Error */}
+              {error && (
+                <div className="flex items-center gap-2 p-3 rounded-lg bg-red-50 border border-red-100 text-red-600 text-sm">
+                  <AlertCircle size={16} className="shrink-0" />
+                  {error}
+                </div>
+              )}
+
+              {/* Form */}
+              <form onSubmit={handleLogin} className="space-y-4">
+                {/* Email */}
+                <div>
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="name@example.com"
+                    className="w-full h-12 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-blue-500 focus:bg-white transition-all"
+                  />
+                </div>
+
+                {/* Password */}
+                <div>
+                  <div className="relative">
+                    <input
+                      type={showPw ? "text" : "password"}
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Password"
+                      className="w-full h-12 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 pr-10 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-blue-500 focus:bg-white transition-all"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPw(!showPw)}
+                      className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                    >
+                      {showPw ? <EyeOff size={18} /> : <Eye size={18} />}
+                    </button>
+                  </div>
+                  <div className="flex justify-end mt-1.5">
+                    <button type="button" onClick={() => alert("Password reset functionality is not yet available.")} className="text-sm text-gray-500 hover:text-gray-700 underline-offset-2 hover:underline">
+                      Forgot Password?
+                    </button>
+                  </div>
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full h-13 rounded-xl bg-[#007BFF] hover:bg-[#0056b3] text-white font-bold text-base tracking-wide transition-all shadow-sm shadow-blue-500/20 disabled:opacity-70 flex items-center justify-center gap-2 mt-2"
+                  style={{ height: "52px" }}
+                >
+                  {loading ? (
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : "Sign In"}
+                </button>
+              </form>
+
+              {/* Sign up link */}
+              <p className="text-center text-sm text-gray-600">
+                Not a member?{" "}
+                <Link href="/signup" className="text-[#007BFF] font-semibold hover:underline underline-offset-2">
+                  Sign up
+                </Link>
+              </p>
+            </>
+          ) : (
+            <form onSubmit={handleTrainerSubmit} className="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  required
+                  placeholder="Full Name"
+                  className="w-full h-12 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-blue-500 focus:bg-white transition-all"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  required
+                  placeholder="Email Address"
+                  className="w-full h-12 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-blue-500 focus:bg-white transition-all"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  required
+                  placeholder="Primary Area of Expertise"
+                  className="w-full h-12 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-blue-500 focus:bg-white transition-all"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  required
+                  placeholder="LinkedIn Profile URL"
+                  className="w-full h-12 rounded-xl border-2 border-gray-200 bg-gray-50 px-4 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-blue-500 focus:bg-white transition-all"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full h-13 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-base tracking-wide transition-all shadow-sm disabled:opacity-70 flex items-center justify-center gap-2 mt-2"
+                style={{ height: "52px" }}
+              >
+                Apply as Trainer
+              </button>
+              <p className="text-center text-xs text-gray-500 mt-4 leading-relaxed">
+                By submitting this application, you agree to undergo our trainer verification process. Our team will contact you within 2-3 business days.
+              </p>
+            </form>
+          )}
         </div>
       </div>
     </div>

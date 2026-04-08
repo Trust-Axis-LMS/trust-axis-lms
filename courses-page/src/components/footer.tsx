@@ -125,14 +125,17 @@ export function Footer() {
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] md:text-[13px] text-gray-500 font-semibold tracking-wide text-center md:text-left">
           <p>© 2026 Trust Axis. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
+            <a href={`${MAIN_SITE_URL}/value-proposition`} className="hover:text-white transition-colors">
+              Value Proposition
             </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
+            <a href={`${MAIN_SITE_URL}/sustainability`} className="hover:text-white transition-colors">
+              Sustainability Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Cookie Policy
+            <a href={`${MAIN_SITE_URL}/privacy-policy`} className="hover:text-white transition-colors">
+              Privacy & Cookie Policy
+            </a>
+            <a href={`${MAIN_SITE_URL}/terms-and-conditions`} className="hover:text-white transition-colors">
+              Terms & Conditions
             </a>
           </div>
         </div>
