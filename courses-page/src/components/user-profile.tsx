@@ -1,11 +1,11 @@
 import { LogIn, LogOut, User } from 'lucide-react'
+import { MAIN_SITE_URL } from '@/lib/url'
 
 // Fetches the current Better Auth session from the frontend (landing) app.
 // The frontend is the auth server; courses-page is a session consumer only.
 async function getSession() {
-  const landingUrl = process.env.NEXT_PUBLIC_LANDING_URL ?? 'http://localhost:3000'
   try {
-    const res = await fetch(`${landingUrl}/api/auth/get-session`, {
+    const res = await fetch(`${MAIN_SITE_URL}/api/auth/get-session`, {
       cache: 'no-store',
     })
     if (!res.ok) return null
@@ -35,7 +35,7 @@ export async function UserProfile() {
       <div className="ml-auto">
         {user ? (
           <a
-            href={`${process.env.NEXT_PUBLIC_LANDING_URL ?? 'http://localhost:3000'}/api/auth/sign-out`}
+            href={`${MAIN_SITE_URL}/api/auth/sign-out`}
             className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-red-600 bg-red-50 hover:bg-red-100 rounded-md transition-colors"
           >
             <LogOut size={16} />
@@ -43,7 +43,7 @@ export async function UserProfile() {
           </a>
         ) : (
           <a
-            href={`${process.env.NEXT_PUBLIC_LANDING_URL ?? 'http://localhost:3000'}/login`}
+            href={`${MAIN_SITE_URL}/login`}
             className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-md transition-colors cursor-pointer"
           >
             <LogIn size={16} />

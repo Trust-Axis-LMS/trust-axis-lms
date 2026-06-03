@@ -10,17 +10,15 @@ const PUBLIC_PATHS = [
   "/favicon.ico",
 ];
 
-const ONBOARDING_PATH = "/onboarding";
-
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Always allow public paths
-  if (PUBLIC_PATHS.some((p) => pathname.startsWith(p))) {
+  // Allow public paths
+  if (pathname === "/" || PUBLIC_PATHS.some((p) => pathname.startsWith(p))) {
     return NextResponse.next();
   }
 
-  // Check for session cookie (fast lightweight check)
+  // Check for session cookie
   const sessionCookie = getSessionCookie(request);
 
   if (!sessionCookie) {

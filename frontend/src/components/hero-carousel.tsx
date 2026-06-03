@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { ArrowRight, GraduationCap, Library, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -37,8 +37,8 @@ const heroSlides = [
         icon: Users,
         imageLabel: "Consultancy Preview",
         imageSub: "Global Network of Experts",
-        btn1: { label: "Explore Consultancies", href: "/consultancy" },
-        btn2: { label: "Learn More", href: "/consultancy" }
+        btn1: { label: "Explore Consultancies", href: "/#consultancy" },
+        btn2: { label: "Learn More", href: "/#consultancy" }
     }
 ];
 
@@ -46,16 +46,22 @@ export function HeroCarousel() {
     const [api, setApi] = useState<CarouselApi>();
     const [current, setCurrent] = useState(0);
 
-    const plugin = useRef(
-        Autoplay({ delay: 5000, stopOnInteraction: true })
+    const autoplay = useMemo(
+        () => Autoplay({ delay: 5000, stopOnInteraction: true }),
+        []
     );
 
     useEffect(() => {
         if (!api) return;
-        setCurrent(api.selectedScrollSnap());
-        api.on("select", () => {
+        const onSelect = () => {
             setCurrent(api.selectedScrollSnap());
-        });
+        };
+
+        api.on("select", onSelect);
+        queueMicrotask(onSelect);
+        return () => {
+            api.off("select", onSelect);
+        };
     }, [api]);
 
     const scrollPrev = useCallback(() => api?.scrollPrev(), [api]);
@@ -65,11 +71,11 @@ export function HeroCarousel() {
         <section className="bg-[#18181B] lg:bg-white overflow-hidden border-b border-[#F4F4F5] relative h-[calc(100dvh-90px)] lg:h-auto lg:max-h-none lg:min-h-0">
             <Carousel
                 setApi={setApi}
-                plugins={[plugin.current]}
+                plugins={[autoplay]}
                 opts={{ loop: true }}
                 className="w-full h-full lg:h-auto relative group"
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
+                onMouseEnter={autoplay.stop}
+                onMouseLeave={autoplay.reset}
             >
                 <CarouselContent>
                     {heroSlides.map((slide, index) => (

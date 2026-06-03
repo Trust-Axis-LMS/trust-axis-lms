@@ -9,12 +9,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 mb-16 md:mb-20">
           <div className="col-span-1 md:col-span-2 space-y-6">
             <div className="flex items-center gap-3 md:gap-4">
-              <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center bg-white text-black font-bold text-base md:text-lg rounded-sm tracking-tighter">
-                TA
-              </div>
-              <span className="text-xl md:text-2xl font-bold tracking-tight">
-                Trust Axis
-              </span>
+              <a href={MAIN_SITE_URL || "/"} className="flex items-center cursor-pointer group">
+                <div className="bg-white px-3 py-1.5 rounded-md flex items-center justify-center">
+                  <img src="/logo.png" alt="Trust Axis Logo" className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" />
+                </div>
+              </a>
             </div>
             <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed max-w-sm">
               Empowering professionals with industry-leading education and

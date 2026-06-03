@@ -8,43 +8,42 @@ export function Footer() {
         <div className="mb-16 grid grid-cols-1 gap-10 md:mb-20 md:grid-cols-5 md:gap-12">
           <div className="col-span-1 space-y-6 md:col-span-2">
             <div className="flex items-center gap-3 md:gap-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-white text-base font-bold tracking-tighter text-black md:h-12 md:w-12 md:text-lg">
-                TA
-              </div>
-              <span className="text-xl font-bold tracking-tight md:text-2xl">
-                Trust Axis
-              </span>
+              <Link href="/" className="flex items-center cursor-pointer group">
+                <div className="bg-white px-3 py-1.5 rounded-md flex items-center justify-center">
+                  <img src="/logo.png" alt="Trust Axis Logo" className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" />
+                </div>
+              </Link>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-gray-400 md:text-[15px]">
-              Empowering professionals with industry-leading education and
-              career advancement opportunities.
+              Cybersecurity, AI governance, privacy advisory, and practical
+              training to help organizations build digital trust.
             </p>
           </div>
 
           <div className="col-span-1 grid grid-cols-2 gap-8 md:col-span-2">
             <div>
               <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-white md:mb-6 md:text-[11px]">
-                Programs
+                Consultancy
               </h4>
               <ul className="space-y-3 text-sm font-medium text-gray-400 md:space-y-4">
                 <li>
-                  <Link href="/#courses" className="transition-colors hover:text-white">
-                    Data Science
+                  <Link href="/#consultancy" className="transition-colors hover:text-white">
+                    All Practice Areas
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#courses" className="transition-colors hover:text-white">
-                    Product Management
+                  <Link href="/consultancy/cybersecurity-advisory" className="transition-colors hover:text-white">
+                    Cybersecurity Advisory
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#courses" className="transition-colors hover:text-white">
-                    Cybersecurity
+                  <Link href="/consultancy/ai-technology-advisory" className="transition-colors hover:text-white">
+                    AI & Technology Advisory
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#courses" className="transition-colors hover:text-white">
-                    Cloud Computing
+                  <Link href="/consultancy/privacy-data-protection" className="transition-colors hover:text-white">
+                    Privacy & Data Protection
                   </Link>
                 </li>
               </ul>
@@ -56,7 +55,7 @@ export function Footer() {
               </h4>
               <ul className="space-y-3 text-sm font-medium text-gray-400 md:space-y-4">
                 <li>
-                  <Link href="/#about" className="transition-colors hover:text-white">
+                  <Link href="/about" className="transition-colors hover:text-white">
                     About Us
                   </Link>
                 </li>
@@ -85,8 +84,13 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact" className="transition-colors hover:text-white">
+                  <Link href="/contact" className="transition-colors hover:text-white">
                     Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/archive" className="transition-colors hover:text-white">
+                    Training & Courses (Archive)
                   </Link>
                 </li>
               </ul>

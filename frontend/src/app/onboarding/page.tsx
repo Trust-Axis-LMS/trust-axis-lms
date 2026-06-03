@@ -4,12 +4,22 @@ import { auth } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 import OnboardingClient from "./OnboardingClient";
 
-export default async function OnboardingPage(props: { searchParams: any }) {
+type OnboardingSearchParams = {
+  callbackURL?: string | string[];
+};
+
+export default async function OnboardingPage({
+  searchParams,
+}: {
+  searchParams: Promise<OnboardingSearchParams>;
+}) {
   const session = await auth.api.getSession({ headers: await headers() });
-  
-  // Await searchParams to support both Next 14 and 15
-  const searchParams = await Promise.resolve(props.searchParams);
-  const callbackURL = typeof searchParams?.callbackURL === "string" ? searchParams.callbackURL : "/";
+
+  const resolvedSearchParams = await searchParams;
+  const callbackURL =
+    typeof resolvedSearchParams.callbackURL === "string"
+      ? resolvedSearchParams.callbackURL
+      : "/";
 
   if (!session) {
     redirect("/login");

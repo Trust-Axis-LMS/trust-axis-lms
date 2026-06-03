@@ -17,17 +17,17 @@ Backend architecture and logic for Trust Axis cybersecurity ed-tech platform wit
 - **Runtime**: Node.js 20
 - **Language**: TypeScript
 - **Framework**: Next.js 14 App Router
-- **Database**: Supabase Postgres
-- **ORM**: Supabase JS
-- **Auth**: Supabase Auth
+- **Database**: PostgreSQL hosted on Supabase
+- **ORM**: Prisma Client (with `multiSchema` support for `auth` + `public` schemas)
+- **Auth**: Better Auth (with Prisma adapter; replaces Supabase Auth)
 - **LMS**: Thinkific
 - **Payments**: Stripe, Razorpay
 
 ## Assumptions
-- All persistent data (users, trainers, courses, payments, enrollments, rewards, consultancy) is stored in Supabase Postgres via the Supabase client.
-- Supabase Auth is used for session handling via `@supabase/ssr` to support Server Components and Server Actions across both Next.js apps.
+- All persistent data (users, trainers, courses, payments, enrollments, rewards, consultancy) is stored in Supabase Postgres via **Prisma Client**.
+- **Better Auth** is used for session handling via HttpOnly cookies that are shared cross-subdomain (`.trustacg.com`). It integrates with Prisma directly via the `better-auth/adapters/prisma` adapter.
 - Thinkific is integrated via its Admin REST API and Webhooks for user enrollments and progress sync; we store Thinkific user and enrollment IDs in Supabase.
-- Payment providers (Stripe and/or Razorpay) send webhooks to our backend which then update the Supabase `payments` table and trigger LMS enrollment.
+- Payment providers (Stripe and/or Razorpay) send webhooks to our backend which then update the `payments` table and trigger LMS enrollment.
 - Rewards system will start simple as points on the user plus an events table to make future gamification/leaderboards easier.
 - Admin and Trainer roles are enforced via the `role` field on `public.users` plus authorization middleware on all `/api/admin/*` endpoints.
 
@@ -45,14 +45,15 @@ Backend architecture and logic for Trust Axis cybersecurity ed-tech platform wit
 - `RAZORPAY_WEBHOOK_SECRET`
 - `APP_BASE_URL`
 
-## Authentication (Supabase Auth)
+## Authentication (Better Auth)
 - **Strategies**: Email/Password, OAuth Google
 - **Next.js Integration**:
-  - Package: `@supabase/ssr`
-  - Session Strategy: HTTP Only Cookies (managed via Supabase middleware)
+  - Package: `better-auth` with `better-auth/adapters/prisma`
+  - Session Strategy: HttpOnly cookies, cross-subdomain (`.trustacg.com`), 7-day TTL
   - User Model Extension: 
-    - Supabase handles identity in `auth.users`. 
-    - Custom profile data and `role` (student | trainer | admin) is anchored in `public.users`.
+    - Better Auth manages identity in `public.users` (via Prisma). 
+    - Extended profile data lives in `public.student_profiles` (linked 1:1 to `users.id`).
+    - `role` field on `public.users` (`student | trainer | admin`) used for RBAC.
 
 ## Database (Supabase)
 **Schema**: `public`
@@ -97,8 +98,8 @@ Course catalog metadata used on the website; Thinkific handles actual content ho
 - `title`: text, not_null
 - `short_description`: text
 - `long_description`: text
-- `cate`levgory`: text
-- el`: text, check: `level IN ('beginner','intermediate','advanced')`
+- `category`: text
+- `level`: text, check: `level IN ('beginner','intermediate','advanced')`
 - `thumbnail_url`: text
 - `price_inr`: integer (*Price in paise*)
 - `price_usd`: integer (*Optional USD cents*)

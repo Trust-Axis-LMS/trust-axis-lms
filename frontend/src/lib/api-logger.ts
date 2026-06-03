@@ -24,6 +24,14 @@ export interface ApiLogEntry {
 
 // In-memory store — lives for the lifetime of the Node.js process (dev server)
 const log: ApiLogEntry[] = [];
+const MAX_LOG_ENTRIES = 200;
+
+function addLogEntry(entry: ApiLogEntry): void {
+  log.push(entry);
+  if (log.length > MAX_LOG_ENTRIES) {
+    log.splice(0, log.length - MAX_LOG_ENTRIES);
+  }
+}
 
 /**
  * Wraps fetch(), records timing + status for every call.
@@ -56,7 +64,7 @@ export async function timedFetch(
       ok: response.ok,
     };
 
-    log.push(entry);
+    addLogEntry(entry);
     console.log(
       `[API] ${method} ${name} → ${response.status} — ${durationMs}ms`
     );
@@ -77,7 +85,7 @@ export async function timedFetch(
       error: errorMessage,
     };
 
-    log.push(entry);
+    addLogEntry(entry);
     console.error(
       `[API] ${method} ${name} → ERROR — ${durationMs}ms — ${errorMessage}`
     );

@@ -175,7 +175,7 @@ export default function OnboardingClient({ callbackURL = "/" }: { callbackURL?: 
       });
       if (!res.ok) throw new Error("Failed to save profile");
       router.push(callbackURL);
-    } catch (e) {
+    } catch {
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -220,7 +220,7 @@ export default function OnboardingClient({ callbackURL = "/" }: { callbackURL?: 
 
               <div>
                 <h2 className="text-base font-semibold text-gray-900 mb-1">Areas of Interest</h2>
-                <p className="text-sm text-gray-500 mb-3">Select all that apply — even if you're just curious.</p>
+                <p className="text-sm text-gray-500 mb-3">Select all that apply — even if you&apos;re just curious.</p>
                 <div className="flex flex-wrap gap-2">
                   {INTEREST_OPTIONS.map((opt) => (
                     <Chip
@@ -241,7 +241,7 @@ export default function OnboardingClient({ callbackURL = "/" }: { callbackURL?: 
             <div className="space-y-8">
               <div>
                 <h1 className="text-2xl font-bold text-gray-900 tracking-tight">What are your goals?</h1>
-                <p className="text-sm text-gray-500 mt-1.5">Pick what you're working towards. You can have multiple.</p>
+                <p className="text-sm text-gray-500 mt-1.5">Pick what you&apos;re working towards. You can have multiple.</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 {GOAL_OPTIONS.map((opt) => (

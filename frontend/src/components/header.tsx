@@ -134,9 +134,9 @@ function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
 // ─── Nav Items ────────────────────────────────────────────────────────────────
 const navItems = [
   { label: "About Us", href: "/about" },
-  { label: "Courses", href: "/#courses" },
+  { label: "Courses", href: "/archive#courses" },
   { label: "Resources", href: "/resources" },
-  { label: "Consultancy", href: "/consultancy" },
+  { label: "Consultancy", href: "/#consultancy" },
   { label: "Contact Us", href: "/contact" },
 ];
 

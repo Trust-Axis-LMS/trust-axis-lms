@@ -35,6 +35,7 @@ export function AnimatedCounter({
         if (!isVisible) return;
 
         let startTimestamp: number | null = null;
+        let animationFrameId: number;
         const duration = 2000;
 
         const step = (timestamp: number) => {
@@ -45,11 +46,12 @@ export function AnimatedCounter({
 
             setCount(Math.floor(easeOut * value));
             if (progress < 1) {
-                window.requestAnimationFrame(step);
+                animationFrameId = window.requestAnimationFrame(step);
             }
         };
 
-        window.requestAnimationFrame(step);
+        animationFrameId = window.requestAnimationFrame(step);
+        return () => window.cancelAnimationFrame(animationFrameId);
     }, [isVisible, value]);
 
     return (

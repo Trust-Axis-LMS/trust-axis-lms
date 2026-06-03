@@ -3,10 +3,11 @@
 # Trust Axis — Dev / Production Launcher
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Explicitly limit Node.js to use max 4GB RAM per process.
-# Two Next.js dev servers without a limit will try to claim as much as possible,
-# causing heavy garbage-collection CPU lag and eventual OOM crashes on M-series Macs.
-export NODE_OPTIONS="--max-old-space-size=4096"
+# Explicitly limit Node.js heap per process.
+# Two Next.js dev servers at 4GB each can put heavy pressure on macOS memory.
+# Override only when needed: NODE_MAX_OLD_SPACE_SIZE=3072 ./dev.sh
+export NODE_OPTIONS="--max-old-space-size=${NODE_MAX_OLD_SPACE_SIZE:-2048}"
+export NEXT_TELEMETRY_DISABLED=1
 
 echo "🧹 Checking for orphaned Next.js dev servers..."
 # Kill any orphaned node processes running next dev from previous corrupted runs
