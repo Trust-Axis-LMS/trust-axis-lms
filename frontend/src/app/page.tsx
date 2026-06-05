@@ -167,7 +167,7 @@ export default function Home() {
                style={{ backgroundImage: 'linear-gradient(to right, #94a3b8 1px, transparent 1px), linear-gradient(to bottom, #94a3b8 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
           </div>
 
-          <div className="container relative z-10 px-0 md:px-6 max-w-[1400px] mx-auto w-full h-full">
+          <div className="container relative z-10 px-0 md:px-6 max-w-[1400px] mx-auto w-full h-full -mt-6 md:-mt-10 lg:-mt-14">
             
             {/* ─── Technical Frame ─── */}
             <div className="bg-white/90 backdrop-blur-sm border border-slate-200 shadow-sm flex flex-col lg:flex-row min-h-[560px]">
