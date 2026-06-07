@@ -2,11 +2,14 @@
 
 const cloudinary = require('cloudinary').v2;
 
+require('dotenv').config({ path: '.env.local' });
+require('dotenv').config({ path: '.env' });
+
 // 1. Configure Cloudinary
 cloudinary.config({
-  cloud_name: 'dlzfmn4hg', // ← replace this
-  api_key: '958683441317648', // ← replace this
-  api_secret: 'VsFLI1LesVcL7_YScmbpiy-Yedc', // ← replace this
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true,
 });
 
