@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import {
   ArrowRight,
-  CheckCircle,
+
   ArrowLeft,
   Shield,
   Brain,
@@ -269,57 +269,110 @@ function ConsultancyDetailsView({ slug }: { slug: string }) {
       )}
 
       {/* ═══════════════════════════════════════════════════════════════════
-          BUSINESS OUTCOMES
+          BUSINESS OUTCOMES — Premium Dark Design
       ═══════════════════════════════════════════════════════════════════ */}
       <section
-        className="py-14 md:py-20 border-b border-white/5 relative overflow-hidden"
-        style={{ background: `linear-gradient(135deg, #0A0A0F 0%, ${c.color}22 100%)` }}
+        className="py-16 md:py-24 relative overflow-hidden"
+        style={{ background: '#06060A' }}
       >
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Geometric decorative elements — category-colored */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* Large quarter-circle top-right */}
           <div
-            className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[120px] opacity-20"
+            className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-[0.07]"
             style={{ background: c.color }}
+          />
+          {/* Small accent dot bottom-left */}
+          <div
+            className="absolute bottom-12 left-12 w-32 h-32 rounded-full opacity-[0.12]"
+            style={{ background: c.color }}
+          />
+          {/* Thin horizontal rule accent */}
+          <div
+            className="absolute top-0 left-0 right-0 h-px opacity-30"
+            style={{ background: `linear-gradient(90deg, transparent, ${c.color}, transparent)` }}
+          />
+          {/* Grid dot pattern */}
+          <div className="absolute inset-0 opacity-[0.025]"
+            style={{
+              backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
+              backgroundSize: '32px 32px'
+            }}
           />
         </div>
 
-        <div className="container relative z-10 px-4 md:px-8 mx-auto max-w-5xl">
-          <div className="text-center mb-10 md:mb-14">
-            <p
-              className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest mb-3"
-              style={{ color: c.color }}
-            >
-              What You Gain
-            </p>
-            <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight">Business Outcomes</h2>
-            <p className="mt-3 text-white/50 text-sm md:text-base max-w-xl mx-auto">
+        <div className="container relative z-10 px-4 md:px-8 mx-auto max-w-6xl">
+          {/* Section label + heading */}
+          <div className="mb-12 md:mb-16">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-12" style={{ background: c.color }} />
+              <span
+                className="text-[10px] font-bold uppercase tracking-[0.2em]"
+                style={{ color: c.color }}
+              >
+                What You Gain
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight max-w-2xl">
+              Business <span style={{ color: c.color }}>Outcomes</span>
+            </h2>
+            <p className="mt-4 text-white/40 text-sm md:text-base max-w-xl">
               Tangible, measurable improvements that result from structured advisory engagement.
             </p>
           </div>
 
-          <div className="space-y-8">
-            {c.outcomeStatement && (
-              <div className="max-w-3xl mx-auto text-center p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <p className="text-lg md:text-xl text-white/90 leading-relaxed font-medium">
-                  {c.outcomeStatement}
-                </p>
-              </div>
-            )}
-            {c.businessOutcomes && c.businessOutcomes.length > 0 && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-                {c.businessOutcomes.map((outcome, i) => (
-                  <div key={i} className="flex items-start gap-4 p-5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          {/* Outcome statement — bold feature block */}
+          {c.outcomeStatement && (
+            <div
+              className="mb-10 md:mb-14 p-7 md:p-10 rounded-2xl relative overflow-hidden"
+              style={{ background: `${c.color}12`, border: `1px solid ${c.color}30` }}
+            >
+              <div
+                className="absolute right-0 top-0 bottom-0 w-1 rounded-r-2xl"
+                style={{ background: c.color }}
+              />
+              <p className="text-lg md:text-2xl text-white font-semibold leading-relaxed max-w-3xl">
+                &ldquo;{c.outcomeStatement}&rdquo;
+              </p>
+            </div>
+          )}
+
+          {/* Outcomes grid — numbered premium cards */}
+          {c.businessOutcomes && c.businessOutcomes.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {c.businessOutcomes.map((outcome, i) => (
+                <div
+                  key={i}
+                  className="group relative p-6 rounded-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                  style={{ background: '#0F0F15', border: `1px solid ${c.color}20` }}
+                >
+                  {/* Hover background */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ background: `${c.color}08` }}
+                  />
+                  {/* Number badge */}
+                  <div className="relative z-10 flex items-start gap-4">
                     <div
-                      className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full mt-0.5"
-                      style={{ backgroundColor: `${c.color}20` }}
+                      className="flex-shrink-0 text-xl font-black tabular-nums leading-none mt-0.5"
+                      style={{ color: `${c.color}60` }}
                     >
-                      <CheckCircle className="h-4 w-4" style={{ color: c.color }} />
+                      {String(i + 1).padStart(2, '0')}
                     </div>
-                    <span className="text-sm text-white/75 leading-relaxed">{outcome}</span>
+                    <div>
+                      <div
+                        className="w-8 h-0.5 mb-3 rounded-full"
+                        style={{ background: c.color }}
+                      />
+                      <p className="text-sm text-white/80 leading-relaxed group-hover:text-white transition-colors">
+                        {outcome}
+                      </p>
+                    </div>
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

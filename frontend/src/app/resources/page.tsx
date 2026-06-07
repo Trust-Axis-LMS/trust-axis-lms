@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Library, Newspaper, FileText, BookOpen, Video, Headphones } from "lucide-react";
 
@@ -36,12 +37,12 @@ const featured = [
 ];
 
 const categories = [
-  { icon: Library, label: "Blogs", count: "40+ articles", description: "Expert commentary, industry news, and practical how-to guides from our faculty and alumni." },
-  { icon: Newspaper, label: "Articles", count: "25+ deep-dives", description: "Technical deep-dives on security, cloud architecture, data engineering, and product management." },
-  { icon: FileText, label: "Whitepapers", count: "12+ reports", description: "Research-backed reports and frameworks intended for practitioners and organizational decision-makers." },
-  { icon: BookOpen, label: "Guides", count: "18+ guides", description: "Step-by-step learning guides aligned with certification tracks and real-world skill building." },
-  { icon: Video, label: "Webinars", count: "30+ sessions", description: "Recorded and upcoming live sessions with industry experts on in-demand technical topics." },
-  { icon: Headphones, label: "Podcasts", count: "Coming soon", description: "Conversations with practitioners, founders, and educators shaping the future of the industry." },
+  { icon: Library, label: "Blogs", count: "40+ articles", description: "Expert commentary, industry news, and practical how-to guides from our faculty and alumni.", href: "/resources/blogs" },
+  { icon: Newspaper, label: "Articles", count: "25+ deep-dives", description: "Technical deep-dives on security, cloud architecture, data engineering, and product management.", href: "/resources/articles" },
+  { icon: FileText, label: "Whitepapers", count: "12+ reports", description: "Research-backed reports and frameworks intended for practitioners and organizational decision-makers.", href: "/resources/whitepapers" },
+  { icon: BookOpen, label: "Guides", count: "18+ guides", description: "Step-by-step learning guides aligned with certification tracks and real-world skill building.", href: "#" },
+  { icon: Video, label: "Webinars", count: "30+ sessions", description: "Recorded and upcoming live sessions with industry experts on in-demand technical topics.", href: "#" },
+  { icon: Headphones, label: "Podcasts", count: "Coming soon", description: "Conversations with practitioners, founders, and educators shaping the future of the industry.", href: "#" },
 ];
 
 export default function ResourcesPage() {
@@ -75,21 +76,22 @@ export default function ResourcesPage() {
               {categories.map((cat, i) => {
                 const Icon = cat.icon;
                 return (
-                  <Card
-                    key={i}
-                    className="rounded-xl border border-[#E5E7EB] bg-white p-6 md:p-8 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 cursor-pointer group"
-                  >
-                    <CardContent className="p-0">
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="h-12 w-12 bg-[#F4F4F5] group-hover:bg-black rounded-lg flex items-center justify-center transition-colors duration-300">
-                          <Icon className="h-6 w-6 text-[#212529] group-hover:text-white transition-colors duration-300" />
+                  <Link key={i} href={cat.href} className="group outline-none">
+                    <Card
+                      className="rounded-xl border border-[#E5E7EB] bg-white p-6 md:p-8 hover:shadow-md transition-all duration-300 group-hover:-translate-y-0.5 cursor-pointer h-full"
+                    >
+                      <CardContent className="p-0">
+                        <div className="flex items-center justify-between mb-5">
+                          <div className="h-12 w-12 bg-[#F4F4F5] group-hover:bg-black rounded-lg flex items-center justify-center transition-colors duration-300">
+                            <Icon className="h-6 w-6 text-[#212529] group-hover:text-white transition-colors duration-300" />
+                          </div>
+                          <span className="text-[10px] font-bold text-[#6C757D] uppercase tracking-widest">{cat.count}</span>
                         </div>
-                        <span className="text-[10px] font-bold text-[#6C757D] uppercase tracking-widest">{cat.count}</span>
-                      </div>
-                      <h3 className="text-base md:text-lg font-bold text-[#212529] mb-2">{cat.label}</h3>
-                      <p className="text-sm text-[#6C757D] leading-relaxed">{cat.description}</p>
-                    </CardContent>
-                  </Card>
+                        <h3 className="text-base md:text-lg font-bold text-[#212529] mb-2">{cat.label}</h3>
+                        <p className="text-sm text-[#6C757D] leading-relaxed">{cat.description}</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
                 );
               })}
             </div>

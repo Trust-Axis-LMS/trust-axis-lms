@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /xp-cms
+Disallow: /xp-cms/
+Disallow: /api/xp-cms/
+
+Sitemap: https://trust-axis.com/sitemap.xml

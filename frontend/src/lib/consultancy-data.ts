@@ -439,16 +439,16 @@ By partnering with us, you gain access to a team of experts dedicated to strengt
     `,
   },
 
-  // ─── 8. Fintech Strategic Services ─────────────────────────────────────────
+  // ─── 8. Banking Services ────────────────────────────────────────────────────
   {
     id: "8",
     slug: "fintech-strategic-services",
-    title: "Fintech Strategic Services",
+    title: "Banking Services",
     excerpt:
       "Empowering financial institutions to adapt, innovate, and thrive within a rapidly evolving digital economy through strategic advisory and transformation.",
     icon: "TrendingUp",
     color: "#F97316",
-    category: "FinTech",
+    category: "Banking",
     whyItMatters:
       "Financial institutions are navigating a rapidly shifting landscape where digital banking, open finance, blockchain, embedded payments, and AI-driven risk management are reshaping the industry. Organizations that fail to adapt risk losing market relevance, regulatory standing, and customer trust. Strategic fintech advisory helps navigate this complexity with clarity and confidence.",
     offerings: [
@@ -469,7 +469,7 @@ By partnering with us, you gain access to a team of experts dedicated to strengt
       "Scale fintech operations with validated market positioning and growth strategy",
       "Strengthen financial crime and compliance controls for a digital-first environment",
     ],
-    ctaLabel: "Explore Fintech Advisory Services",
+    ctaLabel: "Explore Banking Advisory Services",
     content: `
 # Fintech Strategic Services — Innovation & Transformation
 

@@ -53,38 +53,31 @@ const iconMap: Record<string, React.ElementType> = {
 // ─── Constants ────────────────────────────────────────────────────────────────
 const challengesList = [
   "No clear picture of where the biggest cyber and AI risks actually sit",
-  "Policies and controls that exist on paper but aren't consistently applied",
-  "AI and cloud tools being adopted without proper risk assessment or governance",
-  "Vendor and third-party risks that are under-monitored or not assessed at all",
-  "Employees using AI tools without awareness of data privacy implications",
-  "Leadership lacking confidence to answer questions from regulators or boards",
-  "Compliance frameworks that feel like a box-ticking exercise rather than real protection",
-  "Security and privacy functions that operate in isolation from each other",
+  "AI and cloud tools adopted without proper risk assessment or governance",
+  "Vendor and third-party risks that are under-monitored or not assessed",
+  "Leadership lacking confidence to answer regulators or board questions",
+  "Compliance frameworks used as box-ticking rather than real protection",
 ];
 
 const outcomesList = [
   "A clear, prioritized view of your cyber, AI, and digital risk exposure",
-  "Practical recommendations that translate into real improvements, not just reports",
-  "Governance structures that make accountability clear across leadership and teams",
-  "AI tools and cloud platforms adopted with appropriate controls in place",
-  "Employees who understand their responsibilities and make better risk decisions",
+  "Practical recommendations that create real improvements, not just reports",
+  "Governance structures that make accountability clear across leadership",
   "Readiness for audits, regulatory reviews, and board-level risk conversations",
-  "Privacy and security working together to protect data and build stakeholder trust",
   "A structured improvement roadmap that builds maturity and resilience over time",
 ];
 
 const whoWeSupport = [
-  { icon: Building2, label: "Enterprises", sub: "Seeking stronger cybersecurity governance" },
-  { icon: Briefcase, label: "Small & Medium Businesses", sub: "Looking for practical security guidance" },
-  { icon: Globe, label: "Banks & FinTech", sub: "Financial services organizations" },
-  { icon: Brain, label: "Technology Companies", sub: "Digital platforms and tech companies" },
-  { icon: GraduationCap, label: "Educational Institutions", sub: "Building cyber and AI awareness" },
-  { icon: Shield, label: "Government", sub: "Government and public sector teams" },
-  { icon: Scale, label: "Risk & Compliance", sub: "Risk, audit, compliance, and privacy professionals" },
-  { icon: Users, label: "IT & Security Teams", sub: "IT and cybersecurity teams" },
-  { icon: BookOpen, label: "Students & Early Career", sub: "Students and early-career professionals" },
-  { icon: HeartHandshake, label: "Senior Executives", sub: "Senior executives and business leaders" },
-  { icon: Users, label: "Corporate Teams", sub: "Corporate teams requiring customized training" },
+  { icon: Building2, label: "Enterprises", sub: "Seeking stronger cybersecurity governance", color: "#007BFF" },
+  { icon: Briefcase, label: "Small & Medium Businesses", sub: "Practical security guidance", color: "#8B5CF6" },
+  { icon: Globe, label: "Banks & Financial Services", sub: "Financial institutions & FinTech", color: "#10B981" },
+  { icon: Brain, label: "Technology Companies", sub: "Digital platforms and tech companies", color: "#F59E0B" },
+  { icon: GraduationCap, label: "Educational Institutions", sub: "Building cyber and AI awareness", color: "#0EA5E9" },
+  { icon: Shield, label: "Government & Public Sector", sub: "Government and public sector teams", color: "#6366F1" },
+  { icon: Scale, label: "Risk & Compliance", sub: "Risk, audit, and privacy professionals", color: "#EC4899" },
+  { icon: Users, label: "IT & Security Teams", sub: "IT and cybersecurity teams", color: "#14B8A6" },
+  { icon: HeartHandshake, label: "Senior Executives", sub: "Business leaders needing risk clarity", color: "#F97316" },
+  { icon: BookOpen, label: "Students & Early Career", sub: "Building future-ready digital skills", color: "#84CC16" },
 ];
 
 const advisorySteps = [
@@ -488,21 +481,12 @@ export default function Home() {
                 <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight leading-[1.15]">
                   Cybersecurity, AI & Digital Risk Advisory Services
                 </h2>
-                <div className="space-y-4 text-[#6C757D] leading-relaxed text-sm md:text-base">
+                <div className="space-y-3 text-[#6C757D] leading-relaxed text-sm md:text-base">
                   <p>
-                    Organizations today operate in a world where cybersecurity, artificial intelligence, privacy, compliance, cloud adoption, and digital transformation are deeply connected. A weakness in one area can quickly become a business risk in another.
-                  </p>
-                  <p>
-                    A poorly governed AI tool can create privacy and compliance exposure. A weak identity control can lead to a cyber incident. A cloud misconfiguration can expose sensitive data. A vendor weakness can disrupt operations. A lack of employee awareness can become the entry point for an attack.
-                  </p>
-                  <p>
-                    Our Cybersecurity, AI & Digital Risk Advisory Services help organizations connect these dots.
-                  </p>
-                  <p>
-                    We provide structured advisory support across cybersecurity governance, AI risk, privacy, cloud security, compliance readiness, technology risk, and digital trust. Our goal is to help clients understand their current risk posture, prioritize what matters most, and develop practical steps to reduce exposure.
+                    In today's connected world, cybersecurity, AI, privacy, and cloud risks are deeply intertwined. A single weak point — a misconfigured cloud service, ungoverned AI tool, or unassessed vendor — can cascade into a serious business disruption.
                   </p>
                   <p className="font-medium text-[#212529]">
-                    We help organizations turn fragmented digital risk concerns into a structured, practical, and business-aligned action plan.
+                    We help organizations connect these dots: turning fragmented digital risk concerns into a structured, practical, and business-aligned action plan.
                   </p>
                 </div>
                 <div className="pt-2">
@@ -519,12 +503,12 @@ export default function Home() {
                 {focusAreas.map(({ icon: Icon, label, color }, i) => (
                   <div
                     key={i}
-                    className="group flex items-start gap-3 p-4 rounded-xl bg-white border border-[#E5E7EB] hover:border-transparent hover:shadow-md transition-all duration-200"
-                    style={{ ["--accent" as string]: color }}
+                    className="group flex items-start gap-3 p-4 rounded-xl bg-white border-l-4 border border-[#E5E7EB] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                    style={{ borderLeftColor: color }}
                   >
                     <div
                       className="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-lg mt-0.5"
-                      style={{ backgroundColor: `${color}15` }}
+                      style={{ backgroundColor: `${color}18` }}
                     >
                       <Icon className="h-4 w-4" style={{ color }} />
                     </div>
@@ -554,37 +538,63 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-              {/* Left Side: Consultancy Tabs */}
-              <div className="lg:w-1/3 flex flex-col gap-2">
-                {consultancies.map((c) => (
-                  <button
-                    type="button"
-                    key={c.id}
-                    onClick={() => setActiveConsultancyId(c.id)}
-                    className={`flex items-center justify-between text-left px-5 py-4 rounded-xl transition-all ${
-                      activeConsultancyId === c.id 
-                        ? 'bg-white/10 border-white/20 shadow-lg' 
-                        : 'bg-transparent border-transparent hover:bg-white/5'
-                    } border`}
-                  >
-                    <span className={`text-sm font-bold ${activeConsultancyId === c.id ? 'text-white' : 'text-white/60'}`}>
-                      {c.title}
-                    </span>
-                    <ArrowRight className={`h-4 w-4 transition-transform ${activeConsultancyId === c.id ? 'text-white translate-x-1' : 'text-white/20'}`} />
-                  </button>
-                ))}
+            <div className="flex flex-col lg:flex-row gap-0 rounded-2xl overflow-hidden border border-white/10">
+              {/* Left Sidebar: Category Navigator */}
+              <div className="lg:w-[280px] flex-shrink-0 bg-[#0D0D14] border-r border-white/8">
+                <div className="p-4 border-b border-white/8">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/30">Practice Areas</p>
+                </div>
+                {consultancies.map((c, idx) => {
+                  const CIcon = iconMap[c.icon] ?? Shield;
+                  const isActive = activeConsultancyId === c.id;
+                  return (
+                    <button
+                      type="button"
+                      key={c.id}
+                      onClick={() => setActiveConsultancyId(c.id)}
+                      className={`w-full flex items-center gap-3 px-4 py-3.5 text-left transition-all duration-200 relative group ${
+                        isActive ? 'bg-white/6' : 'hover:bg-white/3'
+                      }`}
+                    >
+                      {/* Active indicator */}
+                      {isActive && (
+                        <div
+                          className="absolute left-0 top-0 bottom-0 w-[3px] rounded-r-full"
+                          style={{ background: c.color }}
+                        />
+                      )}
+                      <div
+                        className="flex-shrink-0 h-7 w-7 rounded-lg flex items-center justify-center"
+                        style={{ backgroundColor: isActive ? `${c.color}22` : 'transparent' }}
+                      >
+                        <CIcon
+                          className="h-3.5 w-3.5 transition-colors"
+                          style={{ color: isActive ? c.color : 'rgba(255,255,255,0.3)' }}
+                        />
+                      </div>
+                      <span
+                        className={`text-[11px] font-semibold leading-snug transition-colors ${
+                          isActive ? 'text-white' : 'text-white/40 group-hover:text-white/70'
+                        }`}
+                      >
+                        {c.title}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* Right Side: Offerings for Active Consultancy */}
-              <div className="lg:w-2/3">
-                <div 
-                  className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-md h-full"
-                  style={{ borderTop: `4px solid ${activeConsultancy.color}` }}
+              {/* Right Panel: Offering Spotlight */}
+              <div className="flex-1 bg-[#080810] flex flex-col">
+                {/* Category Hero Strip */}
+                <div
+                  className="px-8 py-7 border-b border-white/8 flex items-center justify-between"
+                  style={{ background: `linear-gradient(90deg, ${activeConsultancy.color}10 0%, transparent 60%)` }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div 
-                      className="h-12 w-12 rounded-xl flex items-center justify-center bg-white/10"
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: `${activeConsultancy.color}20`, border: `1px solid ${activeConsultancy.color}40` }}
                     >
                       {(() => {
                         const Icon = iconMap[activeConsultancy.icon] ?? Shield;
@@ -592,32 +602,78 @@ export default function Home() {
                       })()}
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold text-white">{activeConsultancy.title}</h3>
-                      <p className="text-sm text-white/60">{activeConsultancy.category} Offerings</p>
+                      <p
+                        className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1"
+                        style={{ color: activeConsultancy.color }}
+                      >
+                        {activeConsultancy.category}
+                      </p>
+                      <h3 className="text-lg md:text-xl font-bold text-white leading-tight">{activeConsultancy.title}</h3>
                     </div>
                   </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {activeConsultancy.offerings.slice(0, 6).map((offering, i) => {
-                      const OfferingIcon = iconMap[offering.icon] ?? Shield;
-                      return (
-                        <div key={i} className="bg-black/40 border border-white/5 rounded-xl p-5 hover:border-white/20 transition-colors">
-                          <h4 className="text-sm font-bold text-white mb-2 leading-snug">{offering.title}</h4>
-                          <p className="text-xs text-white/50 leading-relaxed">{offering.description}</p>
+                  <Link
+                    href={`/consultancy/${activeConsultancy.slug}`}
+                    className="hidden md:inline-flex items-center gap-2 px-5 h-10 rounded-full text-xs font-bold uppercase tracking-wider transition-all hover:opacity-90 flex-shrink-0"
+                    style={{ background: activeConsultancy.color, color: '#fff' }}
+                  >
+                    Explore Full Service <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+
+                {/* Offering Rows */}
+                <div className="flex-1 divide-y divide-white/[0.05]">
+                  {activeConsultancy.offerings.slice(0, 3).map((offering, i) => {
+                    const OfferingIcon = iconMap[offering.icon] ?? Shield;
+                    return (
+                      <div
+                        key={i}
+                        className="group flex items-start gap-5 px-8 py-6 hover:bg-white/[0.02] transition-all duration-200 cursor-default"
+                      >
+                        {/* Number */}
+                        <span
+                          className="flex-shrink-0 text-2xl font-black tabular-nums leading-none mt-1 w-7 text-right"
+                          style={{ color: `${activeConsultancy.color}30` }}
+                        >
+                          {i + 1}
+                        </span>
+                        {/* Icon */}
+                        <div
+                          className="flex-shrink-0 h-9 w-9 rounded-lg flex items-center justify-center mt-0.5"
+                          style={{ background: `${activeConsultancy.color}15`, border: `1px solid ${activeConsultancy.color}25` }}
+                        >
+                          <OfferingIcon className="h-4 w-4" style={{ color: activeConsultancy.color }} />
                         </div>
-                      );
-                    })}
-                  </div>
-                  
-                  <div className="mt-8 text-right">
-                    <Link
-                      href={`/consultancy/${activeConsultancy.slug}`}
-                      className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:underline"
-                      style={{ color: activeConsultancy.color }}
-                    >
-                      View All Offerings <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
+                        {/* Content */}
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-bold text-white mb-1 leading-snug group-hover:text-white transition-colors">
+                            {offering.title}
+                          </h4>
+                          <p className="text-xs text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">
+                            {offering.description}
+                          </p>
+                        </div>
+                        {/* Hover arrow */}
+                        <ArrowRight
+                          className="flex-shrink-0 h-4 w-4 mt-1 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200"
+                          style={{ color: activeConsultancy.color }}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Footer strip */}
+                <div className="px-8 py-4 border-t border-white/8 flex items-center justify-between">
+                  <p className="text-[11px] text-white/25">
+                    {activeConsultancy.offerings.length} total offerings in this practice
+                  </p>
+                  <Link
+                    href={`/consultancy/${activeConsultancy.slug}`}
+                    className="md:hidden inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
+                    style={{ color: activeConsultancy.color }}
+                  >
+                    Explore Service <ArrowRight className="h-3 w-3" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -625,67 +681,110 @@ export default function Home() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════════
-            5. CHALLENGES & OUTCOMES — Before / After
+            5. CHALLENGES & OUTCOMES — Premium Dark Split
         ════════════════════════════════════════════════════════════════════ */}
-        <section id="challenges" className="bg-[#F9FAFB] py-16 md:py-24 border-b border-[#F4F4F5] scroll-mt-[90px]">
-          <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-            <div className="text-center mb-12 md:mb-16">
-              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF] mb-3">From Risk to Resilience</p>
-              <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight">Challenges & Outcomes</h2>
-              <p className="mt-3 text-[#6C757D] text-sm md:text-base max-w-xl mx-auto">
-                Many organizations know they need stronger cybersecurity and better governance, but struggle with where to begin. Here is what we typically see — and what we help change.
+        <section id="challenges" className="relative overflow-hidden scroll-mt-[90px]" style={{ background: '#09090E' }}>
+          {/* Top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+          <div className="container mx-auto px-4 md:px-8 max-w-7xl py-16 md:py-24">
+            {/* Header */}
+            <div className="text-center mb-14 md:mb-20">
+              <div className="inline-flex items-center gap-2 mb-5">
+                <div className="h-px w-8 bg-[#007BFF]/60" />
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#007BFF]">From Risk to Resilience</p>
+                <div className="h-px w-8 bg-[#007BFF]/60" />
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Challenges <span className="text-white/30">&</span> Outcomes</h2>
+              <p className="mt-4 text-white/40 text-sm md:text-base max-w-lg mx-auto">
+                What we typically see — and what we help change.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-              {/* BEFORE */}
-              <div className="rounded-2xl border-2 border-red-100 bg-white p-6 md:p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-50">
-                    <AlertTriangle className="h-5 w-5 text-red-500" />
+            {/* Split layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-white/[0.08]">
+              {/* LEFT — Challenges */}
+              <div className="relative p-8 md:p-10" style={{ background: '#0E0E16' }}>
+                {/* Column header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="h-10 w-10 rounded-xl bg-red-500/15 flex items-center justify-center flex-shrink-0">
+                    <AlertTriangle className="h-5 w-5 text-red-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-red-400">Before Advisory</p>
-                    <h3 className="text-lg font-bold text-[#212529]">Common Challenges</h3>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-red-400 mb-0.5">Before Advisory</p>
+                    <h3 className="text-lg font-bold text-white">Common Challenges</h3>
                   </div>
                 </div>
-                <ul className="space-y-3">
+
+                {/* Divider */}
+                <div className="h-px bg-white/[0.06] mb-6" />
+
+                {/* Items */}
+                <ul className="space-y-0 divide-y divide-white/[0.05]">
                   {challengesList.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 mt-0.5 h-5 w-5 rounded-full bg-red-50 flex items-center justify-center">
-                        <span className="text-red-400 text-xs font-bold">✕</span>
+                    <li key={i} className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0">
+                      <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-red-500/20 flex items-center justify-center">
+                        <span className="text-red-400 text-[10px] font-black">✕</span>
                       </div>
-                      <span className="text-sm text-[#4A5568] leading-relaxed">{item}</span>
+                      <span className="text-sm text-white/55 leading-relaxed group-hover:text-white/80 transition-colors">{item}</span>
                     </li>
                   ))}
                 </ul>
+
+                {/* Watermark number */}
+                <div className="absolute bottom-6 right-8 text-[80px] font-black text-white/[0.03] leading-none select-none pointer-events-none">
+                  01
+                </div>
               </div>
 
-              {/* AFTER */}
-              <div className="rounded-2xl border-2 border-green-100 bg-white p-6 md:p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-50">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
+              {/* CENTER DIVIDER — Arrow */}
+              <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-8 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                  <div className="h-8 w-8 rounded-full bg-[#09090E] border border-white/20 flex items-center justify-center shadow-lg">
+                    <ArrowRight className="h-3.5 w-3.5 text-white/50" />
+                  </div>
+                  <div className="h-8 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                </div>
+              </div>
+
+              {/* RIGHT — Outcomes */}
+              <div className="relative p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-white/[0.08]" style={{ background: '#0A0A12' }}>
+                {/* Column header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="h-10 w-10 rounded-xl bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="h-5 w-5 text-emerald-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-green-500">After Advisory</p>
-                    <h3 className="text-lg font-bold text-[#212529]">What You Gain</h3>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-emerald-400 mb-0.5">After Advisory</p>
+                    <h3 className="text-lg font-bold text-white">What You Gain</h3>
                   </div>
                 </div>
-                <ul className="space-y-3">
+
+                {/* Divider */}
+                <div className="h-px bg-white/[0.06] mb-6" />
+
+                {/* Items */}
+                <ul className="space-y-0 divide-y divide-white/[0.05]">
                   {outcomesList.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 mt-0.5 h-5 w-5 rounded-full bg-green-50 flex items-center justify-center">
-                        <CheckCircle className="h-3 w-3 text-green-500" />
+                    <li key={i} className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0">
+                      <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-emerald-500/20 flex items-center justify-center">
+                        <CheckCircle className="h-3.5 w-3.5 text-emerald-400" />
                       </div>
-                      <span className="text-sm text-[#4A5568] leading-relaxed">{item}</span>
+                      <span className="text-sm text-white/55 leading-relaxed group-hover:text-white/80 transition-colors">{item}</span>
                     </li>
                   ))}
                 </ul>
+
+                {/* Watermark number */}
+                <div className="absolute bottom-6 right-8 text-[80px] font-black text-white/[0.03] leading-none select-none pointer-events-none">
+                  02
+                </div>
               </div>
             </div>
           </div>
         </section>
+
 
         {/* ════════════════════════════════════════════════════════════════════
             6. CORE CONSULTING — Practice Areas Grid
@@ -696,7 +795,7 @@ export default function Home() {
               <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF] mb-3">Our Practice Areas</p>
               <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight">Core Consulting Services</h2>
               <p className="mt-3 text-[#6C757D] text-sm md:text-base max-w-2xl mx-auto">
-                Select an area of expertise to explore why it matters, specific offerings, business outcomes, and how to engage with our advisors.
+                Explore our specialist advisory areas to find the right fit for your organization's cybersecurity, AI, and digital risk priorities.
               </p>
             </div>
 
@@ -719,8 +818,8 @@ export default function Home() {
                         <Icon className="h-6 w-6" style={{ color: c.color }} />
                       </div>
                       <span
-                        className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full bg-white shadow-sm"
-                        style={{ color: c.color }}
+                        className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                        style={{ color: c.color, backgroundColor: `${c.color}15` }}
                       >
                         {c.category}
                       </span>
@@ -731,9 +830,12 @@ export default function Home() {
                     </h3>
                     <p className="text-sm text-[#6C757D] leading-relaxed flex-1">{c.excerpt}</p>
 
-                    <div className="mt-5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest" style={{ color: c.color }}>
+                    <div
+                      className="mt-5 inline-flex items-center justify-center gap-2 px-5 h-10 rounded-full text-xs font-bold uppercase tracking-widest transition-all group-hover:opacity-90 self-start"
+                      style={{ background: c.color, color: '#fff' }}
+                    >
                       Explore Services
-                      <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </Link>
                 );
@@ -741,6 +843,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
 
         {/* ════════════════════════════════════════════════════════════════════
             7. ADVISORY APPROACH — 5-Step Stepper
@@ -750,16 +853,9 @@ export default function Home() {
             <div className="text-center mb-12 md:mb-16">
               <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF] mb-3">How We Work</p>
               <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight">Practical Advisory for Modern Digital Risk</h2>
-              <div className="mt-4 text-[#6C757D] text-sm md:text-base max-w-3xl mx-auto space-y-4">
+              <div className="mt-4 text-[#6C757D] text-sm md:text-base max-w-2xl mx-auto">
                 <p>
-                  Modern digital risk is complex because it does not sit in one department. It appears across technology, people, processes, data, vendors, cloud platforms, AI tools, customer channels, and business operations.
-                </p>
-                <p>
-                  Many organizations know they need stronger cybersecurity and better governance, but they struggle with where to begin. Some have tools but lack control maturity. Some have policies but limited adoption. Some have awareness programs but weak measurement. Others are adopting AI and cloud technologies without fully understanding the risk implications.
-                </p>
-                <p>Our advisory approach is designed to bring clarity.</p>
-                <p>
-                  We help clients identify the most relevant risks, separate urgent priorities from background noise, and define practical steps that can be implemented in real business environments. The focus is not to overwhelm clients with technical complexity. The focus is to help them make better decisions, strengthen controls, and build capability over time.
+                  Our advisory approach brings clarity to complex digital risk. We help clients identify the most critical gaps, prioritize what matters most, and define practical steps that create real improvements — not just reports.
                 </p>
               </div>
             </div>
@@ -818,29 +914,32 @@ export default function Home() {
               <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight">
                 Built for Organizations, Professionals, and Decision-Makers Across Industries
               </h2>
-              <div className="mt-4 text-[#6C757D] text-sm md:text-base max-w-3xl mx-auto space-y-3">
-                <p>
-                  Cybersecurity and AI are no longer specialist concerns limited to technical teams. Every organization, regardless of size or sector, now depends on digital systems, data, cloud platforms, connected services, third-party providers, and increasingly, AI-enabled tools. This creates both opportunity and exposure.
-                </p>
-                <p>
-                  Our services are designed for organizations and professionals who want practical guidance, not theoretical complexity. We support businesses that need stronger cyber resilience, teams that require structured training, leaders who need clarity on digital risk, and professionals who want to build future-ready skills.
-                </p>
-                <p>
-                  From startups and growing businesses to regulated industries, educational institutions, technology teams, and leadership groups, our platform provides advisory and training services that can be adapted to different maturity levels, budgets, and business priorities.
-                </p>
-              </div>
+              <p className="mt-4 text-[#6C757D] text-sm md:text-base max-w-xl mx-auto">
+                From enterprises and financial institutions to government bodies, tech companies, and early-career professionals — our advisory and training services adapt to your maturity level and priorities.
+              </p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5">
-              {whoWeSupport.map(({ icon: Icon, label, sub }, i) => (
-                <div key={i} className="group flex flex-col items-center text-center gap-3 p-5 rounded-xl border border-[#E5E7EB] bg-white hover:border-[#007BFF]/30 hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F4F4F5] group-hover:bg-blue-50 transition-colors">
-                    <Icon className="h-5 w-5 text-[#6C757D] group-hover:text-[#007BFF] transition-colors" />
+              {whoWeSupport.map(({ icon: Icon, label, sub, color }, i) => (
+                <div
+                  key={i}
+                  className="group flex flex-col items-center text-center gap-3 p-5 rounded-xl border bg-white hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
+                  style={{ borderColor: `${color}30` }}
+                >
+                  <div
+                    className="flex h-12 w-12 items-center justify-center rounded-xl transition-all group-hover:scale-110"
+                    style={{ backgroundColor: `${color}15` }}
+                  >
+                    <Icon className="h-5 w-5 transition-colors" style={{ color }} />
                   </div>
                   <div>
                     <p className="text-sm font-bold text-[#212529]">{label}</p>
                     <p className="text-[11px] text-[#6C757D] mt-0.5 leading-tight">{sub}</p>
                   </div>
+                  <div
+                    className="h-0.5 w-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ backgroundColor: color }}
+                  />
                 </div>
               ))}
             </div>
@@ -872,20 +971,11 @@ export default function Home() {
                 <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight leading-[1.15]">
                   Cybersecurity and Privacy Are Business Trust Enablers
                 </h2>
-                <p className="text-white/60 leading-relaxed text-sm md:text-base">
-                  Trust is now a business differentiator. Customers want to know their data is protected. Regulators expect responsible handling of information. Partners want assurance that digital connections are secure. Employees expect safe systems and clear guidance. Leadership wants confidence that cyber and privacy risks are being managed before they become business disruptions.
-                </p>
-                <p className="text-white/60 leading-relaxed text-sm md:text-base font-semibold">
-                  Cybersecurity and privacy are no longer background controls. They are visible signals of how responsibly an organization operates.
-                </p>
-                <p className="text-white/60 leading-relaxed text-sm md:text-base">
-                  A mature cybersecurity and privacy program helps organizations reduce the likelihood of incidents, respond more effectively when issues occur, protect sensitive data, support compliance expectations, and build confidence with stakeholders.
-                </p>
-                <p className="text-white/60 leading-relaxed text-sm md:text-base">
-                  Organizations that invest in cybersecurity and privacy are not only reducing risk. They are strengthening their reputation, improving resilience, and creating a foundation for responsible digital growth.
+                <p className="text-white/70 leading-relaxed text-sm md:text-base">
+                  Trust is now a business differentiator. Customers, regulators, partners, and leadership all expect responsible handling of data, secure digital systems, and clear governance — before risks become disruptions.
                 </p>
                 <div className="pt-2">
-                  <p className="text-white/90 font-medium italic">
+                  <p className="text-white/90 font-semibold italic border-l-2 border-blue-400 pl-4">
                     Cybersecurity protects the business. Privacy protects trust. Together, they create the foundation for responsible digital growth.
                   </p>
                 </div>
@@ -921,41 +1011,53 @@ export default function Home() {
         {/* ════════════════════════════════════════════════════════════════════
             10. CONTACT FORM
         ════════════════════════════════════════════════════════════════════ */}
-        <section id="contact" className="bg-white py-16 md:py-24 scroll-mt-[90px]">
-          <div className="container mx-auto px-4 md:px-8 max-w-4xl">
+        <section id="contact" className="relative py-16 md:py-24 scroll-mt-[90px] overflow-hidden">
+          {/* Darkened gradient background */}
+          <div
+            className="absolute inset-0 z-0"
+            style={{ background: 'linear-gradient(135deg, #0A0A0F 0%, #0d1b2a 40%, #0f2044 100%)' }}
+          />
+          {/* Gradient orbs */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-blue-700/20 blur-[120px]" />
+            <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-purple-700/15 blur-[100px]" />
+            <div className="absolute top-1/2 right-0 w-[200px] h-[200px] rounded-full bg-blue-500/10 blur-[80px]" />
+          </div>
+
+          <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-4xl">
             <div className="text-center mb-10 md:mb-16 space-y-2 md:space-y-4">
-              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF]">Get In Touch</p>
-              <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight">Ready to Start the Conversation?</h2>
-              <p className="text-[#6C757D] text-sm md:text-lg">Tell us about your organization and how we can help. We&apos;ll get back to you promptly.</p>
+              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-blue-400">Get In Touch</p>
+              <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight">Ready to Start the Conversation?</h2>
+              <p className="text-white/60 text-sm md:text-lg">Tell us about your organization and how we can help. We&apos;ll get back to you promptly.</p>
             </div>
 
-            <Card className="rounded-2xl border border-gray-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] bg-[#F8FAFC] p-6 md:p-12">
+            <Card className="rounded-2xl border border-white/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)] bg-white/5 backdrop-blur-md p-6 md:p-12">
               <form className="space-y-5 md:space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                   <div className="space-y-1.5 md:space-y-2">
-                    <Label htmlFor="fullName" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-500 mb-1 ml-1">Full Name</Label>
-                    <Input id="fullName" placeholder="Your full name" className="h-12 md:h-14 bg-white border-gray-200 rounded-md shadow-sm focus-visible:ring-black" />
+                    <Label htmlFor="fullName" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Full Name</Label>
+                    <Input id="fullName" placeholder="Your full name" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
                   </div>
                   <div className="space-y-1.5 md:space-y-2">
-                    <Label htmlFor="email" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-500 mb-1 ml-1">Email Address</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" className="h-12 md:h-14 bg-white border-gray-200 rounded-md shadow-sm focus-visible:ring-black" />
+                    <Label htmlFor="email" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Email Address</Label>
+                    <Input id="email" type="email" placeholder="your@email.com" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                   <div className="space-y-1.5 md:space-y-2">
-                    <Label htmlFor="phone" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-500 mb-1 ml-1">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" className="h-12 md:h-14 bg-white border-gray-200 rounded-md shadow-sm focus-visible:ring-black" />
+                    <Label htmlFor="phone" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Phone Number</Label>
+                    <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
                   </div>
                   <div className="space-y-1.5 md:space-y-2">
-                    <Label htmlFor="organization" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-500 mb-1 ml-1">Organization</Label>
-                    <Input id="organization" placeholder="Your organization name" className="h-12 md:h-14 bg-white border-gray-200 rounded-md shadow-sm focus-visible:ring-black" />
+                    <Label htmlFor="organization" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Organization</Label>
+                    <Input id="organization" placeholder="Your organization name" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
                   </div>
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
-                  <Label htmlFor="message" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-500 mb-1 ml-1">How Can We Help?</Label>
-                  <Textarea id="message" placeholder="Tell us about your cybersecurity, AI, or digital risk challenges..." className="min-h-[140px] md:min-h-[180px] bg-white border-gray-200 rounded-md shadow-sm resize-y focus-visible:ring-black p-4 text-sm" />
+                  <Label htmlFor="message" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">How Can We Help?</Label>
+                  <Textarea id="message" placeholder="Tell us about your cybersecurity, AI, or digital risk challenges..." className="min-h-[140px] md:min-h-[180px] bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm resize-y focus-visible:ring-blue-400 p-4 text-sm" />
                 </div>
-                <Button className="w-full h-12 md:h-14 text-xs md:text-sm uppercase tracking-widest font-bold rounded-md bg-black text-white hover:bg-black/90 mt-2 shadow-md transition-all">
+                <Button className="w-full h-12 md:h-14 text-xs md:text-sm uppercase tracking-widest font-bold rounded-md bg-blue-600 text-white hover:bg-blue-700 mt-2 shadow-md transition-all">
                   Send Message
                 </Button>
               </form>

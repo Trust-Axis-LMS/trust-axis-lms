@@ -8,10 +8,8 @@ export function Footer() {
         <div className="mb-16 grid grid-cols-1 gap-10 md:mb-20 md:grid-cols-5 md:gap-12">
           <div className="col-span-1 space-y-6 md:col-span-2">
             <div className="flex items-center gap-3 md:gap-4">
-              <Link href="/" className="flex items-center cursor-pointer group">
-                <div className="bg-white px-3 py-1.5 rounded-md flex items-center justify-center">
-                  <img src="/logo.png" alt="Trust Axis Logo" className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" />
-                </div>
+            <Link href="/" className="flex items-center cursor-pointer group">
+                <img src="/logo.png" alt="Trust Axis Logo" className="h-12 md:h-14 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
               </Link>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-gray-400 md:text-[15px]">
