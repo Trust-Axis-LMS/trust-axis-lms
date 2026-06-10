@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
           <p className="text-muted-foreground font-medium mb-12">Effective Date: [Insert Date]</p>
 
           <p className="mb-8 leading-relaxed">
-            Welcome to <strong>SecureTree.ai</strong> (“we,” “our,” “us”). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy and Cookie Consent Policy outlines how we collect, use, and protect your information when you visit our website.
+            Welcome to <strong>Trust Axis Group</strong> (“we,” “our,” “us”). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy and Cookie Consent Policy outlines how we collect, use, and protect your information when you visit our website.
           </p>
 
           <section className="mb-10">
@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-semibold mb-4">8. Contact Us</h2>
             <p className="mb-4">If you have any questions or concerns about this Privacy and Cookie Consent Policy, please contact us at:</p>
             <address className="not-italic formatting leading-relaxed">
-              <strong>SecureTree.ai</strong><br />
+              <strong>Trust Axis Group</strong><br />
               [Your Address]<br />
               [Your Email Address]<br />
               [Your Phone Number]

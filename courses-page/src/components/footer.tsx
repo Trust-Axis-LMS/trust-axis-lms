@@ -1,139 +1,135 @@
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { MAIN_SITE_URL } from "@/lib/url";
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white pt-16 md:pt-20 pb-8 border-t border-black">
+    <footer className="border-t border-black bg-black pb-8 pt-16 text-white md:pt-20">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 mb-16 md:mb-20">
-          <div className="col-span-1 md:col-span-2 space-y-6">
+        <div className="mb-16 grid grid-cols-1 gap-10 md:mb-20 md:grid-cols-5 md:gap-12">
+          <div className="col-span-1 space-y-6 md:col-span-2">
             <div className="flex items-center gap-3 md:gap-4">
-              <a href={MAIN_SITE_URL || "/"} className="flex items-center cursor-pointer group">
-                <div className="bg-white px-3 py-1.5 rounded-md flex items-center justify-center">
-                  <img src="/logo.png" alt="Trust Axis Logo" className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" />
-                </div>
-              </a>
+            <Link href={MAIN_SITE_URL} className="flex items-center cursor-pointer group">
+                <img src="/logo.png" alt="Trust Axis Logo" className="h-12 md:h-14 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
+              </Link>
             </div>
-            <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed max-w-sm">
-              Empowering professionals with industry-leading education and
-              career advancement opportunities.
+            <p className="max-w-sm text-sm leading-relaxed text-gray-400 md:text-[15px]">
+              Cybersecurity, AI governance, privacy advisory, and practical
+              training to help organizations build digital trust.
             </p>
           </div>
 
-          <div className="col-span-1 md:col-span-2 grid grid-cols-2 gap-8">
+          <div className="col-span-1 grid grid-cols-2 gap-8 md:col-span-2">
             <div>
-              <h4 className="font-bold text-white mb-5 md:mb-6 uppercase tracking-widest text-[10px] md:text-[11px]">
-                Programs
+              <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-white md:mb-6 md:text-[11px]">
+                Consultancy
               </h4>
-              <ul className="space-y-3 md:space-y-4 text-sm text-gray-400 font-medium">
+              <ul className="space-y-3 text-sm font-medium text-gray-400 md:space-y-4">
                 <li>
-                  <Link
-                    href="/courses/advanced-cybersecurity-program"
-                    className="hover:text-white transition-colors"
-                  >
-                    Cybersecurity
+                  <Link href={`${MAIN_SITE_URL}/#consultancy`} className="transition-colors hover:text-white">
+                    All Practice Areas
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/courses/advanced-data-analytics-program"
-                    className="hover:text-white transition-colors"
-                  >
-                    Data Science
+                  <Link href={`${MAIN_SITE_URL}/consultancy/cybersecurity-advisory`} className="transition-colors hover:text-white">
+                    Cybersecurity Advisory
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/courses/product-management-program"
-                    className="hover:text-white transition-colors"
-                  >
-                    Product Management
+                  <Link href={`${MAIN_SITE_URL}/consultancy/ai-technology-advisory`} className="transition-colors hover:text-white">
+                    AI & Technology Advisory
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/courses/aws-cloud-architecture-program"
-                    className="hover:text-white transition-colors"
-                  >
-                    Cloud Computing
+                  <Link href={`${MAIN_SITE_URL}/consultancy/privacy-data-protection`} className="transition-colors hover:text-white">
+                    Privacy & Data Protection
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-5 md:mb-6 uppercase tracking-widest text-[10px] md:text-[11px]">
+              <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-white md:mb-6 md:text-[11px]">
                 Company
               </h4>
-              <ul className="space-y-3 md:space-y-4 text-sm text-gray-400 font-medium">
+              <ul className="space-y-3 text-sm font-medium text-gray-400 md:space-y-4">
                 <li>
-                  <a
-                    href={`${MAIN_SITE_URL}/#about`}
-                    className="hover:text-white transition-colors"
-                  >
+                  <Link href={`${MAIN_SITE_URL}/about`} className="transition-colors hover:text-white">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`${MAIN_SITE_URL}/#resources`}
-                    className="hover:text-white transition-colors"
+                  <Link
+                    href={`${MAIN_SITE_URL}/resources/blogs`}
+                    className="transition-colors hover:text-white"
                   >
-                    Blog
-                  </a>
+                    Blogs
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href={`${MAIN_SITE_URL}/#contact`}
-                    className="hover:text-white transition-colors"
+                  <Link
+                    href={`${MAIN_SITE_URL}/resources/articles`}
+                    className="transition-colors hover:text-white"
                   >
+                    Articles
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={`${MAIN_SITE_URL}/resources/whitepapers`}
+                    className="transition-colors hover:text-white"
+                  >
+                    Whitepapers
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`${MAIN_SITE_URL}/contact`} className="transition-colors hover:text-white">
                     Contact
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`${MAIN_SITE_URL}/archive`} className="transition-colors hover:text-white">
+                    Training & Courses (Archive)
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="col-span-1 md:col-span-1 md:ml-auto">
-            <h4 className="font-bold text-white mb-5 md:mb-6 uppercase tracking-widest text-[10px] md:text-[11px]">
+          <div className="col-span-1 md:ml-auto">
+            <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-white md:mb-6 md:text-[11px]">
               Connect
             </h4>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 transition-colors hover:text-white">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 transition-colors hover:text-white">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 transition-colors hover:text-white">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" className="text-gray-400 transition-colors hover:text-white">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] md:text-[13px] text-gray-500 font-semibold tracking-wide text-center md:text-left">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-gray-800 pt-8 text-center text-[11px] font-semibold tracking-wide text-gray-500 md:flex-row md:text-left md:text-[13px]">
           <p>© 2026 Trust Axis. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <a href={`${MAIN_SITE_URL}/value-proposition`} className="hover:text-white transition-colors">
+            <a href={`${MAIN_SITE_URL}/value-proposition`} className="transition-colors hover:text-white">
               Value Proposition
             </a>
-            <a href={`${MAIN_SITE_URL}/sustainability`} className="hover:text-white transition-colors">
+            <a href={`${MAIN_SITE_URL}/sustainability`} className="transition-colors hover:text-white">
               Sustainability Policy
             </a>
-            <a href={`${MAIN_SITE_URL}/privacy-policy`} className="hover:text-white transition-colors">
+            <a href={`${MAIN_SITE_URL}/privacy-policy`} className="transition-colors hover:text-white">
               Privacy & Cookie Policy
             </a>
-            <a href={`${MAIN_SITE_URL}/terms-and-conditions`} className="hover:text-white transition-colors">
+            <a href={`${MAIN_SITE_URL}/terms-and-conditions`} className="transition-colors hover:text-white">
               Terms & Conditions
             </a>
           </div>

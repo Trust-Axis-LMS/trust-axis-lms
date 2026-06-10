@@ -12,7 +12,7 @@ export default function SustainabilityPolicyPage() {
 
           <h2 className="text-2xl font-semibold mb-4 mt-8">Introduction</h2>
           <p className="mb-8 leading-relaxed">
-            At <strong>SecureTree.ai</strong>, we recognize the importance of Environmental, Social, and Governance (ESG) factors in creating long-term value for our stakeholders, including employees, customers, partners, investors, and the broader community. We are committed to integrating ESG considerations into our business strategies and operations to contribute to a sustainable future.
+            At <strong>Trust Axis Group</strong>, we recognize the importance of Environmental, Social, and Governance (ESG) factors in creating long-term value for our stakeholders, including employees, customers, partners, investors, and the broader community. We are committed to integrating ESG considerations into our business strategies and operations to contribute to a sustainable future.
           </p>
 
           <section className="mb-10">
@@ -61,7 +61,7 @@ export default function SustainabilityPolicyPage() {
 
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-4">5. Conclusion</h2>
-            <p className="mb-4">At <strong>SecureTree.ai</strong>, our commitment to ESG principles is fundamental to our mission and values. We believe that by integrating environmental, social, and governance considerations into our business, we can drive positive change, create long-term value, and contribute to a more sustainable and equitable world.</p>
+            <p className="mb-4">At <strong>Trust Axis Group</strong>, our commitment to ESG principles is fundamental to our mission and values. We believe that by integrating environmental, social, and governance considerations into our business, we can drive positive change, create long-term value, and contribute to a more sustainable and equitable world.</p>
           </section>
         </div>
       </main>

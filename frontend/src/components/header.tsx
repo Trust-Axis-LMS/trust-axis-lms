@@ -391,7 +391,7 @@ function LearningMegaMenu({
         onMouseLeave={onMouseLeave}
       >
         <div className="flex h-[560px]">
-          
+
           {/* ── Column 1: Main Categories ── */}
           <div className="w-[300px] bg-slate-50/50 border-r border-slate-200/60 flex-shrink-0 flex flex-col relative z-10">
             <div className="px-8 py-6 border-b border-slate-200/50">
@@ -407,8 +407,8 @@ function LearningMegaMenu({
                     onClick={() => handleMainEnter(mainCat.id)}
                     className={cn(
                       "w-full flex items-center justify-between px-5 py-3.5 rounded-xl text-[14px] font-semibold transition-all duration-300 relative group overflow-hidden",
-                      isActive 
-                        ? "text-blue-600 bg-blue-50/80 shadow-sm ring-1 ring-blue-500/20" 
+                      isActive
+                        ? "text-blue-600 bg-blue-50/80 shadow-sm ring-1 ring-blue-500/20"
                         : "text-slate-600 hover:bg-white hover:text-slate-900 hover:shadow-sm"
                     )}
                   >
@@ -425,12 +425,12 @@ function LearningMegaMenu({
               })}
             </div>
             <div className="p-6 bg-gradient-to-br from-blue-600 to-indigo-700 m-4 rounded-2xl shadow-lg relative overflow-hidden group cursor-pointer" onClick={onClose}>
-               <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
-               <h5 className="text-white font-bold text-sm mb-1">Need Guidance?</h5>
-               <p className="text-blue-100 text-xs mb-3">Talk to our advisors to find the perfect career path.</p>
-               <div className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 px-3 py-1.5 rounded-lg hover:bg-white/30 transition-colors">
-                 Book a Call <ArrowRight className="w-3 h-3" />
-               </div>
+              <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
+              <h5 className="text-white font-bold text-sm mb-1">Need Guidance?</h5>
+              <p className="text-blue-100 text-xs mb-3">Talk to our advisors to find the perfect career path.</p>
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 px-3 py-1.5 rounded-lg hover:bg-white/30 transition-colors">
+                Book a Call <ArrowRight className="w-3 h-3" />
+              </div>
             </div>
           </div>
 
@@ -452,15 +452,15 @@ function LearningMegaMenu({
                       onClick={() => handleSubEnter(subCat.id)}
                       className={cn(
                         "w-full flex items-center justify-between px-5 py-3.5 rounded-xl text-[14px] transition-all duration-300 group",
-                        isActive 
-                          ? "bg-slate-50 text-blue-600 font-bold shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] ring-1 ring-slate-200/50" 
+                        isActive
+                          ? "bg-slate-50 text-blue-600 font-bold shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] ring-1 ring-slate-200/50"
                           : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                       )}
                     >
                       <span className="flex items-center gap-3">
                         <div className={cn(
-                           "w-1.5 h-1.5 rounded-full transition-all duration-300",
-                           isActive ? "bg-blue-600 scale-125" : "bg-slate-200 group-hover:bg-slate-300"
+                          "w-1.5 h-1.5 rounded-full transition-all duration-300",
+                          isActive ? "bg-blue-600 scale-125" : "bg-slate-200 group-hover:bg-slate-300"
                         )} />
                         {subCat.label}
                       </span>
@@ -479,20 +479,20 @@ function LearningMegaMenu({
           {/* ── Column 3: Courses ── */}
           <div className="flex-1 bg-slate-50/30 flex flex-col overflow-hidden relative">
             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -z-10 pointer-events-none -translate-y-1/2 translate-x-1/3" />
-            
-             <div className="px-10 py-6 border-b border-slate-200/50 flex items-center justify-between bg-white/40 sticky top-0 backdrop-blur-xl z-10">
+
+            <div className="px-10 py-6 border-b border-slate-200/50 flex items-center justify-between bg-white/40 sticky top-0 backdrop-blur-xl z-10">
               <div className="flex items-center gap-3">
-                 <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-100 text-blue-600 ring-1 ring-blue-500/20">
-                   <BookOpen className="w-4 h-4" />
-                 </div>
-                 <div>
-                   <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-none mb-1">
-                     {activeSub ? activeSub.label : activeMain.label}
-                   </h3>
-                   <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Featured Programs</p>
-                 </div>
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-100 text-blue-600 ring-1 ring-blue-500/20">
+                  <BookOpen className="w-4 h-4" />
+                </div>
+                <div>
+                  <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-none mb-1">
+                    {activeSub ? activeSub.label : activeMain.label}
+                  </h3>
+                  <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Featured Programs</p>
+                </div>
               </div>
-              
+
               {activeMain.subcategories && (
                 <a
                   href={`${COURSES_SITE_URL}?category=${encodeURIComponent(activeMain.label)}`}
@@ -503,7 +503,7 @@ function LearningMegaMenu({
                 </a>
               )}
             </div>
-            
+
             <div className="flex-1 overflow-y-auto py-6 px-10 relative custom-scrollbar">
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-3 pb-8">
                 {displayCourses.map((course) => (
@@ -522,7 +522,7 @@ function LearningMegaMenu({
                 ))}
               </div>
             </div>
-            
+
             <div className="p-5 bg-white/80 border-t border-slate-200/50 backdrop-blur-md flex justify-center sticky bottom-0 z-10">
               <a
                 href={COURSES_SITE_URL}

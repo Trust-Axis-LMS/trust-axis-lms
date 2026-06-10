@@ -11,7 +11,7 @@ export default function ValuePropositionPage() {
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Value Proposition</h1>
           
           <h2 className="text-xl md:text-2xl font-semibold text-gray-800 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Securetree.ai is your strategic partner in achieving digital resilience.
+            Trust Axis Group is your strategic partner in achieving digital resilience.
           </h2>
 
           <p className="text-lg text-gray-600 mb-16 leading-relaxed max-w-3xl mx-auto text-left md:text-center px-4">
