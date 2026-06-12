@@ -113,3 +113,28 @@
 .animate-infinite-scroll:hover {
   animation-play-state: paused;
 }
+
+/* ── Subtle moving symmetric lines for section backgrounds ── */
+@keyframes driftLines {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 56px 56px, -56px 56px; }
+}
+
+.bg-moving-lines {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(99, 155, 255, 0.055) 0px,
+      rgba(99, 155, 255, 0.055) 1px,
+      transparent 1px,
+      transparent 56px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(99, 155, 255, 0.055) 0px,
+      rgba(99, 155, 255, 0.055) 1px,
+      transparent 1px,
+      transparent 56px
+    );
+  animation: driftLines 14s linear infinite;
+}

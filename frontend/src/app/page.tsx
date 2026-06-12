@@ -523,26 +523,30 @@ export default function Home() {
         {/* ════════════════════════════════════════════════════════════════════
             4. MODULAR CONSULTING OFFERINGS SECTION
         ════════════════════════════════════════════════════════════════════ */}
-        <section id="offerings" className="bg-[#0A0A0F] py-16 md:py-24 border-b border-white/5 relative overflow-hidden scroll-mt-[90px]">
+        <section id="offerings" className="py-16 md:py-24 border-b border-blue-100 relative overflow-hidden scroll-mt-[90px]" style={{ background: 'linear-gradient(160deg, #ffffff 0%, #f0f7ff 50%, #e8f2ff 100%)' }}>
+          {/* Subtle grid texture */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.4]" 
+               style={{ backgroundImage: 'linear-gradient(to right, #bfdbfe 1px, transparent 1px), linear-gradient(to bottom, #bfdbfe 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
+          {/* Soft blue glow orbs */}
           <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-blue-700/10 blur-[120px]" />
-            <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-purple-700/10 blur-[120px]" />
+            <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-blue-200/40 blur-[120px]" />
+            <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-blue-100/50 blur-[100px]" />
           </div>
 
           <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
             <div className="text-center mb-10 md:mb-16">
-              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-blue-400 mb-3">Service Capabilities</p>
-              <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight">Our Consulting Offerings</h2>
-              <p className="mt-3 text-white/50 text-sm md:text-base max-w-2xl mx-auto">
+              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF] mb-3">Service Capabilities</p>
+              <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] tracking-tight">Our Consulting Offerings</h2>
+              <p className="mt-3 text-slate-500 text-sm md:text-base max-w-2xl mx-auto">
                 Explore the specific modular offerings we provide across our diverse practice areas to help you build resilience and trust.
               </p>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-0 rounded-2xl overflow-hidden border border-white/10">
+            <div className="flex flex-col lg:flex-row gap-0 rounded-2xl overflow-hidden border border-blue-200/60 shadow-lg shadow-blue-100/50">
               {/* Left Sidebar: Category Navigator */}
-              <div className="lg:w-[280px] flex-shrink-0 bg-[#0D0D14] border-r border-white/8">
-                <div className="p-4 border-b border-white/8">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/30">Practice Areas</p>
+              <div className="lg:w-[280px] flex-shrink-0 bg-white/80 backdrop-blur-sm border-r border-blue-100">
+                <div className="p-4 border-b border-blue-100">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">Practice Areas</p>
                 </div>
                 {consultancies.map((c, idx) => {
                   const CIcon = iconMap[c.icon] ?? Shield;
@@ -553,7 +557,7 @@ export default function Home() {
                       key={c.id}
                       onClick={() => setActiveConsultancyId(c.id)}
                       className={`w-full flex items-center gap-3 px-4 py-3.5 text-left transition-all duration-200 relative group ${
-                        isActive ? 'bg-white/6' : 'hover:bg-white/3'
+                        isActive ? 'bg-blue-50/80' : 'hover:bg-blue-50/40'
                       }`}
                     >
                       {/* Active indicator */}
@@ -569,12 +573,12 @@ export default function Home() {
                       >
                         <CIcon
                           className="h-3.5 w-3.5 transition-colors"
-                          style={{ color: isActive ? c.color : 'rgba(255,255,255,0.3)' }}
+                          style={{ color: isActive ? c.color : '#94a3b8' }}
                         />
                       </div>
                       <span
                         className={`text-[11px] font-semibold leading-snug transition-colors ${
-                          isActive ? 'text-white' : 'text-white/40 group-hover:text-white/70'
+                          isActive ? 'text-slate-800' : 'text-slate-400 group-hover:text-slate-600'
                         }`}
                       >
                         {c.title}
@@ -585,16 +589,16 @@ export default function Home() {
               </div>
 
               {/* Right Panel: Offering Spotlight */}
-              <div className="flex-1 bg-[#080810] flex flex-col">
+              <div className="flex-1 bg-white/60 backdrop-blur-sm flex flex-col">
                 {/* Category Hero Strip */}
                 <div
-                  className="px-8 py-7 border-b border-white/8 flex items-center justify-between"
-                  style={{ background: `linear-gradient(90deg, ${activeConsultancy.color}10 0%, transparent 60%)` }}
+                  className="px-8 py-7 border-b border-blue-100 flex items-center justify-between"
+                  style={{ background: `linear-gradient(90deg, ${activeConsultancy.color}08 0%, transparent 60%)` }}
                 >
                   <div className="flex items-center gap-4">
                     <div
                       className="h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: `${activeConsultancy.color}20`, border: `1px solid ${activeConsultancy.color}40` }}
+                      style={{ background: `${activeConsultancy.color}15`, border: `1px solid ${activeConsultancy.color}30` }}
                     >
                       {(() => {
                         const Icon = iconMap[activeConsultancy.icon] ?? Shield;
@@ -608,7 +612,7 @@ export default function Home() {
                       >
                         {activeConsultancy.category}
                       </p>
-                      <h3 className="text-lg md:text-xl font-bold text-white leading-tight">{activeConsultancy.title}</h3>
+                      <h3 className="text-lg md:text-xl font-bold text-slate-800 leading-tight">{activeConsultancy.title}</h3>
                     </div>
                   </div>
                   <Link
@@ -621,34 +625,34 @@ export default function Home() {
                 </div>
 
                 {/* Offering Rows */}
-                <div className="flex-1 divide-y divide-white/[0.05]">
+                <div className="flex-1 divide-y divide-blue-100/60">
                   {activeConsultancy.offerings.slice(0, 3).map((offering, i) => {
                     const OfferingIcon = iconMap[offering.icon] ?? Shield;
                     return (
                       <div
                         key={i}
-                        className="group flex items-start gap-5 px-8 py-6 hover:bg-white/[0.02] transition-all duration-200 cursor-default"
+                        className="group flex items-start gap-5 px-8 py-6 hover:bg-blue-50/40 transition-all duration-200 cursor-default"
                       >
                         {/* Number */}
                         <span
                           className="flex-shrink-0 text-2xl font-black tabular-nums leading-none mt-1 w-7 text-right"
-                          style={{ color: `${activeConsultancy.color}30` }}
+                          style={{ color: `${activeConsultancy.color}40` }}
                         >
                           {i + 1}
                         </span>
                         {/* Icon */}
                         <div
                           className="flex-shrink-0 h-9 w-9 rounded-lg flex items-center justify-center mt-0.5"
-                          style={{ background: `${activeConsultancy.color}15`, border: `1px solid ${activeConsultancy.color}25` }}
+                          style={{ background: `${activeConsultancy.color}12`, border: `1px solid ${activeConsultancy.color}25` }}
                         >
                           <OfferingIcon className="h-4 w-4" style={{ color: activeConsultancy.color }} />
                         </div>
                         {/* Content */}
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-bold text-white mb-1 leading-snug group-hover:text-white transition-colors">
+                          <h4 className="text-sm font-bold text-slate-800 mb-1 leading-snug group-hover:text-slate-900 transition-colors">
                             {offering.title}
                           </h4>
-                          <p className="text-xs text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">
+                          <p className="text-xs text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors">
                             {offering.description}
                           </p>
                         </div>
@@ -663,8 +667,8 @@ export default function Home() {
                 </div>
 
                 {/* Footer strip */}
-                <div className="px-8 py-4 border-t border-white/8 flex items-center justify-between">
-                  <p className="text-[11px] text-white/25">
+                <div className="px-8 py-4 border-t border-blue-100 flex items-center justify-between">
+                  <p className="text-[11px] text-slate-400">
                     {activeConsultancy.offerings.length} total offerings in this practice
                   </p>
                   <Link
@@ -681,109 +685,122 @@ export default function Home() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════════
-            5. CHALLENGES & OUTCOMES — Premium Dark Split
+            5. CHALLENGES & OUTCOMES — Light Split
         ════════════════════════════════════════════════════════════════════ */}
-        <section id="challenges" className="relative overflow-hidden scroll-mt-[90px]" style={{ background: '#09090E' }}>
+        <section id="challenges" className="relative overflow-hidden scroll-mt-[90px]" style={{ background: 'linear-gradient(135deg, #f0f7ff 0%, #e8f3ff 40%, #eef5ff 100%)' }}>
           {/* Top accent line */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/60 to-transparent" />
+          {/* Moving symmetric diagonal lines — very subtle */}
+          <div className="absolute inset-0 z-0 pointer-events-none bg-moving-lines" />
+          {/* Soft directional glow blobs */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <div className="absolute top-1/4 left-0 w-[600px] h-[600px] rounded-full bg-blue-200/25 blur-[140px]" />
+            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-100/30 blur-[120px]" />
+          </div>
 
-          <div className="container mx-auto px-4 md:px-8 max-w-7xl py-16 md:py-24">
+          <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl py-16 md:py-24">
             {/* Header */}
             <div className="text-center mb-14 md:mb-20">
               <div className="inline-flex items-center gap-2 mb-5">
-                <div className="h-px w-8 bg-[#007BFF]/60" />
+                <div className="h-px w-8 bg-[#007BFF]/50" />
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#007BFF]">From Risk to Resilience</p>
-                <div className="h-px w-8 bg-[#007BFF]/60" />
+                <div className="h-px w-8 bg-[#007BFF]/50" />
               </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Challenges <span className="text-white/30">&</span> Outcomes</h2>
-              <p className="mt-4 text-white/40 text-sm md:text-base max-w-lg mx-auto">
+              <h2 className="text-3xl md:text-5xl font-bold text-[#1a2744] tracking-tight">Challenges <span className="text-slate-300">&</span> Outcomes</h2>
+              <p className="mt-4 text-slate-500 text-sm md:text-base max-w-lg mx-auto">
                 What we typically see — and what we help change.
               </p>
             </div>
 
             {/* Split layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-white/[0.08]">
-              {/* LEFT — Challenges */}
-              <div className="relative p-8 md:p-10" style={{ background: '#0E0E16' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-blue-100 shadow-xl shadow-blue-100/40">
+
+              {/* LEFT — Challenges (emphatic but not dominant) */}
+              <div className="relative p-8 md:p-10 bg-white">
+                {/* Subtle red left-edge glow */}
+                <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-full bg-gradient-to-b from-red-300/0 via-red-400/50 to-red-300/0" />
+
                 {/* Column header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="h-10 w-10 rounded-xl bg-red-500/15 flex items-center justify-center flex-shrink-0">
-                    <AlertTriangle className="h-5 w-5 text-red-400" />
+                  <div className="h-10 w-10 rounded-xl bg-red-50 border border-red-200/70 flex items-center justify-center flex-shrink-0 shadow-sm shadow-red-100/60">
+                    <AlertTriangle className="h-5 w-5 text-red-500" />
                   </div>
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-red-400 mb-0.5">Before Advisory</p>
-                    <h3 className="text-lg font-bold text-white">Common Challenges</h3>
+                  <div className="flex-1">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-red-500 mb-0.5">Before Advisory</p>
+                    <h3 className="text-lg font-bold text-slate-800">Common Challenges</h3>
                   </div>
+                  <span className="flex-shrink-0 text-[10px] font-black tracking-[0.15em] text-red-400 border border-red-200 rounded-full px-2.5 py-1 select-none bg-red-50">01</span>
                 </div>
 
                 {/* Divider */}
-                <div className="h-px bg-white/[0.06] mb-6" />
+                <div className="h-px bg-red-100 mb-6" />
 
                 {/* Items */}
-                <ul className="space-y-0 divide-y divide-white/[0.05]">
+                <ul className="space-y-0 divide-y divide-slate-100">
                   {challengesList.map((item, i) => (
                     <li key={i} className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0">
-                      <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-red-500/20 flex items-center justify-center">
-                        <span className="text-red-400 text-[10px] font-black">✕</span>
+                      <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-red-50 border border-red-200/60 flex items-center justify-center">
+                        <span className="text-red-500 text-[10px] font-black">✕</span>
                       </div>
-                      <span className="text-sm text-white/55 leading-relaxed group-hover:text-white/80 transition-colors">{item}</span>
+                      <span className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* Watermark number */}
-                <div className="absolute bottom-6 right-8 text-[80px] font-black text-white/[0.03] leading-none select-none pointer-events-none">
-                  01
-                </div>
               </div>
+
 
               {/* CENTER DIVIDER — Arrow */}
               <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                 <div className="flex flex-col items-center gap-2">
-                  <div className="h-8 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-                  <div className="h-8 w-8 rounded-full bg-[#09090E] border border-white/20 flex items-center justify-center shadow-lg">
-                    <ArrowRight className="h-3.5 w-3.5 text-white/50" />
+                  <div className="h-8 w-px bg-gradient-to-b from-transparent via-emerald-300/50 to-transparent" />
+                  <div className="h-9 w-9 rounded-full flex items-center justify-center shadow-lg shadow-emerald-200/60" style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}>
+                    <ArrowRight className="h-4 w-4 text-white" />
                   </div>
-                  <div className="h-8 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                  <div className="h-8 w-px bg-gradient-to-b from-transparent via-emerald-300/50 to-transparent" />
                 </div>
               </div>
 
-              {/* RIGHT — Outcomes */}
-              <div className="relative p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-white/[0.08]" style={{ background: '#0A0A12' }}>
+              {/* RIGHT — Outcomes (prominent, clean white with emerald accents) */}
+              <div
+                className="relative p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-emerald-100 bg-white"
+              >
+                {/* Subtle emerald left-edge glow */}
+                <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-full bg-gradient-to-b from-emerald-300/0 via-emerald-400/60 to-emerald-300/0" />
+
                 {/* Column header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="h-10 w-10 rounded-xl bg-emerald-500/15 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="h-5 w-5 text-emerald-400" />
+                  <div className="h-11 w-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-emerald-200/60" style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}>
+                    <CheckCircle className="h-5 w-5 text-white" />
                   </div>
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-emerald-400 mb-0.5">After Advisory</p>
-                    <h3 className="text-lg font-bold text-white">What You Gain</h3>
+                  <div className="flex-1">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-0.5">After Advisory</p>
+                    <h3 className="text-lg font-bold text-slate-800">What You Gain</h3>
                   </div>
+                  <span className="flex-shrink-0 text-[10px] font-black tracking-[0.15em] text-emerald-600 border border-emerald-200 rounded-full px-2.5 py-1 select-none bg-emerald-50">02</span>
                 </div>
 
                 {/* Divider */}
-                <div className="h-px bg-white/[0.06] mb-6" />
+                <div className="h-px bg-emerald-100 mb-6" />
 
                 {/* Items */}
-                <ul className="space-y-0 divide-y divide-white/[0.05]">
+                <ul className="space-y-0 divide-y divide-emerald-50">
                   {outcomesList.map((item, i) => (
                     <li key={i} className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0">
-                      <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-emerald-500/20 flex items-center justify-center">
-                        <CheckCircle className="h-3.5 w-3.5 text-emerald-400" />
+                      <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-emerald-50 border border-emerald-200/60 flex items-center justify-center">
+                        <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
                       </div>
-                      <span className="text-sm text-white/55 leading-relaxed group-hover:text-white/80 transition-colors">{item}</span>
+                      <span className="text-sm text-slate-700 font-medium leading-relaxed group-hover:text-slate-900 transition-colors">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* Watermark number */}
-                <div className="absolute bottom-6 right-8 text-[80px] font-black text-white/[0.03] leading-none select-none pointer-events-none">
-                  02
-                </div>
+
               </div>
             </div>
           </div>
         </section>
+
 
 
         {/* ════════════════════════════════════════════════════════════════════
@@ -958,30 +975,34 @@ export default function Home() {
         {/* ════════════════════════════════════════════════════════════════════
             9. DIGITAL TRUST CTA STRIP
         ════════════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#0A0A0F] py-16 md:py-24 border-b border-white/5 relative overflow-hidden">
+        <section className="py-16 md:py-24 border-b border-blue-200/60 relative overflow-hidden" style={{ background: 'linear-gradient(145deg, #dbeafe 0%, #eff6ff 30%, #f8faff 60%, #edf4ff 100%)' }}>
+          {/* Layered blue gradient orbs */}
           <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-blue-700/10 blur-[100px]" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-purple-700/10 blur-[100px]" />
+            <div className="absolute top-0 left-1/4 w-[480px] h-[480px] rounded-full bg-blue-300/25 blur-[110px]" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-blue-400/20 blur-[100px]" />
+            <div className="absolute top-1/2 right-0 w-[300px] h-[300px] rounded-full bg-indigo-300/15 blur-[90px]" />
           </div>
+          {/* Diagonal shimmer line */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/80 to-transparent" />
 
           <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div className="space-y-6">
-                <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-blue-400">Why It Matters</p>
-                <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight leading-[1.15]">
+                <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF]">Why It Matters</p>
+                <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] tracking-tight leading-[1.15]">
                   Cybersecurity and Privacy Are Business Trust Enablers
                 </h2>
-                <p className="text-white/70 leading-relaxed text-sm md:text-base">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
                   Trust is now a business differentiator. Customers, regulators, partners, and leadership all expect responsible handling of data, secure digital systems, and clear governance — before risks become disruptions.
                 </p>
                 <div className="pt-2">
-                  <p className="text-white/90 font-semibold italic border-l-2 border-blue-400 pl-4">
+                  <p className="text-slate-700 font-semibold italic border-l-2 border-[#007BFF] pl-4">
                     Cybersecurity protects the business. Privacy protects trust. Together, they create the foundation for responsible digital growth.
                   </p>
                 </div>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-8 h-13 py-4 rounded-full bg-white text-black font-bold text-xs uppercase tracking-widest hover:bg-white/90 transition-all shadow-xl hover:shadow-white/10"
+                  className="inline-flex items-center gap-2 px-8 h-13 py-4 rounded-full bg-[#007BFF] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#0062cc] transition-all shadow-lg shadow-blue-300/40 hover:shadow-blue-400/50"
                 >
                   STRENGTHEN YOUR CYBERSECURITY AND PRIVACY PROGRAM <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -998,9 +1019,9 @@ export default function Home() {
                   "Stronger third-party and vendor risk management",
                   "More resilient business operations",
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                    <CheckCircle className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-white/70 leading-snug">{item}</span>
+                  <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white/70 border border-blue-200/60 shadow-sm hover:shadow-md hover:bg-white/90 transition-all duration-200">
+                    <CheckCircle className="h-4 w-4 text-[#007BFF] flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-slate-600 leading-snug">{item}</span>
                   </div>
                 ))}
               </div>
