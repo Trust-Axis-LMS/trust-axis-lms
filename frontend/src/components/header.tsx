@@ -137,8 +137,8 @@ const megaMenuData: MainCategory[] = [
     label: "Courses by Vendor",
     subcategories: [
       {
-        id: "infosectrain",
-        label: "Infosectrain",
+        id: "Trust Axis Group",
+        label: "Trust Axis Group",
         courses: [
           { title: "AI Cybersecurity Training", slug: "ai-cybersecurity" },
           { title: "GRC IT Audit Practical Approach Training", slug: "grc-it-audit" },
