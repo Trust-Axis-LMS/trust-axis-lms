@@ -140,11 +140,7 @@ const megaMenuData: MainCategory[] = [
         id: "Trust Axis Group",
         label: "Trust Axis Group",
         courses: [
-          { title: "AI Cybersecurity Training", slug: "ai-cybersecurity" },
-          { title: "GRC IT Audit Practical Approach Training", slug: "grc-it-audit" },
-          { title: "SailPoint IIQ Implementation", slug: "sailpoint-iiq" },
-          { title: "Threat Hunting and DFIR", slug: "threat-hunting-dfir" },
-          { title: "Red Team Operations Professional Training", slug: "red-team-ops" }
+          { title: "SailPoint IIQ Implementation", slug: "sailpoint-iiq" }
         ]
       },
       {
@@ -190,25 +186,8 @@ const megaMenuData: MainCategory[] = [
         id: "comptia",
         label: "CompTIA",
         courses: [
-          { title: "CompTIA – Security+", slug: "comptia-security-plus" },
           { title: "CompTIA – Network+", slug: "comptia-network-plus" },
           { title: "CompTIA – PenTest+", slug: "comptia-pentest-plus" }
-        ]
-      },
-      {
-        id: "aws",
-        label: "AWS",
-        courses: [
-          { title: "AWS Certified Security – Specialty", slug: "aws-security" },
-          { title: "AWS Certified Cloud Practitioner", slug: "aws-cloud-practitioner" }
-        ]
-      },
-      {
-        id: "microsoft",
-        label: "Microsoft",
-        courses: [
-          { title: "Microsoft Security Operations Analyst (SC-200)", slug: "sc-200" },
-          { title: "Microsoft Identity and Access Administrator (SC-300)", slug: "sc-300" }
         ]
       }
     ]
@@ -221,8 +200,7 @@ const megaMenuData: MainCategory[] = [
         id: "cybersecurity",
         label: "Cybersecurity",
         courses: [
-          { title: "ISC2 – Certified in Cybersecurity (CC)", slug: "cc" },
-          { title: "AI-Powered Cybersecurity", slug: "ai-cybersecurity" }
+          { title: "ISC2 – Certified in Cybersecurity (CC)", slug: "cc" }
         ]
       },
       {
@@ -237,9 +215,7 @@ const megaMenuData: MainCategory[] = [
         id: "sec-ops",
         label: "Security Operations",
         courses: [
-          { title: "ISACA – CCOA", slug: "ccoa" },
-          { title: "Threat Hunting and DFIR", slug: "threat-hunting-dfir" },
-          { title: "AI Powered SOC Analyst", slug: "ai-soc-analyst" }
+          { title: "ISACA – CCOA", slug: "ccoa" }
         ]
       },
       {
@@ -255,24 +231,13 @@ const megaMenuData: MainCategory[] = [
         label: "Offensive Security",
         courses: [
           { title: "EC-Council – C|EH", slug: "ceh" },
-          { title: "Red Team Operations Professional Training", slug: "red-team-ops" },
           { title: "CompTIA – PenTest+", slug: "comptia-pentest-plus" }
-        ]
-      },
-      {
-        id: "defensive-security",
-        label: "Defensive Security",
-        courses: [
-          { title: "Blue Team Hands-on Training", slug: "blue-team" },
-          { title: "Incident Response and Handling", slug: "incident-response" }
         ]
       },
       {
         id: "grc",
         label: "GRC",
         courses: [
-          { title: "GRC IT Audit Practical Approach Training", slug: "grc-it-audit" },
-          { title: "GRC Hands-on", slug: "grc-hands-on" },
           { title: "ISACA – CRISC", slug: "crisc" }
         ]
       },
@@ -283,14 +248,6 @@ const megaMenuData: MainCategory[] = [
           { title: "IAPP – CIPP/E", slug: "cipp-e" },
           { title: "ISACA – CDPSE", slug: "cdpse" }
         ]
-      },
-      {
-        id: "security-testing",
-        label: "Security Testing",
-        courses: [
-          { title: "Web Application Penetration Testing", slug: "wapt" },
-          { title: "Mobile Application Security Testing", slug: "mast" }
-        ]
       }
     ]
   },
@@ -299,26 +256,9 @@ const megaMenuData: MainCategory[] = [
     label: "Career-Oriented Courses",
     subcategories: [
       {
-        id: "soc-analyst",
-        label: "SOC Analyst Path",
-        courses: [
-          { title: "AI Powered SOC Analyst", slug: "ai-soc-analyst" },
-          { title: "Threat Hunting and DFIR", slug: "threat-hunting-dfir" }
-        ]
-      },
-      {
-        id: "ciso",
-        label: "CISO Path",
-        courses: [
-          { title: "CISO Hands-On Training", slug: "ciso-hands-on" },
-          { title: "Certified AI Governance Specialist", slug: "ai-governance" }
-        ]
-      },
-      {
         id: "cloud-sec-engineer",
         label: "Cloud Security Engineer",
         courses: [
-          { title: "AWS Certified Security", slug: "aws-security" },
           { title: "CCSP – Certified Cloud Security Professional", slug: "ccsp" }
         ]
       },
@@ -326,7 +266,6 @@ const megaMenuData: MainCategory[] = [
         id: "red-teamer",
         label: "Red Teamer / Pen Tester",
         courses: [
-          { title: "Red Team Operations Professional Training", slug: "red-team-ops" },
           { title: "EC-Council – CPENT", slug: "cpent" }
         ]
       }
@@ -336,15 +275,15 @@ const megaMenuData: MainCategory[] = [
     id: "courses",
     label: "Courses",
     allCourses: [
-      { title: "AI-Powered Practical DevSecOps Training", slug: "ai-devsecops" },
-      { title: "GRC IT Audit Practical Approach Training", slug: "grc-it-audit" },
-      { title: "CISO Hands-On Training", slug: "ciso-hands-on" },
-      { title: "Red Team Operations Professional Training", slug: "red-team-ops" },
-      { title: "AI-Powered Cybersecurity", slug: "ai-cybersecurity" },
-      { title: "AIGP - Artificial Intelligence Governance Professional", slug: "aigp" },
-      { title: "Certified AI Governance Specialist", slug: "ai-governance" },
       { title: "CISSP - Certified Information Systems Security Professional", slug: "cissp" },
-      { title: "CISA - Certified Information Systems Auditor", slug: "cisa" }
+      { title: "CISA - Certified Information Systems Auditor", slug: "cisa" },
+      { title: "CISM - Certified Information Security Manager", slug: "cism" },
+      { title: "CRISC - Certified Risk and Information Systems Control", slug: "crisc" },
+      { title: "CDPSE - Certified Data Privacy Solutions Engineer", slug: "cdpse" },
+      { title: "CCSK - Certificate of Cloud Security Knowledge", slug: "ccsk" },
+      { title: "CCSP - Certified Cloud Security Professional", slug: "ccsp" },
+      { title: "C|EH - Certified Ethical Hacker", slug: "ceh" },
+      { title: "CCOA - Certified Cybersecurity Operations Analyst", slug: "ccoa" }
     ]
   }
 ];
