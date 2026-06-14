@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { courses, categories } from "@/lib/courses-data";
 import { getCourseCategoryMeta } from "@/lib/course-category-meta";
 import { cn } from "@/lib/utils";
+import { MAIN_SITE_URL } from "@/lib/url";
 
 const domainCategories = categories.filter((c) => c !== "All");
 
@@ -119,7 +120,7 @@ export default function CoursesPage() {
                     Explore Programs <ArrowRight className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://trust-axis-frontend.vercel.app/#contact"
+                    href={`${MAIN_SITE_URL}/#contact`}
                     className="inline-flex h-14 items-center justify-center gap-2 rounded-sm border border-border bg-background px-8 text-sm font-bold uppercase tracking-[0.14em] text-foreground transition-colors hover:bg-secondary"
                   >
                     Book Consultation
@@ -287,7 +288,7 @@ export default function CoursesPage() {
               Speak with an enrollment advisor to compare programs and find the best fit for your goals.
             </p>
             <a
-              href="https://trust-axis-frontend.vercel.app/#contact"
+              href={`${MAIN_SITE_URL}/#contact`}
               className="inline-flex h-14 items-center justify-center gap-2 rounded-sm bg-black px-8 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80"
             >
               Speak to an Advisor
