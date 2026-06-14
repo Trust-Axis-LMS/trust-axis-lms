@@ -640,7 +640,7 @@ export function Header() {
                 )}
                 onClick={() => setActiveMega(activeMega === "learning" ? null : "learning")}
               >
-                Courses
+                Academy
                 <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", activeMega === "learning" ? "rotate-180" : "")} />
               </button>
 
@@ -723,7 +723,7 @@ export function Header() {
             <div className="h-px bg-gray-100 my-3" />
 
             {/* Courses by domain */}
-            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 px-2 mb-2">Courses</p>
+            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 px-2 mb-2">Academy</p>
             {megaMenuData.map((mainCat) => {
               return (
                 <a
