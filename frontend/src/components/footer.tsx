@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -100,17 +100,21 @@ export function Footer() {
               Connect
             </h4>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 transition-colors hover:text-white">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 transition-colors hover:text-white">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 transition-colors hover:text-white">
+              <a
+                href="https://www.linkedin.com/company/trust-axis-conulting-group-pvt-ltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 transition-colors hover:text-white"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 transition-colors hover:text-white">
-                <Instagram className="h-5 w-5" />
+              <a
+                href="https://www.youtube.com/@TrustAxisConsultingGroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 transition-colors hover:text-white"
+              >
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>

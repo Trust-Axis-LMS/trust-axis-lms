@@ -130,30 +130,101 @@ function ConsultancyDetailsView({ slug }: { slug: string }) {
             </Link>
           </div>
 
-          <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
-            {/* Icon */}
-            <div
-              className="flex-shrink-0 flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-2xl"
-              style={{ backgroundColor: `${c.color}20`, border: `1px solid ${c.color}30` }}
-            >
-              <CategoryIcon className="h-10 w-10 md:h-12 md:w-12" style={{ color: c.color }} />
-            </div>
-
-            <div className="flex-1">
-              <div
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4"
-                style={{ backgroundColor: `${c.color}20`, color: c.color }}
-              >
-                {c.category}
+          {c.slug === "esg-consulting-advisory" ? (
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center">
+              {/* Left Column */}
+              <div className="lg:col-span-7">
+                <div
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6"
+                  style={{ backgroundColor: `${c.color}20`, color: c.color }}
+                >
+                  {c.category}
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.05]">
+                  {c.title}
+                </h1>
+                <p className="max-w-[650px] text-base md:text-lg lg:text-xl text-white/60 leading-relaxed mb-8">
+                  {c.excerpt}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-6 h-12 rounded-xl text-xs font-bold uppercase tracking-wider text-white transition-all hover:opacity-90"
+                    style={{ backgroundColor: c.color }}
+                  >
+                    Schedule an ESG Advisory Session
+                  </Link>
+                  <a
+                    href="#services"
+                    className="inline-flex items-center justify-center px-6 h-12 rounded-xl text-xs font-bold uppercase tracking-wider text-white border border-white/20 hover:bg-white/10 transition-all"
+                  >
+                    View ESG Services
+                  </a>
+                </div>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
-                {c.heading || c.title}
-              </h1>
-              <p className="max-w-[700px] text-base md:text-lg lg:text-xl text-white/60 leading-relaxed">
-                {c.excerpt}
-              </p>
+
+              {/* Right Column - ESG Readiness Snapshot Card */}
+              <div className="lg:col-span-5">
+                <div className="bg-white rounded-[30px] p-8 border border-[#E2E8F0] shadow-[0_18px_42px_rgba(15,23,42,0.07)]">
+                  <h3 className="text-xl font-bold text-[#071226] mb-2">ESG Readiness Snapshot</h3>
+                  <p className="text-sm text-[#536174] mb-6 leading-relaxed">
+                    Build visibility across sustainability strategy, governance, risk, reporting, and stakeholder expectations.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[22px] p-5 flex flex-col">
+                      <span className="text-[#157F3B] text-[34px] font-bold mb-2 leading-none">E</span>
+                      <span className="text-sm font-semibold text-[#334155] leading-snug">
+                        Environment & climate
+                      </span>
+                    </div>
+                    <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[22px] p-5 flex flex-col">
+                      <span className="text-[#157F3B] text-[34px] font-bold mb-2 leading-none">S</span>
+                      <span className="text-sm font-semibold text-[#334155] leading-snug">
+                        People & communities
+                      </span>
+                    </div>
+                    <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[22px] p-5 flex flex-col">
+                      <span className="text-[#157F3B] text-[34px] font-bold mb-2 leading-none">G</span>
+                      <span className="text-sm font-semibold text-[#334155] leading-snug">
+                        Governance & ethics
+                      </span>
+                    </div>
+                    <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-[22px] p-5 flex flex-col">
+                      <span className="text-[#157F3B] text-[34px] font-bold mb-2 leading-none">R</span>
+                      <span className="text-sm font-semibold text-[#334155] leading-snug">
+                        Reporting readiness
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-10">
+              {/* Icon */}
+              <div
+                className="flex-shrink-0 flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-2xl"
+                style={{ backgroundColor: `${c.color}20`, border: `1px solid ${c.color}30` }}
+              >
+                <CategoryIcon className="h-10 w-10 md:h-12 md:w-12" style={{ color: c.color }} />
+              </div>
+
+              <div className="flex-1">
+                <div
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4"
+                  style={{ backgroundColor: `${c.color}20`, color: c.color }}
+                >
+                  {c.category}
+                </div>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-[1.05]">
+                  {c.heading || c.title}
+                </h1>
+                <p className="max-w-[700px] text-base md:text-lg lg:text-xl text-white/60 leading-relaxed">
+                  {c.excerpt}
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

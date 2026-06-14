@@ -500,72 +500,70 @@ For ambitious fintech startups and scale-ups, market penetration requires absolu
     `,
   },
 
-  // ─── 9. Cryptographic Inventory Management ─────────────────────────────────
+  // ─── 9. ESG Consulting & Advisory ─────────────────────────────────────────
   {
     id: "9",
-    slug: "cryptographic-inventory-management-risk-assessment",
-    title: "Cryptographic Inventory & Quantum-Safe Advisory",
+    slug: "esg-consulting-advisory",
+    title: "ESG Advisory for Responsible Growth",
     excerpt:
-      "Establish a Quantum-safe strategy by identifying cryptographic vulnerabilities, assessing risks, and planning a structured transition to post-quantum cryptography.",
-    icon: "KeyRound",
-    color: "#14B8A6",
-    category: "Quantum Readiness",
+      "We help organizations turn environmental, social, and governance priorities into practical strategies, measurable actions, and credible reporting.",
+    icon: "Globe",
+    color: "#157F3B",
+    category: "ESG Consulting",
     whyItMatters:
-      "The rise of quantum computing presents an unprecedented challenge to modern cryptographic systems. Organizations must proactively identify cryptographic vulnerabilities, assess risks, and establish a Quantum-safe strategy before their existing cryptographic protections become exploitable. Waiting until quantum threats materialize is not a viable risk management approach.",
+      "ESG is no longer a side initiative. It is becoming a core business expectation. Customers, investors, regulators, employees, and business partners increasingly expect organizations to demonstrate responsible operations, environmental awareness, ethical governance, and transparent reporting. Waiting to address ESG expectations can create compliance gaps, supply chain friction, and reputational risk.",
     offerings: [
-      { icon: "Search", title: "Enterprise-Wide Cryptographic Discovery", description: "Identify cryptographic assets across servers, networks, APIs, websites, CDNs, DNS, and PKI infrastructure." },
-      { icon: "Brain", title: "AI-Powered Cryptographic Risk Analysis", description: "Detect vulnerabilities in cryptographic implementations and assess exposure to quantum computing threats." },
-      { icon: "Layout", title: "Cryptographic Asset Management", description: "Maintain a centralized governance view of cryptographic assets, tracking compliance and security status." },
-      { icon: "FileCheck", title: "Policy & Compliance Mapping", description: "Align cryptographic assets with industry standards, regulatory requirements, and enterprise security policies." },
-      { icon: "AlertTriangle", title: "End-to-End Cryptographic Risk Assessment", description: "Evaluate cryptographic dependencies and risk levels across systems, software, and supply chains." },
-      { icon: "Map", title: "Cryptographic Migration Roadmap", description: "Develop a structured plan for transitioning to quantum-resistant cryptographic algorithms." },
-      { icon: "Link2", title: "Supply Chain Cryptographic Risk Review", description: "Assess quantum-vulnerable cryptographic algorithms across internal and third-party applications." },
-      { icon: "Activity", title: "Continuous Monitoring & Reassessment", description: "Ensure ongoing compliance and security posture improvement with scheduled cryptographic scans." },
+      { icon: "Map", title: "ESG Strategy & Roadmap", description: "Define a practical ESG strategy aligned to business priorities, industry expectations, and stakeholder needs." },
+      { icon: "Scale", title: "ESG Governance & Operating Model", description: "Design governance structures that clarify ownership, accountability, oversight, and decision-making." },
+      { icon: "FileCheck", title: "Sustainability Reporting Readiness", description: "Prepare for structured ESG and sustainability reporting with clearer metrics, evidence, and reporting processes." },
+      { icon: "Globe", title: "Climate & Environmental Risk", description: "Assess environmental priorities and climate-related risks that may impact operations, supply chains, and reputation." },
+      { icon: "Users", title: "Social Responsibility & Workforce", description: "Support people-focused ESG priorities including employee wellbeing, inclusion, community impact, and responsible culture." },
+      { icon: "Link2", title: "Supplier & Third-Party ESG Risk", description: "Assess ESG exposure across vendors, suppliers, partners, and outsourced service providers." },
     ],
     businessOutcomes: [
-      "Gain full visibility into your cryptographic asset landscape and risk exposure",
-      "Prioritize and plan a structured transition to quantum-safe cryptography",
-      "Reduce supply chain cryptographic risk through vendor assessment and engagement",
-      "Demonstrate proactive quantum-readiness to regulators and stakeholders",
-      "Streamline cryptographic governance and compliance reporting",
-      "Build organizational capability for long-term crypto-agility and resilience",
+      "Clear ESG strategy and implementation roadmap",
+      "Improved ESG governance and accountability",
+      "Better readiness for sustainability reporting",
+      "Stronger supplier and third-party ESG visibility",
+      "Practical ESG actions aligned to business priorities",
+      "Greater confidence with stakeholders, partners, and leadership",
     ],
-    ctaLabel: "Begin Your Quantum-Safe Assessment",
+    ctaLabel: "Request an ESG Advisory Consultation",
     content: `
-# Cryptographic Inventory Management & Risk Assessment
+# ESG Advisory for Responsible Growth
 
-## Building Crypto Agility for a Quantum-Safe Future
+## Connecting ESG Ambition with Operational Reality
 
-## DISCOVER. ANALYZE. TRANSITION.
+## STRATEGY. GOVERNANCE. REPORTING.
 
-The rise of quantum computing presents an unprecedented challenge to modern cryptographic systems. Organizations must proactively identify cryptographic vulnerabilities, assess risks, and establish a Quantum-safe strategy.
+ESG is no longer a side initiative. It is becoming a core business expectation. Customers, investors, regulators, employees, and business partners increasingly expect organizations to demonstrate responsible operations, environmental awareness, ethical governance, and transparent reporting.
 
-# Comprehensive Cryptographic Inventory & Visibility
+# Practical ESG Strategy & Roadmap
 
-A reliable cryptographic inventory is the foundation of any Quantum-safe migration strategy. Our AI-powered cryptographic inventory platform enables organizations to discover, analyze, and manage cryptographic assets across their IT landscape.
+Many organizations want to improve ESG maturity but struggle with where to begin, what to measure, who should own delivery, and how to evidence progress. We help you design a practical roadmap that makes sense for your business.
 
-- Enterprise-Wide Cryptographic Discovery
-- Automated AI-Powered Risk Analysis
-- Intuitive Cryptographic Asset Management
-- Policy & Compliance Mapping
+- ESG Current-State Review
+- ESG Strategy Development
+- Materiality Assessment Support
+- Implementation Roadmap & Action Plan
 
-# Risk Assessment & Remediation Planning
+# ESG Governance & Accountability
 
-Cryptographic weaknesses can expose businesses to compliance risks, operational disruptions, and security vulnerabilities.
+Effective sustainability requires clear ownership, oversight, and operational capability across the organization.
 
-- End-to-End Cryptographic Risk Assessment
-- Remediation Strategy & Action Plan
-- Integration with Service Desk & ITSM Tools
-- Continuous Monitoring & Risk Reassessment
+- ESG Governance Framework Design
+- Roles & Responsibilities Definition
+- Committee and Reporting Structure
+- Sustainability Policy and Standards Review
 
-# Quantum-Safe Transition Program Management
+# Reporting Readiness & Risk Management
 
-Transitioning to Post-Quantum Cryptography requires strategic planning and cross-functional collaboration.
+Prepare for structured ESG frameworks, improve data quality, and manage risks across operations and third parties.
 
-- Cryptographic Migration Roadmap
-- Asset Prioritization & Impact Analysis
-- Executive & Cross-Functional Collaboration
-- Regulatory & Audit Compliance Readiness
+- Reporting Gap Assessment & KPI Definition
+- Climate & Environmental Risk Considerations
+- Social Responsibility & Workforce Engagement
+- Supplier & Third-Party ESG Risk Assessment
     `,
   },
 ];

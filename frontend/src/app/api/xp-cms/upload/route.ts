@@ -46,15 +46,19 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // ── Convert to base64 data URI ───────────────────────────────────────────────
+  // ── Check Cloudinary Config ──────────────────────────────────────────────────
+  if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
+    return NextResponse.json({ error: "Cloudinary is not configured correctly on the server." }, { status: 500 });
+  }
+
+  // ── Convert to Buffer ────────────────────────────────────────────────────────
   const arrayBuffer = await file.arrayBuffer();
-  const base64 = Buffer.from(arrayBuffer).toString("base64");
-  const dataUri = `data:${file.type};base64,${base64}`;
+  const fileBuffer = Buffer.from(arrayBuffer);
 
   // ── Upload to Cloudinary ─────────────────────────────────────────────────────
   try {
     const folder = uploadType === "pdf" ? "whitepapers" : "content-covers";
-    const result = await uploadToCloudinary(dataUri, folder, {
+    const result = await uploadToCloudinary(fileBuffer, folder, {
       resource_type: uploadType === "pdf" ? "raw" : "image",
     });
 

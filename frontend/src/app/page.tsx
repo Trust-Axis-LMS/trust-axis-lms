@@ -48,6 +48,7 @@ const iconMap: Record<string, React.ElementType> = {
   Link: LinkIcon,
   TrendingUp,
   KeyRound,
+  Globe,
 };
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -153,53 +154,57 @@ export default function Home() {
         {/* ════════════════════════════════════════════════════════════════════
             1. HERO SECTION (Spaceship Manual / Technical Blueprint)
         ════════════════════════════════════════════════════════════════════ */}
-        <section className="relative w-full min-h-[85vh] bg-[#f8fafc] font-sans pt-16 pb-12 md:pt-20 md:pb-16 flex items-center border-b border-slate-200">
+        <section className="relative w-full min-h-screen bg-slate-950 font-sans -mt-[68px] pt-[68px] pb-16 flex items-center border-b border-slate-800">
           
-          {/* ─── Blueprint Grid Background ─── */}
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.15]" 
-               style={{ backgroundImage: 'linear-gradient(to right, #94a3b8 1px, transparent 1px), linear-gradient(to bottom, #94a3b8 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+          {/* Background Video */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <video
+              src="/hero-video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            {/* Darken overlay to make text box pop and ensure proper contrast */}
+            <div className="absolute inset-0 bg-slate-950/40"></div>
           </div>
 
-          <div className="container relative z-10 px-0 md:px-6 max-w-[1400px] mx-auto w-full h-full -mt-6 md:-mt-10 lg:-mt-14">
+          <div className="container relative z-10 px-0 md:px-6 max-w-[1400px] mx-auto w-full h-full -mt-2 md:-mt-4 lg:-mt-6">
             
             {/* ─── Technical Frame ─── */}
-            <div className="bg-white/90 backdrop-blur-sm border border-slate-200 shadow-sm flex flex-col lg:flex-row min-h-[560px]">
+            <div className="bg-slate-950/40 backdrop-blur-md border border-white/10 shadow-2xl flex flex-col lg:flex-row min-h-[560px]">
               
               {/* ─── LEFT PANEL: Main Display ─── */}
-              <div className="flex-1 p-8 md:p-10 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-200">
+              <div className="flex-1 p-8 md:p-10 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
                 
                 <div className="space-y-8 lg:space-y-10">
-                  {/* Tag */}
-	                  <div className="flex items-center gap-3 font-mono text-[10px] md:text-xs text-blue-600 uppercase tracking-widest">
-	                    <span className="w-2 h-2 bg-blue-600 rounded-none animate-pulse"></span>
-	                    <span>{"// SYS_MODULE: TRUST_AXIS_ADVISORY"}</span>
-	                  </div>
-                  
+
                   {/* Headline */}
-                  <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-slate-900 tracking-tight leading-[1.05]">
+                  <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-white tracking-tight leading-[1.05]">
                     Building Digital Trust <br className="hidden xl:block" /> Through Cybersecurity, AI, <br className="hidden xl:block" /> & Practical Learning
                   </h1>
 
                   {/* Primary Statement */}
-                  <div className="pl-6 border-l-2 border-blue-600 max-w-2xl">
-                    <p className="text-slate-600 text-sm md:text-base font-medium leading-relaxed">
+                  <div className="pl-6 border-l-2 border-blue-500 max-w-2xl">
+                    <p className="text-slate-300 text-sm md:text-base font-medium leading-relaxed">
                       Digital trust is becoming one of the most important assets for modern organizations. Customers, employees, regulators, partners, and investors expect businesses to protect data, manage cyber threats, use technology responsibly, and demonstrate strong governance.
                     </p>
                   </div>
                 </div>
 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4 mt-12 pt-8 border-t border-slate-100">
+                <div className="flex flex-col sm:flex-row gap-4 mt-12 pt-8 border-t border-white/10">
                   <Link
                     href="/contact"
-                    className="group relative inline-flex items-center justify-center gap-2 px-8 h-12 bg-slate-900 text-white font-mono text-[11px] md:text-xs uppercase tracking-widest hover:bg-blue-600 transition-colors overflow-hidden"
+                    className="group relative inline-flex items-center justify-center gap-2 px-8 h-12 bg-white text-slate-950 font-mono text-[11px] md:text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-colors overflow-hidden"
                   >
                     <span className="absolute inset-y-0 left-0 w-[2px] bg-blue-400 group-hover:bg-white transition-colors"></span>
                     Start Building Trust <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="#services"
-                    className="inline-flex items-center justify-center gap-2 px-8 h-12 bg-transparent border border-slate-300 text-slate-700 font-mono text-[11px] md:text-xs uppercase tracking-widest hover:bg-slate-50 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-8 h-12 bg-transparent border border-white/20 text-white font-mono text-[11px] md:text-xs uppercase tracking-widest hover:bg-white/10 transition-colors"
                   >
                     Explore Advisory
                   </Link>
@@ -207,26 +212,26 @@ export default function Home() {
               </div>
 
               {/* ─── RIGHT PANEL: Technical Specs ─── */}
-              <div className="w-full lg:w-[400px] xl:w-[450px] bg-slate-50/50 flex flex-col shrink-0">
+              <div className="w-full lg:w-[400px] xl:w-[450px] bg-black/20 flex flex-col shrink-0">
                 
                 {/* Quote / Directive */}
-                <div className="p-8 md:p-10 border-b border-slate-200">
+                <div className="p-8 md:p-10 border-b border-white/10">
                   <div className="flex items-center justify-between mb-5">
                     <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">{">"} CORE_DIRECTIVE</span>
-                    <Shield className="w-4 h-4 text-slate-300" />
+                    <Shield className="w-4 h-4 text-slate-400" />
                   </div>
-                  <p className="font-serif text-slate-700 text-sm md:text-base italic leading-relaxed">
+                  <p className="font-serif text-slate-300 text-sm md:text-base italic leading-relaxed">
 	                    &ldquo;Digital trust is not built by technology alone. It is built through the right combination of governance, awareness, controls, accountability, and continuous learning.&rdquo;
 	                  </p>
                 </div>
 
                 {/* Risk Spec */}
-                <div className="p-8 md:p-10 border-b border-slate-200 flex-1">
+                <div className="p-8 md:p-10 border-b border-white/10 flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <Brain className="w-5 h-5 text-purple-600" />
-                    <h3 className="font-mono text-[11px] md:text-xs font-bold text-slate-900 uppercase tracking-widest">Emerging Risk</h3>
+                    <Brain className="w-5 h-5 text-purple-400" />
+                    <h3 className="font-mono text-[11px] md:text-xs font-bold text-white uppercase tracking-widest">Emerging Risk</h3>
                   </div>
-                  <p className="text-slate-600 text-[13px] leading-relaxed">
+                  <p className="text-slate-300 text-[13px] leading-relaxed">
                     Organizations are adopting AI, cloud services, and data-driven models at increasing speed. These technologies bring new possibilities, but also new questions: Is the data protected? Are AI tools used responsibly? Are controls strong enough?
                   </p>
                 </div>
@@ -234,10 +239,10 @@ export default function Home() {
                 {/* Approach Spec */}
                 <div className="p-8 md:p-10 flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <CheckCircle className="w-5 h-5 text-blue-600" />
-                    <h3 className="font-mono text-[11px] md:text-xs font-bold text-slate-900 uppercase tracking-widest">Our Approach</h3>
+                    <CheckCircle className="w-5 h-5 text-blue-400" />
+                    <h3 className="font-mono text-[11px] md:text-xs font-bold text-white uppercase tracking-widest">Our Approach</h3>
                   </div>
-                  <p className="text-slate-600 text-[13px] leading-relaxed">
+                  <p className="text-slate-300 text-[13px] leading-relaxed">
                     We exist to help organizations answer these questions with confidence. We bring together cybersecurity, AI governance, privacy, and training to build stronger security awareness and future-ready capability.
                   </p>
                 </div>
@@ -245,6 +250,33 @@ export default function Home() {
               </div>
 
             </div>
+          </div>
+
+          {/* Scroll Down Indicator */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+            <button
+              onClick={() => statsRef.current?.scrollIntoView({ behavior: "smooth" })}
+              className="animate-glow-border px-4 py-2 rounded-full border border-white/20 flex items-center gap-2 bg-slate-950/30 backdrop-blur-md text-[10px] uppercase tracking-widest font-mono text-white/70 hover:text-white transition-all cursor-pointer"
+              aria-label="Scroll down to stats"
+            >
+              <span>Scroll Down</span>
+              <ChevronDown className="w-3.5 h-3.5" />
+            </button>
+            <style dangerouslySetInnerHTML={{__html: `
+              @keyframes border-glow {
+                0%, 100% {
+                  box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+                  border-color: rgba(255, 255, 255, 0.15);
+                }
+                50% {
+                  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+                  border-color: rgba(59, 130, 246, 0.4);
+                }
+              }
+              .animate-glow-border {
+                animation: border-glow 4s infinite ease-in-out;
+              }
+            `}} />
           </div>
         </section>
 
@@ -346,16 +378,31 @@ export default function Home() {
                           <line x1="50" y1="150" x2="450" y2="150" stroke="#E5E7EB" strokeWidth="0.5" strokeDasharray="4" />
                           <line x1="50" y1="170" x2="450" y2="170" stroke="#9CA3AF" strokeWidth="1.5" />
                           
-                          <text x="35" y="34" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">5.0 (Optimized)</text>
-                          <text x="35" y="74" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">3.0 (Defined)</text>
-                          <text x="35" y="114" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">2.0 (Repeatable)</text>
-                          <text x="35" y="154" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">1.0 (Initial)</text>
+                          <text x="35" y="34" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">
+                            <tspan className="hidden sm:inline">5.0 (Optimized)</tspan>
+                            <tspan className="inline sm:hidden">5.0</tspan>
+                          </text>
+                          <text x="35" y="74" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">
+                            <tspan className="hidden sm:inline">3.0 (Defined)</tspan>
+                            <tspan className="inline sm:hidden">3.0</tspan>
+                          </text>
+                          <text x="35" y="114" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">
+                            <tspan className="hidden sm:inline">2.0 (Repeatable)</tspan>
+                            <tspan className="inline sm:hidden">2.0</tspan>
+                          </text>
+                          <text x="35" y="154" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">
+                            <tspan className="hidden sm:inline">1.0 (Initial)</tspan>
+                            <tspan className="inline sm:hidden">1.0</tspan>
+                          </text>
                           
                           <text x="50" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">Q1</text>
                           <text x="150" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">Q2</text>
                           <text x="250" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">Q3</text>
                           <text x="350" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">Q4</text>
-                          <text x="450" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">Q5 (Active)</text>
+                          <text x="450" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">
+                            <tspan className="hidden sm:inline">Q5 (Active)</tspan>
+                            <tspan className="inline sm:hidden">Q5</tspan>
+                          </text>
                           
                           <path
                             d="M 50 170 L 50 150 L 150 130 L 250 90 L 350 60 L 450 40 L 450 170 Z"
@@ -406,14 +453,35 @@ export default function Home() {
                           <line x1="50" y1="125" x2="450" y2="125" stroke="#E5E7EB" strokeWidth="0.5" strokeDasharray="4" />
                           <line x1="50" y1="170" x2="450" y2="170" stroke="#9CA3AF" strokeWidth="1.5" />
 
-                          <text x="35" y="39" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">90 Days</text>
-                          <text x="35" y="84" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">60 Days</text>
-                          <text x="35" y="129" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">30 Days</text>
-                          <text x="35" y="174" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">0 Days</text>
+                          <text x="35" y="39" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">
+                            <tspan className="hidden sm:inline">90 Days</tspan>
+                            <tspan className="inline sm:hidden">90d</tspan>
+                          </text>
+                          <text x="35" y="84" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">
+                            <tspan className="hidden sm:inline">60 Days</tspan>
+                            <tspan className="inline sm:hidden">60d</tspan>
+                          </text>
+                          <text x="35" y="129" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">
+                            <tspan className="hidden sm:inline">30 Days</tspan>
+                            <tspan className="inline sm:hidden">30d</tspan>
+                          </text>
+                          <text x="35" y="174" fill="#6C757D" className="text-[9px] font-bold" textAnchor="end">
+                            <tspan className="hidden sm:inline">0 Days</tspan>
+                            <tspan className="inline sm:hidden">0d</tspan>
+                          </text>
 
-                          <text x="115" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">Prior to Advisory</text>
-                          <text x="250" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">After 6 Months</text>
-                          <text x="385" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">After 12 Months</text>
+                          <text x="115" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">
+                            <tspan className="hidden sm:inline">Prior to Advisory</tspan>
+                            <tspan className="inline sm:hidden">Before</tspan>
+                          </text>
+                          <text x="250" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">
+                            <tspan className="hidden sm:inline">After 6 Months</tspan>
+                            <tspan className="inline sm:hidden">6 Months</tspan>
+                          </text>
+                          <text x="385" y="190" fill="#6C757D" className="text-[9px] font-bold uppercase tracking-wider" textAnchor="middle">
+                            <tspan className="hidden sm:inline">After 12 Months</tspan>
+                            <tspan className="inline sm:hidden">12 Months</tspan>
+                          </text>
 
                           <rect
                             x="90"
@@ -424,7 +492,10 @@ export default function Home() {
                             fill="#EF4444"
                             style={{ transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)" }}
                           />
-                          <text x="115" y={statsVisible ? "60" : "165"} fill="#FFFFFF" className="text-[10px] font-bold" textAnchor="middle">90 Days</text>
+                          <text x="115" y={statsVisible ? "60" : "165"} fill="#FFFFFF" className="text-[10px] font-bold" textAnchor="middle">
+                            <tspan className="hidden sm:inline">90 Days</tspan>
+                            <tspan className="inline sm:hidden">90d</tspan>
+                          </text>
 
                           <rect
                             x="225"
@@ -435,7 +506,10 @@ export default function Home() {
                             fill="#F59E0B"
                             style={{ transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)", transitionDelay: "0.15s" }}
                           />
-                          <text x="250" y={statsVisible ? "140" : "165"} fill="#FFFFFF" className="text-[10px] font-bold" textAnchor="middle">35 Days</text>
+                          <text x="250" y={statsVisible ? "140" : "165"} fill="#FFFFFF" className="text-[10px] font-bold" textAnchor="middle">
+                            <tspan className="hidden sm:inline">35 Days</tspan>
+                            <tspan className="inline sm:hidden">35d</tspan>
+                          </text>
 
                           <rect
                             x="360"
@@ -446,7 +520,10 @@ export default function Home() {
                             fill="#10B981"
                             style={{ transition: "all 1s cubic-bezier(0.16, 1, 0.3, 1)", transitionDelay: "0.3s" }}
                           />
-                          <text x="385" y={statsVisible ? "145" : "165"} fill={statsVisible ? "#FFFFFF" : "transparent"} className="text-[9px] font-bold" textAnchor="middle">12 Days</text>
+                          <text x="385" y={statsVisible ? "145" : "165"} fill={statsVisible ? "#FFFFFF" : "transparent"} className="text-[9px] font-bold" textAnchor="middle">
+                            <tspan className="hidden sm:inline">12 Days</tspan>
+                            <tspan className="inline sm:hidden">12d</tspan>
+                          </text>
                         </svg>
                       </div>
                     )}

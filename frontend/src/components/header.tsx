@@ -20,7 +20,7 @@ function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   if (isPending) {
-    return <div className="w-24 h-9 rounded-sm bg-gray-100 animate-pulse" />;
+    return <div className={cn("w-24 h-9 rounded-sm bg-gray-100 animate-pulse", !isMobile && "bg-white/10")} />;
   }
 
   if (session?.user) {
@@ -58,7 +58,10 @@ function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
       <div className="relative">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+          className={cn(
+            "flex items-center gap-2 px-3 py-2 rounded-lg transition-colors",
+            isMobile ? "hover:bg-gray-100" : "hover:bg-white/10"
+          )}
         >
           <div className="w-8 h-8 rounded-full bg-blue-100 overflow-hidden text-blue-700 flex items-center justify-center text-sm font-bold shrink-0">
             {session.user.image ? (
@@ -68,7 +71,7 @@ function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
               session.user.name?.charAt(0).toUpperCase() ?? "U"
             )}
           </div>
-          <ChevronDown size={14} className="text-gray-500" />
+          <ChevronDown size={14} className={isMobile ? "text-gray-500" : "text-slate-300"} />
         </button>
         {menuOpen && (
           <>
@@ -96,14 +99,24 @@ function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
 
   return (
     <div className={cn("flex items-center gap-4", isMobile && "w-full")}>
-      <Link href="/login" className={cn("text-[12px] font-semibold text-gray-500 hover:text-black transition-colors uppercase tracking-widest", isMobile && "flex-1 text-center py-3 border border-gray-200 rounded-xl")}>
+      <Link
+        href="/login"
+        className={cn(
+          "text-[12px] font-semibold uppercase tracking-widest transition-colors",
+          isMobile 
+            ? "text-gray-500 hover:text-black flex-1 text-center py-3 border border-gray-200 rounded-xl"
+            : "text-slate-300 hover:text-white"
+        )}
+      >
         Login
       </Link>
       <Link
         href="/signup"
         className={cn(
-          "px-5 h-[38px] text-[12px] font-bold text-white bg-black hover:bg-black/90 rounded-full transition-all shadow-md active:scale-95 uppercase tracking-widest flex items-center justify-center shrink-0",
-          isMobile && "flex-1 h-12 rounded-xl"
+          "px-5 h-[38px] text-[12px] font-bold transition-all shadow-md active:scale-95 uppercase tracking-widest flex items-center justify-center shrink-0",
+          isMobile 
+            ? "flex-1 h-12 rounded-xl text-white bg-black hover:bg-black/90"
+            : "rounded-full text-slate-950 bg-white hover:bg-white/90"
         )}
       >
         Sign Up
@@ -591,11 +604,11 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur-md border-gray-100/60">
+      <header className="sticky top-0 z-50 w-full border-b bg-slate-950/45 backdrop-blur-md border-white/10">
         <div className="container mx-auto flex h-[68px] items-center justify-between px-4 md:px-6 relative">
           {/* Logo */}
           <Link href="/" className="flex items-center cursor-pointer group -ml-3 md:-ml-5 flex-shrink-0">
-            <img src="/logo.png" alt="Trust Axis Logo" className="h-12 w-auto object-contain transition-transform group-hover:scale-105" />
+            <img src="/logo.png" alt="Trust Axis Logo" className="h-12 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation — centred */}
@@ -611,7 +624,7 @@ export function Header() {
                 type="button"
                 className={cn(
                   "flex items-center gap-1 px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest transition-colors",
-                  activeMega === "company" ? "text-black bg-gray-100" : "text-gray-500 hover:text-black hover:bg-gray-50"
+                  activeMega === "company" ? "text-white bg-white/10" : "text-slate-300 hover:text-white hover:bg-white/5"
                 )}
                 onClick={() => setActiveMega(activeMega === "company" ? null : "company")}
               >
@@ -636,7 +649,7 @@ export function Header() {
                 type="button"
                 className={cn(
                   "flex items-center gap-1 px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest transition-colors whitespace-nowrap",
-                  activeMega === "learning" ? "text-black bg-gray-100" : "text-gray-500 hover:text-black hover:bg-gray-50"
+                  activeMega === "learning" ? "text-white bg-white/10" : "text-slate-300 hover:text-white hover:bg-white/5"
                 )}
                 onClick={() => setActiveMega(activeMega === "learning" ? null : "learning")}
               >
@@ -650,12 +663,12 @@ export function Header() {
             </div>
 
             {/* Resources */}
-            <Link href="/resources" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-gray-500 hover:text-black hover:bg-gray-50 transition-colors whitespace-nowrap">
+            <Link href="/resources" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
               Resources
             </Link>
 
             {/* Consultancy */}
-            <Link href="/#consultancy" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-gray-500 hover:text-black hover:bg-gray-50 transition-colors whitespace-nowrap">
+            <Link href="/#consultancy" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
               Consultancy
             </Link>
 
@@ -668,7 +681,7 @@ export function Header() {
             </div>
             <button
               type="button"
-              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-xl hover:bg-gray-100 transition-colors"
+              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-xl hover:bg-white/10 text-white transition-colors"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
