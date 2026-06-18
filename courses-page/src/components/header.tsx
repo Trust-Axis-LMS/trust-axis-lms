@@ -137,13 +137,6 @@ const megaMenuData: MainCategory[] = [
     label: "Courses by Vendor",
     subcategories: [
       {
-        id: "Trust Axis Group",
-        label: "Trust Axis Group",
-        courses: [
-          { title: "SailPoint IIQ Implementation", slug: "sailpoint-iiq" }
-        ]
-      },
-      {
         id: "ec-council",
         label: "EC Council",
         courses: [

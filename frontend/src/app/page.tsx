@@ -33,9 +33,13 @@ import {
   HeartHandshake,
   BookOpen,
   ChevronDown,
-  UserCircle
+  UserCircle,
+  ShieldCheck,
+  Cpu,
+  Landmark,
+  Leaf
 } from "lucide-react";
-import { consultancies } from "@/lib/consultancy-data";
+
 
 // ─── Icon Map ─────────────────────────────────────────────────────────────────
 const iconMap: Record<string, React.ElementType> = {
@@ -133,9 +137,6 @@ export default function Home() {
   const statsRef = useRef<HTMLDivElement>(null);
   const [activeGraph, setActiveGraph] = useState<"maturity" | "risk">("maturity");
 
-  // For the modular consulting offerings section
-  const [activeConsultancyId, setActiveConsultancyId] = useState(consultancies[0].id);
-  const activeConsultancy = consultancies.find((c) => c.id === activeConsultancyId) || consultancies[0];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -170,10 +171,10 @@ export default function Home() {
             <div className="absolute inset-0 bg-slate-950/40"></div>
           </div>
 
-          <div className="container relative z-10 px-0 md:px-6 max-w-[1400px] mx-auto w-full h-full -mt-2 md:-mt-4 lg:-mt-6">
+          <div className="container relative z-10 px-0 md:px-6 max-w-[1400px] mx-auto w-full h-full pt-6 md:pt-8">
             
             {/* ─── Technical Frame ─── */}
-            <div className="bg-slate-950/40 backdrop-blur-md border border-white/10 shadow-2xl flex flex-col lg:flex-row min-h-[560px]">
+            <div className="relative bg-slate-950/40 backdrop-blur-md border border-white/10 shadow-2xl flex flex-col lg:flex-row min-h-[560px]">
               
               {/* ─── LEFT PANEL: Main Display ─── */}
               <div className="flex-1 p-8 md:p-10 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
@@ -182,7 +183,7 @@ export default function Home() {
 
                   {/* Headline */}
                   <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-white tracking-tight leading-[1.05]">
-                    Building Digital Trust <br className="hidden xl:block" /> Through Cybersecurity, AI, <br className="hidden xl:block" /> & Practical Learning
+                    Trusted Advisors <br className="hidden xl:block" /> for a Complex <br className="hidden xl:block" /> Digital World
                   </h1>
 
                   {/* Primary Statement */}
@@ -249,34 +250,34 @@ export default function Home() {
 
               </div>
 
-            </div>
-          </div>
+              {/* Scroll Down — sits at bottom-centre of the frame, half overhanging */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20">
+                <button
+                  onClick={() => statsRef.current?.scrollIntoView({ behavior: "smooth" })}
+                  className="animate-glow-border px-4 py-2 rounded-full border border-white/20 flex items-center gap-2 bg-slate-950/70 backdrop-blur-md text-[10px] uppercase tracking-widest font-mono text-white/70 hover:text-white transition-all cursor-pointer"
+                  aria-label="Scroll down to stats"
+                >
+                  <span>Scroll Down</span>
+                  <ChevronDown className="w-3.5 h-3.5" />
+                </button>
+                <style dangerouslySetInnerHTML={{__html: `
+                  @keyframes border-glow {
+                    0%, 100% {
+                      box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+                      border-color: rgba(255, 255, 255, 0.15);
+                    }
+                    50% {
+                      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+                      border-color: rgba(59, 130, 246, 0.4);
+                    }
+                  }
+                  .animate-glow-border {
+                    animation: border-glow 4s infinite ease-in-out;
+                  }
+                `}} />
+              </div>
 
-          {/* Scroll Down Indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
-            <button
-              onClick={() => statsRef.current?.scrollIntoView({ behavior: "smooth" })}
-              className="animate-glow-border px-4 py-2 rounded-full border border-white/20 flex items-center gap-2 bg-slate-950/30 backdrop-blur-md text-[10px] uppercase tracking-widest font-mono text-white/70 hover:text-white transition-all cursor-pointer"
-              aria-label="Scroll down to stats"
-            >
-              <span>Scroll Down</span>
-              <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-            <style dangerouslySetInnerHTML={{__html: `
-              @keyframes border-glow {
-                0%, 100% {
-                  box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
-                  border-color: rgba(255, 255, 255, 0.15);
-                }
-                50% {
-                  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-                  border-color: rgba(59, 130, 246, 0.4);
-                }
-              }
-              .animate-glow-border {
-                animation: border-glow 4s infinite ease-in-out;
-              }
-            `}} />
+            </div>
           </div>
         </section>
 
@@ -548,392 +549,138 @@ export default function Home() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════════
-            3. WHAT WE DO — Advisory Focus Areas
+            advisory / consulting sections removed per request
         ════════════════════════════════════════════════════════════════════ */}
-        <section id="services" className="bg-[#F9FAFB] py-16 md:py-24 border-b border-[#F4F4F5] scroll-mt-[90px]">
+        <div id="services" className="scroll-mt-[90px]" />
+
+
+        {/* ════════════════════════════════════════════════════════════════════
+            5. CORE CONSULTING — Practice Areas Grid (4 Light Gradient Tiles)
+        ════════════════════════════════════════════════════════════════════ */}
+        <section id="consultancy" className="bg-white py-14 md:py-20 border-b border-[#F4F4F5] scroll-mt-[90px]">
           <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <div className="space-y-6">
-                <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF]">Our Advisory Focus</p>
-                <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight leading-[1.15]">
-                  Cybersecurity, AI & Digital Risk Advisory Services
-                </h2>
-                <div className="space-y-3 text-[#6C757D] leading-relaxed text-sm md:text-base">
-                  <p>
-                    In today's connected world, cybersecurity, AI, privacy, and cloud risks are deeply intertwined. A single weak point — a misconfigured cloud service, ungoverned AI tool, or unassessed vendor — can cascade into a serious business disruption.
-                  </p>
-                  <p className="font-medium text-[#212529]">
-                    We help organizations connect these dots: turning fragmented digital risk concerns into a structured, practical, and business-aligned action plan.
-                  </p>
-                </div>
-                <div className="pt-2">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 px-6 h-12 rounded-sm bg-[#212529] text-white font-bold text-xs uppercase tracking-widest hover:bg-black transition-colors"
-                  >
-                    SPEAK TO A DIGITAL RISK ADVISOR <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                {focusAreas.map(({ icon: Icon, label, color }, i) => (
-                  <div
-                    key={i}
-                    className="group flex items-start gap-3 p-4 rounded-xl bg-white border-l-4 border border-[#E5E7EB] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
-                    style={{ borderLeftColor: color }}
-                  >
-                    <div
-                      className="flex-shrink-0 flex h-9 w-9 items-center justify-center rounded-lg mt-0.5"
-                      style={{ backgroundColor: `${color}18` }}
-                    >
-                      <Icon className="h-4 w-4" style={{ color }} />
-                    </div>
-                    <span className="text-xs font-semibold text-[#212529] leading-snug">{label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* ════════════════════════════════════════════════════════════════════
-            4. MODULAR CONSULTING OFFERINGS SECTION
-        ════════════════════════════════════════════════════════════════════ */}
-        <section id="offerings" className="py-16 md:py-24 border-b border-blue-100 relative overflow-hidden scroll-mt-[90px]" style={{ background: 'linear-gradient(160deg, #ffffff 0%, #f0f7ff 50%, #e8f2ff 100%)' }}>
-          {/* Subtle grid texture */}
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.4]" 
-               style={{ backgroundImage: 'linear-gradient(to right, #bfdbfe 1px, transparent 1px), linear-gradient(to bottom, #bfdbfe 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
-          {/* Soft blue glow orbs */}
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-blue-200/40 blur-[120px]" />
-            <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-blue-100/50 blur-[100px]" />
-          </div>
-
-          <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
-            <div className="text-center mb-10 md:mb-16">
-              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF] mb-3">Service Capabilities</p>
-              <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] tracking-tight">Our Consulting Offerings</h2>
-              <p className="mt-3 text-slate-500 text-sm md:text-base max-w-2xl mx-auto">
-                Explore the specific modular offerings we provide across our diverse practice areas to help you build resilience and trust.
-              </p>
-            </div>
-
-            <div className="flex flex-col lg:flex-row gap-0 rounded-2xl overflow-hidden border border-blue-200/60 shadow-lg shadow-blue-100/50">
-              {/* Left Sidebar: Category Navigator */}
-              <div className="lg:w-[280px] flex-shrink-0 bg-white/80 backdrop-blur-sm border-r border-blue-100">
-                <div className="p-4 border-b border-blue-100">
-                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">Practice Areas</p>
-                </div>
-                {consultancies.map((c, idx) => {
-                  const CIcon = iconMap[c.icon] ?? Shield;
-                  const isActive = activeConsultancyId === c.id;
-                  return (
-                    <button
-                      type="button"
-                      key={c.id}
-                      onClick={() => setActiveConsultancyId(c.id)}
-                      className={`w-full flex items-center gap-3 px-4 py-3.5 text-left transition-all duration-200 relative group ${
-                        isActive ? 'bg-blue-50/80' : 'hover:bg-blue-50/40'
-                      }`}
-                    >
-                      {/* Active indicator */}
-                      {isActive && (
-                        <div
-                          className="absolute left-0 top-0 bottom-0 w-[3px] rounded-r-full"
-                          style={{ background: c.color }}
-                        />
-                      )}
-                      <div
-                        className="flex-shrink-0 h-7 w-7 rounded-lg flex items-center justify-center"
-                        style={{ backgroundColor: isActive ? `${c.color}22` : 'transparent' }}
-                      >
-                        <CIcon
-                          className="h-3.5 w-3.5 transition-colors"
-                          style={{ color: isActive ? c.color : '#94a3b8' }}
-                        />
-                      </div>
-                      <span
-                        className={`text-[11px] font-semibold leading-snug transition-colors ${
-                          isActive ? 'text-slate-800' : 'text-slate-400 group-hover:text-slate-600'
-                        }`}
-                      >
-                        {c.title}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Right Panel: Offering Spotlight */}
-              <div className="flex-1 bg-white/60 backdrop-blur-sm flex flex-col">
-                {/* Category Hero Strip */}
-                <div
-                  className="px-8 py-7 border-b border-blue-100 flex items-center justify-between"
-                  style={{ background: `linear-gradient(90deg, ${activeConsultancy.color}08 0%, transparent 60%)` }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div
-                      className="h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: `${activeConsultancy.color}15`, border: `1px solid ${activeConsultancy.color}30` }}
-                    >
-                      {(() => {
-                        const Icon = iconMap[activeConsultancy.icon] ?? Shield;
-                        return <Icon className="h-6 w-6" style={{ color: activeConsultancy.color }} />;
-                      })()}
-                    </div>
-                    <div>
-                      <p
-                        className="text-[10px] font-bold uppercase tracking-[0.2em] mb-1"
-                        style={{ color: activeConsultancy.color }}
-                      >
-                        {activeConsultancy.category}
-                      </p>
-                      <h3 className="text-lg md:text-xl font-bold text-slate-800 leading-tight">{activeConsultancy.title}</h3>
-                    </div>
-                  </div>
-                  <Link
-                    href={`/consultancy/${activeConsultancy.slug}`}
-                    className="hidden md:inline-flex items-center gap-2 px-5 h-10 rounded-full text-xs font-bold uppercase tracking-wider transition-all hover:opacity-90 flex-shrink-0"
-                    style={{ background: activeConsultancy.color, color: '#fff' }}
-                  >
-                    Explore Full Service <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                </div>
-
-                {/* Offering Rows */}
-                <div className="flex-1 divide-y divide-blue-100/60">
-                  {activeConsultancy.offerings.slice(0, 3).map((offering, i) => {
-                    const OfferingIcon = iconMap[offering.icon] ?? Shield;
-                    return (
-                      <div
-                        key={i}
-                        className="group flex items-start gap-5 px-8 py-6 hover:bg-blue-50/40 transition-all duration-200 cursor-default"
-                      >
-                        {/* Number */}
-                        <span
-                          className="flex-shrink-0 text-2xl font-black tabular-nums leading-none mt-1 w-7 text-right"
-                          style={{ color: `${activeConsultancy.color}40` }}
-                        >
-                          {i + 1}
-                        </span>
-                        {/* Icon */}
-                        <div
-                          className="flex-shrink-0 h-9 w-9 rounded-lg flex items-center justify-center mt-0.5"
-                          style={{ background: `${activeConsultancy.color}12`, border: `1px solid ${activeConsultancy.color}25` }}
-                        >
-                          <OfferingIcon className="h-4 w-4" style={{ color: activeConsultancy.color }} />
-                        </div>
-                        {/* Content */}
-                        <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-bold text-slate-800 mb-1 leading-snug group-hover:text-slate-900 transition-colors">
-                            {offering.title}
-                          </h4>
-                          <p className="text-xs text-slate-500 leading-relaxed group-hover:text-slate-700 transition-colors">
-                            {offering.description}
-                          </p>
-                        </div>
-                        {/* Hover arrow */}
-                        <ArrowRight
-                          className="flex-shrink-0 h-4 w-4 mt-1 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-200"
-                          style={{ color: activeConsultancy.color }}
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Footer strip */}
-                <div className="px-8 py-4 border-t border-blue-100 flex items-center justify-between">
-                  <p className="text-[11px] text-slate-400">
-                    {activeConsultancy.offerings.length} total offerings in this practice
-                  </p>
-                  <Link
-                    href={`/consultancy/${activeConsultancy.slug}`}
-                    className="md:hidden inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
-                    style={{ color: activeConsultancy.color }}
-                  >
-                    Explore Service <ArrowRight className="h-3 w-3" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ════════════════════════════════════════════════════════════════════
-            5. CHALLENGES & OUTCOMES — Light Split
-        ════════════════════════════════════════════════════════════════════ */}
-        <section id="challenges" className="relative overflow-hidden scroll-mt-[90px]" style={{ background: 'linear-gradient(135deg, #f0f7ff 0%, #e8f3ff 40%, #eef5ff 100%)' }}>
-          {/* Top accent line */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/60 to-transparent" />
-          {/* Moving symmetric diagonal lines — very subtle */}
-          <div className="absolute inset-0 z-0 pointer-events-none bg-moving-lines" />
-          {/* Soft directional glow blobs */}
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="absolute top-1/4 left-0 w-[600px] h-[600px] rounded-full bg-blue-200/25 blur-[140px]" />
-            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-100/30 blur-[120px]" />
-          </div>
-
-          <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl py-16 md:py-24">
-            {/* Header */}
-            <div className="text-center mb-14 md:mb-20">
-              <div className="inline-flex items-center gap-2 mb-5">
-                <div className="h-px w-8 bg-[#007BFF]/50" />
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#007BFF]">From Risk to Resilience</p>
-                <div className="h-px w-8 bg-[#007BFF]/50" />
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-[#1a2744] tracking-tight">Challenges <span className="text-slate-300">&</span> Outcomes</h2>
-              <p className="mt-4 text-slate-500 text-sm md:text-base max-w-lg mx-auto">
-                What we typically see — and what we help change.
-              </p>
-            </div>
-
-            {/* Split layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-blue-100 shadow-xl shadow-blue-100/40">
-
-              {/* LEFT — Challenges (emphatic but not dominant) */}
-              <div className="relative p-8 md:p-10 bg-white">
-                {/* Subtle red left-edge glow */}
-                <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-full bg-gradient-to-b from-red-300/0 via-red-400/50 to-red-300/0" />
-
-                {/* Column header */}
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="h-10 w-10 rounded-xl bg-red-50 border border-red-200/70 flex items-center justify-center flex-shrink-0 shadow-sm shadow-red-100/60">
-                    <AlertTriangle className="h-5 w-5 text-red-500" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-red-500 mb-0.5">Before Advisory</p>
-                    <h3 className="text-lg font-bold text-slate-800">Common Challenges</h3>
-                  </div>
-                  <span className="flex-shrink-0 text-[10px] font-black tracking-[0.15em] text-red-400 border border-red-200 rounded-full px-2.5 py-1 select-none bg-red-50">01</span>
-                </div>
-
-                {/* Divider */}
-                <div className="h-px bg-red-100 mb-6" />
-
-                {/* Items */}
-                <ul className="space-y-0 divide-y divide-slate-100">
-                  {challengesList.map((item, i) => (
-                    <li key={i} className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0">
-                      <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-red-50 border border-red-200/60 flex items-center justify-center">
-                        <span className="text-red-500 text-[10px] font-black">✕</span>
-                      </div>
-                      <span className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-              </div>
-
-
-              {/* CENTER DIVIDER — Arrow */}
-              <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="h-8 w-px bg-gradient-to-b from-transparent via-emerald-300/50 to-transparent" />
-                  <div className="h-9 w-9 rounded-full flex items-center justify-center shadow-lg shadow-emerald-200/60" style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}>
-                    <ArrowRight className="h-4 w-4 text-white" />
-                  </div>
-                  <div className="h-8 w-px bg-gradient-to-b from-transparent via-emerald-300/50 to-transparent" />
-                </div>
-              </div>
-
-              {/* RIGHT — Outcomes (prominent, clean white with emerald accents) */}
-              <div
-                className="relative p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-emerald-100 bg-white"
-              >
-                {/* Subtle emerald left-edge glow */}
-                <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-full bg-gradient-to-b from-emerald-300/0 via-emerald-400/60 to-emerald-300/0" />
-
-                {/* Column header */}
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="h-11 w-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-emerald-200/60" style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}>
-                    <CheckCircle className="h-5 w-5 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-0.5">After Advisory</p>
-                    <h3 className="text-lg font-bold text-slate-800">What You Gain</h3>
-                  </div>
-                  <span className="flex-shrink-0 text-[10px] font-black tracking-[0.15em] text-emerald-600 border border-emerald-200 rounded-full px-2.5 py-1 select-none bg-emerald-50">02</span>
-                </div>
-
-                {/* Divider */}
-                <div className="h-px bg-emerald-100 mb-6" />
-
-                {/* Items */}
-                <ul className="space-y-0 divide-y divide-emerald-50">
-                  {outcomesList.map((item, i) => (
-                    <li key={i} className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0">
-                      <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-emerald-50 border border-emerald-200/60 flex items-center justify-center">
-                        <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
-                      </div>
-                      <span className="text-sm text-slate-700 font-medium leading-relaxed group-hover:text-slate-900 transition-colors">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-        {/* ════════════════════════════════════════════════════════════════════
-            6. CORE CONSULTING — Practice Areas Grid
-        ════════════════════════════════════════════════════════════════════ */}
-        <section id="consultancy" className="bg-white py-16 md:py-24 border-b border-[#F4F4F5] scroll-mt-[90px]">
-          <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-            <div className="text-center mb-12 md:mb-16">
+            <div className="text-center mb-10 md:mb-14">
               <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF] mb-3">Our Practice Areas</p>
               <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight">Core Consulting Services</h2>
               <p className="mt-3 text-[#6C757D] text-sm md:text-base max-w-2xl mx-auto">
-                Explore our specialist advisory areas to find the right fit for your organization's cybersecurity, AI, and digital risk priorities.
+                Explore our specialist advisory areas to find the right fit for your organisation&apos;s needs.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-              {consultancies.map((c) => {
-                const Icon = iconMap[c.icon] ?? Shield;
-                return (
-                  <Link
-                    key={c.slug}
-                    href={`/consultancy/${c.slug}`}
-                    className="group relative flex flex-col bg-[#F9FAFB] border border-[#E5E7EB] rounded-2xl p-6 md:p-7 hover:border-transparent hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-                  >
-                    <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl"
-                      style={{ background: c.color }}
-                    />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm">
-                        <Icon className="h-6 w-6" style={{ color: c.color }} />
-                      </div>
-                      <span
-                        className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
-                        style={{ color: c.color, backgroundColor: `${c.color}15` }}
-                      >
-                        {c.category}
-                      </span>
-                    </div>
+              {/* Tile 1: Cybersecurity & Data Privacy */}
+              <Link
+                href="/consultancy/cybersecurity-advisory"
+                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-blue-300 rounded-[2rem] hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300"
+              >
+                <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
+                  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 to-transparent mix-blend-multiply"></div>
+                  <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <ShieldCheck className="h-6 w-6" strokeWidth={2} />
+                  </div>
+                </div>
+                
+                <div className="px-2 md:px-4 flex flex-col flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
+                    Cybersecurity & Data Privacy
+                  </h3>
+                  <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
+                    Cyber governance, risk management, controls assessment, AI risk, privacy, and GRC advisory.
+                  </p>
+                  
+                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-colors duration-300">
+                    <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </Link>
 
-                    <h3 className="text-lg font-bold text-[#212529] leading-tight mb-3 group-hover:text-[#007BFF] transition-colors">
-                      {c.heading || c.title}
-                    </h3>
-                    <p className="text-sm text-[#6C757D] leading-relaxed flex-1">{c.excerpt}</p>
+              {/* Tile 2: Digital Transformation */}
+              <Link
+                href="/consultancy/cloud-technology-risk"
+                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-sky-300 rounded-[2rem] hover:shadow-2xl hover:shadow-sky-900/10 transition-all duration-300"
+              >
+                <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
+                  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Digital Transformation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0ea5e9]/40 to-transparent mix-blend-multiply"></div>
+                  <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <Cpu className="h-6 w-6" strokeWidth={2} />
+                  </div>
+                </div>
+                
+                <div className="px-2 md:px-4 flex flex-col flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-sky-600 transition-colors duration-300">
+                    Digital Transformation
+                  </h3>
+                  <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
+                    Cloud migration, platform modernisation, technology risk, third-party risk management, and digital strategy advisory.
+                  </p>
+                  
+                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-sky-500 group-hover:border-sky-500 group-hover:text-white transition-colors duration-300">
+                    <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </Link>
 
-                    <div
-                      className="mt-5 inline-flex items-center justify-center gap-2 px-5 h-10 rounded-full text-xs font-bold uppercase tracking-widest transition-all group-hover:opacity-90 self-start"
-                      style={{ background: c.color, color: '#fff' }}
-                    >
-                      Explore Services
-                      <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
-                    </div>
-                  </Link>
-                );
-              })}
+              {/* Tile 3: Banking & Credit Card Services */}
+              <Link
+                href="/consultancy/fintech-strategic-services"
+                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-orange-300 rounded-[2rem] hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-300"
+              >
+                <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
+                  <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=800&q=80" alt="Banking" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#f97316]/40 to-transparent mix-blend-multiply"></div>
+                  <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <Landmark className="h-6 w-6" strokeWidth={2} />
+                  </div>
+                </div>
+                
+                <div className="px-2 md:px-4 flex flex-col flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors duration-300">
+                    Banking & Credit Card Services
+                  </h3>
+                  <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
+                    Strategic advisory across payments, open banking, digital transformation, lending, compliance, and credit card services.
+                  </p>
+                  
+                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-orange-500 group-hover:border-orange-500 group-hover:text-white transition-colors duration-300">
+                    <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </Link>
+
+              {/* Tile 4: ESG Advisory */}
+              <Link
+                href="/consultancy/esg-consulting-advisory"
+                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-emerald-300 rounded-[2rem] hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-300"
+              >
+                <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
+                  <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=800&q=80" alt="ESG" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#10b981]/40 to-transparent mix-blend-multiply"></div>
+                  <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <Leaf className="h-6 w-6" strokeWidth={2} />
+                  </div>
+                </div>
+                
+                <div className="px-2 md:px-4 flex flex-col flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-emerald-600 transition-colors duration-300">
+                    ESG Advisory
+                  </h3>
+                  <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
+                    Environmental, social, and governance strategies, measurable actions, and credible reporting frameworks for responsible growth.
+                  </p>
+                  
+                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-emerald-500 group-hover:border-emerald-500 group-hover:text-white transition-colors duration-300">
+                    <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </Link>
+
             </div>
           </div>
         </section>

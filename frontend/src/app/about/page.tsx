@@ -1,6 +1,5 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { Users } from "lucide-react";
 
 export const metadata = {
   title: "About Us — Trust Axis Consulting Group",
@@ -293,11 +292,13 @@ export default function AboutPage() {
           <div className="container mx-auto px-4 md:px-8 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-10 items-center">
 
-              {/* Photo placeholder */}
-              <div className="rounded-2xl border border-dashed border-[#94A3B8] bg-gradient-to-br from-[#F1F5F9] to-white h-[360px] flex flex-col items-center justify-center text-[#64748B] gap-3 p-8 text-center">
-                <Users className="h-12 w-12 text-[#94A3B8]" />
-                <p className="text-sm font-bold text-[#64748B]">Founder Photo Placeholder</p>
-                <p className="text-xs text-[#94A3B8]">Add professional headshot here</p>
+              {/* Founder Photo */}
+              <div className="rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-sm bg-[#F8F9FA] relative aspect-[4/5] w-full">
+                <img
+                  src="/about-headshot.jpeg"
+                  alt="Founder"
+                  className="absolute inset-0 w-full h-full object-cover scale-105 object-top"
+                />
               </div>
 
               {/* Bio */}

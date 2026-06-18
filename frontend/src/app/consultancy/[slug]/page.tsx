@@ -51,6 +51,7 @@ import {
   Scale as ScaleIcon,
   HelpCircle,
   MessageSquare,
+  CheckCircle,
 } from "lucide-react";
 
 // ─── Icon registry ────────────────────────────────────────────────────────────
@@ -64,6 +65,23 @@ const ICONS: Record<string, React.ElementType> = {
 };
 
 const getIcon = (name: string): React.ElementType => ICONS[name] ?? Shield;
+
+// ─── Challenges & Outcomes data ───────────────────────────────────────────────
+const challengesList = [
+  "No clear picture of where the biggest cyber and AI risks actually sit",
+  "AI and cloud tools adopted without proper risk assessment or governance",
+  "Vendor and third-party risks that are under-monitored or not assessed",
+  "Leadership lacking confidence to answer regulators or board questions",
+  "Compliance frameworks used as box-ticking rather than real protection",
+];
+
+const outcomesList = [
+  "A clear, prioritized view of your cyber, AI, and digital risk exposure",
+  "Practical recommendations that create real improvements, not just reports",
+  "Governance structures that make accountability clear across leadership",
+  "Readiness for audits, regulatory reviews, and board-level risk conversations",
+  "A structured improvement roadmap that builds maturity and resilience over time",
+];
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -444,6 +462,85 @@ function ConsultancyDetailsView({ slug }: { slug: string }) {
               ))}
             </div>
           )}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════════
+          FROM RISK TO RESILIENCE — Challenges & Outcomes
+      ═══════════════════════════════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #f0f7ff 0%, #e8f3ff 40%, #eef5ff 100%)' }}>
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/60 to-transparent" />
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-1/4 left-0 w-[600px] h-[600px] rounded-full bg-blue-200/25 blur-[140px]" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-100/30 blur-[120px]" />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl py-16 md:py-24">
+          <div className="text-center mb-14 md:mb-20">
+            <div className="inline-flex items-center gap-2 mb-5">
+              <div className="h-px w-8 bg-[#007BFF]/50" />
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#007BFF]">From Risk to Resilience</p>
+              <div className="h-px w-8 bg-[#007BFF]/50" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-[#1a2744] tracking-tight">Challenges <span className="text-slate-300">&amp;</span> Outcomes</h2>
+            <p className="mt-4 text-slate-500 text-sm md:text-base max-w-lg mx-auto">
+              What we typically see &mdash; and what we help change.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-blue-100 shadow-xl shadow-blue-100/40">
+            {/* LEFT — Challenges */}
+            <div className="relative p-8 md:p-10 bg-white">
+              <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-full bg-gradient-to-b from-red-300/0 via-red-400/50 to-red-300/0" />
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-10 w-10 rounded-xl bg-red-50 border border-red-200/70 flex items-center justify-center flex-shrink-0 shadow-sm shadow-red-100/60">
+                  <AlertTriangle className="h-5 w-5 text-red-500" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-red-500 mb-0.5">Before Advisory</p>
+                  <h3 className="text-lg font-bold text-slate-800">Common Challenges</h3>
+                </div>
+                <span className="flex-shrink-0 text-[10px] font-black tracking-[0.15em] text-red-400 border border-red-200 rounded-full px-2.5 py-1 select-none bg-red-50">01</span>
+              </div>
+              <div className="h-px bg-red-100 mb-6" />
+              <ul className="space-y-0 divide-y divide-slate-100">
+                {challengesList.map((item, i) => (
+                  <li key={i} className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0">
+                    <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-red-50 border border-red-200/60 flex items-center justify-center">
+                      <span className="text-red-500 text-[10px] font-black">✕</span>
+                    </div>
+                    <span className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* RIGHT — Outcomes */}
+            <div className="relative p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-emerald-100 bg-white">
+              <div className="absolute left-0 top-8 bottom-8 w-[3px] rounded-full bg-gradient-to-b from-emerald-300/0 via-emerald-400/60 to-emerald-300/0" />
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-11 w-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md shadow-emerald-200/60" style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}>
+                  <CheckCircle className="h-5 w-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-0.5">After Advisory</p>
+                  <h3 className="text-lg font-bold text-slate-800">What You Gain</h3>
+                </div>
+                <span className="flex-shrink-0 text-[10px] font-black tracking-[0.15em] text-emerald-600 border border-emerald-200 rounded-full px-2.5 py-1 select-none bg-emerald-50">02</span>
+              </div>
+              <div className="h-px bg-emerald-100 mb-6" />
+              <ul className="space-y-0 divide-y divide-emerald-50">
+                {outcomesList.map((item, i) => (
+                  <li key={i} className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0">
+                    <div className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-md bg-emerald-50 border border-emerald-200/60 flex items-center justify-center">
+                      <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                    </div>
+                    <span className="text-sm text-slate-700 font-medium leading-relaxed group-hover:text-slate-900 transition-colors">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

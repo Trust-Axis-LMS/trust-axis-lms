@@ -11,6 +11,7 @@ import { courses, categories } from "@/lib/courses-data";
 import { getCourseCategoryMeta } from "@/lib/course-category-meta";
 import { cn } from "@/lib/utils";
 import { MAIN_SITE_URL } from "@/lib/url";
+import { PixelAnimation } from "@/components/ui/pixel-animation";
 
 const domainCategories = categories.filter((c) => c !== "All");
 
@@ -92,8 +93,16 @@ export default function CoursesPage() {
 
         {/* ── Hero ──────────────────────────────────────── */}
         <section className="relative overflow-hidden border-b border-border bg-[radial-gradient(circle_at_top_right,rgba(0,123,255,0.12),transparent_32%),linear-gradient(180deg,rgba(0,123,255,0.07)_0%,rgba(255,255,255,1)_48%)]">
-          <div className="absolute inset-x-0 top-0 h-px bg-primary/10" />
-          <div className="container mx-auto px-4 md:px-8">
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-multiply">
+            <PixelAnimation 
+              pixelGap={10} 
+              maxPixelSize={5}
+              animationSpeed={0.4}
+              animationDuration={400}
+            />
+          </div>
+          <div className="absolute inset-x-0 top-0 h-px bg-primary/10 z-10" />
+          <div className="container mx-auto px-4 md:px-8 relative z-10">
             <div className="grid gap-10 py-14 md:pb-16 md:pt-[4.5rem] lg:grid-cols-[minmax(0,780px)_minmax(320px,430px)] lg:items-center lg:gap-12 lg:pb-[4.5rem] lg:pt-20">
               <div className="max-w-[760px]">
                 <Badge
