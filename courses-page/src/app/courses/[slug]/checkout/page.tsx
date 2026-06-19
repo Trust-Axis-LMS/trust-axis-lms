@@ -12,7 +12,7 @@ interface Props {
 
 export async function generateStaticParams() {
   const courses = await prisma.course.findMany({ select: { slug: true } });
-  return courses.map((course) => ({
+  return courses.map((course: { slug: string }) => ({
     slug: course.slug,
   }));
 }
