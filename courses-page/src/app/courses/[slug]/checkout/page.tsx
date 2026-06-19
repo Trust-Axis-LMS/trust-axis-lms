@@ -10,12 +10,7 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const courses = await prisma.course.findMany({ select: { slug: true } });
-  return courses.map((course: { slug: string }) => ({
-    slug: course.slug,
-  }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
