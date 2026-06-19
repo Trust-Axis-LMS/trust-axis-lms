@@ -11,7 +11,7 @@ export async function GET() {
     const domainMap: Record<string, { title: string; slug: string }[]> = {};
     const allCourses: { title: string; slug: string }[] = [];
 
-    dbCourses.forEach((c) => {
+    dbCourses.forEach((c: { title: string; slug: string; vendor: string | null; category: string | null }) => {
       const courseItem = { title: c.title, slug: c.slug };
       allCourses.push(courseItem);
 
