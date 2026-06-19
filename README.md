@@ -22,7 +22,12 @@ The TrustACG platform is built to support three primary pillars:
 
 ### Subdomain Strategy
 - **Primary Domain (`trustacg.com`)**: Landing page, Resources, Consultations, and About Us sections.
-- **Training Subdomain (`training.trustacg.com`)**: Course catalog and full Thinkific LMS integration.
+- **Training Subdomain (`train.trustacg.com`)**: Course catalog and course detail pages.
+
+### Vercel Projects
+- **Landing project**: deploy from `frontend`, assigned to `trustacg.com`.
+- **Courses project**: deploy from `courses-page`, assigned to `train.trustacg.com`.
+- Set `NEXT_PUBLIC_MAIN_SITE_URL=https://trustacg.com` and `NEXT_PUBLIC_COURSES_SITE_URL=https://train.trustacg.com` in both Vercel projects so cross-domain links and auth calls resolve consistently.
 
 ### Page Hierarchy
 - **Landing Page**: A high-impact hub featuring hero sections, course overviews, and consultancy summaries.

@@ -2,6 +2,15 @@
 
 This is a Next.js App Router frontend for the Trust Axis course catalog and course detail pages.
 
+Production domain: `https://train.trustacg.com`
+
+The landing site runs separately from `frontend` at `https://trustacg.com`. Keep these Vercel environment variables set in the courses project:
+
+```bash
+NEXT_PUBLIC_MAIN_SITE_URL=https://trustacg.com
+NEXT_PUBLIC_COURSES_SITE_URL=https://train.trustacg.com
+```
+
 ## Scripts
 
 ```bash
