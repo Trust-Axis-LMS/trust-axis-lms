@@ -1,0 +1,4504 @@
+{
+  "courses": [
+    {
+      "name": "CEH",
+      "modules": [
+        {
+          "title": "Module 2: Footprinting and Reconnaissance",
+          "topics": [
+            "Footprinting Concepts",
+            "Footprinting through Search Engines",
+            "Footprinting through Internet Research Services",
+            "Footprinting through Social Networking Sites",
+            "Whois Footprinting",
+            "DNS Footprinting",
+            "Network and Email Footprinting",
+            "Footprinting through Social Engineering",
+            "Footprinting Tasks using Advanced Tools and AI",
+            "Footprinting Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 3: Scanning Networks",
+          "topics": [
+            "Network Scanning Concepts",
+            "Scanning Tools",
+            "Host Discovery",
+            "Port and Service Discovery",
+            "OS Discovery (Banner Grabbing/OS Fingerprinting)",
+            "Scanning Beyond IDS and Firewall",
+            "Source Port Manipulation",
+            "Network Scanning Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 4: Enumeration",
+          "topics": [
+            "Enumeration Concepts",
+            "NetBIOS Enumeration",
+            "SNMP Enumeration",
+            "LDAP Enumeration",
+            "NTP and NFS Enumeration",
+            "SMTP and DNS Enumeration",
+            "Other Enumeration Techniques",
+            "Enumeration Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 5: Vulnerability Analysis",
+          "topics": [
+            "Vulnerability Assessment Concepts",
+            "Vulnerability Scoring Systems and Databases",
+            "Vulnerability-Management Life Cycle",
+            "Vulnerability Research",
+            "Vulnerability Scanning and Analysis",
+            "Vulnerability Assessment Tools",
+            "Vulnerability Assessment Reports"
+          ]
+        },
+        {
+          "title": "Module 6: System Hacking",
+          "topics": [
+            "Gaining Access",
+            "Escalating Privileges",
+            "Maintaining Access",
+            "Clearing Logs"
+          ]
+        },
+        {
+          "title": "Module 7: Malware Threats",
+          "topics": [
+            "Malware Concepts",
+            "APT Concepts",
+            "Trojan Concepts",
+            "Viruses and Worms",
+            "Fileless Malware Concepts"
+          ]
+        }
+      ]
+    },
+    {
+      "name": " AI",
+      "modules": [
+        {
+          "title": "Module 8: Sniffing",
+          "topics": [
+            "Sniffing Concepts",
+            "Sniffing Technique",
+            "Sniffing Tools",
+            "Sniffing Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 9: Social Engineering",
+          "topics": [
+            "Social Engineering Concepts",
+            "Human-based Social Engineering Techniques",
+            "Computer-based Social Engineering Techniques",
+            "Mobile-based Social Engineering Techniques",
+            "Social Engineering Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 10: Denial-of-Service",
+          "topics": [
+            "DoS/DDoS Concepts",
+            "Botnets",
+            "DDoS Case Study",
+            "DoS/DDoS Attack Techniques",
+            "DoS/DDoS Attack Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 11: Session Hijacking",
+          "topics": [
+            "Session Hijacking Concepts",
+            "Application-Level Session Hijacking",
+            "Network-Level Session Hijacking",
+            "Session Hijacking Tools",
+            "Session Hijacking Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 12: Evading IDS, Firewalls, and Honeypots",
+          "topics": [
+            "Intrusion Detection/Prevention System (IDS/IPS) Concepts",
+            "Firewall Concepts",
+            "IDS, IPS, and Firewall Solutions",
+            "Evading IDS/Firewalls",
+            "Evading NAC and Endpoint Security",
+            "IDS/Firewall Evading Tools",
+            "Honeypot Concepts",
+            "IDS/Firewall Evasion Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 13: Hacking Web Servers",
+          "topics": [
+            "Web Server Concepts",
+            "Web Server Attacks",
+            "Web Server Attack Methodology",
+            "Web Server Attack Countermeasures",
+            "Patch Management"
+          ]
+        },
+        {
+          "title": "Module 14: Hacking Web Applications",
+          "topics": [
+            "Web Application Concepts",
+            "Web Application Threats",
+            "Web Application Hacking Methodology",
+            "Web API and Webhooks",
+            "Web Application Security"
+          ]
+        },
+        {
+          "title": "Module 15: SQL Injections",
+          "topics": [
+            "SQL Injection Concepts",
+            "Types of SQL Injection",
+            "SQL Injection Methodology",
+            "Evasion Techniques",
+            "SQL Injection Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 16: Hacking Wireless Networks",
+          "topics": [
+            "Wireless Concepts",
+            "Wireless Encryption",
+            "Wireless Threats",
+            "Wireless Hacking Methodology",
+            "Wireless Attack Countermeasures"
+          ]
+        },
+        {
+          "title": "Module 17: Hacking Mobile Platforms",
+          "topics": [
+            "Mobile Platform Attack Vectors",
+            "Hacking Android OS",
+            "Hacking iOS",
+            "Mobile Device Management",
+            "Mobile Security Guidelines",
+            "Mobile Security Tools"
+          ]
+        },
+        {
+          "title": "Module 18: IoT Hacking & OT Hacking",
+          "topics": [
+            "IoT Hacking",
+            "IoT Concepts and Attacks",
+            "IoT Hacking Methodology",
+            "OT Hacking"
+          ]
+        },
+        {
+          "title": "Module 19: Cloud Computing",
+          "topics": [
+            "Cloud Computing Concepts",
+            "Container Technology",
+            "Serverless Computing",
+            "Cloud Hacking",
+            "Cloud Hacking Methodology",
+            "AWS Hacking",
+            "Microsoft Azure Hacking",
+            "Google Cloud Hacking",
+            "Container Hacking",
+            "Cloud Security"
+          ]
+        },
+        {
+          "title": "Module 20: Cryptography",
+          "topics": [
+            "Cryptography Concepts and Encryption Algorithms",
+            "Applications of Cryptography",
+            "Cryptanalysis",
+            "Cryptography Attack Countermeasures"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CND",
+      "modules": [
+        {
+          "title": "Module 01: Network Attacks and Defense Strategies: This module introduces you to",
+          "topics": []
+        },
+        {
+          "title": "Module 02: Administrative Network Security: It involves developing or updating",
+          "topics": []
+        },
+        {
+          "title": "Module 03: Technical Network Security: Implementing authentication and protection",
+          "topics": []
+        },
+        {
+          "title": "Module 04: Network Perimeter Security: Implementation and management of",
+          "topics": []
+        },
+        {
+          "title": "Module 05: Endpoint Security-Windows Systems: Security of end-user devices and",
+          "topics": []
+        },
+        {
+          "title": "Module 06: Endpoint Security-Linux Systems: Securing entry points or end-user",
+          "topics": []
+        },
+        {
+          "title": "Module 07: Endpoint Security- Mobile Devices: Securing entry points or end-user",
+          "topics": []
+        },
+        {
+          "title": "Module 08: Endpoint Security-IoT Devices: Fundamentals of IoT, IoT threats and",
+          "topics": []
+        },
+        {
+          "title": "Module 09: Administrative Application Security: Understanding the methodologies of",
+          "topics": []
+        },
+        {
+          "title": "Module 10: Data Security: Implementing policies to safeguard data from",
+          "topics": []
+        },
+        {
+          "title": "Module 11: Enterprise Virtual Network Security: In-depth understanding of",
+          "topics": []
+        },
+        {
+          "title": "Module 12: Enterprise Cloud Network Security: Introduction to cloud",
+          "topics": []
+        },
+        {
+          "title": "Module 13: Enterprise Wireless Network Security: Understanding of wireless",
+          "topics": []
+        },
+        {
+          "title": "Module 14: Network Traffic Monitoring and Analysis: Analysis and monitoring of logs",
+          "topics": []
+        },
+        {
+          "title": "Module 15: Network Logs Monitoring and Analysis: Analyzing the events generated",
+          "topics": []
+        },
+        {
+          "title": "Module 16: Incident Response and Forensic Investigations: Understanding of",
+          "topics": []
+        },
+        {
+          "title": "Module 17: Business Continuity and Disaster Recovery: Understanding the",
+          "topics": []
+        },
+        {
+          "title": "Module 18: Risk Anticipation with Risk Management: Risk management process,",
+          "topics": []
+        },
+        {
+          "title": "Module 19: Threat Assessment with Attack Surface Analysis: Analyzing the threats",
+          "topics": []
+        },
+        {
+          "title": "Module 20: Threat Prediction with Cyber Threat Intelligence: Developing a proactive",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "name": " CIH",
+      "modules": []
+    },
+    {
+      "name": "CPENT",
+      "modules": []
+    },
+    {
+      "name": "CISSP",
+      "modules": [
+        {
+          "title": "Domain 2: Asset Security",
+          "topics": [
+            "2.1 – Identify and classify information and assets",
+            "Data classification",
+            "Asset Classification",
+            "2.2 – Establish information and asset handling requirements",
+            "2.3 – Provision information and assets securely",
+            "Information and asset ownership",
+            "Asset inventory (e.g., tangible, intangible)",
+            "Asset management",
+            "2.4 – Manage data lifecycle",
+            "Data roles (i.e., owners, controllers, custodians, processors,",
+            "Data collection",
+            "Data location",
+            "Data maintenance",
+            "Data retention",
+            "Data remanence",
+            "Data destruction",
+            "2.5 – Ensure appropriate asset retention (e.g., End of Life (EOL), End of",
+            "2.6 – Determine data security controls and compliance requirements",
+            "Data states (e.g., in use, in transit, at rest)",
+            "Scoping and tailoring",
+            "Standards selection",
+            "Data protection methods (e.g., Digital Rights Management (DRM),"
+          ]
+        },
+        {
+          "title": "Domain 3: Security Architecture and Engineering",
+          "topics": [
+            "3.1 – Research, implement and manage engineering processes using",
+            "Threat modeling",
+            "Least privilege",
+            "Defense in depth",
+            "Secure defaults",
+            "Fail securely",
+            "Segregation of Duties (SoD)",
+            "Keep it simple and small",
+            "Zero trust or trust but verify",
+            "Privacy by design",
+            "Shared responsibility",
+            "Secure access service edge",
+            "3.2 – Understand the fundamental concepts of security models (e.g.,",
+            "3.3 – Select controls based upon systems security requirements",
+            "3.4 – Understand security capabilities of Information Systems (IS) (e.g.,",
+            "3.5 – Assess and mitigate the vulnerabilities of security architectures,",
+            "Client-based systems",
+            "Server-based systems",
+            "Database systems",
+            "Cryptographic systems",
+            "Industrial Control Systems (ICS)",
+            "Cloud-based systems (e.g., Software as a Service (SaaS),",
+            "Distributed systems",
+            "Internet of Things (IoT)",
+            "Microservices (e.g., application programming interface (API))",
+            "Containerization",
+            "Serverless",
+            "Embedded systems",
+            "High-Performance Computing systems",
+            "Edge computing systems",
+            "Virtualized systems",
+            "3.6 – Select and determine cryptographic solutions",
+            "Cryptographic life cycle (e.g., keys, algorithm selection)",
+            "Cryptographic methods (e.g., symmetric, asymmetric, elliptic curves,",
+            "Public key infrastructure (PKI) (e.g., quantum key distribution)",
+            "3.7 – Understand methods of cryptanalytic attacks",
+            "Brute force",
+            "Ciphertext only",
+            "Known plaintext",
+            "Frequency analysis",
+            "Chosen ciphertext",
+            "Implementation attacks",
+            "Side-channel",
+            "Fault injection",
+            "Timing",
+            "Man-in-the-Middle (MITM)",
+            "Pass the hash",
+            "Kerberos exploitation",
+            "Ransomware",
+            "3.8 – Apply security principles to site and facility design",
+            "3.9 – Design site and facility security controls",
+            "Wiring closets/intermediate distribution facilities",
+            "Server rooms/data centers",
+            "Media storage facilities",
+            "Evidence storage",
+            "Restricted and work area security",
+            "Utilities and Heating, Ventilation, and Air Conditioning (HVAC)",
+            "Environmental issues (e.g., natural disasters, man-made)",
+            "Fire prevention, detection, and suppression",
+            "Power (e.g., redundant, backup)",
+            "3.10 – Manage the information system lifecycle",
+            "Stakeholders needs and requirements",
+            "Requirements analysis",
+            "Architectural design",
+            "Development /implementation",
+            "Integration",
+            "Verification and validation",
+            "Transition/deployment",
+            "Operations and maintenance/sustainment",
+            "Retirement/disposal"
+          ]
+        },
+        {
+          "title": "Domain 4: Communication and Network Security",
+          "topics": [
+            "4.1 – Apply secure design principles in network architectures",
+            "Open System Interconnection (OSI) and Transmission Control",
+            "Internet Protocol (IP) version 4 and 6 (IPv6) (e.g., unicast, broadcast,",
+            "Secure protocols (e.g., Internet Protocol Security (IPSec), Secure Shell",
+            "Implications of multilayer protocols",
+            "Converged protocols (e.g., Internet Small Computer Systems Interface",
+            "Transport architecture (e.g., topology, data/control/management plane,",
+            "Performance metrics (e.g., bandwidth, latency, jitter, throughput, signal-",
+            "Traffic flows (e.g., north-south, east-west)",
+            "Physical segmentation (e.g., in-band, out-of-band, air-gapped)",
+            "Logical segmentation (e.g., virtual local area networks (VLANs), virtual",
+            "Micro-segmentation (e.g., network overlays/encapsulation; distributed",
+            "Edge networks (e.g., ingress/egress, peering)",
+            "Wireless networks (e.g., Bluetooth, Wi-Fi, Zigbee, satellite)",
+            "Cellular/mobile networks (e.g., 4G, 5G)",
+            "Content distribution networks (CDN)",
+            "Software defined networks (SDN), (e.g., application programming",
+            "Virtual Private Cloud (VPC)",
+            "Monitoring and management (e.g., network observability, traffic",
+            "4.2 – Secure network components",
+            "Operation of infrastructure (e.g., redundant power, warranty, support)",
+            "Transmission media (e.g., physical security of media, signal",
+            "Network Access Control (NAC) systems (e.g., physical, and virtual",
+            "Endpoint security (e.g., host-based)",
+            "4.3 – Implement secure communication channels according to design",
+            "Voice, video, and collaboration (e.g., conferencing, Zoom rooms)",
+            "Remote access (e.g., network administrative functions)",
+            "Data communications (e.g., backhaul networks, satellite)",
+            "Third-party connectivity (e.g., telecom providers, hardware support)"
+          ]
+        },
+        {
+          "title": "Domain 5: Identity and Access Management (IAM)",
+          "topics": [
+            "5.1 – Control physical and logical access to assets",
+            "Information",
+            "Systems",
+            "Devices",
+            "Facilities",
+            "Applications",
+            "Services",
+            "5.2 – Design identification and authentication strategy (e.g., people,",
+            "Groups and Roles",
+            "Authentication, Authorization and Accounting (AAA) (e.g., multi-factor",
+            "Session management",
+            "Registration, proofing, and establishment of identity",
+            "Federated Identity Management (FIM)",
+            "Credential management systems (e.g., Password vault)",
+            "Single sign-on (SSO)",
+            "Just-In-Time",
+            "5.3 – Federated identity with a third-party service",
+            "On-premise",
+            "Cloud",
+            "Hybrid",
+            "5.4 – Implement and manage authorization mechanisms",
+            "Role-based access control (RBAC)",
+            "Rule based access control",
+            "Mandatory access control (MAC)",
+            "Discretionary access control (DAC)",
+            "Attribute-based access control (ABAC)",
+            "Risk based access control",
+            "Access policy enforcement (e.g., policy decision point, policy",
+            "5.5 – Manage the identity and access provisioning lifecycle",
+            "Account access review (e.g., user, system, service)",
+            "Provisioning and deprovisioning (e.g., on /off boarding and transfers)",
+            "Role definition and transition (e.g., people assigned to new roles)",
+            "Privilege escalation (e.g., use of sudo, auditing its use)",
+            "Service accounts management",
+            "5.6 – Implement authentication systems"
+          ]
+        },
+        {
+          "title": "Domain 6: Security Assessment and Testing",
+          "topics": [
+            "6.1 – Design and validate assessment, test, and audit strategies",
+            "Internal (e.g., within organization control)",
+            "External (e.g., outside organization control)",
+            "Third-party (e.g., outside of enterprise control)",
+            "Location (e.g., on-premises, cloud, hybrid)",
+            "6.2 – Conduct security control testing",
+            "Vulnerability assessment",
+            "Penetration testing (e.g., red, blue, and/or purple team exercises)",
+            "Log reviews",
+            "Synthetic transactions/benchmarks",
+            "Code review and testing",
+            "Misuse case testing",
+            "Coverage analysis",
+            "Interface testing (e.g., user interface, network interface, application",
+            "Breach attack simulations",
+            "Compliance checks",
+            "6.3 – Collect security process data (e.g., technical and administrative)",
+            "Account management",
+            "Management review and approval",
+            "Key performance and risk indicators",
+            "Backup verification data",
+            "Training and awareness",
+            "Disaster Recovery (DR) and Business Continuity (BC)",
+            "6.4 – Analyze test output and generate report",
+            "Remediation",
+            "Exception handling",
+            "Ethical disclosure",
+            "6.5 – Conduct or facilitate security audits",
+            "Internal (e.g., within organization control)",
+            "External (e.g., outside organization control)",
+            "Third-party (e.g., outside of enterprise control)",
+            "Location (e.g., on-premises, cloud, hybrid)"
+          ]
+        },
+        {
+          "title": "Domain 7: Security Operations",
+          "topics": [
+            "7.1 – Understand and comply with investigations",
+            "Evidence collection and handling",
+            "Reporting and documentation",
+            "Investigative techniques",
+            "Digital forensics tools, tactics, and procedures",
+            "Artifacts (e.g., data, computer, network, mobile device)",
+            "7.2 – Conduct logging and monitoring activities",
+            "Intrusion detection and prevention (IDPS)",
+            "Security Information and Event Management (SIEM)",
+            "Continuous monitoring and tuning",
+            "Egress monitoring",
+            "Log management",
+            "Threat intelligence (e.g., threat feeds, threat hunting)",
+            "User and Entity Behavior Analytics (UEBA)",
+            "7.3 – Perform Configuration Management (CM) (e.g., provisioning,",
+            "7.4 – Apply foundational security operations concepts",
+            "Need-to-know/least privilege",
+            "Separation of Duties (SoD) and responsibilities",
+            "Privileged account management",
+            "Job rotation",
+            "Service-level agreements (SLA)",
+            "7.5 – Apply resource protection",
+            "Media management",
+            "Media protection techniques",
+            "Data at rest/data in transit",
+            "7.6 – Conduct incident management",
+            "Detection",
+            "Response",
+            "Mitigation",
+            "Reporting",
+            "Recovery",
+            "Remediation",
+            "Lessons learned",
+            "7.7 – Operate and maintain detection and preventative measures",
+            "Firewalls (e.g., next generation, web application, network)",
+            "Intrusion Detection Systems (IDS) and Intrusion Prevention Systems",
+            "Whitelisting/blacklisting",
+            "Third-party provided security services",
+            "Sandboxing",
+            "Honeypots/honeynets",
+            "Anti-malware",
+            "Machine learning and Artificial Intelligence (AI) based tools",
+            "7.8 – Implement and support patch and vulnerability management",
+            "7.9 – Understand and participate in change management processes",
+            "7.10 – Implement recovery strategies",
+            "Backup storage strategies (e.g., cloud storage, onsite, offsite)",
+            "Recovery site strategies (e.g., cold vs. hot, resource capacity",
+            "Multiple processing sites",
+            "System resilience, high availability (HA), Quality of Service (QoS), and",
+            "7.11 – Implement Disaster Recovery (DR) processes",
+            "Response",
+            "Personnel",
+            "Communications (e.g., methods)",
+            "Assessment",
+            "Restoration",
+            "Training and awareness",
+            "Lessons learned",
+            "7.12 – Test Disaster Recovery Plans (DRP)",
+            "Read-through/tabletop",
+            "Walkthrough",
+            "Simulation",
+            "Parallel",
+            "Full interruption",
+            "Communications (e.g., stakeholders, test status, regulators)",
+            "7.13 – Participate in Business Continuity (BC) planning and exercises",
+            "7.14 – Implement and manage physical security",
+            "Perimeter security controls",
+            "Internal security controls",
+            "7.15 – Address personnel safety and security concerns",
+            "Travel",
+            "Security training and awareness (e.g., insider threat, social media",
+            "Emergency management",
+            "Duress"
+          ]
+        },
+        {
+          "title": "Domain 8: Software Development Security",
+          "topics": [
+            "8.1 – Understand and integrate security in the Software Development",
+            "Development methodologies (e.g., Agile, Waterfall, DevOps,",
+            "Maturity models (e.g., Capability Maturity Model (CMM), Software",
+            "Operation and maintenance",
+            "Change management",
+            "Integrated Product Team",
+            "8.2 – Identify and apply security controls in software development",
+            "Programming languages",
+            "Libraries",
+            "Tool sets",
+            "Integrated Development Environment",
+            "Runtime",
+            "Continuous Integration and Continuous Delivery (CI/CD)",
+            "Software configuration management (CM)",
+            "Code repositories",
+            "Application security testing (e.g., static application security testing",
+            "8.3 – Assess the effectiveness of software security",
+            "Auditing and logging of changes",
+            "Risk analysis and mitigation",
+            "8.4 – Assess security impact of acquired software",
+            "Commercial-off-the-shelf (COTS)",
+            "Open source",
+            "Third-party",
+            "Managed services (e.g., enterprise applications)",
+            "Cloud services (e.g., Software as a Service (SaaS), Infrastructure as a",
+            "8.5 – Define and apply secure coding guidelines and standards",
+            "Security weaknesses and vulnerabilities at the source-code level",
+            "Security of application programming interfaces (API)",
+            "Secure coding practices",
+            "Software-defined security"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CCSP",
+      "modules": [
+        {
+          "title": "Domain 2: Cloud Data Security (20%)",
+          "topics": [
+            "2.1 Describe Cloud Data Concepts",
+            "Cloud Data Lifecycle Phases",
+            "Data Dispersion",
+            "Data Flows",
+            "2.2 Design and Implement Cloud Data Storage Architectures",
+            "Storage Types",
+            "Threats to Storage Types",
+            "2.3 Design and Apply Data Security Technologies and Strategies",
+            "Encryption and Key Management",
+            "Hashing (e.g., data integrity, non-repudiation)",
+            "Data Obfuscation (e.g., masking, anonymization)",
+            "Tokenization",
+            "Data Loss Prevention (DLP)",
+            "Keys, Secrets and Certificates Management",
+            "2.4 Implement Data Discovery",
+            "Structured Data",
+            "Unstructured Data",
+            "Semi-Structured Data",
+            "Data Location",
+            "2.5 Plan and Implement Data Classification",
+            "Data Classification Policies",
+            "Data Mapping",
+            "Data Labelling and Tagging",
+            "2.6 Design and Implement Information Rights Management (IRM)",
+            "Objectives",
+            "Appropriate Tools",
+            "2.7 Plan and Implement Data Retention, Deletion and Archiving Policies",
+            "Data Retention Policies",
+            "Data Deletion Procedures and Mechanisms",
+            "Data Archiving Procedures and Mechanisms",
+            "Legal Hold",
+            "2.8 Design and Implement Auditability, Traceability and Accountability of",
+            "Definition of Event Sources and Requirement of Event Attributes",
+            "Logging, Storage and Analysis of Data Events",
+            "Chain of Custody and Non-repudiation",
+            "2.9 Comprehend Data Protection of AI and ML Data",
+            "Data Set and Model Privacy",
+            "Data Set and Model Security"
+          ]
+        },
+        {
+          "title": "Domain 3: Cloud Platform and Infrastructure Security (17%)",
+          "topics": [
+            "3.1 Comprehend Cloud Infrastructure Components",
+            "Physical Environment",
+            "Network and Communications",
+            "Compute",
+            "Virtualization",
+            "Storage",
+            "Management Plane",
+            "3.2 Design a Secure Data Center",
+            "Logical Design",
+            "Physical Design",
+            "Environmental Design",
+            "Design Resilience",
+            "3.3 Analyze Risks Associated with Cloud Infrastructure and Platforms",
+            "Risk Assessment",
+            "Cloud Vulnerabilities, Threats and Attacks",
+            "Risk Treatment Strategies",
+            "3.4 Plan and Implementation of Security Controls",
+            "Physical and Environmental Protection",
+            "System, Storage and Communication Protection",
+            "Identification, Authentication and Authorization in Cloud Environments",
+            "Audit Mechanisms",
+            "3.5 Plan Business Continuity (BC) and Disaster Recovery (DR)",
+            "Business Continuity (BC)/Disaster Recovery (DR) Strategy",
+            "Business Requirements",
+            "Creation, Implementation and Testing of Plan"
+          ]
+        },
+        {
+          "title": "Domain 4: Cloud Application Security (16%)",
+          "topics": [
+            "4.1 Advocate Training and Awareness for Application Security",
+            "Cloud Development Basics",
+            "Common Pitfalls",
+            "Common Cloud Vulnerabilities",
+            "4.2 Describe the Secure Software Development Life Cycle (SDLC)",
+            "Business Requirements",
+            "Phases and Methodologies (e.g., design, code, test, maintain, waterfall",
+            "4.3 Apply the Secure Software Development Life Cycle (SDLC)",
+            "Cloud-Specific Risks",
+            "Threat Modelling",
+            "Avoid Common Vulnerabilities During Development",
+            "Secure Coding",
+            "Software Configuration Management (CM) and Versioning",
+            "4.4 Apply Cloud Software Assurance and Validation",
+            "Functional and Non-functional Testing",
+            "Security Testing Methodologies",
+            "Quality Assurance (QA)",
+            "Abuse Case Testing",
+            "4.5 Use Verified Secure Software",
+            "Securing Application Programming Interfaces (API)",
+            "Supply-Chain Management",
+            "Third-Party Software Management",
+            "Validated Open-Source Software",
+            "4.6 Comprehend and Apply the Specifics of Cloud Application",
+            "Supplemental Security Components",
+            "Cryptography",
+            "Sandboxing",
+            "Application Virtualization and Orchestration",
+            "4.7 Design Appropriate Identity and Access Management (IAM) Solutions",
+            "Federated Identity",
+            "Identity Providers (IdP)",
+            "Single Sign-On (SSO)",
+            "Multi-Factor Authentication (MFA)",
+            "Cloud Access Security Broker (CASB)",
+            "Secrets, Key, and Certificate Management"
+          ]
+        },
+        {
+          "title": "Domain 5: Cloud Security Operations (17%)",
+          "topics": [
+            "5.1 Build and Implement Physical and Logical Infrastructure for Cloud",
+            "Hardware Specific Security Configuration Requirements",
+            "Secure by Default",
+            "Installation and Configuration of Management Plane Tools",
+            "Virtual Hardware Specific Security Configuration Requirements",
+            "Installation of Guest Operating System (OS) Virtualization Toolsets",
+            "5.2 Operate and Maintain Physical and Logical Infrastructure for Cloud",
+            "Access Controls for Local and Remote Access",
+            "Secure Network Configuration",
+            "Network Security Controls",
+            "Operating Systems Hardening through Application of Baselines,",
+            "Patch Management",
+            "Availability of Clustered Hosts",
+            "Availability of Guest Operating System (OS)",
+            "Performance and Capacity Monitoring",
+            "Hardware Monitoring",
+            "Configuration of Host and Guest OS Backup and Restore Functions",
+            "Management Plane",
+            "5.3 Implement Operational Controls and Standards",
+            "Change Management",
+            "Continuity Management",
+            "Information Security Management",
+            "Continual Service Improvement Management",
+            "Incident Management",
+            "Problem Management",
+            "Release Management",
+            "Deployment Management",
+            "Configuration Management (CM)",
+            "Service-Level Management",
+            "Availability Management",
+            "Capacity Management",
+            "5.4 Support Digital Forensics",
+            "Forensic Data Collection Methodologies",
+            "Evidence Management",
+            "Collecting, Acquiring, and Preserving Digital Evidence",
+            "5.5 Manage Communication with Relevant Parties",
+            "Vendors",
+            "Customers",
+            "Partners",
+            "Regulators",
+            "Other Stakeholders",
+            "5.6 Manage Security Operations",
+            "Security Operations Center (SOC)",
+            "Intelligent Monitoring of Security Controls",
+            "Log Capture and Analysis",
+            "Incident Response (IR)",
+            "Vulnerability Assessments",
+            "Penetration Testing"
+          ]
+        },
+        {
+          "title": "Domain 6: Legal, Risk and Compliance (13%)",
+          "topics": [
+            "6.1 Articulate Legal Requirements and Unique Risks within the Cloud",
+            "Conflicting International Legislation",
+            "Evaluation of Legal Risks Specific to Cloud Computing",
+            "Legal and Regulatory Frameworks and Guidelines",
+            "eDiscovery",
+            "Forensics Requirements",
+            "6.2 Understand Privacy Requirements",
+            "Difference Between Contractual and Regulated Private Data",
+            "Country-Specific Legislation Related to Private Data",
+            "Jurisdictional Differences in Data Privacy",
+            "Standard Privacy Requirements",
+            "Privacy Impact Assessments (PIA)",
+            "6.3 Understand Audit Processes, Methodologies, and Required",
+            "Internal and External Audit Controls",
+            "Impact of Audit Requirements",
+            "Identify Assurance Challenges of Virtualization and Cloud",
+            "Types of Audit Reports",
+            "Restrictions of Audit Scope Statements",
+            "Gap Analysis",
+            "Audit Planning",
+            "Internal Information Security Management System (ISMS)",
+            "Internal Information Security Controls System",
+            "Policies",
+            "Identification and Involvement of Relevant Stakeholders",
+            "Specialized Compliance Requirements for Highly Regulated Industries",
+            "Impact of Distributed Information Technology (IT) Model",
+            "6.4 Understand Implications of Cloud to Enterprise Risk Management",
+            "Assess Providers Risk Management Programs",
+            "Difference Between Data Roles",
+            "Regulatory Transparency Requirements",
+            "Risk Treatment",
+            "Different Risk Frameworks",
+            "Metrics for Risk Management",
+            "Assessment of Risk Environment",
+            "6.5 Understand Outsourcing and Cloud Contract Design",
+            "Business Requirements",
+            "Vendor Management",
+            "Contract Management",
+            "Supply-Chain Management"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SSCP",
+      "modules": [
+        {
+          "title": "Domain 2. Access Controls (15%)",
+          "topics": [
+            "2.1 – Implement and maintain authentication methods",
+            "Single/Multi-Factor Authentication (MFA)",
+            "Single Sign-On (SSO) (e.g., Active Directory Federation Services",
+            "Device authentication",
+            "Federated access (e.g., Open Authorization 2 (OAuth2), Security",
+            "2.2 – Support internetwork trust architectures",
+            "Trust relationships (e.g., 1-way, 2-way, transitive, zero)",
+            "Internet, intranet and extranet",
+            "Third-party connections",
+            "2.3 – Participate in the identity management lifecycle",
+            "Authorization",
+            "Proofing",
+            "Provisioning/De-provisioning",
+            "Maintenance",
+            "Entitlement",
+            "Identity and Access Management (IAM) systems",
+            "2.4 – Understand and apply access controls",
+            "Mandatory",
+            "Discretionary",
+            "Role-based (e.g., attribute-, subject-, object-based)",
+            "Rule-based"
+          ]
+        },
+        {
+          "title": "Domain 3. Risk Identification, Monitoring, and Analysis (15%)",
+          "topics": [
+            "3.1 – Understand the risk management process",
+            "Risk visibility and reporting (e.g., risk register, Common Vulnerability",
+            "Risk management concepts (e.g., threat modeling, impact",
+            "Risk management frameworks",
+            "Risk tolerance (e.g., appetite)",
+            "Risk treatment (e.g., acceptance, transference, mitigation, or",
+            "3.2 – Understand legal and regulatory concerns (e.g., jurisdiction, limitations,",
+            "3.3 – Participate in security assessment and vulnerability management",
+            "Security testing",
+            "Risk review (e.g., internal, supplier, architecture)",
+            "Vulnerability management lifecycle",
+            "3.4 – Operate and monitor security platforms (e.g., continuous monitoring)",
+            "Source systems (e.g., applications, security appliances, network",
+            "Events of interest (e.g., anomalies, intrusions, unauthorized changes,",
+            "Log management",
+            "Event aggregation and correlation",
+            "3.5 – Analyze monitoring results",
+            "Security baselines and anomalies",
+            "Visualizations, metrics, and trends (e.g., notifications, dashboards,",
+            "Event data analysis",
+            "Document and communicate findings (e.g., escalation)"
+          ]
+        },
+        {
+          "title": "Domain 4. Incident Response and Recovery (14%)",
+          "topics": [
+            "4.1 – Support incident lifecycle, e.g., National Institute of Standards and",
+            "Preparation",
+            "Detection, analysis and escalation",
+            "Containment",
+            "Eradication",
+            "Recovery",
+            "Lessons learned/implementation of new countermeasure",
+            "4.2 – Understand and support forensic investigations",
+            "Legal (e.g., civil, criminal, administrative) and ethical principles",
+            "Evidence handling (e.g., first responder, triage, chain of custody,",
+            "Reporting of analysis",
+            "4.3 – Understand and support Business Continuity Plan (BCP) and Disaster",
+            "Emergency response plans and procedures (e.g., pandemic, natural",
+            "Interim or alternate processing strategies",
+            "Restoration planning",
+            "Backup and redundancy implementation",
+            "Testing and drills"
+          ]
+        },
+        {
+          "title": "Domain 5. Cryptography (9%)",
+          "topics": [
+            "5.1 – Understand cryptography",
+            "Confidentiality",
+            "Integrity and authenticity",
+            "Data sensitivity (e.g., Personally Identifiable Information (PII),",
+            "Regulatory and industry best practices (e.g., International Organization",
+            "5.2 – Apply cryptography concepts",
+            "Hashing",
+            "Salting",
+            "Symmetric/Asymmetric encryption/Elliptic Curve Cryptography (ECC)",
+            "Non-repudiation (e.g., digital signatures/certificates, Hash-based",
+            "Strength of encryption algorithms and keys (e.g., Advanced Encryption",
+            "Cryptographic attacks, cryptanalysis, and countermeasures (e.g.,",
+            "5.3 – Understand and implement secure protocols",
+            "Services and protocols",
+            "Common use cases",
+            "Limitations and vulnerabilities",
+            "5.4 – Understand Public Key Infrastructure (PKI)",
+            "Fundamental key management concepts (e.g., storage, rotation,",
+            "Web of Trust (WOT)"
+          ]
+        },
+        {
+          "title": "Domain 6. Network and Communications Security (16%)",
+          "topics": [
+            "6.1 – Understand and apply fundamental concepts of networking",
+            "Open Systems Interconnection (OSI) and Transmission Control",
+            "Network topologies",
+            "Network relationships (e.g., Peer-to-Peer (P2P), client server)",
+            "Transmission media types (e.g., wired, wireless)",
+            "Software-Defined Networking (SDN) (e.g., Software-Defined Wide Area",
+            "Commonly used ports and protocols",
+            "6.2 – Understand network attacks",
+            "Distributed Denial of Service (DDoS)",
+            "Man-in-the-Middle (MITM)",
+            "Domain Name System (DNS) poisoning",
+            "Countermeasures (e.g., Content Delivery Networks (CDN)",
+            "6.3 – Manage network access controls",
+            "Network access controls, standards and protocols (e.g.,  Remote",
+            "Remote access operation and configuration (e.g., thin client, Virtual",
+            "6.4 – Manage network security",
+            "Logical and physical network devices placement of (e.g., passive,",
+            "Segmentation (e.g., data/control plane, physical/logical, Virtual Local",
+            "Secure device management",
+            "6.5 – Operate and configure network-based security devices",
+            "Firewalls and proxies (e.g., filtering methods, Web Application Firewalls",
+            "Network intrusion detection/prevention systems",
+            "Routers and switches",
+            "Traffic-shaping devices (e.g., Wide Area Network (WAN) optimization,",
+            "6.6 – Secure wireless communications",
+            "Technologies (e.g., cellular network, Wi-Fi, Bluetooth, Near-Field",
+            "Authentication and encryption protocols (e.g., Wired Equivalent Privacy",
+            "Internet of Things (IoT)"
+          ]
+        },
+        {
+          "title": "Domain 7. Systems and Application Security (15%)",
+          "topics": [
+            "7.1 – Identify and analyze malicious code and activity",
+            "Malware (e.g., spyware, scareware, ransomware, trojans, viruses,",
+            "Malware countermeasures (e.g., scanners, anti-malware, code signing)",
+            "Malicious activity (e.g., data theft, Distributed Denial of Service (DDoS),",
+            "Malicious activity countermeasures (e.g., user awareness, patching,",
+            "7.2 – Implement and operate endpoint device security",
+            "Host-based firewalls",
+            "Application whitelisting",
+            "Host-based Intrusion Prevention System (HIPS)",
+            "Endpoint encryption (e.g., whole disk encryption)",
+            "Trusted Platform Module (TPM)",
+            "Secure browsing",
+            "Endpoint Detection and Response (EDR)",
+            "7.3 – Administer Mobile Device Management (MDM)",
+            "Provisioning techniques (e.g., Corporate-Owned Personally Enabled",
+            "Containerization",
+            "Encryption",
+            "Mobile application management (MAM)",
+            "7.4 – Understand and configure cloud security",
+            "Deployment models (e.g., private, public, hybrid, community)",
+            "Service models (e.g., Platform as a Service (PaaS), Infrastructure as a",
+            "Virtualization",
+            "Legal and regulatory concerns (e.g., privacy, jurisdiction, surveillance,",
+            "Data storage, processing, and transmission (e.g., recovery, resilience,",
+            "Third-party/outsourcing requirements (e.g., data portability, Service-",
+            "Shared responsibility model",
+            "7.5 – Operate and maintain secure virtual environments",
+            "Containers",
+            "Hypervisor",
+            "Virtual appliances",
+            "Continuity and resilience",
+            "Attacks and countermeasures",
+            "Shared storage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": " CC",
+      "modules": []
+    },
+    {
+      "name": "CISA",
+      "modules": []
+    },
+    {
+      "name": " A",
+      "modules": []
+    },
+    {
+      "name": " B",
+      "modules": []
+    },
+    {
+      "name": " A",
+      "modules": []
+    },
+    {
+      "name": " B",
+      "modules": []
+    },
+    {
+      "name": " A",
+      "modules": []
+    },
+    {
+      "name": " B",
+      "modules": []
+    },
+    {
+      "name": " A",
+      "modules": []
+    },
+    {
+      "name": " B",
+      "modules": []
+    },
+    {
+      "name": " A",
+      "modules": []
+    },
+    {
+      "name": " B",
+      "modules": []
+    },
+    {
+      "name": "CISM",
+      "modules": [
+        {
+          "title": "Domain 2 – Information Security Risk Management – 20%",
+          "topics": [
+            "A–Information Security Risk Assessment",
+            "Emerging Risk and Threat Landscape",
+            "Vulnerability and Control Deficiency Analysis",
+            "Risk Assessment and Analysis",
+            "B–Information Security Risk Response",
+            "Risk Treatment / Risk Response Options",
+            "Risk and Control Ownership",
+            "Risk Monitoring and Reporting"
+          ]
+        },
+        {
+          "title": "Domain 3 – Information Security Program – 33%",
+          "topics": [
+            "A–Information Security Program Development",
+            "Information Security Program Resources (e.g., People, Tools,",
+            "Information Asset Identification and Classification",
+            "Industry Standards and Frameworks for Information Security",
+            "Information Security Policies, Procedures, and Guidelines",
+            "Information Security Program Metrics",
+            "B–Information Security Program Management",
+            "Information Security Control Design and Selection",
+            "Information Security Control Implementation and Integrations",
+            "Information Security Control Testing and Evaluation",
+            "Information Security Awareness and Training",
+            "Management of External Services (e.g., Providers, Suppliers, Third",
+            "Information Security Program Communications and Reporting"
+          ]
+        },
+        {
+          "title": "Domain 4 – Incident Management – 30%",
+          "topics": [
+            "A–Incident Management Readiness",
+            "Incident Response Plan",
+            "Business Impact Analysis (BIA)",
+            "Business Continuity Plan (BCP)",
+            "Disaster Recovery Plan (DRP)",
+            "Incident Classification/Categorization",
+            "Incident Management Training, Testing, and Evaluation",
+            "B–Incident Management Operations",
+            "Incident Management Tools and Techniques",
+            "Incident Investigation and Evaluation",
+            "Incident Containment Methods",
+            "Incident Response Communications (e.g., Reporting, Notification,",
+            "Incident Eradication and Recovery",
+            "Post-Incident Review Practices"
+          ]
+        }
+      ]
+    },
+    {
+      "name": " CRISC",
+      "modules": []
+    },
+    {
+      "name": " CGEIT",
+      "modules": []
+    },
+    {
+      "name": "IAPP",
+      "modules": []
+    },
+    {
+      "name": " IAPP",
+      "modules": [
+        {
+          "title": "Chapter 1: Fundamentals",
+          "topics": [
+            "Module A: Networking concepts",
+            "Module B: Classifying networks",
+            "Module C: Network models",
+            "Module D: The troubleshooting process"
+          ]
+        },
+        {
+          "title": "Chapter 2: Physical networks",
+          "topics": [
+            "Module A: Connection technologies",
+            "Module B: Network devices",
+            "Module C: Copper media",
+            "Module D: Optical media",
+            "Module E: Ethernet standards"
+          ]
+        },
+        {
+          "title": "Chapter 3: TCP/IP networks",
+          "topics": [
+            "Module A: IP addressing",
+            "Module B: Core protocols",
+            "Module C: Network ports and applications"
+          ]
+        },
+        {
+          "title": "Chapter 4: Internetworking",
+          "topics": [
+            "Module A: Switching",
+            "Module B: Routing"
+          ]
+        },
+        {
+          "title": "Chapter 5: Wireless LANs",
+          "topics": [
+            "Module A: Wireless networks",
+            "Module B: Wireless LAN standards"
+          ]
+        },
+        {
+          "title": "Chapter 6: Wide area networks",
+          "topics": [
+            "Module A: Internet connections",
+            "Module B: WAN infrastructure"
+          ]
+        },
+        {
+          "title": "Chapter 7: Cybersecurity principles",
+          "topics": [
+            "Module A: Goals and threats",
+            "Module B: Digital security",
+            "Module C: Transport encryption"
+          ]
+        },
+        {
+          "title": "Chapter 8: Defending networks",
+          "topics": [
+            "Module A: Network security components",
+            "Module B: Network authentication systems",
+            "Module C: Hardening networks"
+          ]
+        },
+        {
+          "title": "Chapter 9: Evolving network technologies",
+          "topics": [
+            "Module A: Network convergence",
+            "Module B: Virtual and cloud systems"
+          ]
+        },
+        {
+          "title": "Chapter 10: Network operations",
+          "topics": [
+            "Module A: Monitoring and optimization",
+            "Module B: Fault tolerance and disaster recovery",
+            "Module C: Incident response"
+          ]
+        },
+        {
+          "title": "Chapter 11: Network planning",
+          "topics": [
+            "Module A: Network policy design",
+            "Module B: Network installation",
+            "Module C: Maintenance and upgrades",
+            "1.1 Compare and contrast governance, risk, ad compliance concepts",
+            "1.2 Explain the importance of scoping organizations/customer requirements",
+            "1.3 Given a scenario, demonstrate an ethical hacking mindset by maintaining",
+            "2.1 Given a scenario, perform passive reconnaissance",
+            "2.2 Given a scenario, perform active reconnaissance",
+            "2.3 Given a scenario, analyze the results of a reconnaissance exercise",
+            "2.4 Given a scenario, perform vulnerability scanning",
+            "3.1 Given a scenario, research attack vectors and perform network attacks",
+            "3.2 Given a scenario, research attack vectors and perform wireless attacks",
+            "3.3 Given a scenario, research attack vectors and perform application-based",
+            "3.4 Given a scenario, research attack vectors and perform attacks on cloud",
+            "3.5 Explain common attacks and vulnerabilities against specialized systems",
+            "3.6 Given a scenario, perform a social engineering or physical attack",
+            "3.7 Given a scenario, perform post-exploitation techniques",
+            "4.1 Compare and contrast important components of written reports",
+            "4.2 Given a scenario, analyze the findings and recommend the appropriate",
+            "4.3 Explain the importance of communication during the penetration testing",
+            "4.4 Explain post-report delivery activities",
+            "5.1 Explain the basic concepts of scripting and software development",
+            "5.2 Given a scenario, analyze a script or code sample for use in a penetration",
+            "5.3 Explain use cases of the following tools during the phases of a penetration"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CPENT",
+      "modules": []
+    },
+    {
+      "name": "CSA CCSK",
+      "modules": [
+        {
+          "title": "Domain 1: Cloud Computing Concepts & Architectures",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "1.1 Defining Cloud Computing",
+            "1.1.1 Abstraction & Orchestration",
+            "1.2 Cloud Computing Models",
+            "1.2.1 Essential Characteristics",
+            "1.2.2 Cloud Service Models",
+            "1.2.2.1 Infrastructure as a Service (IaaS)",
+            "1.2.2.2 Platform as a Service (PaaS)",
+            "1.2.2.3 Software as a Service (SaaS)",
+            "1.2.3 Cloud Deployment Models",
+            "1.2.4 CSA Enterprise Architecture Model",
+            "1.3 Cloud Security Scope, Responsibilities, & Models",
+            "1.3.1 Shared Security Responsibility Mode"
+          ]
+        },
+        {
+          "title": "Domain 2: Cloud Governance",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "2.1. Cloud Governance",
+            "2.2 The Governance Hierarchy",
+            "2.2.1 Cloud Security Frameworks",
+            "2.2.2 Policies"
+          ]
+        },
+        {
+          "title": "Domain 3: Risk, Audit, & Compliance",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "3.1. Cloud Risk Management",
+            "3.1.1 Cloud Risks",
+            "3.1.2 Understanding Cloud Risk Management",
+            "3.1.3 Assessing Cloud Services",
+            "3.1.4 The Cloud Register",
+            "3.2 Compliance & Audit",
+            "3.2.1 Jurisdictions",
+            "3.2.2 Cloud-Relevant Laws & Regulations Examples",
+            "3.2.3 Compliance Inheritance",
+            "3.2.4 Artifacts of Compliance",
+            "3.3 Governance, Risk, Compliance Tools & Technologies"
+          ]
+        },
+        {
+          "title": "Domain 4: Organization Management",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "4.1 Organization Hierarchy Models",
+            "4.1.1 Definitions",
+            "4.1.2 Organization Capabilities Within a Cloud Service Provider",
+            "4.1.3 Building a Hierarchy Within a Provider",
+            "4.2 Managing Organization-Level Security Within a Provider",
+            "4.2.1 Identity Provider & User/Group/Role Mappings",
+            "4.2.2 Common Organization Shared Services",
+            "4.3 Considerations for Hybrid & Multi-Cloud Deployments",
+            "4.3.1 Organization Management for Hybrid Cloud Security",
+            "4.3.2 Organization Management for Multi-Cloud Security",
+            "4.3.3 Organization Management for SaaS Hybrid & Multi-Cloud"
+          ]
+        },
+        {
+          "title": "Domain 5: Identity & Access Management",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "5.1 Fundamental Terms",
+            "5.2 Federation",
+            "5.2.1 Common Federation Standards",
+            "5.2.2 How Federated Identity Management Works",
+            "5.2.3 Managing Users & Identities for Cloud Computing",
+            "5.3 Strong Authentication & Authorization",
+            "5.3.1 Authentication & Credentials",
+            "5.3.2 Entitlement & Access Management",
+            "5.3.3 Privileged User Management"
+          ]
+        },
+        {
+          "title": "Domain 6: Security Monitoring",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "6.1 Cloud Monitoring",
+            "6.1.1 Logs & Events",
+            "6.2 Beyond Logs – Posture Management",
+            "6.3 Cloud Telemetry Sources",
+            "6.3.1 Management Plane Logs",
+            "6.3.2 Service & Application Logs",
+            "6.3.3 Resource Logs",
+            "6.3.4 Cloud Native Tools",
+            "6.4 Collection Architectures",
+            "6.4.1 Log Storage & Retention",
+            "6.4.2 Cascading Log Architecture",
+            "6.5 AI for Security Monitoring"
+          ]
+        },
+        {
+          "title": "Domain 7: Infrastructure & Networking",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "7.1 Cloud Infrastructure Security",
+            "7.1.1 Foundational Infrastructure Security Techniques",
+            "7.1.2 CSP Infrastructure Security Responsibilities",
+            "7.1.3 Infrastructure Resilience",
+            "7.2 Cloud Network Fundamentals",
+            "7.2.1 Cloud Networks are Software-Defined Networks",
+            "7.2.2 Cloud Connectivity",
+            "7.3 Cloud Network Security & Secure Architecture",
+            "7.3.1 Preventative Security Measures",
+            "7.3.2 Detective Security Measures",
+            "7.4 Infrastructure as Code (IaC)",
+            "7.5 Zero Trust for Cloud Infrastructure & Networks",
+            "7.5.1 Software-Defined Perimeter & ZT Network Access",
+            "7.6 Secure Access Service Edge (SASE)"
+          ]
+        },
+        {
+          "title": "Domain 8: Cloud Workload Security",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "8.1 Introduction to Cloud Workload Security",
+            "8.1.1 Types of Cloud Workloads",
+            "8.1.2 Impact on Workload Security Controls",
+            "8.2 Securing Virtual Machines",
+            "8.2.1 Virtual Machine Challenges & Mitigations",
+            "8.2.2 Creating Secure VM Images with Factories",
+            "8.2.3 Snapshots & Public Exposures/Exfiltration",
+            "8.3 Securing Containers",
+            "8.3.1 Container Image Creation",
+            "8.3.2 Container Networking",
+            "8.3.3 Container Orchestration & Management Systems",
+            "8.3.4 Container Orchestration Security",
+            "8.3.5 Runtime Protection for Containers",
+            "8.4 Securing Serverless and Function as a Service",
+            "8.4.1 FaaS Security Issues",
+            "8.4.2 IAM for Serverless",
+            "8.4.3 Environment Variables & Secrets",
+            "8.5 Securing AI Workloads",
+            "8.5.1 AI-System Threats",
+            "8.5.2 AI Risk Mitigation and Shared Responsibilities"
+          ]
+        },
+        {
+          "title": "Domain 9: Data Security",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "9.1 Primer on Cloud Storage",
+            "9.1.1 Volume/Block Storage",
+            "9.1.2 Object Storage",
+            "9.1.3 Database Storage",
+            "9.1.4 Other Types of Storage",
+            "9.2 Data Security Tools and Techniques",
+            "9.2.1 Data Classification",
+            "9.2.2 Identity and Access Management",
+            "9.2.3 Access Policies",
+            "9.2.4 Encryption and Key Management",
+            "9.2.5 Data Loss Prevention",
+            "9.3 Cloud Data Encryption at Rest",
+            "9.3.1 Cloud Data Key Management Strategies",
+            "9.3.2 Data Encryption Recommendations",
+            "9.4 Data Security Posture Management",
+            "9.5 Object Storage Security",
+            "9.6 Data Security for Artificial Intelligence",
+            "9.6.1 AI as a Service"
+          ]
+        },
+        {
+          "title": "Domain 10: Application Security",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "10.1 Secure Development Lifecycle",
+            "10.1.1 SDLC Stages",
+            "10.1.2 Threat Modeling",
+            "10.1.3 Testing: Pre-Deployment",
+            "10.1.4 Testing: Post Deployment",
+            "10.2 Architecture’s Role in Secure Cloud Applications",
+            "10.2.1 Cloud Impacts on Architecture-Level Security",
+            "10.2.2 Architectural Resilience",
+            "10.3 Identity & Access Management and Application Security",
+            "10.3.1 Secrets Management",
+            "10.4 Dev Ops & DevSecOps"
+          ]
+        },
+        {
+          "title": "Domain 11: Incident Response & Resilience",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "11.1 Incident Response",
+            "11.1.1 Incident Response Lifecycle",
+            "11.2 Preparation",
+            "11.2.1 Incident Response Preparation & Cloud Service Providers",
+            "11.2.2 Training for Cloud Incident Responders",
+            "11.3 Detection & Analysis",
+            "11.3.1 Cloud Impact on Incident Response Analysis",
+            "11.3.2 Cloud System Forensics",
+            "11.4 Containment, Eradication, & Recovery",
+            "11.4.1 Containment",
+            "11.4.2 Eradication",
+            "11.4.3 Recovery",
+            "11.5 Post Incident Analysis"
+          ]
+        },
+        {
+          "title": "Domain 12: Related Technologies & Strategies",
+          "topics": [
+            "Introduction",
+            "Learning Objectives",
+            "12.1 Zero Trust",
+            "12.1.1 Technical Objectives of Zero Trust",
+            "12.1.2 Zero Trust Pillars & Maturity Model",
+            "12.1.3 Zero Trust & Cloud Security",
+            "12.2 Artificial Intelligence",
+            "12.2.1 Characteristics of AI Workloads",
+            "Next Steps.",
+            "Identify the privacy program requirements",
+            "Describe the types of privacy protection legal models",
+            "Identify the common privacy laws and regulations",
+            "Identify the various privacy standards",
+            "Identify the different types of documentation necessary for data privacy",
+            "Explain the requirements to address the data subjects’ right",
+            "Identify roles & responsibilities of various stakeholders",
+            "Define & execute a privacy awareness program",
+            "Apply privacy controls for the privacy risks and issues",
+            "Define privacy incident management program",
+            "Identify the common privacy-related vulnerabilities caused by the problematic",
+            "Identify the methods of exploiting these vulnerabilities leading to privacy",
+            "Identify the common established PIA methodologies",
+            "Describe the NIST privacy risk assessment methodology and EU GDPR",
+            "Describe Data Protection Impact Assessment (DPIA)",
+            "Identify various types of computing infrastructure",
+            "Identify the advantages and limitations of cloud computing",
+            "Recognize the responsibilities of the Cloud Service Provider and the cloud",
+            "Describe Secure Development Life Cycle",
+            "List the various considerations for endpoint security",
+            "Describe the elements and principles of privacy by design",
+            "Identify the best practices for system hardening",
+            "Explain the steps involved in application and system hardening to protect the",
+            "Describe the privacy considerations required for applications using APIs and",
+            "Recognize the risks associated with the various communication protocols",
+            "Explain the steps to create a data inventory & classification",
+            "Describe the four process areas of data quality",
+            "Illustrate the different data flow diagrams",
+            "Explain data analytics and its privacy concerns",
+            "Explain data minimalization",
+            "Explain data migration & storage requirements",
+            "Explain data warehousing",
+            "Explain data retention, archiving & destruction",
+            "ISO 27001 Foundations- Introduction to the ISO/IEC 27000 family of",
+            "Introduction to management systems and the process approach",
+            "Fundamental principles information security",
+            "General requirements: presentation of the clauses 4 to 8 of ISO/IEC 27001",
+            "Implementation phases of ISO/IEC 27001 framework",
+            "Continual improvement of Information Security",
+            "Conducting an ISO/IEC 27001 certification audit",
+            "Principles and design of information security controls",
+            "Documentation of an information security control environment",
+            "Monitoring and reviewing the information security controls",
+            "Examples of implementation of information security controls based on ISO",
+            "Introduction",
+            "General information",
+            "Learning objectives",
+            "Educational approach",
+            "Examination and certification",
+            "What is ISO?",
+            "The ISO/IEC 27000 family of standards",
+            "Advantages of ISO/IEC 27001",
+            "Definition of a management system",
+            "Management system standards",
+            "Integrated management systems",
+            "Definition of an ISMS",
+            "Process approach",
+            "Overview — Clauses 4 to 10",
+            "Overview — Annex A",
+            "Information and asset",
+            "Information security",
+            "Availability, confidentiality, and integrity",
+            "Vulnerability, threat, and impact",
+            "Information security risk",
+            "Classification of security controls",
+            "Define the approach to the ISMS implementation",
+            "Proposed implementation approaches",
+            "Application of the proposed implementation approaches",
+            "Choose a methodological framework to manage the implementation of an",
+            "Approach and methodology",
+            "Alignment with best practices",
+            "Mission, objectives, values, and strategies of the organization",
+            "ISMS objectives",
+            "Preliminary scope definition",
+            "Internal and external environment",
+            "Key processes and activities",
+            "Interested parties",
+            "Business requirements",
+            "Boundary of the ISMS",
+            "Organizational boundaries",
+            "Information security boundaries",
+            "Physical boundaries",
+            "ISMS scope statement",
+            "Business case",
+            "Resource requirements",
+            "ISMS project plan",
+            "ISMS project team",
+            "Management approval",
+            "Organizational structure",
+            "Information security coordinator",
+            "Roles and responsibilities of interested parties",
+            "Roles and responsibilities of key committees",
+            "Determine the current state",
+            "Conduct the gap analysis",
+            "Establish maturity targets",
+            "Publish a gap analysis report",
+            "Types of policies",
+            "Policy models",
+            "Information security policy",
+            "Specific security policies",
+            "Management policy approval",
+            "Publication and dissemination",
+            "Training and awareness sessions",
+            "Control, evaluation, and review",
+            "ISO/IEC 27005",
+            "Risk assessment approach",
+            "Risk assessment methodology",
+            "Risk identification",
+            "Risk estimation",
+            "Risk evaluation",
+            "Risk treatment",
+            "Residual risk",
+            "Drafting the Statement of Applicability",
+            "Management approval",
+            "Review and selection of the applicable information security controls",
+            "Justification of selected controls",
+            "Justification of excluded controls",
+            "Value and types of documented information",
+            "Master list of documented information",
+            "Creation of templates",
+            "Documented information management process",
+            "Implementation of a documented information management system",
+            "Management of records",
+            "Organization’s security architecture",
+            "Preparation for the implementation of controls",
+            "Design and description of controls",
+            "Implementation of security processes and controls",
+            "Introduction of Annex A controls",
+            "Big data",
+            "The three V’s of big data",
+            "Artificial intelligence",
+            "Machine learning",
+            "Cloud computing",
+            "Outsourced operations",
+            "The impact of new technologies in information security",
+            "Principles of an efficient communication strategy",
+            "Information security communication process",
+            "Establishing communication objectives",
+            "Identifying interested parties",
+            "Planning communication activities",
+            "Performing a communication activity",
+            "Evaluating communication",
+            "Competence and people development",
+            "Difference between training, awareness, and communication",
+            "Determine competence needs",
+            "Plan the competence development activities",
+            "Define the competence development program type and structure",
+            "Training and awareness programs",
+            "Provide the trainings",
+            "Evaluate the outcome of trainings",
+            "Change management planning",
+            "Management of operations",
+            "Resource management"
+          ]
+        }
+      ]
+    },
+    {
+      "name": " ISO/IEC 27035",
+      "modules": [
+        {
+          "title": "Module 1: Introduction to COBIT 2019",
+          "topics": [
+            "Overview of IT Governance and Management",
+            "Evolution of COBIT Framework",
+            "COBIT 2019 vs COBIT 5",
+            "Benefits of COBIT Implementation",
+            "Key Terminologies and Concepts",
+            "Governance vs Management",
+            "Enterprise Governance of Information and Technology (EGIT)",
+            "Understand the purpose and scope of COBIT 2019",
+            "Differentiate governance from management",
+            "Explain the role of COBIT in enterprise IT governance"
+          ]
+        },
+        {
+          "title": "Module 2: COBIT 2019 Framework Principles",
+          "topics": [
+            "Governance System Principles",
+            "Provide Stakeholder Value",
+            "Holistic Approach",
+            "Dynamic Governance System",
+            "Distinct Governance from Management",
+            "Tailored to Enterprise Needs",
+            "End-to-End Governance System",
+            "Governance Framework Principles",
+            "Conceptual Model",
+            "Open and Flexible",
+            "Aligned to Major Standards",
+            "Understand the six governance system principles",
+            "Explain governance framework principles",
+            "Apply principles to governance scenarios"
+          ]
+        },
+        {
+          "title": "Module 3: Governance and Management Objectives",
+          "topics": [
+            "Introduction to Governance Objectives",
+            "Introduction to Management Objectives",
+            "COBIT Core Model",
+            "Governance Domain:",
+            "EDM (Evaluate, Direct and Monitor)",
+            "Management Domains:",
+            "APO (Align, Plan and Organize)",
+            "BAI (Build, Acquire and Implement)",
+            "DSS (Deliver, Service and Support)",
+            "MEA (Monitor, Evaluate and Assess)",
+            "Understand the purpose of governance and management objectives",
+            "Identify responsibilities within each domain"
+          ]
+        },
+        {
+          "title": "Module 4: COBIT Governance System Components",
+          "topics": [
+            "Processes",
+            "Organizational Structures",
+            "Policies and Procedures",
+            "Information Flows and Items",
+            "Culture, Ethics and Behavior",
+            "People, Skills and Competencies",
+            "Services, Infrastructure and Applications",
+            "Explain governance system components",
+            "Understand how components interact to support governance"
+          ]
+        },
+        {
+          "title": "Module 5: Governance and Management Domains Deep Dive",
+          "topics": [
+            "EDM01 Governance Framework Setting and Maintenance",
+            "EDM02 Benefits Delivery",
+            "EDM03 Risk Optimization",
+            "EDM04 Resource Optimization",
+            "EDM05 Stakeholder Transparency",
+            "APO01 Managed I&T Management Framework",
+            "APO02 Managed Strategy",
+            "APO03 Managed Enterprise Architecture",
+            "APO12 Managed Risk",
+            "APO13 Managed Security",
+            "Understand domain objectives and activities",
+            "Map governance requirements to enterprise goals"
+          ]
+        },
+        {
+          "title": "Module 6: Build, Acquire and Implement (BAI)",
+          "topics": [
+            "BAI01 Managed Programs",
+            "BAI02 Managed Requirements",
+            "BAI03 Managed Solutions Identification",
+            "BAI05 Organizational Change Enablement",
+            "BAI06 Managed IT Changes",
+            "BAI09 Managed Assets",
+            "BAI11 Managed Projects",
+            "Understand project governance and implementation processes",
+            "Manage enterprise IT initiatives using COBIT practices"
+          ]
+        },
+        {
+          "title": "Module 7: Deliver, Service and Support (DSS)",
+          "topics": [
+            "DSS01 Managed Operations",
+            "DSS02 Managed Service Requests and Incidents",
+            "DSS03 Managed Problems",
+            "DSS04 Managed Continuity",
+            "DSS05 Managed Security Services",
+            "DSS06 Managed Business Process Controls",
+            "Explain service management concepts",
+            "Understand operational governance and support functions"
+          ]
+        },
+        {
+          "title": "Module 8: Monitor, Evaluate and Assess (MEA)",
+          "topics": [
+            "MEA01 Performance and Conformance",
+            "MEA02 Internal Control System",
+            "MEA03 Compliance with External Requirements",
+            "Monitor governance effectiveness",
+            "Evaluate compliance and internal controls"
+          ]
+        },
+        {
+          "title": "Module 9: COBIT Performance Management",
+          "topics": [
+            "Introduction to Performance Management",
+            "Capability Levels",
+            "Maturity Measurement Concepts",
+            "Process Performance Measurement",
+            "Governance System Performance",
+            "Metrics and KPIs",
+            "Measure governance process performance",
+            "Assess capability and maturity levels"
+          ]
+        },
+        {
+          "title": "Module 10: Design Factors",
+          "topics": [
+            "Enterprise Strategy",
+            "Enterprise Goals",
+            "Risk Profile",
+            "Compliance Requirements",
+            "Threat Landscape",
+            "Role of IT",
+            "Sourcing Model",
+            "Technology Adoption Strategy",
+            "Enterprise Size",
+            "Understand governance system customization",
+            "Apply design factors to enterprise scenarios"
+          ]
+        },
+        {
+          "title": "Module 11: Focus Areas",
+          "topics": [
+            "Information Security",
+            "Digital Transformation",
+            "Small and Medium Enterprises",
+            "DevOps",
+            "Cloud Computing",
+            "Privacy Management",
+            "Cybersecurity Governance",
+            "Risk Governance",
+            "Tailor COBIT for specific business needs",
+            "Apply focus areas to real-world governance challenges"
+          ]
+        },
+        {
+          "title": "Module 12: Goals Cascade Mechanism",
+          "topics": [
+            "Stakeholder Drivers",
+            "Stakeholder Needs",
+            "Enterprise Goals",
+            "Alignment Goals",
+            "Governance and Management Objectives",
+            "Goal Mapping Techniques",
+            "Align business goals with IT objectives",
+            "Perform goals cascade analysis"
+          ]
+        },
+        {
+          "title": "Module 13: COBIT Implementation Approach",
+          "topics": [
+            "Implementation Lifecycle",
+            "Governance Improvement Program",
+            "Change Management",
+            "Continuous Improvement",
+            "Governance Roadmap Development",
+            "Common Implementation Challenges",
+            "Plan a COBIT implementation project",
+            "Manage governance transformation initiatives"
+          ]
+        },
+        {
+          "title": "Module 14: COBIT and Other Frameworks",
+          "topics": [
+            "COBIT and ITIL",
+            "COBIT and ISO/IEC 27001",
+            "COBIT and NIST Cybersecurity Framework",
+            "COBIT and TOGAF",
+            "COBIT and PMI",
+            "COBIT and COSO",
+            "Integrate COBIT with other governance frameworks",
+            "Understand complementary framework relationships"
+          ]
+        },
+        {
+          "title": "Module 15: COBIT 2019 Foundation Exam Preparation",
+          "topics": [
+            "COBIT Terminology Review",
+            "Governance Principles Review",
+            "Domains and Objectives Revision",
+            "Design Factors Review",
+            "Performance Management Review",
+            "Focus Areas Review",
+            "Practice Questions",
+            "Mock Tests",
+            "Exam Strategies",
+            "Prepare for the COBIT 2019 Foundation Certification Exam",
+            "Develop confidence in applying COBIT concepts"
+          ]
+        },
+        {
+          "title": "Module Hours",
+          "topics": []
+        },
+        {
+          "title": "Module 1–4 8 Hours",
+          "topics": []
+        },
+        {
+          "title": "Module 5–8 12 Hours",
+          "topics": []
+        },
+        {
+          "title": "Module 9–12 8 Hours",
+          "topics": []
+        },
+        {
+          "title": "Module 13–14 4 Hours",
+          "topics": []
+        },
+        {
+          "title": "Module 15 4 Hours",
+          "topics": [
+            "Goals Cascade",
+            "Governance Objectives",
+            "Risk Assessment",
+            "Performance Metrics",
+            "Governance Dashboard",
+            "Implementation Roadmap",
+            "Compliance Mapping (ISO 27001/NIST/ITIL)",
+            "fficial ISACA COBIT 2019 Design and Implementation certification and prepares",
+            "rganizations."
+          ]
+        },
+        {
+          "title": "Module 1: Introduction to COBIT 2019 Design & Implementation",
+          "topics": [
+            "Overview of Enterprise Governance of Information and Technology (EGIT)",
+            "COBIT 2019 Governance Framework Recap",
+            "Purpose of Design & Implementation",
+            "Business Drivers for Governance",
+            "Governance Challenges in Modern Enterprises",
+            "Relationship between Governance and Digital Transformation",
+            "COBIT Design Guide and Implementation Guide Overview",
+            "Understand the purpose of COBIT Design & Implementation.",
+            "Explain how governance contributes to business value.",
+            "Identify governance challenges and opportunities."
+          ]
+        },
+        {
+          "title": "Module 2: Understanding Governance System Design",
+          "topics": [
+            "Governance System Concepts",
+            "Design Factors Overview",
+            "Tailoring Governance Systems",
+            "Governance Components",
+            "Enterprise Context Assessment",
+            "Stakeholder Requirements Analysis",
+            "Governance Prioritization",
+            "Understand governance system design principles.",
+            "Identify factors affecting governance design.",
+            "Analyze organizational governance requirements."
+          ]
+        },
+        {
+          "title": "Module 3: COBIT 2019 Design Factors",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "name": "4. IT",
+      "modules": [
+        {
+          "title": "Module 4: Governance System Tailoring",
+          "topics": [
+            "Designing Governance Priorities",
+            "Determining Governance Objectives",
+            "Customizing Governance Components",
+            "Mapping Enterprise Goals",
+            "Aligning IT and Business Objectives",
+            "Governance System Architecture",
+            "Create a customized governance blueprint.",
+            "Tailor governance systems to enterprise needs.",
+            "Develop governance architectures."
+          ]
+        },
+        {
+          "title": "Module 5: Focus Areas and Governance Customization",
+          "topics": [
+            "Cybersecurity Governance",
+            "Digital Transformation Governance",
+            "Cloud Governance",
+            "DevOps Governance",
+            "Privacy Governance",
+            "Risk Governance",
+            "SME Governance Models",
+            "Select and integrate relevant focus areas.",
+            "Apply focus areas to governance systems.",
+            "Customize governance for emerging technologies."
+          ]
+        },
+        {
+          "title": "Module 6: COBIT Governance Design Workflow",
+          "topics": [
+            "Design Workflow Steps",
+            "Stakeholder Analysis",
+            "Governance Prioritization",
+            "Design Toolkit Usage",
+            "Governance Score Interpretation",
+            "Target Capability Determination",
+            "Build governance workflows using design tools.",
+            "Execute governance design methodologies.",
+            "Prioritize governance objectives effectively."
+          ]
+        },
+        {
+          "title": "Module 7: Introduction to COBIT Implementation",
+          "topics": [
+            "COBIT Implementation Guide",
+            "Governance Improvement Lifecycle",
+            "Organizational Readiness Assessment",
+            "Change Management Fundamentals",
+            "Governance Transformation Programs",
+            "Business Case Development",
+            "Understand governance implementation concepts.",
+            "Develop implementation readiness assessments."
+          ]
+        },
+        {
+          "title": "Module 8: COBIT Implementation Lifecycle – Phase 1 & 2",
+          "topics": [
+            "Pain Points Analysis",
+            "Trigger Events",
+            "Stakeholder Needs",
+            "Governance Challenges",
+            "Current State Assessment",
+            "Capability Assessment",
+            "Gap Analysis",
+            "Risk Identification",
+            "Conduct governance maturity assessment.",
+            "Identify governance drivers.",
+            "Assess current governance maturity."
+          ]
+        },
+        {
+          "title": "Module 9: COBIT Implementation Lifecycle – Phase 3 & 4",
+          "topics": [
+            "Target State Definition",
+            "Governance Goals",
+            "Desired Capabilities",
+            "Strategic Alignment",
+            "Solution Identification",
+            "Governance Improvement Initiatives",
+            "Roadmap Planning",
+            "Resource Planning",
+            "Develop governance target-state roadmap.",
+            "Define governance objectives.",
+            "Build governance implementation plans."
+          ]
+        },
+        {
+          "title": "Module 10: COBIT Implementation Lifecycle – Phase 5",
+          "topics": [
+            "Project Execution",
+            "Governance Program Management",
+            "Change Enablement",
+            "Stakeholder Communication",
+            "Training and Awareness",
+            "Build implementation execution plans.",
+            "Execute governance transformation programs.",
+            "Manage governance change initiatives."
+          ]
+        },
+        {
+          "title": "Module 11: COBIT Implementation Lifecycle – Phase 6",
+          "topics": [
+            "Benefits Realization",
+            "KPI Monitoring",
+            "Governance Metrics",
+            "Performance Evaluation",
+            "Post-Implementation Review",
+            "Develop governance scorecards.",
+            "Measure implementation success.",
+            "Evaluate governance performance."
+          ]
+        },
+        {
+          "title": "Module 12: COBIT Implementation Lifecycle – Phase 7",
+          "topics": [
+            "Continuous Improvement",
+            "Governance Sustainability",
+            "Lessons Learned",
+            "Continuous Monitoring",
+            "Governance Culture Development",
+            "Design continuous improvement frameworks.",
+            "Sustain governance programs.",
+            "Establish governance improvement cycles."
+          ]
+        },
+        {
+          "title": "Module 13: Organizational Change Management",
+          "topics": [
+            "Governance Transformation Challenges",
+            "Change Resistance",
+            "Stakeholder Engagement",
+            "Communication Strategy",
+            "Leadership Alignment",
+            "Governance Culture",
+            "Manage organizational resistance.",
+            "Drive governance adoption."
+          ]
+        },
+        {
+          "title": "Module 14: Measuring Governance Performance",
+          "topics": [
+            "COBIT Performance Management",
+            "Capability Levels",
+            "Maturity Models",
+            "Metrics and KPIs",
+            "Governance Dashboards",
+            "Reporting Frameworks",
+            "Create governance performance dashboards.",
+            "Assess governance effectiveness.",
+            "Develop governance measurement systems."
+          ]
+        },
+        {
+          "title": "Module 15: Risk, Compliance and Assurance Integration",
+          "topics": [
+            "Governance and Risk Alignment",
+            "Compliance Monitoring",
+            "Internal Controls",
+            "Audit Readiness",
+            "Assurance Activities",
+            "Third-Party Governance",
+            "Integrate governance with risk and compliance.",
+            "Prepare organizations for audits."
+          ]
+        },
+        {
+          "title": "Module 16: COBIT Integration with Other Frameworks",
+          "topics": [
+            "COBIT and ITIL 4",
+            "COBIT and ISO/IEC 27001",
+            "COBIT and NIST Cybersecurity Framework",
+            "COBIT and COSO",
+            "COBIT and TOGAF",
+            "COBIT and PMBOK",
+            "Align COBIT with enterprise frameworks.",
+            "Build integrated governance ecosystems."
+          ]
+        },
+        {
+          "title": "Module 17: Governance Design Workshop",
+          "topics": [
+            "Analyze a Case Study Organization",
+            "Identify Design Factors",
+            "Create Governance Objectives Profile",
+            "Prioritize Governance Components",
+            "Build Governance Architecture",
+            "Governance Design Document",
+            "Governance Objectives Matrix",
+            "Governance Capability Assessment"
+          ]
+        },
+        {
+          "title": "Module 18: Governance Implementation Workshop",
+          "topics": [
+            "Conduct Current State Assessment",
+            "Build Target State Model",
+            "Create Governance Roadmap",
+            "Develop Change Management Plan",
+            "Define KPIs and Success Metrics",
+            "Implementation Roadmap",
+            "Governance Dashboard",
+            "Benefits Realization Plan"
+          ]
+        },
+        {
+          "title": "Module 19: Capstone Project",
+          "topics": [
+            "Analyze Enterprise Context",
+            "Assess Design Factors",
+            "Design Governance System",
+            "Select Governance Objectives",
+            "Develop Implementation Roadmap",
+            "Create Governance Metrics",
+            "Establish Continuous Improvement Strategy",
+            "COBIT Governance Design Blueprint",
+            "Governance Objectives Profile",
+            "Risk and Compliance Mapping",
+            "Governance Dashboard",
+            "Implementation Roadmap",
+            "Executive Presentation"
+          ]
+        },
+        {
+          "title": "Module 20: COBIT Design & Implementation Certification Preparation",
+          "topics": [
+            "Exam Domain Review",
+            "Design Factors Revision",
+            "Implementation Lifecycle Revision",
+            "Governance Scenarios",
+            "Case Study Analysis",
+            "Practice Questions",
+            "Mock Exams",
+            "Exam Strategies",
+            "Prepare for COBIT Design & Implementation certification.",
+            "Apply governance concepts to real-world scenarios."
+          ]
+        }
+      ]
+    },
+    {
+      "name": " CGRC",
+      "modules": [
+        {
+          "title": "Module 1: Introduction to IT Service Management (ITSM)",
+          "topics": [
+            "Fundamentals of IT Service Management",
+            "Evolution of ITSM",
+            "Business Value of IT Services",
+            "IT Service Management Concepts",
+            "Service Lifecycle Overview",
+            "Service Provider Roles and Responsibilities",
+            "Relationship between ITSM and Business Strategy",
+            "Understand ITSM principles and terminology.",
+            "Explain the value of service management in organizations.",
+            "Identify the components of an effective SMS."
+          ]
+        },
+        {
+          "title": "Module 2: Introduction to ISO/IEC 20000",
+          "topics": [
+            "Overview of ISO/IEC 20000 Family",
+            "Purpose and Benefits of Certification"
+          ]
+        }
+      ]
+    },
+    {
+      "name": " ISO/IEC 20000",
+      "modules": []
+    },
+    {
+      "name": " ISO/IEC 20000",
+      "modules": [
+        {
+          "title": "Module 3: Service Management System (SMS) Fundamentals",
+          "topics": [
+            "Service Management System Architecture",
+            "Scope Definition",
+            "SMS Policies and Objectives",
+            "Process-Based Approach",
+            "Service Value Creation",
+            "Stakeholder Expectations",
+            "Service Governance",
+            "Design a Service Management System.",
+            "Establish SMS scope and objectives.",
+            "Align SMS with business needs."
+          ]
+        },
+        {
+          "title": "Module 4: Organizational Context and Leadership",
+          "topics": [
+            "Internal and External Issues",
+            "Interested Parties",
+            "Scope Determination",
+            "SMS Processes",
+            "Leadership Commitment",
+            "Service Management Policy",
+            "Roles and Responsibilities",
+            "Governance Structures",
+            "Analyze organizational context.",
+            "Define leadership responsibilities.",
+            "Establish governance mechanisms."
+          ]
+        },
+        {
+          "title": "Module 5: Planning the Service Management System",
+          "topics": [
+            "Risk-Based Thinking",
+            "Opportunities Management",
+            "Service Management Objectives",
+            "Change Planning",
+            "Strategic Service Planning",
+            "Resource Planning",
+            "Create an SMS implementation plan.",
+            "Plan SMS implementation.",
+            "Identify risks and opportunities.",
+            "Develop measurable objectives."
+          ]
+        },
+        {
+          "title": "Module 6: Support Processes for SMS",
+          "topics": [
+            "Resource Management",
+            "Competence and Training",
+            "Awareness Programs",
+            "Communication Management",
+            "Documented Information",
+            "Knowledge Management",
+            "Service Documentation Control",
+            "Develop document control procedures.",
+            "Establish support processes.",
+            "Manage documentation and records.",
+            "Develop staff competency plans."
+          ]
+        },
+        {
+          "title": "Module 7: Service Portfolio and Service Level Management",
+          "topics": [
+            "Service Portfolio Management",
+            "Service Catalog Management",
+            "Service Level Agreements (SLAs)",
+            "Operational Level Agreements (OLAs)",
+            "Service Reporting",
+            "Customer Relationship Management",
+            "Supplier Relationship Management",
+            "Create SLA and Service Catalog templates.",
+            "Manage service portfolios effectively.",
+            "Define and monitor service levels."
+          ]
+        },
+        {
+          "title": "Module 8: Service Design and Transition",
+          "topics": [
+            "Service Design Principles",
+            "Service Transition Management",
+            "Release and Deployment Management",
+            "Change Enablement",
+            "Configuration Management",
+            "Asset Management",
+            "Capacity Planning",
+            "Design a new IT service implementation plan.",
+            "Implement service design processes.",
+            "Manage service transitions effectively."
+          ]
+        },
+        {
+          "title": "Module 9: Incident and Service Request Management",
+          "topics": [
+            "Incident Management",
+            "Service Request Fulfillment",
+            "Major Incident Handling",
+            "Escalation Procedures",
+            "Service Desk Operations",
+            "Incident Prioritization",
+            "Incident Reporting",
+            "Simulate incident response workflows.",
+            "Implement incident management processes.",
+            "Improve service responsiveness."
+          ]
+        },
+        {
+          "title": "Module 10: Problem Management",
+          "topics": [
+            "Problem Identification",
+            "Root Cause Analysis",
+            "Known Error Database",
+            "Preventive Actions",
+            "Trend Analysis",
+            "Problem Resolution Workflows",
+            "Conduct Root Cause Analysis (RCA).",
+            "Reduce recurring incidents.",
+            "Implement structured problem management."
+          ]
+        },
+        {
+          "title": "Module 11: Availability, Capacity and Continuity Management",
+          "topics": [
+            "Availability Management",
+            "Capacity Management",
+            "IT Service Continuity Management",
+            "Disaster Recovery Planning",
+            "Business Impact Analysis",
+            "Resilience Strategies",
+            "Develop continuity and recovery plans.",
+            "Improve service resilience.",
+            "Ensure service continuity."
+          ]
+        },
+        {
+          "title": "Module 12: Information Security and Risk Management",
+          "topics": [
+            "Information Security in ITSM",
+            "Service Risks",
+            "Security Controls",
+            "Risk Assessment Methodologies",
+            "Supplier Risks",
+            "Compliance Requirements",
+            "Security Incident Handling",
+            "Perform service risk assessments.",
+            "Integrate security into ITSM.",
+            "Manage service-related risks."
+          ]
+        },
+        {
+          "title": "Module 13: Performance Evaluation",
+          "topics": [
+            "Service Metrics and KPIs",
+            "Monitoring and Measurement",
+            "Internal Audits",
+            "Management Reviews",
+            "Customer Satisfaction Analysis",
+            "Performance Reporting",
+            "Create KPI dashboards.",
+            "Measure SMS performance.",
+            "Conduct management reviews."
+          ]
+        },
+        {
+          "title": "Module 14: Continual Improvement",
+          "topics": [
+            "Continual Improvement Process",
+            "Corrective Actions",
+            "Nonconformity Management",
+            "PDCA Cycle",
+            "Service Optimization",
+            "Lessons Learned Programs",
+            "Develop continual improvement plans.",
+            "Implement improvement initiatives.",
+            "Enhance service maturity."
+          ]
+        },
+        {
+          "title": "Module 15: ISO/IEC 20000 Implementation Methodology",
+          "topics": [
+            "PECB Implementation Framework",
+            "SMS Implementation Lifecycle",
+            "Gap Assessment",
+            "Project Planning",
+            "Process Development",
+            "Pilot Deployment",
+            "Full-Scale Implementation",
+            "Build an SMS implementation roadmap.",
+            "Execute structured SMS implementations.",
+            "Manage implementation projects effectively."
+          ]
+        },
+        {
+          "title": "Module 16: ITSM Governance and Integration",
+          "topics": [
+            "ITSM Governance Framework",
+            "Integration with IT Governance",
+            "Service Governance Models",
+            "Organizational Roles",
+            "Service Ownership",
+            "Governance Committees",
+            "Establish ITSM governance structures.",
+            "Align IT services with organizational objectives."
+          ]
+        },
+        {
+          "title": "Module 17: Integration with Other Standards",
+          "topics": [
+            "ISO/IEC 20000 and ISO 9001",
+            "ISO/IEC 20000 and ISO/IEC 27001",
+            "ISO/IEC 20000 and ISO 22301",
+            "ISO/IEC 20000 and COBIT 2019",
+            "ISO/IEC 20000 and ITIL 4",
+            "Governance and Compliance Alignment",
+            "Integrate SMS with other management systems.",
+            "Build unified governance models."
+          ]
+        },
+        {
+          "title": "Module 18: Internal Audit and Certification Preparation",
+          "topics": [
+            "Audit Principles",
+            "Audit Planning",
+            "Audit Checklists",
+            "Evidence Collection",
+            "Nonconformity Reporting",
+            "Certification Process",
+            "Readiness Assessment",
+            "Conduct a mock certification audit.",
+            "Prepare organizations for certification audits.",
+            "Evaluate SMS compliance."
+          ]
+        },
+        {
+          "title": "Module 19: Service Management System Implementation Workshop",
+          "topics": [
+            "Define SMS Scope",
+            "Conduct Gap Analysis",
+            "Develop SMS Policy",
+            "Create Service Catalog",
+            "Design Incident Management Process",
+            "Develop KPI Framework",
+            "Build Audit Plan",
+            "SMS Implementation Plan",
+            "Service Catalog",
+            "KPI Dashboard",
+            "Audit Checklist"
+          ]
+        },
+        {
+          "title": "Module 20: Capstone Project",
+          "topics": [
+            "Organizational Context Analysis",
+            "SMS Scope Definition",
+            "Risk Assessment",
+            "Service Catalog Design",
+            "SLA Development",
+            "Incident & Problem Management Design",
+            "Performance Measurement Framework",
+            "Internal Audit Planning",
+            "Continual Improvement Roadmap",
+            "Service Management System Manual",
+            "SMS Policy and Objectives",
+            "Service Catalog",
+            "SLA Framework",
+            "Risk Register",
+            "KPI Dashboard",
+            "Internal Audit Program",
+            "Certification Readiness Report"
+          ]
+        },
+        {
+          "title": "Module 21: PECB ISO/IEC 20000 Lead Implementer Exam Preparation",
+          "topics": [
+            "ISO/IEC 20000 Clause Review",
+            "SMS Requirements Review",
+            "Implementation Lifecycle Review",
+            "Service Management Processes",
+            "Governance and Compliance",
+            "Scenario-Based Questions",
+            "Mock Examinations",
+            "Exam Strategies",
+            "Prepare for the Lead Implementer certification exam.",
+            "Apply ISO/IEC 20000 requirements in real-world scenarios."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CGEIT",
+      "modules": []
+    },
+    {
+      "name": "CCNA",
+      "modules": [
+        {
+          "title": "Chapter 1: Introduction to TCP/IP Networking",
+          "topics": [
+            "TCP/IP Networking Model",
+            "History Leading to TCP/IP",
+            "Overview of the TCP/IP Networking Model",
+            "TCP/IP Application Layer",
+            "HTTP Overview",
+            "HTTP Protocol Mechanisms",
+            "TCP/IP Transport Layer",
+            "TCP Error Recovery Basics",
+            "Same-Layer and Adjacent-Layer Interactions",
+            "TCP/IP Network Layer",
+            "Internet Protocol and the Postal Service",
+            "Internet Protocol Addressing Basics",
+            "IP Routing Basics",
+            "TCP/IP Data-Link and Physical Layers",
+            "Data Encapsulation Terminology",
+            "Names of TCP/IP Messages",
+            "OSI Networking Model and Terminology",
+            "Comparing OSI and TCP/IP Layer Names and Numbers",
+            "OSI Data Encapsulation Terminology"
+          ]
+        },
+        {
+          "title": "Chapter 2: Fundamentals of Ethernet LANs",
+          "topics": [
+            "An Overview of LANs",
+            "SOHO LANs",
+            "Enterprise LANs",
+            "The Variety of Ethernet Physical Layer Standards",
+            "Consistent Behavior over All Links Using the Ethernet Data-Link Layer",
+            "Building Physical Ethernet LANs with UTP",
+            "Transmitting Data Using Twisted Pairs",
+            "Breaking Down a UTP Ethernet Link",
+            "UTP Cabling Pinouts for 10BASE-T and 100BASE-T",
+            "Straight-Through Cable Pinout",
+            "Choosing the Right Cable Pinouts",
+            "UTP Cabling Pinouts for 1000BASE-T",
+            "Building Physical Ethernet LANs with Fiber",
+            "Fiber Cabling Transmission Concepts",
+            "Using Fiber with Ethernet",
+            "Sending Data in Ethernet Networks",
+            "Ethernet Data-Link Protocols",
+            "Ethernet Addressing",
+            "Identifying Network Layer Protocols with the Ethernet Type Field",
+            "Error Detection with FCS",
+            "Sending Ethernet Frames with Switches and Hubs",
+            "Sending in Modern Ethernet LANs Using Full Duplex",
+            "Using Half Duplex with LAN Hubs"
+          ]
+        },
+        {
+          "title": "Chapter 3: Fundamentals of WANs and IP Routing",
+          "topics": [
+            "Wide-Area Networks",
+            "Leased-Line WANs",
+            "Physical Details of Leased Lines",
+            "HDLC Data-Link Details of Leased Lines",
+            "How Routers Use a WAN Data Link",
+            "Ethernet as a WAN Technology",
+            "Ethernet WANs That Create a Layer 2 Service",
+            "How Routers Route IP Packets Using Ethernet Emulation",
+            "IP Routing",
+            "Network Layer Routing (Forwarding) Logic",
+            "Host Forwarding Logic: Send the Packet to the Default Router",
+            "R1 and R2’s Logic: Routing Data Across the Network",
+            "R3’s Logic: Delivering Data to the End Destination",
+            "How Network Layer Routing Uses LANs and WAN",
+            "How IP Addressing Helps IP Routing",
+            "Rules for Groups of IP Addresses (Networks and Subnets)",
+            "The IP Header",
+            "How IP Routing Protocols Help IP Routing",
+            "Other Network Layer Features",
+            "Using Names and the Domain Name System",
+            "The Address Resolution Protocol",
+            "ICMP Echo and the ping Command"
+          ]
+        },
+        {
+          "title": "Chapter 4: Using the Command-Line Interface",
+          "topics": [
+            "Accessing the Cisco Catalyst Switch CLI",
+            "Cisco Catalyst Switches",
+            "Accessing the Cisco IOS CLI",
+            "Cabling the Console Connection",
+            "Accessing the CLI with Telnet and SSH",
+            "User and Enable (Privileged) Modes",
+            "Password Security for CLI Access from the Console",
+            "CLI Help Features",
+            "The debug and show Commands",
+            "Configuring Cisco IOS Software",
+            "Configuration Submodels and Contexts",
+            "Storing Switch Configuration Files",
+            "Copying and Erasing Configuration Files"
+          ]
+        },
+        {
+          "title": "Chapter 5: Analysing Ethernet LAN Switching",
+          "topics": [
+            "LAN Switching Concepts",
+            "Overview of Switching Logic",
+            "Forwarding Known Unicast Frames",
+            "Learning MAC Addresses",
+            "Flooding Unknown Unicast and Broadcast Frames",
+            "Avoiding Loops Using Spanning Tree Protocol",
+            "LAN Switching Summary",
+            "Verifying and Analyzing Ethernet Switching",
+            "Demonstrating MAC Learning",
+            "Switch Interfaces",
+            "Finding Entries in the MAC Address Table",
+            "Managing the MAC Address Table (Aging, Clearing)",
+            "MAC Address Tables with Multiple Switches"
+          ]
+        },
+        {
+          "title": "Chapter 6: Configuring Basic Switch Management",
+          "topics": [
+            "Securing the Switch CLI",
+            "Securing User Mode and Privileged Mode with Simple Passwords",
+            "Securing User Mode Access with Local Usernames and Passwords",
+            "Securing User Mode Access with External Authentication Servers",
+            "Securing Remote Access with Secure Shell",
+            "Enabling IPv4 for Remote Access",
+            "Host and Switch IP Settings",
+            "Configuring IPv4 on a Switch",
+            "Configuring a Switch to Learn Its IP Address with DHCP",
+            "Verifying IPv4 on a Switch",
+            "Miscellaneous Settings Useful in the Lab",
+            "History Buffer Commands",
+            "The logging synchronous, exec-timeout, and no ip domain-lookup Commands"
+          ]
+        },
+        {
+          "title": "Chapter 7: Configuring and Verifying Switch Interfaces",
+          "topics": [
+            "Configuring Switch Interfaces",
+            "Configuring Speed, Duplex, and Description",
+            "Configuring Multiple Interfaces with the interface range Command",
+            "Administratively Controlling Interface State with shutdown",
+            "Removing Configuration with the no Command",
+            "Auto-negotiation",
+            "Auto-negotiation Under Working Conditions",
+            "Auto-negotiation Results When Only One Node Uses Autonegotiation",
+            "Auto-negotiation and LAN Hubs",
+            "Analyzing Switch Interface Status and Statistics",
+            "Interface Status Codes and Reasons for Nonworking States",
+            "Interface Speed and Duplex Issues",
+            "Common Layer 1 Problem on Working Interfaces"
+          ]
+        },
+        {
+          "title": "Chapter 8: Implementing Ethernet Virtual LANs",
+          "topics": [
+            "Virtual LAN Concepts",
+            "Creating Multiswitch VLANs Using Trunking",
+            "VLAN Tagging Concepts",
+            "The 802.1Q and ISL VLAN Trunking Protocols",
+            "Forwarding Data Between VLANs",
+            "The Need for Routing Between VLANs",
+            "Routing Packets Between VLANs with a Router",
+            "VLAN and VLAN Trunking Configuration and Verification",
+            "Creating VLANs and Assigning Access VLANs to an Interface",
+            "VLAN Configuration Example 1: Full VLAN Configuration",
+            "VLAN Configuration Example 2: Shorter VLAN Configuration",
+            "VLAN Trunking Protocol",
+            "VLAN Trunking Configuration",
+            "Implementing Interfaces Connected to Phones",
+            "Data and Voice VLAN Concepts",
+            "Data and Voice VLAN Configuration and Verification",
+            "Summary: IP Telephony Ports on Switches",
+            "Troubleshooting VLANs and VLAN Trunks",
+            "Access VLANs Undefined or Disabled",
+            "Mismatched Trunking Operational State",
+            "The Supported VLAN List on Trunks",
+            "Mismatched Native VLAN on a Trunk"
+          ]
+        },
+        {
+          "title": "Chapter 9: Spanning Tree Protocol Concepts",
+          "topics": [
+            "STP and RSTP Basics",
+            "The Need for Spanning Tree",
+            "What Spanning Tree Does",
+            "How Spanning Tree Works",
+            "The STP Bridge ID and Hello BPDU",
+            "Electing the Root Switch",
+            "Choosing Each Switch’s Root Port",
+            "Choosing the Designated Port on Each LAN Segment",
+            "Configuring to Influence the STP Topology",
+            "Details Specific to STP (and Not RSTP)",
+            "STP Activity When the Network Remains Stable",
+            "STP Timers That Manage STP Convergence",
+            "Changing Interface States with STP",
+            "Rapid STP Concepts",
+            "Comparing STP and RSTP",
+            "RSTP and the Alternate (Root) Port Role",
+            "RSTP States and Processes",
+            "RSTP and the Backup (Designated) Port Role",
+            "RSTP Port Types",
+            "Optional STP Features",
+            "EtherChannel",
+            "PortFast",
+            "BPDU Guard"
+          ]
+        },
+        {
+          "title": "Chapter 10: RSTP and EtherChannel Configuration",
+          "topics": [
+            "Understanding RSTP Through Configuration",
+            "The Need for Multiple Spanning Trees",
+            "STP Modes and Standards",
+            "The Bridge ID and System ID Extension",
+            "How Switches Use the Priority and System ID Extension",
+            "RSTP Methods to Support Multiple Spanning Trees",
+            "Other RSTP Configuration Options",
+            "Configuring Layer 2 EtherChannel",
+            "Configuring a Manual Layer 2 EtherChannel",
+            "Configuring Dynamic EtherChannels",
+            "Physical Interface Configuration and EtherChannels",
+            "EtherChannel Load Distribution",
+            "Configuration Options for EtherChannel Load Distribution",
+            "The Effects of the EtherChannel Load Distribution Algorithm"
+          ]
+        },
+        {
+          "title": "Chapter 11: Perspectives on IPv4 Subnetting",
+          "topics": [
+            "Introduction to Subnetting",
+            "Subnetting Defined Through a Simple Example",
+            "Operational View Versus Design View of Subnetting",
+            "Analyze Subnetting and Addressing Needs",
+            "Rules About Which Hosts Are in Which Subnet",
+            "Determining the Number of Subnets",
+            "Determining the Number of Hosts per Subnet",
+            "One Size Subnet Fits All—Or Not",
+            "Defining the Size of a Subnet",
+            "One Size Subnet Fits All",
+            "Multiple Subnet Sizes (Variable-Length Subnet Masks)",
+            "One Mask for All Subnets, or More Than One",
+            "Make Design Choices",
+            "Choose a Classful Network",
+            "Public IP Networks",
+            "Growth Exhausts the Public IP Address Space",
+            "Private IP Networks",
+            "Choosing an IP Network During the Design Phase",
+            "Choose the Mask",
+            "Classful IP Networks Before Subnetting",
+            "Borrowing Host Bits to Create Subnet Bits",
+            "Choosing Enough Subnet and Host Bits",
+            "Example Design: 172.16.0.0, 200 Subnets, 200 Hosts",
+            "Masks and Mask Formats",
+            "Build a List of All Subnets",
+            "Plan the Implementation",
+            "Assigning Subnets to Different Locations",
+            "Choose Static and Dynamic Ranges per Subnet"
+          ]
+        },
+        {
+          "title": "Chapter 12: Analysing Classful IPv4 Networks",
+          "topics": [
+            "Classful Network Concepts",
+            "IPv4 Network Classes and Related Facts",
+            "The Number and Size of Class A, B, and C Networks",
+            "Address Formats",
+            "Default Masks",
+            "Number of Hosts per Network",
+            "Deriving the Network ID and Related Numbers",
+            "Unusual Network IDs and Network Broadcast Addresses",
+            "Practice with Classful Networks",
+            "Practice Deriving Key Facts Based on an IP Address",
+            "Practice Remembering the Details of Address Classes"
+          ]
+        },
+        {
+          "title": "Chapter 13: Analyzing Subnet Masks",
+          "topics": [
+            "Subnet Mask Conversion",
+            "Three Mask Formats",
+            "Converting Between Binary and Prefix Masks",
+            "Converting Between Binary and DDN Masks",
+            "Converting Between Prefix and DDN Masks",
+            "Practice Converting Subnet Masks",
+            "Identifying Subnet Design Choices Using Masks",
+            "Masks Divide the Subnet’s Addresses into Two Parts",
+            "Masks and Class Divide Addresses into Three Parts",
+            "Classless and Classful Addressing",
+            "Calculations Based on the IPv4 Address Format",
+            "Practice Analyzing Subnet Masks"
+          ]
+        },
+        {
+          "title": "Chapter 14: Analyzing Existing Subnets",
+          "topics": [
+            "Defining a Subnet",
+            "An Example with Network 172.16.0.0 and Four Subnets",
+            "Subnet ID Concepts",
+            "Subnet Broadcast Address",
+            "Range of Usable Addresses",
+            "Analyzing Existing Subnets: Binary",
+            "Finding the Subnet ID: Binary",
+            "Finding the Subnet Broadcast Address: Binary",
+            "Binary Practice Problems",
+            "Shortcut for the Binary Process",
+            "Brief Note About Boolean Math",
+            "Finding the Range of Addresses",
+            "Analyzing Existing Subnets: Decimal",
+            "Analysis with Easy Masks",
+            "Predictability in the Interesting Octet",
+            "Finding the Subnet ID: Difficult Masks",
+            "Resident Subnet Example 1",
+            "Resident Subnet Example 2",
+            "Resident Subnet Practice Problems",
+            "Finding the Subnet Broadcast Address: Difficult Masks",
+            "Subnet Broadcast Example 1",
+            "Subnet Broadcast Example 2",
+            "Subnet Broadcast Address Practice Problems",
+            "Practice Analyzing Existing Subnets",
+            "A Choice: Memorize or Calculate"
+          ]
+        },
+        {
+          "title": "Chapter 15: Operating Cisco Routers",
+          "topics": [
+            "Installing Cisco Routers",
+            "Installing Enterprise Routers",
+            "Cisco Integrated Services Routers",
+            "Physical Installation",
+            "Installing SOHO Routers",
+            "Enabling IPv4 Support on Cisco Router Interfaces",
+            "Accessing the Router CLI",
+            "Router Interfaces",
+            "Interface Status Codes",
+            "Router Interface IP Addresses",
+            "Bandwidth and Clock Rate on Serial Interfaces",
+            "Router Auxiliary Port"
+          ]
+        },
+        {
+          "title": "Chapter 16: Configuring IPv4 Addresses and Static Routes",
+          "topics": [
+            "IP Routing",
+            "IPv4 Routing Process Reference",
+            "An Example of IP Routing",
+            "Host Forwards the IP Packet to the Default Router (Gateway)",
+            "Routing Step 1: Decide Whether to Process the Incoming Frame",
+            "Routing Step 2: De-encapsulation of the IP Packet",
+            "Routing Step 3: Choosing Where to Forward the Packet",
+            "Routing Step 4: Encapsulating the Packet in a New Frame",
+            "Routing Step 5: Transmitting the Frame",
+            "Configuring IP Addresses and Connected Routes",
+            "Connected Routes and the ip address Command",
+            "The ARP Table on a Cisco Router",
+            "Configuring Static Routes",
+            "Static Network Routes",
+            "Static Host Routes",
+            "Floating Static Routes",
+            "Static Default Routes",
+            "Troubleshooting Static Routes",
+            "Troubleshooting Incorrect Static Routes That Appear in the IP Routing Table",
+            "The Static Route Does Not Appear in the IP Routing Table",
+            "The Correct Static Route Appears but Works Poorly",
+            "IP Forwarding with the Longest Prefix Match",
+            "Using show ip route to Find the Best Route",
+            "Using show ip route address to Find the Best Route",
+            "Interpreting the IP Routing Table"
+          ]
+        },
+        {
+          "title": "Chapter 17: IP Routing in the LAN",
+          "topics": [
+            "VLAN Routing with Router 802.1Q Trunks",
+            "Configuring ROAS",
+            "Verifying ROAS",
+            "Troubleshooting ROAS",
+            "VLAN Routing with Layer 3 Switch SVIs",
+            "Configuring Routing Using Switch SVIs",
+            "Verifying Routing with SVIs",
+            "Troubleshooting Routing with SVIs",
+            "VLAN Routing with Layer 3 Switch Routed Ports",
+            "Implementing Routed Interfaces on Switches",
+            "Implementing Layer 3 EtherChannels",
+            "Troubleshooting Layer 3 EtherChannels"
+          ]
+        },
+        {
+          "title": "Chapter 18: Troubleshooting IPv4 Routing",
+          "topics": [
+            "Problem Isolation Using the Ping Command",
+            "Ping Command Basics",
+            "Strategies and Results When Testing with the Ping Command",
+            "Testing Longer Routes from Near the Source of the Problem",
+            "Using Extended Ping to Test the Reverse Route",
+            "Testing LAN Neighbors with Standard Ping",
+            "Testing LAN Neighbors with Extended Ping",
+            "Testing WAN Neighbors with Standard Ping",
+            "Using Ping with Names and with IP Addresses",
+            "Problem Isolation Using the Traceroute Command",
+            "Traceroute Basics",
+            "How the Traceroute Command Works",
+            "Standard and Extended Traceroute",
+            "Telnet and SSH",
+            "Common Reasons to Use the IOS Telnet and SSH Client",
+            "IOS Telnet and SSH Examples"
+          ]
+        },
+        {
+          "title": "Chapter 19: Understanding OSPF Concepts",
+          "topics": [
+            "Comparing Dynamic Routing Protocol Features",
+            "Routing Protocol Functions",
+            "Interior and Exterior Routing Protocols",
+            "Comparing IGPs",
+            "IGP Routing Protocol Algorithms",
+            "Metrics",
+            "Other IGP Comparisons",
+            "Administrative Distance",
+            "OSPF Concepts and Operation",
+            "OSPF Overview",
+            "Topology Information and LSAs",
+            "Applying Dijkstra SPF Math to Find the Best Routes",
+            "Becoming OSPF Neighbors",
+            "The Basics of OSPF Neighbors",
+            "Meeting Neighbors and Learning Their Router ID",
+            "Exchanging the LSDB Between Neighbors",
+            "Fully Exchanging LSAs with Neighbors",
+            "Maintaining Neighbors and the LSDB",
+            "Using Designated Routers on Ethernet Links",
+            "Calculating the Best Routes with SPF",
+            "OSPF Areas and LSAs",
+            "OSPF Areas",
+            "How Areas Reduce SPF Calculation Time",
+            "(OSPFv2) Link-State Advertisements",
+            "Router LSAs Build Most of the Intra-Area Topology",
+            "Network LSAs Complete the Intra-Area Topology"
+          ]
+        },
+        {
+          "title": "Chapter 20: Implementing OSPF",
+          "topics": [
+            "Implementing Single-Area OSPFv2",
+            "OSPF Single-Area Configuration",
+            "Wildcard Matching with the network Command",
+            "Verifying OSPF Operation",
+            "Verifying OSPF Configuration",
+            "Configuring the OSPF Router ID",
+            "Implementing Multiarea OSPF",
+            "Using OSPFv2 Interface Subcommands",
+            "OSPF Interface Configuration Example",
+            "Verifying OSPF Interface Configuration",
+            "Additional OSPFv2 Features",
+            "OSPF Passive Interfaces",
+            "OSPF Default Routes",
+            "OSPF Metrics (Cost)",
+            "Setting the Cost Directly",
+            "Setting the Cost Based on Interface and Reference Bandwidth",
+            "OSPF Load Balancing"
+          ]
+        },
+        {
+          "title": "Chapter 21: OSPF Network Types and Neighbors",
+          "topics": [
+            "OSPF Network Types",
+            "The OSPF Broadcast Network Type",
+            "Verifying Operations with Network Type Broadcast",
+            "Configuring to Influence the DR/BDR Election",
+            "The OSPF Point-to-Point Network Type",
+            "OSPF Neighbor Relationships",
+            "OSPF Neighbor Requirements",
+            "Issues That Prevent Neighbor Adjacencies",
+            "Finding Area Mismatches",
+            "Finding Duplicate OSPF Router IDs",
+            "Finding OSPF Hello and Dead Timer Mismatches",
+            "Shutting Down the OSPF Process",
+            "Issues That Allow Adjacencies but Prevent IP Routes",
+            "Mismatched MTU Settings",
+            "Mismatched OSPF Network Types"
+          ]
+        },
+        {
+          "title": "Chapter 22: Fundamentals of IP Version 6",
+          "topics": [
+            "Introduction to IPv6",
+            "The Historical Reasons for IPv6",
+            "The IPv6 Protocols",
+            "IPv6 Routing",
+            "IPv6 Routing Protocols",
+            "IPv6 Addressing Formats and Conventions",
+            "Representing Full (Unabbreviated) IPv6 Addresses",
+            "Abbreviating and Expanding IPv6 Addresses",
+            "Abbreviating IPv6 Addresses",
+            "Expanding Abbreviated IPv6 Addresses",
+            "Representing the Prefix Length of an Address",
+            "Calculating the IPv6 Prefix (Subnet ID)",
+            "Finding the IPv6 Prefix",
+            "Working with More Difficult IPv6 Prefix Lengths"
+          ]
+        },
+        {
+          "title": "Chapter 23: IPv6 Addressing and Subnetting",
+          "topics": [
+            "Global Unicast Addressing Concepts",
+            "Public and Private IPv6 Addresses",
+            "The IPv6 Global Routing Prefix",
+            "Address Ranges for Global Unicast Addresses",
+            "IPv6 Subnetting Using Global Unicast Addresses",
+            "Deciding Where IPv6 Subnets Are Needed",
+            "The Mechanics of Subnetting IPv6 Global Unicast Addresses",
+            "Listing the IPv6 Subnet Identifier",
+            "List All IPv6 Subnets",
+            "Assign Subnets to the Internetwork Topology",
+            "Assigning Addresses to Hosts in a Subnet",
+            "Unique Local Unicast Addresses",
+            "Subnetting with Unique Local IPv6 Addresses",
+            "The Need for Globally Unique Local Addresses"
+          ]
+        },
+        {
+          "title": "Chapter 24: Implementing IPv6 Addressing Routers",
+          "topics": [
+            "Implementing Unicast IPv6 Addresses on Routers",
+            "Static Unicast Address Configuration",
+            "Configuring the Full 128-Bit Address",
+            "Enabling IPv6 Routing",
+            "Verifying the IPv6 Address Configuration",
+            "Generating a Unique Interface ID Using Modified EUI-64",
+            "Dynamic Unicast Address Configuration",
+            "Special Addresses Used by Routers",
+            "Link-Local Addresses",
+            "Link-Local Address Concepts",
+            "Creating Link-Local Addresses on Routers",
+            "Routing IPv6 with Only Link-Local Addresses on an Interface",
+            "IPv6 Multicast Addresses",
+            "Reserved Multicast Addresses",
+            "Multicast Address Scopes",
+            "Solicited-Node Multicast Addresses",
+            "Miscellaneous IPv6 Addresses",
+            "Anycast Addresses",
+            "IPv6 Addressing Configuration Summary"
+          ]
+        },
+        {
+          "title": "Chapter 25: Implementing IPv6 Routing",
+          "topics": [
+            "Connected and Local IPv6 Routes",
+            "Rules for Connected and Local Routes",
+            "Example of Connected IPv6 Routes",
+            "Examples of Local IPv6 Routes",
+            "Static IPv6 Routes",
+            "Static Routes Using the Outgoing Interface",
+            "Static Routes Using Next-Hop IPv6 Address",
+            "Example Static Route with a Global Unicast Next-Hop Address",
+            "Example Static Route with a Link-Local Next-Hop Address",
+            "Static Routes over Ethernet Links",
+            "Static Default Routes",
+            "Static IPv6 Host Routes",
+            "Floating Static IPv6 Routes",
+            "Troubleshooting Static IPv6 Routes",
+            "Troubleshooting Incorrect Static Routes That Appear in the IPv6 Routing",
+            "The Static Route Does Not Appear in the IPv6 Routing Table",
+            "The Neighbor Discovery Protocol",
+            "Discovering Neighbor Link Addresses with NDP NS and NA",
+            "Discovering Routers with NDP RS and RA",
+            "Using SLAAC with NDP RS and RA",
+            "Discovering Duplicate Addresses Using NDP NS and NA",
+            "NDP Summary"
+          ]
+        },
+        {
+          "title": "Chapter 26: Fundamentals of Wireless Networks",
+          "topics": [
+            "Comparing Wired and Wireless Networks",
+            "Wireless LAN Topologies",
+            "Basic Service Set",
+            "Distribution System",
+            "Extended Service Set",
+            "Independent Basic Service Set",
+            "Other Wireless Topologies",
+            "Repeater",
+            "Workgroup Bridge",
+            "Outdoor Bridge",
+            "Mesh Network",
+            "RF Overview",
+            "Wireless Bands and Channels",
+            "APs and Wireless Standards"
+          ]
+        },
+        {
+          "title": "Chapter 27: Analysing Cisco Wireless Architectures",
+          "topics": [
+            "Autonomous AP Architecture",
+            "Cloud-based AP Architecture",
+            "Split-MAC Architectures",
+            "Comparing Wireless LAN Controller Deployments",
+            "Cisco AP Modes"
+          ]
+        },
+        {
+          "title": "Chapter 28: Securing Wireless Networks",
+          "topics": [
+            "Anatomy of a Secure Connection",
+            "Authentication",
+            "Message Privacy",
+            "Message Integrity",
+            "Wireless Client Authentication Methods",
+            "Open Authentication",
+            "WEP",
+            "802.1x/EAP",
+            "LEAP"
+          ]
+        }
+      ]
+    },
+    {
+      "name": " EAP",
+      "modules": []
+    },
+    {
+      "name": " EAP",
+      "modules": [
+        {
+          "title": "Chapter 29: Building a Wireless LAN",
+          "topics": [
+            "Connecting a Cisco AP",
+            "Accessing a Cisco WLC",
+            "Connecting a Cisco WLC",
+            "Using WLC Ports",
+            "Using WLC Interfaces",
+            "Configuring a WLAN",
+            "Step 1. Configure a RADIUS Server",
+            "Step 2. Create a Dynamic Interface",
+            "Step 3. Create a New WLAN",
+            "Configuring WLAN Security",
+            "Configuring WLAN QoS",
+            "Configuring Advanced WLAN Settings",
+            "Finalizing WLAN Configuration"
+          ]
+        },
+        {
+          "title": "Chapter 30: Introduction to TCP/IP Transport and Applications",
+          "topics": [
+            "TCP/IP Layer 4 Protocols: TCP and UDP",
+            "Transmission Control Protocol",
+            "Multiplexing Using TCP Port Numbers",
+            "Popular TCP/IP Applications",
+            "Connection Establishment and Termination",
+            "Error Recovery and Reliability",
+            "Flow Control Using Windowing",
+            "User Datagram Protocol",
+            "TCP/IP Applications",
+            "Uniform Resource Identifiers",
+            "Finding the Web Server Using DNS",
+            "Transferring Files with HTTP",
+            "How the Receiving Host Identifies the Correct Receiving Application"
+          ]
+        },
+        {
+          "title": "Chapter 31: Basic IPv4 Access Control Lists",
+          "topics": [
+            "IPv4 Access Control List Basics",
+            "ACL Location and Direction",
+            "Matching Packets",
+            "Taking Action When a Match Occurs",
+            "Types of IP ACLs",
+            "Standard Numbered IPv4 ACLs",
+            "List Logic with IP ACLs",
+            "Matching Logic and Command Syntax",
+            "Matching the Exact IP Address",
+            "Matching a Subset of the Address with Wildcards",
+            "Binary Wildcard Masks",
+            "Finding the Right Wildcard Mask to Match a Subnet",
+            "Matching Any/All Addresses",
+            "Implementing Standard IP ACLs",
+            "Standard Numbered ACL Example 1",
+            "Standard Numbered ACL Example 2",
+            "Troubleshooting and Verification Tip",
+            "Practice Applying Standard IP ACLs",
+            "Practice Building access-list Commands",
+            "Reverse Engineering from ACL to Address Range"
+          ]
+        },
+        {
+          "title": "Chapter 32: Advanced IPv4 Access Control Lists",
+          "topics": [
+            "Extended Numbered IP Access Control Lists",
+            "Matching the Protocol, Source IP, and Destination IP",
+            "Matching TCP and UDP Port Numbers",
+            "Extended IP ACL Configuration",
+            "Extended IP Access Lists: Example 1",
+            "Extended IP Access Lists: Example 2",
+            "Practice Building access-list Commands",
+            "Named ACLs and ACL Editing",
+            "Named IP Access Lists",
+            "Editing ACLs Using Sequence Numbers",
+            "Numbered ACL Configuration Versus Named ACL Configuration",
+            "ACL Implementation Considerations",
+            "Additional Reading on ACLs"
+          ]
+        },
+        {
+          "title": "Chapter 33: Security Architectures",
+          "topics": [
+            "Security Terminology",
+            "Common Security Threats",
+            "Attacks That Spoof Addresses",
+            "Denial-of-Service Attacks",
+            "Reflection and Amplification Attacks",
+            "Man-in-the-Middle Attacks",
+            "Address Spoofing Attack Summary",
+            "Reconnaissance Attacks",
+            "Buffer Overflow Attacks",
+            "Malware",
+            "Human Vulnerabilities",
+            "Password Vulnerabilities",
+            "Password Alternatives",
+            "Controlling and Monitoring User Access",
+            "Developing a Security Program to Educate Users"
+          ]
+        },
+        {
+          "title": "Chapter 34: Securing Network Devices",
+          "topics": [
+            "Securing IOS Passwords",
+            "Encrypting Older IOS Passwords with service password-encryption",
+            "Encoding the Enable Passwords with Hashes",
+            "Interactions Between Enable Password and Enable Secret",
+            "Making the Enable Secret Truly Secret with a Hash",
+            "Improved Hashes for Cisco’s Enable Secret",
+            "Encoding the Passwords for Local Usernames",
+            "Controlling Password Attacks with ACLs",
+            "Firewalls and Intrusion Prevention Systems",
+            "Traditional Firewalls",
+            "Security Zones",
+            "Intrusion Prevention Systems (IPS)",
+            "Cisco Next-Generation Firewalls",
+            "Cisco Next-Generation IPS"
+          ]
+        },
+        {
+          "title": "Chapter 35: Implementing Switch Port Security",
+          "topics": [
+            "Port Security Concepts and Configuration",
+            "Configuring Port Security",
+            "Verifying Port Security",
+            "Port Security MAC Addresses",
+            "Port Security Violation Modes",
+            "Port Security Shutdown Mode",
+            "Port Security Protect and Restrict Modes"
+          ]
+        },
+        {
+          "title": "Chapter 36: Implementing DHCP",
+          "topics": [
+            "Dynamic Host Configuration Protocol",
+            "DHCP Concepts",
+            "Supporting DHCP for Remote Subnets with DHCP Relay",
+            "Information Stored at the DHCP Server",
+            "Configuring DHCP Features on Routers and Switches",
+            "Configuring DHCP Relay",
+            "Configuring a Switch as DHCP Client",
+            "Configuring a Router as DHCP Client",
+            "Identifying Host IPv4 Settings",
+            "Host Settings for IPv4",
+            "Host IP Settings on Windows",
+            "Host IP Settings on macOS",
+            "Host IP Settings on Linux"
+          ]
+        },
+        {
+          "title": "Chapter 37: DHCP Snooping and ARP Inspection",
+          "topics": [
+            "DHCP Snooping Concepts",
+            "A Sample Attack: A Spurious DHCP Server",
+            "DHCP Snooping Logic",
+            "Filtering DISCOVER Messages Based on MAC Address",
+            "Filtering Messages that Release IP Addresses",
+            "DHCP Snooping Configuration",
+            "Configuring DHCP Snooping on a Layer 2 Switch",
+            "Limiting DHCP Message Rates",
+            "DHCP Snooping Configuration Summary",
+            "Dynamic ARP Inspection",
+            "DAI Concepts",
+            "Review of Normal IP ARP",
+            "Gratuitous ARP as an Attack Vector",
+            "Dynamic ARP Inspection Logic",
+            "Dynamic ARP Inspection Configuration",
+            "Configuring ARP Inspection on a Layer 2 Switch",
+            "Limiting DAI Message Rates",
+            "Configuring Optional DAI Message Checks",
+            "IP ARP Inspection Configuration Summary"
+          ]
+        },
+        {
+          "title": "Chapter 38: Device Management Protocols",
+          "topics": [
+            "System Message Logging (Syslog)",
+            "Sending Messages in Real Time to Current Users",
+            "Storing Log Messages for Later Review",
+            "Log Message Format",
+            "Log Message Severity Levels",
+            "Configuring and Verifying System Logging",
+            "The debug Command and Log Messages",
+            "Network Time Protocol (NTP)",
+            "Setting the Time and Timezone",
+            "Basic NTP Configuration",
+            "NTP Reference Clock and Stratum",
+            "Redundant NTP Configuration",
+            "NTP Using a Loopback Interface for Better Availability",
+            "Analyzing Topology Using CDP and LLDP",
+            "Examining Information Learned by CDP",
+            "Configuring and Verifying CDP",
+            "Examining Information Learned by LLDP",
+            "Configuring and Verifying LLDP"
+          ]
+        },
+        {
+          "title": "Chapter 39: Network Address Translation",
+          "topics": [
+            "Perspectives on IPv4 Address Scalability",
+            "CIDR",
+            "Private Addressing",
+            "Network Address Translation Concepts",
+            "Static NAT",
+            "Dynamic NAT",
+            "Overloading NAT with Port Address Translation",
+            "NAT Configuration and Troubleshooting",
+            "Static NAT Configuration",
+            "Dynamic NAT Configuration",
+            "Dynamic NAT Verification",
+            "NAT Overload (PAT) Configuration",
+            "NAT Troubleshooting"
+          ]
+        },
+        {
+          "title": "Chapter 40: Quality of Service (QoS)",
+          "topics": [
+            "Introduction to QoS",
+            "QoS: Managing Bandwidth, Delay, Jitter, and Loss",
+            "Types of Traffic",
+            "Data Applications",
+            "Voice and Video Applications",
+            "QoS, as mentioned in The Book",
+            "QoS on Switches and Routers",
+            "Classification and Marking",
+            "Classification Basics",
+            "Matching (Classification) Basics",
+            "Classification of Routers with ACLs and NBAR",
+            "Marking IP DSCP and Ethernet CoS",
+            "Marking the IP Header",
+            "Marking the Ethernet 802.1Q Header",
+            "Other Marking Fields",
+            "Defining Trust Boundaries",
+            "DiffServ Suggested Marking Values",
+            "Expedited Forwarding (EF)",
+            "Assured Forwarding (AF)",
+            "Class Selector (CS)",
+            "Guidelines for DSCP Marking Values",
+            "Queuing",
+            "Round-Robin Scheduling (Prioritization)",
+            "Low Latency Queuing",
+            "A Prioritization Strategy for Data, Voice, and Video",
+            "Shaping and Policing",
+            "Policing",
+            "Where to Use Policing",
+            "Shaping",
+            "Setting a Good Shaping Time Interval for Voice and Video",
+            "Congestion Avoidance",
+            "TCP Windowing Basics",
+            "Congestion Avoidance Tools"
+          ]
+        },
+        {
+          "title": "Chapter 41: Miscellaneous IP Services",
+          "topics": [
+            "First Hop Redundancy Protocol",
+            "The Need for Redundancy in Networks",
+            "The Need for a First Hop Redundancy Protocol",
+            "The Three Solutions for First-Hop Redundancy",
+            "HSRP Concepts",
+            "HSRP Failover",
+            "HSRP Load Balancing",
+            "Simple Network Management Protocol",
+            "SNMP Variable Reading and Writing: SNMP Get and Set",
+            "SNMP Notifications: Traps and Informs",
+            "The Management Information Base",
+            "Securing SNMP FTP and TFTP",
+            "Managing Cisco IOS Images with",
+            "FTP/TFTP",
+            "The IOS File System",
+            "Upgrading IOS Images",
+            "Copying a New iOS Image to a Local iOS File System Using TFTP",
+            "Verifying IOS Code Integrity with MD5",
+            "Copying Images with FTP",
+            "The FTP and TFTP Protocols",
+            "FTP Protocol Basics",
+            "FTP Active and Passive Modes",
+            "FTP over TLS (FTP Secure)",
+            "TFTP Protocol Basics"
+          ]
+        },
+        {
+          "title": "Chapter 42: LAN Architecture",
+          "topics": [
+            "Analyzing Campus LAN Topologies",
+            "Two-Tier Campus Design (Collapsed Core)",
+            "The Two-Tier Campus Design",
+            "Topology Terminology Seen Within a Two-Tier Design",
+            "Three-Tier Campus Design (Core)",
+            "Topology Design Terminology",
+            "Small Office/Home Office",
+            "Power over Ethernet (PoE)",
+            "PoE Basics",
+            "PoE Operation",
+            "PoE and LAN Design"
+          ]
+        },
+        {
+          "title": "Chapter 43: WAN Architecture",
+          "topics": [
+            "Metro Ethernet",
+            "Metro Ethernet Physical Design and Topology",
+            "Ethernet WAN Services and Topologies",
+            "Ethernet Line Service (Point-to-Point)",
+            "Ethernet LAN Service (Full Mesh)",
+            "Ethernet Tree Service (Hub and Spoke)",
+            "Layer 3 Design Using Metro Ethernet",
+            "Layer 3 Design with E-Line Service",
+            "Layer 3 Design with E-LAN Service",
+            "Multiprotocol Label Switching (MPLS)",
+            "MPLS VPN Physical Design and Topology",
+            "MPLS and Quality of Service",
+            "Layer 3 with MPLS VPN",
+            "Internet VPNs",
+            "Internet Access",
+            "Digital Subscriber Line",
+            "Cable Internet",
+            "Wireless WAN (3G, 4G, LTE, 5G)",
+            "Fiber (Ethernet) Internet Access",
+            "Internet VPN Fundamentals",
+            "Site-to-Site VPNs with IPsec",
+            "Remote Access VPNs with TLS",
+            "VPN Comparisons"
+          ]
+        },
+        {
+          "title": "Chapter 44: Cloud Architecture",
+          "topics": [
+            "Server Virtualization",
+            "Cisco Server Hardware",
+            "Server Virtualization Basics",
+            "Networking with Virtual Switches on a",
+            "Virtualized Host",
+            "The Physical Data Center Network",
+            "Workflow with a Virtualized Data Center",
+            "Cloud Computing Services",
+            "Private Cloud (On-Premise)",
+            "Public Cloud",
+            "Cloud and the “Software as a Service” Model",
+            "Infrastructure as a Service",
+            "Software as a Service",
+            "(Development) Platform as a Service",
+            "WAN Traffic Paths to Reach Cloud Services",
+            "Enterprise WAN Connections to Public Cloud",
+            "Accessing Public Cloud Services Using the Internet",
+            "Pros and Cons of Connecting to Public Cloud with Internet",
+            "Private WAN and Internet VPN Access to Public Cloud",
+            "Pros and Cons of Connecting to the Cloud with Private WANs",
+            "Intercloud Exchanges",
+            "Summarizing the Pros and Cons of Public Cloud WAN Options",
+            "A Scenario: Branch Offices and the Public Cloud",
+            "Migrating Traffic Flows When Migrating to Email SaaS",
+            "Branch Of ices with Internet and Private WAN"
+          ]
+        },
+        {
+          "title": "Chapter 45: Introduction to Controller-Based Networking",
+          "topics": [
+            "SDN and Controller-Based Networks",
+            "The Data, Control, and Management Planes",
+            "The Data Plane",
+            "The Control Plane",
+            "The Management Plane",
+            "Cisco Switch Data Plane Internals",
+            "Controllers and Software-Defined Architecture",
+            "Controllers and Centralized Control",
+            "The Southbound Interface",
+            "The Northbound Interface",
+            "Software Defined Architecture Summary",
+            "Examples of Network Programmability and SDN",
+            "OpenDaylight and OpenFlow",
+            "The OpenDaylight Controller",
+            "The Cisco Open SDN Controller (OSC)",
+            "Cisco Application Centric Infrastructure (ACI)",
+            "ACI Physical Design: Spine and Leaf",
+            "ACI Operating Model with Intent-Based Networking",
+            "Cisco APIC Enterprise Domain"
+          ]
+        }
+      ]
+    },
+    {
+      "name": " APIC",
+      "modules": []
+    },
+    {
+      "name": " APIC",
+      "modules": [
+        {
+          "title": "Chapter 46: Cisco Software-Defined Access (SDA)",
+          "topics": [
+            "SDA Fabric, Underlay, and Overlay",
+            "The SDA Underlay",
+            "Using Existing Gear for the SDA Underlay",
+            "Using New Gear for the SDA Underlay",
+            "The SDA Overlay",
+            "VXLAN Tunnels in the Overlay (Data Plane)",
+            "LISP for Overlay Discovery and Location (Control Plane)",
+            "DNA Center and SDA Operation",
+            "Cisco DNA Center",
+            "Cisco DNA Center and Scalable Groups",
+            "Issues with Traditional IP-Based Security",
+            "SDA Security Based on User Groups",
+            "DNA Center as a Network Management Platform",
+            "DNA Center Similarities to Traditional Management",
+            "DNA Center Differences with Traditional Management"
+          ]
+        },
+        {
+          "title": "Chapter 47: Understanding REST and JSON",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "name": " REST",
+      "modules": []
+    },
+    {
+      "name": " REST",
+      "modules": [
+        {
+          "title": "Chapter 48: Understanding Ansible, Puppet, and Chef",
+          "topics": [
+            "Device Configuration Challenges and Solutions",
+            "Configuration Drift",
+            "Centralized Configuration Files and Version Control",
+            "Configuration Monitoring and Enforcement",
+            "Configuration Provisioning",
+            "Configuration Templates and Variables",
+            "Files That Control Configuration Automation",
+            "Ansible, Puppet, and Chef Basics",
+            "Ansible",
+            "Puppet",
+            "Chef",
+            "Summary of Configuration Management Tool"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CCNP ENCOR",
+      "modules": [
+        {
+          "title": "Module 2: Software Defined Architecture",
+          "topics": [
+            "Software Defined Networking (SDN)",
+            "Cisco SD-Access Architecture",
+            "Cisco SD-WAN Architecture",
+            "Control Plane vs Data Plane",
+            "DNA Center Fundamentals",
+            "Fabric Networks",
+            "Underlay and Overlay Networks",
+            "Analyze SD-WAN topology"
+          ]
+        }
+      ]
+    },
+    {
+      "name": " SD",
+      "modules": [
+        {
+          "title": "Module 3: Network Virtualization",
+          "topics": [
+            "Virtual Machines",
+            "Hypervisors (Type 1 & Type 2)",
+            "Device Virtualization",
+            "VRF Lite",
+            "Overlay Technologies",
+            "GRE Tunnels",
+            "IPSec Tunnels",
+            "VXLAN Fundamentals",
+            "LISP Overview",
+            "Configure VRF Lite",
+            "Configure GRE Tunnels",
+            "Implement VXLAN concepts",
+            "Deploy virtualization technologies",
+            "Separate traffic using virtual routing instances"
+          ]
+        },
+        {
+          "title": "Module 4: Advanced Layer 2 Technologies",
+          "topics": [
+            "VLAN Design",
+            "802.1Q Trunking",
+            "EtherChannel",
+            "LACP and PAgP",
+            "Rapid STP (RSTP)",
+            "Multiple STP (MST)",
+            "STP Optimization",
+            "Root Guard",
+            "BPDU Guard",
+            "Loop Prevention",
+            "Configure EtherChannel",
+            "Troubleshoot STP",
+            "Configure MST",
+            "Implement resilient Layer 2 networks",
+            "Troubleshoot switching issues"
+          ]
+        },
+        {
+          "title": "Module 5: Advanced Routing Concepts",
+          "topics": [
+            "Routing Fundamentals Review",
+            "Administrative Distance",
+            "Route Selection",
+            "Route Redistribution Concepts",
+            "Policy-Based Routing (PBR)",
+            "Route Maps",
+            "Prefix Lists",
+            "Bidirectional Forwarding Detection (BFD)",
+            "Configure PBR",
+            "Implement route filtering",
+            "Control traffic paths",
+            "Implement advanced routing policies"
+          ]
+        },
+        {
+          "title": "Module 6: OSPF Enterprise Routing",
+          "topics": [
+            "OSPFv2 and OSPFv3",
+            "Multi-Area OSPF",
+            "LSA Types",
+            "DR/BDR Election",
+            "OSPF Authentication",
+            "Route Summarization",
+            "Stub Areas",
+            "NSSA",
+            "OSPF Troubleshooting",
+            "Configure Multi-Area OSPF",
+            "Configure Stub Areas",
+            "Troubleshoot OSPF Adjacencies",
+            "Deploy enterprise OSPF environments",
+            "Optimize OSPF routing design"
+          ]
+        },
+        {
+          "title": "Module 7: EIGRP Enterprise Routing",
+          "topics": [
+            "EIGRP Operations",
+            "DUAL Algorithm",
+            "Neighbor Relationships",
+            "Metric Calculation",
+            "Route Summarization",
+            "Stub Routing",
+            "Authentication",
+            "Wide Metrics",
+            "Configure EIGRP",
+            "Verify DUAL Operations",
+            "Implement and troubleshoot EIGRP networks"
+          ]
+        },
+        {
+          "title": "Module 8: BGP Fundamentals for Enterprise Networks",
+          "topics": [
+            "eBGP Configuration",
+            "iBGP Configuration",
+            "BGP Attributes",
+            "Best Path Selection",
+            "Route Advertisement",
+            "Route Filtering",
+            "Communities",
+            "AS Path Manipulation",
+            "Multi-Homing Design",
+            "Configure eBGP",
+            "Manipulate BGP Path Selection",
+            "Deploy enterprise BGP solutions",
+            "Control routing decisions"
+          ]
+        },
+        {
+          "title": "Module 9: Multicast Technologies",
+          "topics": [
+            "Multicast Fundamentals",
+            "IGMP v2/v3",
+            "IGMP Snooping",
+            "PIM Dense Mode",
+            "PIM Sparse Mode",
+            "Source Specific Multicast (SSM)",
+            "Bidirectional PIM",
+            "MSDP",
+            "Reverse Path Forwarding (RPF)",
+            "Configure PIM Sparse Mode",
+            "Verify Multicast Trees",
+            "Deploy scalable multicast solutions"
+          ]
+        },
+        {
+          "title": "Module 10: Enterprise IP Services",
+          "topics": [
+            "NAT",
+            "PAT",
+            "HSRP",
+            "VRRP",
+            "GLBP",
+            "NTP",
+            "Precision Time Protocol (PTP)",
+            "DHCP Services",
+            "DNS Fundamentals",
+            "Configure HSRP",
+            "Configure NAT/PAT",
+            "Configure NTP",
+            "Implement enterprise network services"
+          ]
+        },
+        {
+          "title": "Module 11: Quality of Service (QoS)",
+          "topics": [
+            "QoS Models",
+            "Traffic Classification",
+            "Marking and Trust Boundaries",
+            "DSCP and CoS",
+            "Congestion Management",
+            "Queuing Mechanisms",
+            "Policing",
+            "Shaping",
+            "Low Latency Queuing (LLQ)",
+            "Configure QoS Policies",
+            "Implement Traffic Shaping",
+            "Prioritize business-critical traffic"
+          ]
+        },
+        {
+          "title": "Module 12: Wireless Enterprise Fundamentals",
+          "topics": [
+            "Wireless Architectures",
+            "WLAN Design",
+            "Wireless Controllers",
+            "CAPWAP",
+            "Wireless Roaming",
+            "RF Fundamentals",
+            "Wireless Troubleshooting",
+            "Wireless Deployment Models",
+            "Configure Wireless LAN Controllers",
+            "Analyze WLAN Design",
+            "Understand enterprise wireless infrastructure"
+          ]
+        },
+        {
+          "title": "Module 13: Network Assurance and Monitoring",
+          "topics": [
+            "SNMP",
+            "Syslog",
+            "Flexible NetFlow",
+            "SPAN",
+            "RSPAN",
+            "ERSPAN",
+            "IP SLA",
+            "Performance Monitoring",
+            "Troubleshooting Methodologies",
+            "Configure NetFlow",
+            "Configure SPAN Sessions",
+            "Configure IP SLA",
+            "Monitor network performance and availability"
+          ]
+        },
+        {
+          "title": "Module 14: Infrastructure Security",
+          "topics": [
+            "Device Hardening",
+            "Secure Management Access",
+            "SSH",
+            "AAA",
+            "TACACS+",
+            "RADIUS",
+            "802.1X",
+            "Network Access Control",
+            "Control Plane Policing (CoPP)",
+            "Management Plane Protection (MPP)",
+            "Configure AAA",
+            "Configure 802.1X",
+            "Implement CoPP",
+            "Secure enterprise infrastructure"
+          ]
+        },
+        {
+          "title": "Module 15: Enterprise Security Technologies",
+          "topics": [
+            "Access Control Lists",
+            "IPSec VPN",
+            "GRE over IPSec",
+            "MACsec",
+            "TrustSec",
+            "Web Authentication",
+            "MAC Authentication Bypass (MAB)",
+            "Next-Generation Firewall Concepts",
+            "Endpoint Security",
+            "Configure IPSec VPN",
+            "Configure ACL Policies",
+            "Implement enterprise-grade security controls"
+          ]
+        },
+        {
+          "title": "Module 16: Automation and Programmability",
+          "topics": [
+            "Network Automation Fundamentals",
+            "Python Basics for Networking",
+            "JSON",
+            "YAML",
+            "REST APIs",
+            "RESTCONF",
+            "NETCONF",
+            "YANG Data Models",
+            "Cisco DNA APIs",
+            "Cisco vManage APIs",
+            "Parse JSON with Python",
+            "Use REST APIs",
+            "Automate device configurations",
+            "Automate network operations and management"
+          ]
+        },
+        {
+          "title": "Module 17: AI and Modern Network Operations",
+          "topics": []
+        }
+      ]
+    },
+    {
+      "name": " AI",
+      "modules": [
+        {
+          "title": "Module 18: Enterprise Troubleshooting Workshop",
+          "topics": [
+            "Layer 2 Troubleshooting",
+            "Routing Troubleshooting",
+            "OSPF Issues",
+            "BGP Issues",
+            "Wireless Troubleshooting",
+            "Security Troubleshooting",
+            "Performance Analysis",
+            "Real-world troubleshooting scenarios",
+            "Enterprise fault isolation exercises",
+            "Apply systematic troubleshooting methodologies"
+          ]
+        },
+        {
+          "title": "Module 19: CCNP ENCOR Enterprise Lab",
+          "topics": [
+            "Configure Enterprise Campus Network",
+            "Implement OSPF and BGP",
+            "Configure Multicast",
+            "Configure QoS",
+            "Implement AAA",
+            "Configure VPNs",
+            "Implement Automation Scripts",
+            "Troubleshoot Complex Scenarios",
+            "Configuration Files",
+            "Network Diagrams",
+            "Verification Reports"
+          ]
+        },
+        {
+          "title": "Module 20: Enterprise Network Design Capstone",
+          "topics": [
+            "Design Campus Architecture",
+            "Create Routing Architecture",
+            "Implement Security Controls",
+            "Configure High Availability",
+            "Deploy Monitoring Systems",
+            "Implement Automation Framework",
+            "Enterprise Network Design Document",
+            "Routing Design",
+            "Security Architecture",
+            "Automation Scripts",
+            "Monitoring Dashboard"
+          ]
+        },
+        {
+          "title": "Module 1: Advanced Enterprise Routing Architecture",
+          "topics": [
+            "Enterprise Routing Design Principles",
+            "Routing Table Processing",
+            "Forwarding Information Base (FIB)",
+            "Cisco Express Forwarding (CEF)",
+            "Control Plane vs Data Plane",
+            "Routing Scalability",
+            "High Availability Design",
+            "Analyze routing table behavior",
+            "Verify CEF operations",
+            "Understand enterprise routing architecture.",
+            "Analyze packet forwarding decisions."
+          ]
+        },
+        {
+          "title": "Module 2: Advanced OSPF",
+          "topics": [
+            "OSPFv2 Deep Dive",
+            "OSPFv3 Deep Dive",
+            "LSA Types and Functions",
+            "Multi-Area OSPF",
+            "Stub Areas",
+            "Totally Stubby Areas",
+            "NSSA",
+            "Virtual Links",
+            "OSPF Summarization",
+            "OSPF Authentication",
+            "Fast Convergence Techniques",
+            "Configure Multi-Area OSPF",
+            "Implement NSSA and Stub Areas",
+            "Troubleshoot OSPF Adjacencies",
+            "Deploy scalable OSPF networks.",
+            "Troubleshoot OSPF routing issues."
+          ]
+        },
+        {
+          "title": "Module 3: Advanced EIGRP",
+          "topics": [
+            "DUAL Algorithm",
+            "Feasible Successor Selection",
+            "Route Summarization",
+            "Stub Routing",
+            "Authentication",
+            "Wide Metrics",
+            "Named EIGRP Configuration",
+            "Load Balancing",
+            "Query Boundaries",
+            "Configure Named EIGRP",
+            "Implement EIGRP Authentication",
+            "Analyze DUAL Operations",
+            "Optimize EIGRP deployments.",
+            "Troubleshoot EIGRP convergence issues."
+          ]
+        },
+        {
+          "title": "Module 4: Advanced BGP",
+          "topics": [
+            "eBGP and iBGP",
+            "BGP Neighbor Relationships",
+            "BGP Path Selection Process",
+            "BGP Attributes",
+            "Local Preference",
+            "MED",
+            "Weight",
+            "Communities",
+            "Route Reflectors",
+            "Confederations",
+            "Route Aggregation",
+            "Route Filtering",
+            "Prefix Lists",
+            "Route Maps",
+            "Configure Enterprise BGP",
+            "Manipulate Best Path Selection",
+            "Configure Route Reflectors",
+            "Deploy enterprise BGP architectures.",
+            "Implement routing policies."
+          ]
+        },
+        {
+          "title": "Module 5: Route Redistribution",
+          "topics": [
+            "Redistribution Concepts",
+            "OSPF to EIGRP Redistribution",
+            "EIGRP to OSPF Redistribution",
+            "BGP Redistribution",
+            "Seed Metrics",
+            "Route Tagging",
+            "Redistribution Loops",
+            "Filtering Redistribution",
+            "Configure Mutual Redistribution",
+            "Prevent Routing Loops",
+            "Implement route sharing across protocols.",
+            "Troubleshoot redistribution problems."
+          ]
+        },
+        {
+          "title": "Module 6: Route Manipulation and Policy Control",
+          "topics": [
+            "Route Maps",
+            "Prefix Lists",
+            "Distribute Lists",
+            "Administrative Distance Manipulation",
+            "Policy-Based Routing (PBR)",
+            "Object Tracking",
+            "Conditional Routing",
+            "Traffic Engineering",
+            "Configure PBR",
+            "Implement Route Filtering",
+            "Control traffic flow and routing decisions."
+          ]
+        },
+        {
+          "title": "Module 7: MPLS Fundamentals",
+          "topics": [
+            "MPLS Architecture",
+            "Label Switching",
+            "LER and LSR",
+            "MPLS Labels",
+            "Label Distribution Protocol (LDP)",
+            "MPLS VPN Concepts",
+            "Service Provider Fundamentals",
+            "MPLS Traffic Flow Analysis",
+            "Label Distribution Verification",
+            "Understand MPLS operations.",
+            "Analyze MPLS-based networks."
+          ]
+        },
+        {
+          "title": "Module 8: VPN Technologies",
+          "topics": [
+            "Site-to-Site VPN",
+            "GRE Tunnels",
+            "IPSec VPN",
+            "DMVPN",
+            "FlexVPN",
+            "Remote Access VPN",
+            "VPN Design Considerations",
+            "Encryption Fundamentals",
+            "Configure GRE Tunnel",
+            "Configure IPSec VPN",
+            "Implement DMVPN",
+            "Secure enterprise communications.",
+            "Deploy VPN technologies."
+          ]
+        },
+        {
+          "title": "Module 9: Infrastructure Security",
+          "topics": [
+            "AAA Architecture",
+            "TACACS+",
+            "RADIUS",
+            "Device Hardening",
+            "Control Plane Protection (CoPP)",
+            "Management Plane Protection",
+            "Secure Device Access",
+            "Role-Based Access Control (RBAC)",
+            "Configure AAA",
+            "Implement TACACS+",
+            "Secure Router Access",
+            "Strengthen network infrastructure security."
+          ]
+        },
+        {
+          "title": "Module 10: First Hop Redundancy Protocols (FHRP)",
+          "topics": [
+            "HSRP",
+            "VRRP",
+            "GLBP",
+            "Object Tracking",
+            "FHRP Optimization",
+            "Load Balancing Strategies",
+            "Configure HSRP",
+            "Configure GLBP",
+            "Verify Failover Operations",
+            "Implement gateway redundancy solutions."
+          ]
+        },
+        {
+          "title": "Module 11: Enterprise Infrastructure Services",
+          "topics": [
+            "DHCP",
+            "DHCP Relay",
+            "DNS",
+            "NTP",
+            "SNMPv3",
+            "Syslog",
+            "SLA Operations",
+            "Infrastructure Monitoring",
+            "Configure DHCP Relay",
+            "Configure NTP",
+            "Configure SNMPv3",
+            "Deploy critical enterprise services."
+          ]
+        },
+        {
+          "title": "Module 12: Quality of Service (QoS)",
+          "topics": [
+            "QoS Models",
+            "Classification and Marking",
+            "DSCP",
+            "CoS",
+            "Policing",
+            "Traffic Shaping",
+            "Congestion Avoidance",
+            "Low Latency Queuing",
+            "Configure QoS Policies",
+            "Verify Traffic Prioritization",
+            "Optimize network performance."
+          ]
+        },
+        {
+          "title": "Module 13: Multicast Routing",
+          "topics": [
+            "Multicast Concepts",
+            "IGMP",
+            "IGMP Snooping",
+            "PIM Dense Mode",
+            "PIM Sparse Mode",
+            "RP Configuration",
+            "Source Specific Multicast (SSM)",
+            "Reverse Path Forwarding (RPF)",
+            "Configure PIM-SM",
+            "Verify Multicast Trees",
+            "Deploy multicast solutions."
+          ]
+        },
+        {
+          "title": "Module 14: Enterprise Network Monitoring",
+          "topics": [
+            "NetFlow",
+            "Flexible NetFlow",
+            "SPAN",
+            "RSPAN",
+            "ERSPAN",
+            "IP SLA",
+            "SNMP Monitoring",
+            "Telemetry Concepts",
+            "Configure NetFlow",
+            "Configure SPAN",
+            "Implement IP SLA",
+            "Monitor and troubleshoot network performance."
+          ]
+        },
+        {
+          "title": "Module 15: Troubleshooting Enterprise Networks",
+          "topics": [
+            "Structured Troubleshooting Methodology",
+            "OSPF Troubleshooting",
+            "EIGRP Troubleshooting",
+            "BGP Troubleshooting",
+            "VPN Troubleshooting",
+            "QoS Troubleshooting",
+            "Security Troubleshooting",
+            "Real-world fault isolation exercises",
+            "Routing protocol troubleshooting",
+            "Resolve enterprise network issues efficiently."
+          ]
+        },
+        {
+          "title": "Module 16: Advanced Troubleshooting Workshop",
+          "topics": [
+            "Multi-Protocol Routing Failures",
+            "Redistribution Issues",
+            "VPN Connectivity Problems",
+            "High Availability Failures",
+            "Route Filtering Problems",
+            "Convergence Analysis",
+            "Complex enterprise troubleshooting scenarios",
+            "Diagnose advanced networking problems."
+          ]
+        },
+        {
+          "title": "Module 17: Enterprise Routing Lab Workshop",
+          "topics": [
+            "Multi-Area OSPF Deployment",
+            "EIGRP Optimization",
+            "Enterprise BGP Configuration",
+            "Route Redistribution",
+            "VPN Deployment",
+            "FHRP Configuration",
+            "QoS Policy Creation",
+            "Configuration Files",
+            "Routing Verification Reports",
+            "Troubleshooting Documentation"
+          ]
+        },
+        {
+          "title": "Module 18: Enterprise Routing Capstone Project",
+          "topics": [
+            "Design Enterprise Routing Architecture",
+            "Implement OSPF, EIGRP, and BGP",
+            "Configure Route Redistribution",
+            "Deploy VPN Technologies",
+            "Implement Security Controls",
+            "Configure Monitoring Solutions",
+            "Validate High Availability",
+            "Network Design Document",
+            "Routing Architecture Diagram",
+            "Security Implementation Plan",
+            "VPN Design Guide",
+            "Troubleshooting Runbook"
+          ]
+        },
+        {
+          "title": "Module 1: Introduction to Identity and Access Management (IAM)",
+          "topics": [
+            "Fundamentals of Identity and Access Management",
+            "Authentication vs Authorization",
+            "Identity Governance and Administration (IGA)",
+            "Identity Lifecycle Management",
+            "IAM Components and Architecture",
+            "Access Control Models",
+            "RBAC",
+            "ABAC",
+            "PBAC",
+            "Regulatory Compliance Requirements",
+            "Understand IAM fundamentals.",
+            "Explain the role of Identity Governance in enterprises."
+          ]
+        },
+        {
+          "title": "Module 2: Introduction to SailPoint IdentityIQ",
+          "topics": [
+            "IdentityIQ Overview",
+            "IdentityIQ Architecture",
+            "Core Components",
+            "Identity Cube Concept",
+            "Governance Framework",
+            "SailPoint Product Ecosystem",
+            "IdentityIQ vs Identity Security Cloud",
+            "Navigate IdentityIQ Interface",
+            "Explore Administrative Console",
+            "Understand IdentityIQ architecture and functionality.",
+            "Navigate the IdentityIQ environment."
+          ]
+        },
+        {
+          "title": "Module 3: IdentityIQ Architecture and Components",
+          "topics": [
+            "Application Server Architecture",
+            "Database Components",
+            "Identity Warehouse",
+            "Identity Cubes",
+            "Aggregation Engine",
+            "Provisioning Engine",
+            "Workflow Engine",
+            "Task Scheduler",
+            "Audit Framework",
+            "Analyze IdentityIQ architecture",
+            "Review identity warehouse structure",
+            "Understand how IdentityIQ components interact."
+          ]
+        },
+        {
+          "title": "Module 4: Identity Lifecycle Management",
+          "topics": [
+            "Joiner Process",
+            "Mover Process",
+            "Leaver Process",
+            "Identity Creation",
+            "Identity Updates",
+            "Identity Termination",
+            "Automated Lifecycle Events",
+            "Lifecycle Event Triggers",
+            "Configure lifecycle events",
+            "Test identity onboarding workflows",
+            "Automate identity lifecycle processes."
+          ]
+        },
+        {
+          "title": "Module 5: Application Onboarding and Connectors",
+          "topics": [
+            "Application Integration Concepts",
+            "Direct Connectors",
+            "Delimited File Connectors",
+            "JDBC Connectors",
+            "Active Directory Integration",
+            "LDAP Integration",
+            "SAP Integration",
+            "Cloud Application Integration",
+            "Configure Active Directory Connector",
+            "Perform Application Aggregation",
+            "Integrate enterprise applications with IdentityIQ."
+          ]
+        },
+        {
+          "title": "Module 6: Identity Aggregation and Correlation",
+          "topics": [
+            "Identity Aggregation",
+            "Account Aggregation",
+            "Correlation Rules",
+            "Identity Mapping",
+            "Identity Cube Creation",
+            "Data Normalization",
+            "Aggregation Troubleshooting",
+            "Configure correlation rules",
+            "Perform account aggregation",
+            "Build and maintain accurate identity repositories."
+          ]
+        },
+        {
+          "title": "Module 7: Access Request Management",
+          "topics": [
+            "Access Request Framework",
+            "Shopping Cart Model",
+            "Request Approval Workflows",
+            "Multi-Level Approvals",
+            "Access Fulfillment",
+            "Self-Service Access Requests",
+            "Request Auditing",
+            "Create access request workflows",
+            "Configure approval chains",
+            "Manage access requests and approvals."
+          ]
+        },
+        {
+          "title": "Module 8: Provisioning and Deprovisioning",
+          "topics": [
+            "Provisioning Concepts",
+            "Provisioning Policies",
+            "Automated Provisioning",
+            "Birthright Access",
+            "Deprovisioning Workflows",
+            "Provisioning Plans",
+            "Provisioning Troubleshooting",
+            "Configure provisioning policies",
+            "Test automated provisioning",
+            "Automate access assignment and removal."
+          ]
+        },
+        {
+          "title": "Module 9: Role Management",
+          "topics": [
+            "Business Roles",
+            "IT Roles",
+            "Role Hierarchies",
+            "Role Mining",
+            "Role Modeling",
+            "Role Assignment",
+            "Role Governance",
+            "Create business roles",
+            "Build role hierarchies",
+            "Design scalable role-based access models."
+          ]
+        },
+        {
+          "title": "Module 10: Access Certifications and Reviews",
+          "topics": [
+            "Certification Concepts",
+            "Manager Certifications",
+            "Application Owner Certifications",
+            "Role Certifications",
+            "Identity Certifications",
+            "Campaign Management",
+            "Certification Remediation",
+            "Create certification campaigns",
+            "Execute access reviews",
+            "Conduct governance-based access reviews."
+          ]
+        },
+        {
+          "title": "Module 11: Policy Management and Compliance",
+          "topics": [
+            "Segregation of Duties (SoD)",
+            "Policy Violations",
+            "Risk Scoring",
+            "Compliance Monitoring",
+            "Policy Enforcement",
+            "Regulatory Mapping",
+            "Audit Readiness",
+            "Configure SoD Policies",
+            "Analyze policy violations",
+            "Implement governance and compliance controls."
+          ]
+        },
+        {
+          "title": "Module 12: Workflow Management",
+          "topics": [
+            "Workflow Fundamentals",
+            "Workflow Components",
+            "Approval Workflows",
+            "Provisioning Workflows",
+            "Escalation Workflows",
+            "Workflow Variables",
+            "Workflow Debugging",
+            "Create custom workflows",
+            "Troubleshoot workflow execution",
+            "Design and manage IdentityIQ workflows."
+          ]
+        },
+        {
+          "title": "Module 13: Rules and Customization",
+          "topics": [
+            "Rule Framework",
+            "BeanShell Scripting",
+            "Rule Types",
+            "Correlation Rules",
+            "Provisioning Rules",
+            "Validation Rules",
+            "Policy Rules",
+            "Custom Logic Development",
+            "Debugging Rules",
+            "Create custom rules",
+            "Debug rule execution",
+            "Extend IdentityIQ functionality through customization."
+          ]
+        },
+        {
+          "title": "Module 14: Reporting and Auditing",
+          "topics": [
+            "Audit Logs",
+            "Compliance Reports",
+            "Certification Reports",
+            "Provisioning Reports",
+            "Custom Reports",
+            "Report Scheduling",
+            "Governance Dashboards",
+            "Generate audit reports",
+            "Build custom reports",
+            "Monitor governance activities effectively."
+          ]
+        },
+        {
+          "title": "Module 15: IdentityIQ Administration",
+          "topics": [
+            "System Configuration",
+            "Task Management",
+            "Task Scheduling",
+            "User Administration",
+            "Backup and Recovery",
+            "Performance Tuning",
+            "Troubleshooting Techniques",
+            "Configure scheduled tasks",
+            "Monitor system performance",
+            "Administer and maintain IdentityIQ environments."
+          ]
+        },
+        {
+          "title": "Module 16: IdentityIQ Security",
+          "topics": [
+            "Security Architecture",
+            "Authentication Integration",
+            "Authorization Controls",
+            "Encryption Mechanisms",
+            "Secure Configuration Practices",
+            "Access Control Policies",
+            "Security Monitoring",
+            "Configure authentication methods",
+            "Secure administrative access",
+            "Secure IdentityIQ deployments."
+          ]
+        },
+        {
+          "title": "Module 17: IdentityIQ Advanced Development",
+          "topics": [
+            "Object Model",
+            "XML Configuration",
+            "Form Development",
+            "Custom UI Development",
+            "Plugin Development",
+            "API Integration",
+            "Advanced Troubleshooting",
+            "Develop custom forms",
+            "Create custom plugins",
+            "Develop advanced IdentityIQ customizations."
+          ]
+        },
+        {
+          "title": "Module 18: IdentityIQ Integration and APIs",
+          "topics": [
+            "REST APIs",
+            "Web Services Integration",
+            "SCIM Integration",
+            "Third-Party Integrations",
+            "HR System Integration",
+            "ServiceNow Integration",
+            "Enterprise Application Integration",
+            "Integrate external systems",
+            "Configure API-based provisioning",
+            "Extend IdentityIQ through integrations."
+          ]
+        },
+        {
+          "title": "Module 19: SailPoint IdentityIQ Implementation Workshop",
+          "topics": [
+            "Configure Identity Sources",
+            "Integrate Active Directory",
+            "Create Roles",
+            "Configure Provisioning",
+            "Launch Certification Campaigns",
+            "Build Workflows",
+            "Configure Policies",
+            "Identity Governance Configuration",
+            "Access Request Workflow",
+            "Certification Campaign",
+            "Governance Reports"
+          ]
+        }
+      ]
+    }
+  ]
+}

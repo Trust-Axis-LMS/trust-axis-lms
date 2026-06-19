@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   Menu, X, ChevronDown, LogOut, User, GraduationCap, BookOpen,
@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { useSession, signOut } from "@/lib/auth-client";
 import Link from "next/link";
 import { MAIN_SITE_URL, COURSES_SITE_URL } from "@/lib/url";
+import { motion, AnimatePresence } from "framer-motion";
 
 // ─── Auth Buttons ─────────────────────────────────────────────────────────────
 function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
@@ -70,10 +71,17 @@ function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
           </div>
           <ChevronDown size={14} className="text-gray-500" />
         </button>
-        {menuOpen && (
-          <>
-            <div className="fixed inset-0 z-40" onClick={() => setMenuOpen(false)} />
-            <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 z-50">
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.15 }}
+              className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 z-50"
+            >
+              {/* Click-away backdrop overlay */}
+              <div className="fixed inset-0 z-[-1] cursor-default" onClick={() => setMenuOpen(false)} />
               <div className="px-4 py-3 border-b border-gray-50">
                 <p className="text-sm font-bold text-gray-900 truncate">{session.user.name}</p>
                 <p className="text-xs text-gray-500 truncate">{session.user.email}</p>
@@ -83,13 +91,13 @@ function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
               </Link>
               <button
                 onClick={async () => { await signOut(); setMenuOpen(false); window.location.href = MAIN_SITE_URL; }}
-                className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 transition-colors mb-1"
+                className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 transition-colors mb-1 cursor-pointer"
               >
                 <LogOut size={15} /> Sign Out
               </button>
-            </div>
-          </>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }
@@ -131,155 +139,28 @@ interface MainCategory {
   allCourses?: CourseItem[]; // For cases where there's no middle column
 }
 
-const megaMenuData: MainCategory[] = [
-  {
-    id: "vendor",
-    label: "Courses by Vendor",
-    subcategories: [
-      {
-        id: "ec-council",
-        label: "EC Council",
-        courses: [
-          { title: "EC-Council – C|EH (Certified Ethical Hacker)", slug: "ceh" },
-          { title: "EC-Council – C|ND (Certified Network Defender)", slug: "cnd" },
-          { title: "EC-Council – E|CIH (Certified Incident Handler)", slug: "cih" },
-          { title: "EC-Council – CPENT (Penetration Testing Professional)", slug: "cpent" }
-        ]
-      },
-      {
-        id: "isc2",
-        label: "(ISC)2",
-        courses: [
-          { title: "ISC2 – CISSP - Certified Information Systems Security Professional", slug: "cissp" },
-          { title: "ISC2 – CCSP", slug: "ccsp" },
-          { title: "ISC2 – SSCP", slug: "sscp" },
-          { title: "ISC2 – Certified in Cybersecurity (CC)", slug: "cc" }
-        ]
-      },
-      {
-        id: "isaca",
-        label: "ISACA",
-        courses: [
-          { title: "ISACA – CISA - Certified Information Systems Auditor", slug: "cisa" },
-          { title: "ISACA – CISM (Certified Info. Security Manager)", slug: "cism" },
-          { title: "ISACA – CRISC (Certified Risk & IS Control)", slug: "crisc" },
-          { title: "ISACA – CGEIT (Governance of Enterprise IT)", slug: "cgeit" },
-          { title: "ISACA – CCOA (Certified Cybersecurity Operations Analyst)", slug: "ccoa" }
-        ]
-      },
-      {
-        id: "iapp",
-        label: "IAPP",
-        courses: [
-          { title: "IAPP – CIPP/E", slug: "cipp-e" },
-          { title: "IAPP – CIPM", slug: "cipm" }
-        ]
-      },
-      {
-        id: "comptia",
-        label: "CompTIA",
-        courses: [
-          { title: "CompTIA – Network+", slug: "comptia-network-plus" },
-          { title: "CompTIA – PenTest+", slug: "comptia-pentest-plus" }
-        ]
-      }
-    ]
-  },
-  {
-    id: "domain",
-    label: "Course by Domain/Expertise",
-    subcategories: [
-      {
-        id: "cybersecurity",
-        label: "Cybersecurity",
-        courses: [
-          { title: "ISC2 – Certified in Cybersecurity (CC)", slug: "cc" }
-        ]
-      },
-      {
-        id: "cloud-security",
-        label: "Cloud Security",
-        courses: [
-          { title: "CSA – CCSK", slug: "ccsk" },
-          { title: "ISC2 – CCSP", slug: "ccsp" }
-        ]
-      },
-      {
-        id: "sec-ops",
-        label: "Security Operations",
-        courses: [
-          { title: "ISACA – CCOA", slug: "ccoa" }
-        ]
-      },
-      {
-        id: "network-security",
-        label: "Network Security",
-        courses: [
-          { title: "CompTIA – Network+", slug: "comptia-network-plus" },
-          { title: "EC-Council – C|ND", slug: "cnd" }
-        ]
-      },
-      {
-        id: "offensive-security",
-        label: "Offensive Security",
-        courses: [
-          { title: "EC-Council – C|EH", slug: "ceh" },
-          { title: "CompTIA – PenTest+", slug: "comptia-pentest-plus" }
-        ]
-      },
-      {
-        id: "grc",
-        label: "GRC",
-        courses: [
-          { title: "ISACA – CRISC", slug: "crisc" }
-        ]
-      },
-      {
-        id: "data-privacy",
-        label: "Data Privacy",
-        courses: [
-          { title: "IAPP – CIPP/E", slug: "cipp-e" },
-          { title: "ISACA – CDPSE", slug: "cdpse" }
-        ]
-      }
-    ]
-  },
-  {
-    id: "career",
-    label: "Career-Oriented Courses",
-    subcategories: [
-      {
-        id: "cloud-sec-engineer",
-        label: "Cloud Security Engineer",
-        courses: [
-          { title: "CCSP – Certified Cloud Security Professional", slug: "ccsp" }
-        ]
-      },
-      {
-        id: "red-teamer",
-        label: "Red Teamer / Pen Tester",
-        courses: [
-          { title: "EC-Council – CPENT", slug: "cpent" }
-        ]
-      }
-    ]
-  },
-  {
-    id: "courses",
-    label: "Courses",
-    allCourses: [
-      { title: "CISSP - Certified Information Systems Security Professional", slug: "cissp" },
-      { title: "CISA - Certified Information Systems Auditor", slug: "cisa" },
-      { title: "CISM - Certified Information Security Manager", slug: "cism" },
-      { title: "CRISC - Certified Risk and Information Systems Control", slug: "crisc" },
-      { title: "CDPSE - Certified Data Privacy Solutions Engineer", slug: "cdpse" },
-      { title: "CCSK - Certificate of Cloud Security Knowledge", slug: "ccsk" },
-      { title: "CCSP - Certified Cloud Security Professional", slug: "ccsp" },
-      { title: "C|EH - Certified Ethical Hacker", slug: "ceh" },
-      { title: "CCOA - Certified Cybersecurity Operations Analyst", slug: "ccoa" }
-    ]
-  }
+// ─── Dynamic Mega Menu Data Fetching ──────────────────────────────────────────
+let cachedMenuData: MainCategory[] | null = null;
+const defaultMenuData: MainCategory[] = [
+  { id: "vendor", label: "Courses by Vendor", subcategories: [] },
+  { id: "domain", label: "Courses by Domain", subcategories: [] }
 ];
+
+function useMegaMenu() {
+  const [data, setData] = useState<MainCategory[]>(cachedMenuData || defaultMenuData);
+  useEffect(() => {
+    if (!cachedMenuData) {
+      fetch("/api/courses/menu")
+        .then((r) => r.json())
+        .then((d) => {
+          cachedMenuData = d;
+          setData(d);
+        })
+        .catch(console.error);
+    }
+  }, []);
+  return data;
+}
 
 // ─── Learning & Development Mega-Menu Component ───────────────────────────────
 function LearningMegaMenu({
@@ -291,11 +172,20 @@ function LearningMegaMenu({
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }) {
-  const [activeMainId, setActiveMainId] = useState(megaMenuData[0].id);
-  const [activeSubId, setActiveSubId] = useState(megaMenuData[0].subcategories?.[0].id ?? "");
+  const megaMenuData = useMegaMenu();
+  const [activeMainId, setActiveMainId] = useState(megaMenuData[0]?.id);
+  const [activeSubId, setActiveSubId] = useState(megaMenuData[0]?.subcategories?.[0]?.id ?? "");
+
+  // Update active IDs if data loads and IDs are empty
+  useEffect(() => {
+    if (megaMenuData.length > 0 && !megaMenuData.find(m => m.id === activeMainId)) {
+      setActiveMainId(megaMenuData[0].id);
+      setActiveSubId(megaMenuData[0].subcategories?.[0]?.id ?? "");
+    }
+  }, [megaMenuData, activeMainId]);
 
   const activeMain = megaMenuData.find((m) => m.id === activeMainId) ?? megaMenuData[0];
-  const activeSub = activeMain.subcategories?.find((s) => s.id === activeSubId) ?? activeMain.subcategories?.[0];
+  const activeSub = activeMain?.subcategories?.find((s) => s.id === activeSubId) ?? activeMain?.subcategories?.[0];
 
   const handleMainEnter = (id: string) => {
     setActiveMainId(id);
@@ -309,15 +199,27 @@ function LearningMegaMenu({
     setActiveSubId(id);
   };
 
-  const displayCourses = activeMain.subcategories ? activeSub?.courses ?? [] : activeMain.allCourses ?? [];
+  const displayCourses = activeMain?.subcategories ? activeSub?.courses ?? [] : activeMain?.allCourses ?? [];
 
   return (
     <div className="fixed left-0 right-0 z-50 flex justify-center" style={{ top: '68px' }}>
       {/* Backdrop */}
-      <div className="fixed inset-0 bg-slate-900/10 backdrop-blur-sm transition-opacity" style={{ top: '68px', zIndex: -1 }} onClick={onClose} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="fixed inset-0 bg-slate-900/10 backdrop-blur-sm"
+        style={{ top: '68px', zIndex: -1 }}
+        onClick={onClose}
+      />
 
       {/* Main Container */}
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: -12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -12 }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
         className="w-full max-w-[1280px] mt-4 relative bg-white/95 backdrop-blur-2xl shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] rounded-3xl border border-slate-200/50 overflow-hidden mx-4 ring-1 ring-slate-900/5"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
@@ -370,11 +272,11 @@ function LearningMegaMenu({
           <div className="w-[340px] bg-white border-r border-slate-200/60 flex-shrink-0 flex flex-col relative">
             <div className="px-8 py-6 border-b border-slate-200/50 flex justify-between items-center bg-white/50 sticky top-0 backdrop-blur-md z-10">
               <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">
-                {activeMain.id === 'vendor' ? 'Official Vendors' : activeMain.id === 'domain' ? 'Expertise Domains' : 'Select Pathway'}
+                {activeMain?.id === 'vendor' ? 'Official Vendors' : activeMain?.id === 'domain' ? 'Expertise Domains' : 'Select Pathway'}
               </h4>
             </div>
             <div className="flex-1 overflow-y-auto py-4 px-4 space-y-1.5 custom-scrollbar">
-              {activeMain.subcategories ? (
+              {activeMain?.subcategories ? (
                 activeMain.subcategories.map((subCat) => {
                   const isActive = activeSubId === subCat.id;
                   return (
@@ -419,13 +321,13 @@ function LearningMegaMenu({
                 </div>
                 <div>
                   <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-none mb-1">
-                    {activeSub ? activeSub.label : activeMain.label}
+                    {activeSub ? activeSub.label : activeMain?.label}
                   </h3>
                   <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Featured Programs</p>
                 </div>
               </div>
 
-              {activeMain.subcategories && (
+              {activeMain?.subcategories && (
                 <a
                   href={`${COURSES_SITE_URL}?category=${encodeURIComponent(activeMain.label)}`}
                   onClick={onClose}
@@ -467,16 +369,14 @@ function LearningMegaMenu({
           </div>
 
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
 
-// ─── Company Dropdown ─────────────────────────────────────────────────────────
 function CompanyDropdown({ onClose }: { onClose: () => void }) {
   return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-52">
-      <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden py-2">
+    <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden py-2">
         <Link href={`${MAIN_SITE_URL}/about`} onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors group">
           <div className="h-7 w-7 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-blue-50">
             <Info className="h-3.5 w-3.5 text-gray-500 group-hover:text-[#007BFF]" />
@@ -496,12 +396,12 @@ function CompanyDropdown({ onClose }: { onClose: () => void }) {
           Value Proposition
         </Link>
       </div>
-    </div>
   );
 }
 
 // ─── Main Header ──────────────────────────────────────────────────────────────
 export function Header() {
+  const megaMenuData = useMegaMenu();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMega, setActiveMega] = useState<"learning" | "company" | null>(null);
 
@@ -551,11 +451,21 @@ export function Header() {
                 <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", activeMega === "company" ? "rotate-180" : "")} />
               </button>
 
-              {activeMega === "company" && (
-                <div onMouseEnter={() => handleEnter("company")} onMouseLeave={handleLeave}>
-                  <CompanyDropdown onClose={() => setActiveMega(null)} />
-                </div>
-              )}
+              <AnimatePresence>
+                {activeMega === "company" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    onMouseEnter={() => handleEnter("company")}
+                    onMouseLeave={handleLeave}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-52"
+                  >
+                    <CompanyDropdown onClose={() => setActiveMega(null)} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Learning & Development — Mega Menu */}
@@ -616,13 +526,15 @@ export function Header() {
       </header>
 
       {/* ── Mega Menu rendered at root level, fixed to viewport ── */}
-      {activeMega === "learning" && (
-        <LearningMegaMenu
-          onClose={() => setActiveMega(null)}
-          onMouseEnter={() => handleEnter("learning")}
-          onMouseLeave={handleLeave}
-        />
-      )}
+      <AnimatePresence>
+        {activeMega === "learning" && (
+          <LearningMegaMenu
+            onClose={() => setActiveMega(null)}
+            onMouseEnter={() => handleEnter("learning")}
+            onMouseLeave={handleLeave}
+          />
+        )}
+      </AnimatePresence>
 
       {/* ── Full-screen Mobile Menu ── */}
       {mobileOpen && (

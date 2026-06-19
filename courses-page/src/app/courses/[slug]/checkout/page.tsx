@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getCourseBySlug, courses } from "@/lib/courses-data";
+import { prisma } from "@/lib/prisma";
+import { mapDbCourseToFrontend } from "@/lib/courses-data";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import CheckoutClient from "./checkout-client";
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
+  const courses = await prisma.course.findMany({ select: { slug: true } });
   return courses.map((course) => ({
     slug: course.slug,
   }));
@@ -17,7 +19,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const course = getCourseBySlug(slug);
+  const course = await prisma.course.findUnique({ where: { slug } });
   if (!course) return { title: "Course Not Found" };
   return {
     title: `Enroll in ${course.title} — Trust Axis`,
@@ -27,11 +29,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CheckoutPage({ params }: Props) {
   const { slug } = await params;
-  const course = getCourseBySlug(slug);
+  const dbCourse = await prisma.course.findUnique({
+    where: { slug },
+    include: {
+      curriculum: true,
+      programHighlights: true,
+      objectives: true,
+      targetAudience: true,
+      examDetails: true,
+      toolsCovered: true,
+    },
+  });
 
-  if (!course) {
+  if (!dbCourse) {
     notFound();
   }
+  
+  const course = mapDbCourseToFrontend(dbCourse);
 
   return (
     <div className="flex flex-col min-h-screen bg-white">

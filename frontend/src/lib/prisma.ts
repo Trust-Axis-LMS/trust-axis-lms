@@ -1,12 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { Pool } from "pg";
 
 // ─── Prisma singleton for Prisma 7 (requires adapter) ─────────────────────────
 // Uses @prisma/adapter-pg with the DATABASE_URL connection string
 
 function createPrismaClient() {
   const connectionString = process.env.DATABASE_URL!;
-  const adapter = new PrismaPg({ connectionString });
+  const pool = new Pool({ connectionString, max: 1 });
+  const adapter = new PrismaPg(pool);
   return new PrismaClient({ adapter });
 }
 

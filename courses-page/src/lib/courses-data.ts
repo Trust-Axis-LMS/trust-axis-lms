@@ -31,6 +31,8 @@ export interface TargetAudienceItem {
 export interface ExamDetail {
   name: string;
   provider: string;
+  duration?: string;
+  format?: string;
   passScore: string;
   prepIncluded: boolean;
 }
@@ -62,6 +64,33 @@ export interface Course {
   targetAudience: TargetAudienceItem[];
   examDetails: ExamDetail[];
   toolsCovered: Tool[];
+}
+
+export function mapDbCourseToFrontend(dbCourse: any): Course {
+  return {
+    ...dbCourse,
+    subtitle: dbCourse.subtitle || "",
+    duration: dbCourse.duration || "Flexible",
+    mode: dbCourse.mode || "Online",
+    weeklyHours: dbCourse.weeklyHours || "10-15 hrs",
+    certificate: dbCourse.certificate || "Upon Completion",
+    rating: dbCourse.rating || 4.8,
+    students: dbCourse.students || "1K+",
+    directorQuote: {
+      text: dbCourse.directorQuoteText || "",
+      author: dbCourse.directorQuoteAuthor || "",
+    },
+    programHighlights: dbCourse.programHighlights || [],
+    objectives: dbCourse.objectives || [],
+    targetAudience: dbCourse.targetAudience || [],
+    examDetails: dbCourse.examDetails || [],
+    toolsCovered: dbCourse.toolsCovered || [],
+    curriculum: (dbCourse.curriculum || []).map((c: any) => ({
+      ...c,
+      modules: c.modules || 0,
+      subtopics: c.subtopics.map((title: string) => ({ title })),
+    })),
+  };
 }
 
 export const categories = [

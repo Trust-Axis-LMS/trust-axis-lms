@@ -1,0 +1,5172 @@
+CEH - Module 1: Introduction to Ethical Hacking  
+ Information Security Overview  
+ Hacking Concepts  
+ Ethical Hacking Concepts  
+ Hacking Methodologies and Frameworks  
+ Information Security Controls  
+ Information Security Laws and Standards  
+  
+Module 2: Footprinting and Reconnaissance  
+ Footprinting Concepts  
+ Footprinting through Search Engines  
+ Footprinting through Internet Research Services  
+ Footprinting through Social Networking Sites  
+ Whois Footprinting  
+ DNS Footprinting  
+ Network and Email Footprinting  
+ Footprinting through So cial Engineering  
+ Footprinting Tasks using Advanced Tools and AI  
+ Footprinting Countermeasures  
+  
+Module 3: Scanning Networks  
+ Network Scanning Concepts  
+ Scanning Tools  
+ Host Discovery  
+ Port and Service Discovery  
+ OS Discovery (Banner Grabbing/OS Fingerprinting)  
+ Scanning Beyond IDS and Firewall  
+ Source Port Manipulation  
+ Network Scanning Countermeasures  
+  
+Module 4: Enumeration  
+ Enumeration Concepts  
+ NetBIOS Enumeration  
+ SNMP Enumeration  
+ LDAP Enumeration  
+ NTP and NFS Enumeration  
+ SMTP and DNS Enumeration  
+ Other Enumeration  Techniques  
+ Enumeration Countermeasures  
+  
+Module 5: Vulnerability Analysis   
+ Vulnerability Assessment Concepts  
+ Vulnerability Scoring Systems and Databases  
+ Vulnerability -Management Life Cycle  
+ Vulnerability Research  
+ Vulnerability Scanning and Analysis  
+ Vulnera bility Assessment Tools  
+ Vulnerability Assessment Reports  
+  
+Module 6: System Hacking  
+ Gaining Access  
+ Escalating Privileges  
+ Maintaining Access  
+ Clearing Logs  
+  
+Module 7: Malware Threats  
+ Malware Concepts  
+ APT Concepts  
+ Trojan Concepts  
+ Viruses and Worms  
+ Fileless Malware Concepts  
+ AI-based Malware Concepts  
+ Malware Countermeasures  
+ Anti-Malware Software  
+  
+Module 8: Sniffing  
+ Sniffing Concepts  
+ Sniffing Technique  
+ Sniffing Tools  
+ Sniffing Countermeasures  
+  
+Module 9: Social Engineering  
+ Social Engineering Concepts  
+ Human -base d Social Engineering Techniques  
+ Computer -based Social Engineering Techniques  
+ Mobile -based Social Engineering Techniques  
+ Social Engineering Countermeasures  
+  
+Module 10: Denial -of-Service  
+ DoS/DDoS Concepts  
+ Botnets  
+ DDoS Case Study  
+ DoS/DDoS Attack Techniques  
+ DoS/DDoS Attack Countermeasures  
+  
+Module 11: Session Hijacking  
+ Session Hijacking Concepts  
+ Application -Level Session Hijacking  
+ Network -Level Session Hijacking  
+ Session Hijacking Tools  
+ Session Hijacking Countermeasures  
+  
+Module 12: Evading IDS, Firewalls, and  Honeypots  
+ Intrusion Detection/Prevention System (IDS/IPS) Concepts  
+ Firewall Concepts  
+ IDS, IPS, and Firewall Solutions  
+ Evading IDS/Firewalls  
+ Evading NAC and Endpoint Security  
+ IDS/Firewall Evading Tools  
+ Honeypot Concepts  
+ IDS/Firewall Evasion Countermeasures  
+  
+Module 13: Hacking Web Servers  
+ Web Server Concepts  
+ Web Server Attacks  
+ Web Server Attack Methodology  
+ Web Server Attack Countermeasures  
+ Patch Management  
+  
+Module 14: Hacking Web Applications  
+ Web Application Concepts  
+ Web Application Threats  
+ Web Application  Hacking Methodology  
+ Web API and Webhooks  
+ Web Application Security  
+  
+Module 15: SQL Injections   
+ SQL Injection Concepts  
+ Types of SQL Injection  
+ SQL Injection Methodology  
+ Evasion Techniques  
+ SQL Injection Countermeasures  
+  
+Module 16: Hacking Wireless Networks  
+ Wireless Concepts  
+ Wireless Encryption  
+ Wireless Threats  
+ Wireless Hacking Methodology  
+ Wireless Attack Countermeasures  
+  
+Module 17: Hacking Mobile Platforms  
+ Mobile Platform Attack Vectors  
+ Hacking Android OS  
+ Hacking iOS  
+ Mobile Device Management  
+ Mobile Security  Guidelines  
+ Mobile Security Tools  
+  
+Module 18: IoT Hacking & OT Hacking  
+ IoT Hacking  
+ IoT Concepts and Attacks  
+ IoT Hacking Methodology  
+ OT Hacking  
+  
+Module 19: Cloud Computing  
+ Cloud Computing Concepts  
+ Container Technology  
+ Serverless Computing  
+ Cloud Hacking  
+ Cloud Hacking Methodology  
+ AWS Hacking  
+ Microsoft Azure Hacking  
+ Google Cloud Hacking  
+ Container Hacking  
+ Cloud Security  
+  
+Module 20: Cryptography  
+ Cryptography Concepts and Encryption Algorithms  
+ Applications of Cryptography  
+ Cryptanalysis  
+ Cryptography Attack Countermeasures  
+ 
+ 
+ 
+CND - The courseware of CNDv2 is designed to develop a strong and deep 
+understanding of various networking verticals, talking first about various network and 
+defense strategies proceeding to incident detection and response and advancing t o 
+threat assessments and intelligence. Below is the list of modules with a brief 
+description of what they talk about.  
+Module 01:  Network Attacks and Defense Strategies: This module introduces you to 
+different network -based attacks faced by the organization  to understand their 
+working and develop defense strategies.  
+Module 02:  Administrative Network Security: It involves developing or updating 
+security infrastructure and continuously monitoring networks for any suspicious 
+actions or unauthorized access  
+Modul e 03:  Technical Network Security: Implementing authentication and protection 
+controls for user verification to avoid theft of sensitive information or data. 
+Introducing the concept of zero trust and its effectiveness in maintaining a better 
+security postur e 
+Module 04:  Network Perimeter Security: Implementation and management of 
+perimeter devices like firewalls, Intrusion Detection Systems, Intrusion Prevention 
+Systems  
+Module 05:  Endpoint Security -Windows Systems: Security of end -user devices and 
+entry point s by implying endpoint security on Windows devices.  
+Module 06:  Endpoint Security -Linux Systems: Securing entry points or end -user 
+devices by ensuring endpoint security on Linux devices  
+Module 07:  Endpoint Security - Mobile Devices: Securing entry points or end-user 
+devices by ensuring endpoint security on mobile devices  
+Module 08:  Endpoint Security -IoT Devices: Fundamentals of IoT, IoT threats and 
+security using endpoint security implementation  
+Module 09:  Administrative Application Security: Understanding th e methodologies of 
+administrative application security and its importance to minimize the security -related 
+vulnerabilities in the application  
+Module 10:  Data Security: Implementing policies to safeguard data from 
+unauthorized access using various technique s like encryption, hashing, tokenization, 
+and other key management practices.   Concept of data storage, data classification, 
+data masking, retention and destruction  
+Module 11:  Enterprise Virtual Network Security: In -depth understanding of 
+virtualization, r elated threats, and security. Essentials of software -defined network 
+(SDN) security, network function virtualization (NFV) security  
+Module 12:  Enterprise Cloud Network Security: Introduction to cloud 
+computing,  threats, challenges and security across clou d platforms, concepts of 
+container security, docker security, and Kubernetes security  
+Module 13:  Enterprise Wireless Network Security: Understanding of wireless 
+network security essentials, threats, attacks, and countermeasures.  
+Module 14:  Network Traffic Monitoring and Analysis: Analysis and monitoring of logs 
+from various perimeter network devices to identify any anomalies in the traffic.  
+Module 15:  Network Logs Monitoring and Analysis: Analyzing the events generated 
+by various devices in the network to i dentify signs of any suspicious activity or a 
+potential incident  
+Module 16:  Incident Response and Forensic Investigations: Understanding of 
+incident management response process and methodologies to be followed in case of 
+security incidents. Understanding o f forensics investigation techniques and tools 
+used for analysis.  
+Module 17:  Business Continuity and Disaster Recovery: Understanding the 
+importance of BCP and DR, related concepts and procedures required to allow 
+smooth functioning of operations in case o f a disaster  
+Module 18:  Risk Anticipation with Risk Management: Risk management process, 
+analyzing various risks that the organization is susceptible to and developing policies 
+to manage them.  
+Module 19:  Threat Assessment with Attack Surface Analysis: Anal yzing the threats 
+and attack vectors to develop solutions for their countermeasures  
+Module 20:  Threat Prediction with Cyber Threat Intelligence: Developing a proactive 
+approach by understanding various frameworks aiding in threat intelligence to 
+anticipate  the kinds of attacks hackers could use to gain access to the network.  
+ 
+ 
+ CIH- Module 01:  Introduction to Incident Handling and Response  
+ Module 02:  Incident Handling and Response Process  
+ Module 03:  Forensic Readiness and First Response  
+ Module 04:  Handling and Responding to Malware Incidents  
+ Module 05:  Handling and Responding to Email Security Incidents  
+ Module 06:  Handling and Responding to Network Security Incidents  
+ Module 07:  Handling and Responding to Web Application Security Incidents  
+ Module 08:  Handling  and Responding to Cloud Security Incidents  
+ Module 09:  Handling and Responding to Insider Threats  
+ 
+CPENT - CPENT Certification Training Course consists of 14 modules and tests the 
+abilities of a penetration tester in almost all the vectors of cybersecurity,  some of 
+which have been introduced for the first time in any penetration certification  
+ Module 01:  Introduction to Penetration Testing  
+ Module 02:  Penetration Testing Scoping and Engagement  
+ Module 03:  Open Source Intelligence (OSINT)  
+ Module 04:  Social Engin eering Penetration Testing  
+ Module 05:  Network Penetration Testing – External  
+ Module 06:  Network Penetration Testing – Internal  
+ Module 07:  Network Penetration Testing – Perimeter Devices  
+ Module 08:  Web Application Penetration Testing  
+ Module 09:  Wireless Penetration Testing  
+ Module 10:  IoT Penetration Testing  
+ Module 11:  OT/SCADA Penetration Testing  
+ Module 12:  Cloud Penetration Testing  
+ Module 13:  Binary Analysis and Exploitation  
+ Module 14:  Report Writing and Post Testing Actions  
+ 
+ 
+ 
+ 
+ 
+CISSP - Domain 1: Securi ty and Risk Management  
+ 1.1 – Understand, adhere to, and promote professional ethics  
+o ISC2 Code of Professional Ethics  
+o Organizational code of ethics  
+ 1.2 – Understand and apply security concepts  
+o Confidentiality, integrity, and availability, authenticity, and 
+nonrepudiation (5 Pillars of Information Security)  
+ 1.3 – Evaluate and apply security governance principles  
+o Alignment of the security function to business strategy, goals, mission, 
+and objectives  
+o Organizational processes (e.g., acquisitions, divestitures, g overnance 
+committees)  
+o Organizational roles and responsibilities  
+o Security control frameworks (e.g., International Organization for 
+Standardization (ISO), National Institute of Standards and Technology 
+(NIST), Control Objectives for Information and Related T echnology 
+(COBIT), Sherwood Applied Business Security Architecture (SABSA), 
+Payment Card Industry (PCI), Federal Risk and Authorization 
+Management Program (FedRAMP))  
+o Due care/due diligence  
+ 1.4 – Understand legal, regulatory, and compliance issues that pert ain to 
+information security in a holistic context  
+o Cybercrimes and data breaches  
+o Licensing and Intellectual Property requirements  
+o Import/export controls  
+o Transborder data flow  
+o Issues related to privacy (e.g., General Data Protection Regulation 
+(GDPR), California Consumer Privacy Act, Personal Information 
+Protection Law, Protection of Personal Information Act)  
+o Contractual, legal, industry standards, and regulatory requirements  
+ 1.5 – Understand requirements for investigation types (i.e., 
+administrative, c riminal, civil, regulatory, industry standards)  
+ 1.6 – Develop, document, and implement security policy, standards, 
+procedures, and guidelines  
+ 1.7 – Identify, analyze, assess, prioritize, and implement Business 
+Continuity (BC) requirements  
+o Business impact a nalysis (BIA)  
+o External dependencies  
+ 1.8 – Contribute to and enforce personnel security policies and 
+procedures  
+o Candidate screening and hiring  
+o Employment agreements and policy driven requirements  
+o Onboarding, transfers, and termination processes  
+o Vendor, cons ultant, and contractor agreements and controls  
+ 1.9 – Understand and apply risk management concepts  
+o Threat and vulnerability identification  
+o Risk analysis, assessment, and scope  
+o Risk response and treatment (e.g., cybersecurity insurance)  
+o Applicable types of controls (e.g., preventive, detection, corrective)  
+o Control assessments (e.g., security and privacy)  
+o Continuous monitoring and measurement  
+o Reporting (e.g., internal, external)  
+o Continuous improvement (e.g., risk maturity modeling)  
+o Risk frameworks (e.g., Inte rnational Organization for Standardization 
+(ISO), National Institute of Standards and Technology (NIST), Control 
+Objectives for Information and Related Technology (COBIT), Sherwood 
+Applied Business Security Architecture (SABSA), Payment Card 
+Industry (PCI) ) 
+ 1.10 – Understand and apply threat modeling concepts and 
+methodologies  
+ 1.11 – Apply Supply Chain Risk Management (SCRM) concepts  
+o Risks associated with the acquisition of products and services from 
+suppliers and providers (e.g., product tampering, counterfeits, implants)  
+o Risk mitigations (e.g., third -party assessment and monitoring, minimum 
+security requirements, service level requirements, silicon root of trust, 
+physically unclonable function, software bill of materials)  
+ 1.12 – Establish and mainta in a security awareness, education, and 
+training program  
+o Methods and techniques to increase awareness and training (e.g., 
+social engineering, phishing, security champions, gamification)  
+o Periodic content reviews to include emerging technologies and trends 
+(e.g., cryptocurrency, artificial intelligence (AI), blockchain)  
+o Program effectiveness evaluation  
+Domain 2: Asset Security  
+ 2.1 – Identify and classify information and assets  
+o Data classification  
+o Asset Classification  
+ 2.2 – Establish information and asset hand ling requirements  
+ 2.3 – Provision information and assets securely  
+o Information and asset ownership  
+o Asset inventory (e.g., tangible, intangible)  
+o Asset management  
+ 2.4 – Manage data lifecycle  
+o Data roles (i.e., owners, controllers, custodians, processors, 
+users/subjects)  
+o Data collection  
+o Data location  
+o Data maintenance  
+o Data retention  
+o Data remanence  
+o Data destruction  
+ 2.5 – Ensure appropriate asset retention (e.g., End of Life (EOL), End of 
+Support)  
+ 2.6 – Determine data security controls and compliance requireme nts 
+o Data states (e.g., in use, in transit, at rest)  
+o Scoping and tailoring  
+o Standards selection  
+o Data protection methods (e.g., Digital Rights Management (DRM), 
+Data Loss Prevention (DLP), Cloud Access Security Broker (CASB))  
+Domain 3: Security Architecture and Engineering  
+ 3.1 – Research, implement and manage engineering processes using 
+secure design principles  
+o Threat modeling  
+o Least privilege  
+o Defense in depth  
+o Secure defaults  
+o Fail securely  
+o Segregation of Duties (SoD)  
+o Keep it simple and small  
+o Zero trust or trus t but verify  
+o Privacy by design  
+o Shared responsibility  
+o Secure access service edge  
+ 3.2 – Understand the fundamental concepts of security models (e.g., 
+Biba, Star Model, Bell -LaPadula)  
+ 3.3 – Select controls based upon systems security requirements  
+ 3.4 – Unders tand security capabilities of Information Systems (IS) (e.g., 
+memory protection, Trusted Platform Module (TPM), 
+encryption/decryption)  
+ 3.5 – Assess and mitigate the vulnerabilities of security architectures, 
+designs, and solution elements  
+o Client -based syst ems 
+o Server -based systems  
+o Database systems  
+o Cryptographic systems  
+o Industrial Control Systems (ICS)  
+o Cloud -based systems (e.g., Software as a Service (SaaS), 
+Infrastructure as a Service (IaaS), Platform as a Service (PaaS))  
+o Distributed systems  
+o Internet of Things (IoT)  
+o Microservices (e.g., application programming interface (API))  
+o Containerization  
+o Serverless  
+o Embedded systems  
+o High-Performance Computing systems  
+o Edge computing systems  
+o Virtualized systems  
+ 3.6 – Select and determine cryptographic solutions  
+o Cryptog raphic life cycle (e.g., keys, algorithm selection)  
+o Cryptographic methods (e.g., symmetric, asymmetric, elliptic curves, 
+quantum)  
+o Public key infrastructure (PKI) (e.g., quantum key distribution)  
+ 3.7 – Understand methods of cryptanalytic attacks  
+o Brute force  
+o Ciphertext only  
+o Known plaintext  
+o Frequency analysis  
+o Chosen ciphertext  
+o Implementation attacks  
+o Side-channel  
+o Fault injection  
+o Timing  
+o Man-in-the-Middle (MITM)  
+o Pass the hash  
+o Kerberos exploitation  
+o Ransomware  
+ 3.8 – Apply security principles to site and facility design  
+ 3.9 – Design site and facility security controls  
+o Wiring closets/intermediate distribution facilities  
+o Server rooms/data centers  
+o Media storage facilities  
+o Evidence storage  
+o Restricted and work area security  
+o Utilities and Heating, Ventilation, and Air Co nditioning (HVAC)  
+o Environmental issues (e.g., natural disasters, man -made)  
+o Fire prevention, detection, and suppression  
+o Power (e.g., redundant, backup)  
+ 3.10 – Manage the information system lifecycle  
+o Stakeholders needs and requirements  
+o Requirements analysis  
+o Architectural design  
+o Development /implementation  
+o Integration  
+o Verification and validation  
+o Transition/deployment  
+o Operations and maintenance/sustainment  
+o Retirement/disposal  
+Domain 4: Communication and Network Security  
+ 4.1 – Apply secure design principles in n etwork architectures  
+o Open System Interconnection (OSI) and Transmission Control 
+Protocol/Internet Protocol (TCP/IP) models  
+o Internet Protocol (IP) version 4 and 6 (IPv6) (e.g., unicast, broadcast, 
+multicast, anycast)  
+o Secure protocols (e.g., Internet Protocol Security (IPSec), Secure Shell 
+(SSH), Secure Sockets Layer (SSL)/ Transport Layer Security (TLS))  
+o Implications of multilayer protocols  
+o Converged protocols (e.g., Internet Small Computer Systems Interface 
+(iSCSI), Voice over Internet Protocol (VoIP ), InfiniBand over Ethernet, 
+Compute Express Link)  
+o Transport architecture (e.g., topology, data/control/management plane, 
+cut-through/store -and-forward)  
+o Performance metrics (e.g., bandwidth, latency, jitter, throughput, signal -
+to-noise ratio)  
+o Traffic flows  (e.g., north -south, east -west)  
+o Physical segmentation (e.g., in -band, out -of-band, air -gapped)  
+o Logical segmentation (e.g., virtual local area networks (VLANs), virtual 
+private networks (VPNs), virtual routing and forwarding, virtual domain)  
+o Micro -segmentat ion (e.g., network overlays/encapsulation; distributed 
+firewalls, routers, intrusion detection system (IDS)/intrusion prevention 
+system (IPS), zero trust)  
+o Edge networks (e.g., ingress/egress, peering)  
+o Wireless networks (e.g., Bluetooth, Wi -Fi, Zigbee, sate llite) 
+o Cellular/mobile networks (e.g., 4G, 5G)  
+o Content distribution networks (CDN)  
+o Software defined networks (SDN), (e.g., application programming 
+interface (API), Software -Defined Wide - Area Network, network 
+functions virtualization)  
+o Virtual Private Cloud  (VPC)  
+o Monitoring and management (e.g., network observability, traffic 
+flow/shaping, capacity management, fault detection and handling)  
+ 4.2 – Secure network components  
+o Operation of infrastructure (e.g., redundant power, warranty, support)  
+o Transmission medi a (e.g., physical security of media, signal 
+propagation quality)  
+o Network Access Control (NAC) systems (e.g., physical, and virtual 
+solutions)  
+o Endpoint security (e.g., host -based)  
+ 4.3 – Implement secure communication channels according to design  
+o Voice, vide o, and collaboration (e.g., conferencing, Zoom rooms)  
+o Remote access (e.g., network administrative functions)  
+o Data communications (e.g., backhaul networks, satellite)  
+o Third -party connectivity (e.g., telecom providers, hardware support)  
+Domain 5: Identity and Access Management (IAM)  
+ 5.1 – Control physical and logical access to assets  
+o Information  
+o Systems  
+o Devices  
+o Facilities  
+o Applications  
+o Services  
+ 5.2 – Design identification and authentication strategy (e.g., people, 
+devices, and services)  
+o Groups and Roles  
+o Authentication, Authorization and Accounting (AAA) (e.g., multi -factor 
+authentication (MFA), password -less authentication)  
+o Session management  
+o Registration, proofing, and establishment of identity  
+o Federated Identity Management (FIM)  
+o Credential management system s (e.g., Password vault)  
+o Single sign -on (SSO)  
+o Just-In-Time  
+ 5.3 – Federated identity with a third -party service  
+o On-premise  
+o Cloud  
+o Hybrid  
+ 5.4 – Implement and manage authorization mechanisms  
+o Role-based access control (RBAC)  
+o Rule based access control  
+o Mandatory access control (MAC)  
+o Discretionary access control (DAC)  
+o Attribute -based access control (ABAC)  
+o Risk based access control  
+o Access policy enforcement (e.g., policy decision point, policy 
+enforcement point)  
+ 5.5 – Manage the identity and access provisioning lifecycle  
+o Account access review (e.g., user, system, service)  
+o Provisioning and deprovisioning (e.g., on /off boarding and transfers)  
+o Role definition and transition (e.g., people assigned to new roles)  
+o Privilege escalation (e.g., use of sudo, auditing its u se) 
+o Service accounts management  
+ 5.6 – Implement authentication systems  
+Domain 6: Security Assessment and Testing  
+ 6.1 – Design and validate assessment, test, and audit strategies  
+o Internal (e.g., within organization control)  
+o External (e.g., outside organizat ion control)  
+o Third -party (e.g., outside of enterprise control)  
+o Location (e.g., on -premises, cloud, hybrid)  
+ 6.2 – Conduct security control testing  
+o Vulnerability assessment  
+o Penetration testing (e.g., red, blue, and/or purple team exercises)  
+o Log reviews  
+o Synth etic transactions/benchmarks  
+o Code review and testing  
+o Misuse case testing  
+o Coverage analysis  
+o Interface testing (e.g., user interface, network interface, application 
+programming interface (API))  
+o Breach attack simulations  
+o Compliance checks  
+ 6.3 – Collect security process data (e.g., technical and administrative)  
+o Account management  
+o Management review and approval  
+o Key performance and risk indicators  
+o Backup verification data  
+o Training and awareness  
+o Disaster Recovery (DR) and Business Continuity (BC)  
+ 6.4 – Analy ze test output and generate report  
+o Remediation  
+o Exception handling  
+o Ethical disclosure  
+ 6.5 – Conduct or facilitate security audits  
+o Internal (e.g., within organization control)  
+o External (e.g., outside organization control)  
+o Third -party (e.g., outside of enterp rise control)  
+o Location (e.g., on -premises, cloud, hybrid)  
+Domain 7: Security Operations  
+ 7.1 – Understand and comply with investigations  
+o Evidence collection and handling  
+o Reporting and documentation  
+o Investigative techniques  
+o Digital forensics tools, tactics, and procedures  
+o Artifacts (e.g., data, computer, network, mobile device)  
+ 7.2 – Conduct logging and monitoring activities  
+o Intrusion detection and prevention (IDPS)  
+o Security Information and Event Management (SIEM)  
+o Continuous monitoring and tuning  
+o Egress monitoring  
+o Log management  
+o Threat intelligence (e.g., threat feeds, threat hunting)  
+o User and Entity Behavior Analytics (UEBA)  
+ 7.3 – Perform Configuration Management (CM) (e.g., provisioning, 
+baselining, automation)  
+ 7.4 – Apply foundational security operatio ns concepts  
+o Need -to-know/least privilege  
+o Separation of Duties (SoD) and responsibilities  
+o Privileged account management  
+o Job rotation  
+o Service -level agreements (SLA)  
+ 7.5 – Apply resource protection  
+o Media management  
+o Media protection techniques  
+o Data at rest/dat a in transit  
+ 7.6 – Conduct incident management  
+o Detection  
+o Response  
+o Mitigation  
+o Reporting  
+o Recovery  
+o Remediation  
+o Lessons learned  
+ 7.7 – Operate and maintain detection and preventative measures  
+o Firewalls (e.g., next generation, web application, network)  
+o Intrusion  Detection Systems (IDS) and Intrusion Prevention Systems 
+(IPS)  
+o Whitelisting/blacklisting  
+o Third -party provided security services  
+o Sandboxing  
+o Honeypots/honeynets  
+o Anti-malware  
+o Machine learning and Artificial Intelligence (AI) based tools  
+ 7.8 – Implement and s upport patch and vulnerability management  
+ 7.9 – Understand and participate in change management processes  
+ 7.10 – Implement recovery strategies  
+o Backup storage strategies (e.g., cloud storage, onsite, offsite)  
+o Recovery site strategies (e.g., cold vs. hot, re source capacity 
+agreements)  
+o Multiple processing sites  
+o System resilience, high availability (HA), Quality of Service (QoS), and 
+fault tolerance  
+ 7.11 – Implement Disaster Recovery (DR) processes  
+o Response  
+o Personnel  
+o Communications (e.g., methods)  
+o Assessment  
+o Restoration  
+o Training and awareness  
+o Lessons learned  
+ 7.12 – Test Disaster Recovery Plans (DRP)  
+o Read -through/tabletop  
+o Walkthrough  
+o Simulation  
+o Parallel  
+o Full interruption  
+o Communications (e.g., stakeholders, test status, regulators)  
+ 7.13 – Participate in Business Continuity (BC) planning and exercises  
+ 7.14 – Implement and manage physical security  
+o Perimeter security controls  
+o Internal security controls  
+ 7.15 – Address personnel safety and security concerns  
+o Travel  
+o Security training and awareness (e.g., insider threat, social media 
+impacts, two -factor authentication (2FA) fatigue)  
+o Emergency management  
+o Duress  
+Domain 8: Software Development Security  
+ 8.1 – Understand and integrate security in the Software Development 
+Life Cycle (SDLC)  
+o Development methodologies (e.g., Agile,  Waterfall, DevOps, 
+DevSecOps, Scaled Agile Framework)  
+o Maturity models (e.g., Capability Maturity Model (CMM), Software 
+Assurance Maturity Model (SAMM))  
+o Operation and maintenance  
+o Change management  
+o Integrated Product Team  
+ 8.2 – Identify and apply security c ontrols in software development 
+ecosystems  
+o Programming languages  
+o Libraries  
+o Tool sets  
+o Integrated Development Environment  
+o Runtime  
+o Continuous Integration and Continuous Delivery (CI/CD)  
+o Software configuration management (CM)  
+o Code repositories  
+o Application security testing (e.g., static application security testing 
+(SAST), dynamic application security testing (DAST), software 
+composition analysis, Interactive Application Security Test (IAST))  
+ 8.3 – Assess the effectiveness of software security  
+o Auditing and l ogging of changes  
+o Risk analysis and mitigation  
+ 8.4 – Assess security impact of acquired software  
+o Commercial -off-the-shelf (COTS)  
+o Open source  
+o Third -party  
+o Managed services (e.g., enterprise applications)  
+o Cloud services (e.g., Software as a Service (SaaS), In frastructure as a 
+Service (IaaS), Platform as a Service (PaaS))  
+ 8.5 – Define and apply secure coding guidelines and standards  
+o Security weaknesses and vulnerabilities at the source -code level  
+o Security of application programming interfaces (API)  
+o Secure codin g practices  
+o Software -defined security  
+ 
+ 
+ 
+ 
+CCSP - Domain 1: Cloud Concepts, Architecture and Design (17%)  
+ 1.1 Understand Cloud Computing Concepts  
+o Cloud Computing Definitions  
+o Cloud Computing Roles and Responsibilities  
+o Essential Cloud Computing Characteristics  
+o Building Block Technologies  
+ 1.2 Describe Cloud Reference Architecture  
+o Cloud Computing Activities  
+o Cloud Service Capabilities  
+o Cloud Service Categories  
+o Cloud Deployment Models  
+o Cloud Shared Considerations  
+o Impact of Related Technologies  
+ 1.3 Understand Security  Concepts Relevant to Cloud Computing  
+o Cryptography and Key Management  
+o Identity and Access Control  
+o Data and Media Sanitization  
+o Network Security  
+o Virtualization Security  
+o Common Cloud Threats  
+o Security Hygien  
+ 1.4 Understand Design Principles of Secure Cloud Com puting  
+o Cloud Secure Data Lifecycle  
+o Cloud -based Business Continuity (BC) and Disaster Recovery (DR) 
+Planning  
+o Business Impact Analysis (BIA)  
+o Functional Security Requirements  
+o Security Considerations and Responsibilities for Different Cloud 
+Categories  
+o Cloud De sign Patterns  
+o DevOps Security  
+ 1.5 Evaluate Cloud Service Providers (CSP)  
+o Verification Against Criteria  
+o System/Subsystem Product Certifications  
+ 1.6 Comprehend Artificial Intelligence (AI)/Machine Learning (ML)  
+o Cloud Threat Detection and Analysis  
+o Data Source  Validation and Verification  
+o Security Orchestration, Automation and Response (SOAR)  
+o Ethical Concerns  
+o Regulatory Requirements  
+Domain 2: Cloud Data Security (20%)  
+ 2.1 Describe Cloud Data Concepts  
+o Cloud Data Lifecycle Phases  
+o Data Dispersion  
+o Data Flows  
+ 2.2 Des ign and Implement Cloud Data Storage Architectures  
+o Storage Types  
+o Threats to Storage Types  
+ 2.3 Design and Apply Data Security Technologies and Strategies  
+o Encryption and Key Management  
+o Hashing (e.g., data integrity, non -repudiation)  
+o Data Obfuscation (e.g., m asking, anonymization)  
+o Tokenization  
+o Data Loss Prevention (DLP)  
+o Keys, Secrets and Certificates Management  
+ 2.4 Implement Data Discovery  
+o Structured Data  
+o Unstructured Data  
+o Semi -Structured Data  
+o Data Location  
+ 2.5 Plan and Implement Data Classification  
+o Data Classification Policies  
+o Data Mapping  
+o Data Labelling and Tagging  
+ 2.6 Design and Implement Information Rights Management (IRM)  
+o Objectives  
+o Appropriate Tools  
+ 2.7 Plan and Implement Data Retention, Deletion and Archiving Policies  
+o Data Retention Policies  
+o Data De letion Procedures and Mechanisms  
+o Data Archiving Procedures and Mechanisms  
+o Legal Hold  
+ 2.8 Design and Implement Auditability, Traceability and Accountability of 
+Data Events  
+o Definition of Event Sources and Requirement of Event Attributes  
+o Logging, Storage and Analysis of Data Events  
+o Chain of Custody and Non -repudiation  
+ 2.9 Comprehend Data Protection of AI and ML Data  
+o Data Set and Model Privacy  
+o Data Set and Model Security  
+Domain 3: Cloud Platform and Infrastructure Security (17%)  
+ 3.1 Comprehend Cloud Infrastruct ure Components  
+o Physical Environment  
+o Network and Communications  
+o Compute  
+o Virtualization  
+o Storage  
+o Management Plane  
+ 3.2 Design a Secure Data Center  
+o Logical Design  
+o Physical Design  
+o Environmental Design  
+o Design Resilience  
+ 3.3 Analyze Risks Associated with Cloud Infrastructure and Platforms  
+o Risk Assessment  
+o Cloud Vulnerabilities, Threats and Attacks  
+o Risk Treatment Strategies  
+ 3.4 Plan and Implementation of Security Controls  
+o Physical and Environmental Protection  
+o System, Storage and Communication Protection  
+o Identifica tion, Authentication and Authorization in Cloud Environments  
+o Audit Mechanisms  
+ 3.5 Plan Business Continuity (BC) and Disaster Recovery (DR)  
+o Business Continuity (BC)/Disaster Recovery (DR) Strategy  
+o Business Requirements  
+o Creation, Implementation and Testing o f Plan  
+Domain 4: Cloud Application Security (16%)  
+ 4.1 Advocate Training and Awareness for Application Security  
+o Cloud Development Basics  
+o Common Pitfalls  
+o Common Cloud Vulnerabilities  
+ 4.2 Describe the Secure Software Development Life Cycle (SDLC) 
+Proces  
+o Busin ess Requirements  
+o Phases and Methodologies (e.g., design, code, test, maintain, waterfall 
+vs. agile)  
+ 4.3 Apply the Secure Software Development Life Cycle (SDLC)  
+o Cloud -Specific Risks  
+o Threat Modelling  
+o Avoid Common Vulnerabilities During Development  
+o Secure Coding  
+o Software Configuration Management (CM) and Versioning  
+ 4.4 Apply Cloud Software Assurance and Validation  
+o Functional and Non -functional Testing  
+o Security Testing Methodologies  
+o Quality Assurance (QA)  
+o Abuse Case Testing  
+ 4.5 Use Verified Secure Software  
+o Securing Application Programming Interfaces (API)  
+o Supply -Chain Management  
+o Third -Party Software Management  
+o Validated Open -Source Software  
+ 4.6 Comprehend and Apply the Specifics of Cloud Application 
+Architecture  
+o Supplemental Security Components  
+o Cryptography  
+o Sandboxing  
+o Application Virtualization and Orchestration  
+ 4.7 Design Appropriate Identity and Access Management (IAM) Solutions  
+o Federated Identity  
+o Identity Providers (IdP)  
+o Single Sign -On (SSO)  
+o Multi -Factor Authentication (MFA)  
+o Cloud Access Security Broker (CA SB) 
+o Secrets, Key, and Certificate Management  
+Domain 5: Cloud Security Operations (17%)  
+ 5.1 Build and Implement Physical and Logical Infrastructure for Cloud 
+Environment  
+o Hardware Specific Security Configuration Requirements  
+o Secure by Default  
+o Installation and Configuration of Management Plane Tools  
+o Virtual Hardware Specific Security Configuration Requirements  
+o Installation of Guest Operating System (OS) Virtualization Toolsets  
+ 5.2 Operate and Maintain Physical and Logical Infrastructure for Cloud 
+Environment  
+o Access Controls for Local and Remote Access  
+o Secure Network Configuration  
+o Network Security Controls  
+o Operating Systems Hardening through Application of Baselines, 
+Monitoring and Remediation  
+o Patch Management  
+o Availability of Clustered Hosts  
+o Availability of Gu est Operating System (OS)  
+o Performance and Capacity Monitoring  
+o Hardware Monitoring  
+o Configuration of Host and Guest OS Backup and Restore Functions  
+o Management Plane  
+ 5.3 Implement Operational Controls and Standards  
+o Change Management  
+o Continuity Management  
+o Information Security Management  
+o Continual Service Improvement Management  
+o Incident Management  
+o Problem Management  
+o Release Management  
+o Deployment Management  
+o Configuration Management (CM)  
+o Service -Level Management  
+o Availability Management  
+o Capacity Management  
+ 5.4 Support Digital Forensics  
+o Forensic Data Collection Methodologies  
+o Evidence Management  
+o Collecting, Acquiring, and Preserving Digital Evidence  
+ 5.5 Manage Communication with Relevant Parties  
+o Vendors  
+o Customers  
+o Partners  
+o Regulators  
+o Other Stakeholders  
+ 5.6 Manage Security Operations  
+o Security Operations Center (SOC)  
+o Intelligent Monitoring of Security Controls  
+o Log Capture and Analysis  
+o Incident Response (IR)  
+o Vulnerability Assessments  
+o Penetration Testing  
+Domain 6: Legal, Risk and Compliance (13%)  
+ 6.1 Articulate Legal R equirements and Unique Risks within the Cloud 
+Environment  
+o Conflicting International Legislation  
+o Evaluation of Legal Risks Specific to Cloud Computing  
+o Legal and Regulatory Frameworks and Guidelines  
+o eDiscovery  
+o Forensics Requirements  
+ 6.2 Understand Privacy Requirements  
+o Difference Between Contractual and Regulated Private Data  
+o Country -Specific Legislation Related to Private Data  
+o Jurisdictional Differences in Data Privacy  
+o Standard Privacy Requirements  
+o Privacy Impact Assessments (PIA)  
+ 6.3 Understand Audit Proce sses, Methodologies, and Required 
+Adaptations for a Cloud Environment  
+o Internal and External Audit Controls  
+o Impact of Audit Requirements  
+o Identify Assurance Challenges of Virtualization and Cloud  
+o Types of Audit Reports  
+o Restrictions of Audit Scope Statements  
+o Gap Analysis  
+o Audit Planning  
+o Internal Information Security Management System (ISMS)  
+o Internal Information Security Controls System  
+o Policies  
+o Identification and Involvement of Relevant Stakeholders  
+o Specialized Compliance Requirements for Highly Regulated Indus tries 
+o Impact of Distributed Information Technology (IT) Model  
+ 6.4 Understand Implications of Cloud to Enterprise Risk Management  
+o Assess Providers Risk Management Programs  
+o Difference Between Data Roles  
+o Regulatory Transparency Requirements  
+o Risk Treatment  
+o Different Risk Frameworks  
+o Metrics for Risk Management  
+o Assessment of Risk Environment  
+ 6.5 Understand Outsourcing and Cloud Contract Design  
+o Business Requirements  
+o Vendor Management  
+o Contract Management  
+o Supply -Chain Management  
+ 
+ 
+ 
+ 
+SSCP - Domain 1. Security Opera tions and Administration (16%)  
+ 1.1 – Comply with codes of ethics  
+o ISC2 Code of Ethics  
+o Organizational code of ethics  
+ 1.2 – Understand security concepts  
+o Confidentiality  
+o Integrity  
+o Availability  
+o Accountability  
+o Privacy  
+o Non-repudiation  
+o Least privilege  
+o Segregation of Duties (SoD)  
+ 1.3 – Identify and implement security controls  
+o Technical controls (e.g., session timeout, password aging)  
+o Physical controls (e.g., mantraps, cameras, locks)  
+o Administrative controls (e.g., security policies, standards, procedures, 
+baselines)  
+o Assessing compliance  
+o Periodic audit and review  
+ 1.4 – Document and maintain functional security controls  
+o Deterrent controls  
+o Preventative controls  
+o Detective controls  
+o Corrective controls  
+o Compensating controls  
+ 1.5 – Participate in asset management lifecycle ( hardware, software and data)  
+o Process, planning, design and initiation  
+o Development/Acquisition  
+o Inventory and licensing  
+o Implementation/Assessment  
+o Operation/Maintenance  
+o Archiving and retention requirements  
+o Disposal and destruction  
+ 1.6 – Participate in change management lifecycle  
+o Change management (e.g., roles, responsibilities, processes)  
+o Security impact analysis  
+o Configuration management (CM)  
+ 1.7 – Participate in implementing security awareness and training (e.g., social 
+engineering/phishing)  
+ 1.8 – Collaborate  with physical security operations (e.g., data center 
+assessment, badging)  
+  
+Domain 2. Access Controls (15%)  
+ 2.1 – Implement and maintain authentication methods  
+o Single/Multi -Factor Authentication (MFA)  
+o Single Sign -On (SSO) (e.g., Active Directory Federation Services 
+(ADFS), OpenID connect)  
+o Device authentication  
+o Federated access (e.g., Open Authorization 2 (OAuth2), Security 
+Assertion Markup Language (SAML))  
+ 2.2 – Support internetwork trust architectures  
+o Trust relationships (e.g., 1 -way, 2 -way, tran sitive, zero)  
+o Internet, intranet and extranet  
+o Third -party connections  
+ 2.3 – Participate in the identity management lifecycle  
+o Authorization  
+o Proofing  
+o Provisioning/De -provisioning  
+o Maintenance  
+o Entitlement  
+o Identity and Access Management (IAM) systems  
+ 2.4 – Unde rstand and apply access controls  
+o Mandatory  
+o Discretionary  
+o Role-based (e.g., attribute -, subject -, object -based)  
+o Rule-based  
+  
+Domain 3. Risk Identification, Monitoring, and Analysis (15%)  
+ 3.1 – Understand the risk management process  
+o Risk visibility and reporting (e.g., risk register, Common Vulnerability 
+Scoring (CVSS), sharing threat intelligence/Indicators of Compromise 
+(IOC))  
+o Risk management concepts (e.g., threat modeling, impact 
+assessments)  
+o Risk management frameworks  
+o Risk tolerance (e.g., appetite)  
+o Risk treatment (e.g., acceptance, transference, mitigation, or 
+avoidance)  
+ 3.2 – Understand legal and regulatory concerns (e.g., jurisdiction, limitations, 
+privacy)  
+ 3.3 – Participate in security assessment and vulnerability management 
+activities  
+o Security t esting  
+o Risk review (e.g., internal, supplier, architecture)  
+o Vulnerability management lifecycle  
+ 3.4 – Operate and monitor security platforms (e.g., continuous monitoring)  
+o Source systems (e.g., applications, security appliances, network 
+devices, and hosts)  
+o Events of interest (e.g., anomalies, intrusions, unauthorized changes, 
+compliance monitoring)  
+o Log management  
+o Event aggregation and correlation  
+ 3.5 – Analyze monitoring results  
+o Security baselines and anomalies  
+o Visualizations, metrics, and trends (e.g., notif ications, dashboards, 
+timelines)  
+o Event data analysis  
+o Document and communicate findings (e.g., escalation)  
+  
+Domain 4. Incident Response and Recovery (14%)  
+ 4.1 – Support incident lifecycle, e.g., National Institute of Standards and 
+Technology (NIST), Intern ational Organization for Standardization (ISO)  
+o Preparation  
+o Detection, analysis and escalation  
+o Containment  
+o Eradication  
+o Recovery  
+o Lessons learned/implementation of new countermeasure  
+ 4.2 – Understand and support forensic investigations  
+o Legal (e.g., civil, criminal, administrative) and ethical principles  
+o Evidence handling (e.g., first responder, triage, chain of custody, 
+preservation of scene)  
+o Reporting of analysis  
+ 4.3 – Understand and support Business Continuity Plan (BCP) and Disaster 
+Recovery Plan (DRP)  
+o Emergency response plans and procedures (e.g., pandemic, natural 
+disaster, information system contingency, crisis management)  
+o Interim or alternate processing strategies  
+o Restoration planning  
+o Backup and redundancy implementation  
+o Testing and drills  
+  
+Domain 5.  Cryptography (9%)  
+ 5.1 – Understand cryptography  
+o Confidentiality  
+o Integrity and authenticity  
+o Data sensitivity (e.g., Personally Identifiable Information (PII), 
+Intellectual Property (IP), Protected Health Information (PHI))  
+o Regulatory and industry best prac tices (e.g., International Organization 
+for Standardization (ISO), Payment Card Industry Data Security 
+Standards (PCI -DSS))  
+ 5.2 – Apply cryptography concepts  
+o Hashing  
+o Salting  
+o Symmetric/Asymmetric encryption/Elliptic Curve Cryptography (ECC)  
+o Non-repudiation (e.g., digital signatures/certificates, Hash -based 
+Message Authentication Code (HMAC), audit trails)  
+o Strength of encryption algorithms and keys (e.g., Advanced Encryption 
+Standards (AES), Rivest -Shamir -Adleman (RSA), 256 -, 512 -, 1024 -, 
+2048 -bit keys)  
+o Crypt ographic attacks, cryptanalysis, and countermeasures (e.g., 
+quantum computing)  
+ 5.3 – Understand and implement secure protocols  
+o Services and protocols  
+o Common use cases  
+o Limitations and vulnerabilities  
+ 5.4 – Understand Public Key Infrastructure (PKI)  
+o Fundamen tal key management concepts (e.g., storage, rotation, 
+composition, generation, destruction, exchange, revocation, escrow)  
+o Web of Trust (WOT)  
+  
+Domain 6. Network and Communications Security (16%)  
+ 6.1 – Understand and apply fundamental concepts of networking  
+o Open Systems Interconnection (OSI) and Transmission Control 
+Protocol/Internet Protocol (TCP/IP) models  
+o Network topologies  
+o Network relationships (e.g., Peer -to-Peer (P2P), client server)  
+o Transmission media types (e.g., wired, wireless)  
+o Software -Defined Net working (SDN) (e.g., Software -Defined Wide Area 
+Network (SD -WAN), network virtualization, automation)  
+o Commonly used ports and protocols  
+ 6.2 – Understand network attacks  
+o Distributed Denial of Service (DDoS)  
+o Man-in-the-Middle (MITM)  
+o Domain Name System (DNS) poisoning  
+o Countermeasures (e.g., Content Delivery Networks (CDN)  
+ 6.3 – Manage network access controls  
+o Network access controls, standards and protocols (e.g.,   Remote  
+Authentication Dial -In User Service (RADIUS), Institute of Electrical 
+and Electronics Engineers (IEEE) 802.1X, Terminal Access Controller 
+Access -Control System Plus (TACACS+))  
+o Remote access operation and configuration (e.g., thin client, Virtual 
+Private N etwork (VPN))  
+ 6.4 – Manage network security  
+o Logical and physical network devices placement of (e.g., passive, 
+inline, virtual)  
+o Segmentation (e.g., data/control plane, physical/logical, Virtual Local 
+Area Network (VLAN), Access Control List (ACL), firewall zones, micro -
+segmentation)  
+o Secure device management  
+ 6.5 – Operate and configure network -based security devices  
+o Firewalls and proxies (e.g., filtering methods, Web Application Firewalls 
+(WAF))  
+o Network intrusion detection/prevention systems  
+o Routers and switc hes 
+o Traffic -shaping devices (e.g., Wide Area Network (WAN) optimization, 
+load balancing)  
+ 6.6 – Secure wireless communications  
+o Technologies (e.g., cellular network, Wi -Fi, Bluetooth, Near -Field 
+Communication (NFC))  
+o Authentication and encryption protocols (e .g., Wired Equivalent Privacy 
+(WEP), Wi -Fi Protected Access (WPA), Extensible Authentication 
+Protocol (EAP))  
+o Internet of Things (IoT)  
+  
+Domain 7. Systems and Application Security (15%)  
+ 7.1 – Identify and analyze malicious code and activity  
+o Malware (e.g., s pyware, scareware, ransomware, trojans, viruses, 
+worms, rootkits, trapdoors, backdoors, fileless)  
+o Malware countermeasures (e.g., scanners, anti -malware, code signing)  
+o Malicious activity (e.g., data theft, Distributed Denial of Service (DDoS), 
+insider threa t, botnet, zero -day exploits, web -based attacks, Advanced 
+Persistent Threat (APT))  
+o Malicious activity countermeasures (e.g., user awareness, patching, 
+sandboxing, system hardening, isolation, Data Loss Prevention (DLP))  
+ 7.2 – Implement and operate endpoint  device security  
+o Host-based firewalls  
+o Application whitelisting  
+o Host-based Intrusion Prevention System (HIPS)  
+o Endpoint encryption (e.g., whole disk encryption)  
+o Trusted Platform Module (TPM)  
+o Secure browsing  
+o Endpoint Detection and Response (EDR)  
+ 7.3 – Administer Mobile Device Management (MDM)  
+o Provisioning techniques (e.g., Corporate -Owned Personally Enabled 
+(COPE), Bring Your Own Device (BYOD))  
+o Containerization  
+o Encryption  
+o Mobile application management (MAM)  
+ 7.4 – Understand and configure cloud security  
+o Deployment models (e.g., private, public, hybrid, community)  
+o Service models (e.g., Platform as a Service (PaaS), Infrastructure as a 
+Service (IaaS), and Software as a Service (SaaS))  
+o Virtualization  
+o Legal and regulatory concerns (e.g., privacy, jurisdiction , surveillance, 
+data ownership, eDiscovery)  
+o Data storage, processing, and transmission (e.g., recovery, resilience, 
+archiving)  
+o Third -party/outsourcing requirements (e.g., data portability, Service -
+Level Agreement (SLA), data destruction, auditing)  
+o Shared r esponsibility model  
+ 7.5 – Operate and maintain secure virtual environments  
+o Containers  
+o Hypervisor  
+o Virtual appliances  
+o Continuity and resilience  
+o Attacks and countermeasures  
+o Shared storage  
+ 
+ 
+ 
+ CC- Domain 1: Security Principles (26%)  
+o 1.1: Understand the security  concepts of information assurance  
+ Confidentiality  
+ Integrity  
+ Availability  
+ Authentication (e.g., methods of authentication, multi -factor 
+authentication (MFA))  
+ Non-repudiation  
+ Privacy  
+o 1.2: Understand the risk management process  
+ Risk management (e.g., risk pr iorities, risk tolerance)  
+ Risk identification, assessment, and treatment  
+o 1.3: Understand security controls  
+ Technical controls  
+ Administrative controls  
+ Physical controls  
+ 1.4: Understand (ISC)² Code of Ethics  
+ Professional code of conduct  
+o 1.4: Understand gover nance processes  
+ Policies  
+ Procedures  
+ Standards  
+ Regulations and laws  
+ Domain 2: Business Continuity (BC), Disaster Recovery (DR) & Incident 
+Response Concepts (10%)  
+o 2.1: Understand business continuity (BC)  
+ Purpose  
+ Importance  
+ Components  
+o 2.2: Understand disaster  recovery (DR)  
+ Purpose  
+ Importance  
+ Components  
+o 2.3: Understand incident response  
+ Purpose  
+ Importance  
+ Components  
+ Domain 3: Access Controls Concepts (22%)  
+o 3.1: Understand physical access controls  
+ Physical security controls (e.g., badge systems, gate entry, 
+environmental design)  
+ Monitoring (e.g., security guards, closed -circuit television 
+(CCTV), alarm systems, logs)  
+ Authorized versus unauthorized personnel  
+o 3.2: Understand logical access controls  
+ Principle of least privilege  
+ Segregation of duties  
+ Discretionary ac cess control (DAC)  
+ Mandatory access control (MAC)  
+ Role-based access control (RBAC)  
+ Domain 4: Network Security (24%)  
+o 4.1: Understand computer networking  
+ Networks (e.g., Open Systems Interconnection (OSI) model, 
+Transmission Control Protocol/Internet Protoco l (TCP/IP) model, 
+Internet Protocol version 4 (IPv4), Internet Protocol version 6 
+(IPv6), WiFi) Ports  
+ Applications  
+o 4.2: Understand network threats and attacks  
+ Types of threats (e.g., distributed denial -of-service (DDoS), 
+virus, worm, Trojan, man-in-the-middle (MITM), side -channel)  
+ Identification (e.g., intrusion detection system (IDS), host -based 
+intrusion detection system (HIDS), network intrusion detection 
+system (NIDS))  
+ Prevention (e.g., antivirus, scans, firewalls, intrusion prevention 
+system (IPS))  
+o 4.3: Understand network security infrastructure  
+ On-premises (e.g., power, data center/closets, Heating, 
+Ventilation, and Air Conditioning (HVAC), environmental, fire 
+suppression, redundancy, memorandum of understanding 
+(MOU)/memorandum of agreem ent (MOA))  
+ Design (e.g., network segmentation (demilitarized zone (DMZ), 
+virtual local area network (VLAN), virtual private network (VPN), 
+micro -segmentation), defense in depth, Network Access Control 
+(NAC) (segmentation for embedded systems, Internet of T hings 
+(IoT))  
+ Cloud (e.g., service -level agreement (SLA), managed service 
+provider (MSP), Software as a Service (SaaS), Infrastructure as 
+a Service (IaaS), Platform as a Service (PaaS), hybrid)  
+ Domain 5: Security Operations (18%)  
+o 5.1: Understand data securi ty 
+ Encryption (e.g., symmetric, asymmetric, hashing)  
+ Data handling (e.g., destruction, retention, classification, 
+labeling)  
+ Logging and monitoring security events  
+o 5.2: Understand system hardening  
+ Configuration management (e.g., baselines, updates, patches)  
+o 5.3: Understand best practice security policies  
+ Data handling policy  
+ Password policy  
+ Acceptable Use Policy (AUP)  
+ Bring your own device (BYOD) policy  
+ Change management policy (e.g., documentation, approval, 
+rollback)  
+ Privacy policy  
+o 5.4: Understand security  awareness training  
+ Purpose/concepts (e.g., social engineering, password 
+protection)  
+ Importance  
+ 
+ 
+CISA - CISA Domain 1: Information System Auditing Process (18%)  
+ A-Planning  
+o IS Audit Standards, Guidelines, and Codes of Ethics  
+o Business Processes  
+o Types of Controls  
+o Risk-Based Audit Planning  
+o Types of Audits and Assessments  
+ B-Execution  
+o Audit Project Management  
+o Sampling Methodology  
+o Audit Evidence Collection Techniques  
+o Data Analytics  
+o Reporting and Communication Techniques  
+o Quality Assurance and Improvement of the  Audit Process  
+  
+CISA Domain 2: Governance and Management of IT (18%)  
+ A-IT Governance  
+o Laws, Regulations, and Industry Standards  
+o Organizational Structure, IT Governance, and IT Strategy  
+o IT Policies, Standards, Procedures, and Practices  
+o Enterprise Architectu re and Considerations  
+o Enterprise Risk Management  
+o Privacy Program and Principles  
+o Data Governance and Classification  
+ B-IT Management  
+o IT Resource Management  
+o IT Vendor Management  
+o IT Performance Monitoring and Reporting  
+o Quality Assurance and Quality Management of IT 
+  
+CISA Domain 3: Information Systems Acquisition, Development, and 
+Implementation (12%)  
+ A-Information Systems Acquisition and Development  
+o Project Governance and Management  
+o Business Case and Feasibility Analysis  
+o System Development Methodologies  
+o Contro l Identification and Design  
+ B-Information Systems Implementation  
+o System Readiness and Implementation Testing  
+o Implementation, Configuration, and Release Management  
+o System Migration, Infrastructure Deployment, and Data Conversion  
+o Post-implementation Review  
+  
+CISA Domain 4: Information Systems Operations and Business Resilience 
+(26%)  
+ A-Information Systems Operations  
+o IT Components  
+o IT Asset Management  
+o Job Scheduling and Production Process Automation  
+o System Interfaces  
+o Shadow IT and End -User Computing  
+o Systems Availability and Capacity Management  
+o Problem and Incident Management  
+o IT Change, Configuration, and Patch Management  
+o Operational Log Management  
+o IT Service Level Management  
+o Database Management  
+ B-Business Resilience  
+o Business Impact Analysis  
+o System and Operati onal Resilience  
+o Data Backup, Storage, and Restoration  
+o Business Continuity Plan  
+o Disaster Recovery Plans  
+  
+CISA Domain 5: Protection of Information Assets (26%)  
+ A- Information Asset Security and Controls  
+o Information Asset Security Frameworks, Standards, and Guidelines  
+o Physical and Environmental Controls  
+o Identity and Access Management  
+o Network and End -Point Security  
+o Data Loss Prevention  
+o Data Encryption  
+o Public Key Infrastructure  
+o Cloud and Virtualized Environments  
+o Mobile, Wireless, and Internet -of-Things Devices  
+ B- Security Event Management  
+o Security Awareness Training and Programs  
+o Information System Attack Methods and Techniques  
+o Security Testing Tools and Techniques  
+o Security Monitoring Tools and Techniques  
+o Security Incident Response Management  
+o Evidence Collection and Forensics  
+ 
+ 
+ 
+CISM - Domain 1 – Information Security Governance – 17% 
+ A–Enterprise Governance  
+o Organizational Culture  
+o Legal, Regulatory, and Contractual Requirements  
+o Organizational Structures, Roles, and Responsibilities  
+ B–Information Security Strategy  
+o Information Security Strategy Development  
+o Information Governance Frameworks and Standards  
+o Strategic Planning (e.g., Budgets, Resources, Business Case)  
+  
+Domain 2 – Information Security Risk Management – 20% 
+ A–Information Security Risk Assessment  
+o Emerging Ris k and Threat Landscape  
+o Vulnerability and Control Deficiency Analysis  
+o Risk Assessment and Analysis  
+ B–Information Security Risk Response  
+o Risk Treatment / Risk Response Options  
+o Risk and Control Ownership  
+o Risk Monitoring and Reporting  
+  
+Domain 3 – Information Security Program – 33% 
+ A–Information Security Program Development  
+o Information Security Program Resources (e.g., People, Tools, 
+Technologies)  
+o Information Asset Identification and Classification  
+o Industry Standards and Frameworks for Information Security  
+o Information Security Policies, Procedures, and Guidelines  
+o Information Security Program Metrics  
+ B–Information Security Program Management  
+o Information Security Control Design and Selection  
+o Information Security Control Implementation and Integrations  
+o Information Security Control Testing and Evaluation  
+o Information Security Awareness and Training  
+o Management of External Services (e.g., Providers, Suppliers, Third 
+Parties, Fourth Parties)  
+o Information Security Program Communications and Reporting  
+  
+Domain 4 – Incident Management – 30% 
+ A–Incident Management Readiness  
+o Incident Response Plan  
+o Business Impact Analysis (BIA)  
+o Business Continuity Plan (BCP)  
+o Disaster Recovery Plan (DRP)  
+o Incident Classification/Categorization  
+o Incident Management Training, Testing, and Evaluation  
+ B–Incident Management Operations  
+o Incident Management Tools and Techniques  
+o Incident Investigation and Evaluation  
+o Incident Containment Methods  
+o Incident Response Communications (e.g., Reporting, Notification, 
+Escalation)  
+o Incident Eradication and Recovery  
+o Post-Incident Review Practices  
+ 
+ 
+ 
+ 
+ CRISC - Domain 1: Governance 26%  
+o Part A: Organizational Governance  
+ Strategy, Goals, and Objectives  
+ Organizational Structure, Roles, and Responsibilities  
+ Organizational Culture and Ethics  
+ Policies and Standards  
+ Business Processes and Resilience  
+ Organizational Asset Management  
+o Part B: Risk Governance  
+ Enterprise Risk Management  
+ Lines of Defense  
+ Risk Profile  
+ Risk Appetite and Risk Tolerance  
+ Risk Frameworks, Legal, Regulatory, and Contractual 
+Requirements  
+ Domain 2: IT Risk Assessment 22%  
+o Part A: Risk Identification  
+ Risk Events  
+ Threat Modeling and Threat Landscape  
+ Vulnerability Management  
+ Risk Scenario Development and Evaluation  
+o Part B: Risk Analysis  
+ Risk Assessment Concepts and Standards  
+ Business Impact Analysis (BIA)  
+ Risk R egister  
+ Risk Analysis Methodologies  
+ Inherent, Residual, and Current Risk  
+ Domain 3: Risk Response and Reporting 32%  
+o Part A: Risk Response  
+ Risk Response Options  
+ Risk and Control Ownership  
+ Vendor/Supply Chain Risk Management  
+ Issues, Findings, Exceptions, and Exemptions Management  
+o Part B: Control Design and Implementation  
+ Control Frameworks, Types, and Standards  
+ Control Design, Selection, Implementation, and Analysis  
+ Control Testing Methodologies  
+o Part C: Risk Monitoring and Reporting  
+ Risk Action Plans  
+ Data Collection, Aggregation, Analysis, and Validation  
+ Risk and Control Metrics  
+ Risk and Control Monitoring and Reporting Techniques  
+ Monitoring and Reporting of Emerging Risks  
+ Domain 4 : Information Technology and Security 20%  
+o Part A: Information Technology Pri nciples  
+ Technology Roadmaps and Enterprise Architecture (EA)  
+ Operations Management  
+ System Development Life Cycle (SDLC)  
+ Data Lifecycle Management  
+ Portfolio and Project Management  
+ Technology Resilience and Disaster Response/Recovery  
+ Emerging Technologies  
+o Part B: Information Security Principles  
+ Security Concepts, Frameworks, and Standards  
+ Security/Risk Awareness and Training  
+ Data Privacy and Data Protection Principles  
+ 
+ 
+ 
+ CGEIT - Domain 1:  Framework for the Governance of Enterprise IT.  
+ Domain 2:  Strategic Management.  
+ Domain 3:  Benefits Realization.  
+ Domain 4:  Risk Optimization.  
+ Domain 5:  Resource Optimization.  
+ 
+ 
+ 
+ 
+IAPP -CIPP/E  
+ Domain 1: Introduction to European Data Protection  
+o Understand the origins and historical context of European data 
+protection laws.  
+o Understand the roles and functions of significant European Union 
+institutions.  
+o Understand the legislative framework underpinning the principles of 
+European data protection.  
+ Domain 2: European Data Protection Law and Regulation  
+o Understand basic GDPR data prote ction concepts.  
+o Understand the requirements involved in maintaining the security of 
+personal data.  
+o Understand data subjects ’ rights.  
+ Domain 3: European Data Processing  
+o Understand the principles of European data processing  
+o Know what constitutes a lawful pro cessing basis.  
+o Understand information provision obligations.  
+o Understand the principles of, and the risks involved in, international 
+data transfers.  
+ Domain 4: European Data Protection: Scope and Accountability  
+o Understand issues related to the territorial an d material scope of the 
+GDPR.  
+o Understand the various accountability requirements under the GDPR.  
+o Understand the European data protection supervision and enforcement 
+structure.  
+o Understand the consequences for GDPR violations.  
+ Domain 5: Compliance with European Data Protection Law and 
+Regulation  
+o Understand how to comply with European data protection laws and 
+regulations in the workplace,  
+specifically as they relate to employment relationships.  
+o Understand how to comply with European data protection laws a nd 
+regulations related to surveillance  
+activities.  
+o Understand how to comply with European data protection laws and 
+regulations related to direct marketing.  
+o Understand how to comply with European data protection laws and 
+regulations related to internet  
+technology and communications.  
+ 
+ 
+ 
+ IAPP -CIPM - Module 1: Introduction to privacy program 
+management Identifies privacy program management responsibilities and 
+describes the role of accountability in privacy program management.  
+ Module 2: Privacy governance Examines  considerations for developing and 
+implementing a privacy program, including the position of the privacy function 
+within the organization, role of the DPO, program scope and charter, privacy 
+strategy, support and ongoing involvement of key functions and pr ivacy 
+frameworks.  
+ Module 3: Applicable laws and regulations Discusses the regulatory 
+environment, common elements across jurisdictions and strategies for 
+aligning compliance with organizational strategy.  
+ Module 4: Data assessments Relates practical processes  for creating and 
+using data inventories/maps, gap analysis, privacy assessments, privacy 
+impact assessments/data protection impact assessments and vendor 
+assessments.  
+ Module 5: Policies Describes common types of privacy -related policies, 
+outlines component s and offers strategies for implementation.  
+ Module 6: Data subject rights Discusses operational considerations for 
+communicating and ensuring data subject rights, including privacy notice, 
+choice and consent, access and rectification, data portability, and erasure.  
+ Module 7: Training and awareness Outlines strategies for developing and 
+implementing privacy training and awareness programs.  
+ Module 8: Protecting personal information Examines a holistic approach to 
+protecting personal information through privacy b y design.  
+ Module 9: Data breach incident plans Provides guidance on planning for 
+and responding to a data security incident or breach.  
+ Module 10: Monitoring and auditing program performance Relates 
+common practices for monitoring, measuring, analyzing and au diting privacy 
+program performance.  
+ 
+ 
+ 
+Network +  
+Chapter 1: Fundamentals  
+ Module A: Networking concepts  
+ Module B: Classifying networks  
+ Module C: Network models  
+ Module D: The troubleshooting process  
+Chapter 2: Physical networks  
+ Module A: Connection technologies  
+ Module B: Network devices  
+ Module C: Copper media  
+ Module D: Optical media  
+ Module E: Ethernet standards  
+Chapter 3: TCP/IP networks  
+ Module A: IP addressing  
+ Module B: Core protocols  
+ Module C: Network ports and applications  
+Chapter 4: Internetworki ng 
+ Module A: Switching  
+ Module B: Routing  
+Chapter 5: Wireless LANs  
+ Module A: Wireless networks  
+ Module B: Wireless LAN standards  
+Chapter 6: Wide area networks  
+ Module A: Internet connections  
+ Module B: WAN infrastructure  
+Chapter 7: Cybersecurity principles  
+ Module A: Goals and threats  
+ Module B: Digital security  
+ Module C: Transport encryption  
+Chapter 8: Defending networks  
+ Module A: Network security components  
+ Module B: Network authentication systems  
+ Module C: Hardening networks  
+Chapter 9: Evolving network tech nologies  
+ Module A: Network convergence  
+ Module B: Virtual and cloud systems  
+Chapter 10: Network operations  
+ Module A: Monitoring and optimization  
+ Module B: Fault tolerance and disaster recovery  
+ Module C: Incident response  
+Chapter 11: Network planning  
+ Module A: Network policy design  
+ Module B: Network installation  
+ Module C: Maintenance and upgrades  
+ 
+ 
+ 
+ 
+Pentest+  
+1.0 planning and scoping  
+ 1.1 Compare and contrast governance, risk, ad compliance concepts  
+ 1.2 Explain the importance of scoping organizations/customer  requirements  
+ 1.3 Given a scenario, demonstrate an ethical hacking mindset by maintaining 
+professionalism and integrity.  
+2.0 Information gathering and vulnerability scanning  
+ 2.1 Given a scenario, perform passive reconnaissance  
+ 2.2 Given a scenario, perform  active reconnaissance  
+ 2.3 Given a scenario, analyze the results of a reconnaissance exercise  
+ 2.4 Given a scenario, perform vulnerability scanning  
+3.0 Attacks and Exploits  
+ 3.1 Given a scenario, research attack vectors and perform network attacks  
+ 3.2 Given a scenario, research attack vectors and perform wireless attacks  
+ 3.3 Given a scenario, research attack vectors and perform application -based 
+attacks  
+ 3.4 Given a scenario, research attack vectors and perform attacks on cloud 
+technologies  
+ 3.5 Explain common attacks and vulnerabilities against specialized systems  
+ 3.6 Given a scenario, perform a social engineering or physical attack  
+ 3.7 Given a scenario, perform post -exploitation techniques  
+4.0 Reporting and Communication  
+ 4.1 Compare and contrast important comp onents of written reports  
+ 4.2 Given a scenario, analyze the findings and recommend the appropriate 
+remediation within a report  
+ 4.3 Explain the importance of communication during the penetration testing 
+process  
+ 4.4 Explain post -report delivery activities  
+5.0 Tools and Code Analysis  
+ 5.1 Explain the basic concepts of scripting and software development  
+ 5.2 Given a scenario, analyze a script or code sample for use in a penetration 
+test 
+ 5.3 Explain use cases of the following tools during the phases of a penetration 
+test 
+ 
+ 
+ 
+ 
+ 
+CPENT - CPENT Certification Training Course consists of 14 modules and tests the 
+abilities of a penetration tester in almost all the vectors of cybersecurity, some of 
+which have been introduced for the first time in any penetration cer tification  
+ Module 01:  Introduction to Penetration Testing  
+ Module 02:  Penetration Testing Scoping and Engagement  
+ Module 03:  Open Source Intelligence (OSINT)  
+ Module 04:  Social Engineering Penetration Testing  
+ Module 05:  Network Penetration Testing – External  
+ Module 06:  Network Penetration Testing – Internal  
+ Module 07:  Network Penetration Testing – Perimeter Devices  
+ Module 08:  Web Application Penetration Testing  
+ Module 09:  Wireless Penetration Testing  
+ Module 10:  IoT Penetration Testing  
+ Module 11:  OT/SCADA Penetr ation Testing  
+ Module 12:  Cloud Penetration Testing  
+ Module 13:  Binary Analysis and Exploitation  
+ Module 14:  Report Writing and Post Testing Actions  
+ 
+ 
+ 
+ 
+ 
+CSA CCSK -  
+ 
+Domain 1: Cloud Computing Concepts & Architectures  
+ Introduction  
+ Learning Objectives  
+ 1.1 Defining Cloud Computing  
+o  1.1.1 Abstraction & Orchestration  
+ 1.2 Cloud Computing Models  
+o 1.2.1 Essential Characteristics  
+o 1.2.2 Cloud Service Models  
+ 1.2.2.1 Infrastructure as a Service (IaaS)  
+ 1.2.2.2 Platform as a Service (PaaS)  
+ 1.2.2.3 Software as a Service (SaaS)  
+o 1.2.3 Cloud Deployment Models  
+o 1.2.4 CSA Enterprise Architecture Model  
+ 1.3 Cloud Security Scope, Responsibilities, & Models  
+o 1.3.1 Shared Security Responsibility Mode  
+  
+Domain 2: Cloud Governance  
+  Introduction  
+ Learning Objectives  
+ 2.1. Cloud Governance  
+ 2.2 The Governance Hierarchy  
+o 2.2.1 Cloud Security Frameworks  
+o 2.2.2 Policies  
+  
+Domain 3: Risk, Audit, & Compliance  
+ Introduction  
+ Learning Objectives  
+ 3.1. Cloud Risk Management  
+o 3.1.1 Cloud Risks  
+o 3.1.2 Understanding Cloud Risk Management  
+o 3.1.3 Assessing Cloud  Services  
+o 3.1.4 The Cloud Register  
+ 3.2 Compliance & Audit  
+o 3.2.1 Jurisdictions  
+o 3.2.2 Cloud -Relevant Laws & Regulations Examples  
+o 3.2.3 Compliance Inheritance  
+o 3.2.4 Artifacts of Compliance  
+ 3.3 Governance, Risk, Compliance Tools & Technologies  
+  
+Domain 4: Orga nization Management  
+ Introduction  
+ Learning Objectives  
+ 4.1 Organization Hierarchy Models  
+o 4.1.1 Definitions  
+o 4.1.2 Organization Capabilities Within a Cloud Service Provider  
+o 4.1.3 Building a Hierarchy Within a Provider  
+ 4.2 Managing Organization -Level Security W ithin a Provider  
+o 4.2.1 Identity Provider & User/Group/Role Mappings  
+o 4.2.2 Common Organization Shared Services  
+ 4.3 Considerations for Hybrid & Multi -Cloud Deployments  
+o 4.3.1 Organization Management for Hybrid Cloud Security  
+o 4.3.2 Organization Management for Multi -Cloud Security  
+o 4.3.3 Organization Management for SaaS Hybrid & Multi -Cloud  
+  
+Domain 5: Identity & Access Management  
+ Introduction  
+ Learning Objectives  
+ 5.1 Fundamental Terms  
+ 5.2 Federation  
+o 5.2.1 Common Federation Standards  
+o 5.2.2 How Federated Identity M anagement Works  
+o 5.2.3 Managing Users & Identities for Cloud Computing  
+ 5.3 Strong Authentication & Authorization  
+o 5.3.1 Authentication & Credentials  
+o 5.3.2 Entitlement & Access Management  
+o 5.3.3 Privileged User Management  
+  
+Domain 6: Security Monitoring  
+ Introd uction  
+ Learning Objectives  
+ 6.1 Cloud Monitoring  
+o 6.1.1 Logs & Events  
+ 6.2 Beyond Logs – Posture Management  
+ 6.3 Cloud Telemetry Sources  
+o 6.3.1 Management Plane Logs  
+o 6.3.2 Service & Application Logs  
+o 6.3.3 Resource Logs  
+o 6.3.4 Cloud Native Tools  
+ 6.4 Collection Architectures  
+o 6.4.1 Log Storage & Retention  
+o 6.4.2 Cascading Log Architecture  
+ 6.5 AI for Security Monitoring  
+  
+Domain 7: Infrastructure & Networking  
+ Introduction  
+ Learning Objectives  
+ 7.1 Cloud Infrastructure Security  
+o 7.1.1 Foundational Infrastructure Securit y Techniques  
+o 7.1.2 CSP Infrastructure Security Responsibilities  
+o 7.1.3 Infrastructure Resilience  
+ 7.2 Cloud Network Fundamentals  
+o 7.2.1 Cloud Networks are Software -Defined Networks  
+o 7.2.2 Cloud Connectivity  
+ 7.3 Cloud Network Security & Secure Architecture  
+o 7.3.1 Preventative Security Measures  
+o 7.3.2 Detective Security Measures  
+ 7.4 Infrastructure as Code (IaC)  
+ 7.5 Zero Trust for Cloud Infrastructure & Networks  
+o 7.5.1 Software -Defined Perimeter & ZT Network Access  
+ 7.6 Secure Access Service Edge (SASE)  
+  
+Domain 8: Cloud Workload Security  
+ Introduction  
+ Learning Objectives  
+ 8.1 Introduction to Cloud Workload Security  
+o 8.1.1 Types of Cloud Workloads  
+o 8.1.2 Impact on Workload Security Controls  
+ 8.2 Securing Virtual Machines  
+o 8.2.1 Virtual Machine Challenges & Mitigations  
+o 8.2.2 Creating Secure VM Images with Factories  
+o 8.2.3 Snapshots & Public Exposures/Exfiltration  
+ 8.3 Securing Containers  
+o 8.3.1 Container Image Creation  
+o 8.3.2 Container Networking  
+o 8.3.3 Container Orchestration & Management Systems  
+o 8.3.4 Container Orchestration Se curity  
+o 8.3.5 Runtime Protection for Containers  
+ 8.4 Securing Serverless and Function as a Service  
+o 8.4.1 FaaS Security Issues  
+o 8.4.2 IAM for Serverless  
+o 8.4.3 Environment Variables & Secrets  
+ 8.5 Securing AI Workloads  
+o 8.5.1 AI -System Threats  
+o 8.5.2 AI Risk Mitigation and Shared Responsibilities  
+  
+Domain 9: Data Security  
+ Introduction  
+ Learning Objectives  
+ 9.1 Primer on Cloud Storage  
+o 9.1.1 Volume/Block Storage  
+o 9.1.2 Object Storage  
+o 9.1.3 Database Storage  
+o 9.1.4 Other Types of Storage  
+ 9.2 Data Security Tools and Te chniques  
+o 9.2.1 Data Classification  
+o 9.2.2 Identity and Access Management  
+o 9.2.3 Access Policies  
+o 9.2.4 Encryption and Key Management  
+o 9.2.5 Data Loss Prevention  
+ 9.3 Cloud Data Encryption at Rest  
+o 9.3.1 Cloud Data Key Management Strategies  
+o 9.3.2 Data Encryption Recommendations  
+ 9.4 Data Security Posture Management  
+ 9.5 Object Storage Security  
+ 9.6 Data Security for Artificial Intelligence  
+o 9.6.1 AI as a Service  
+  
+Domain 10: Application Security  
+ Introduction  
+ Learning Objectives  
+ 10.1 Secure Development Lifecycle  
+o 10.1.1  SDLC Stages  
+o 10.1.2 Threat Modeling  
+o 10.1.3 Testing: Pre -Deployment  
+o 10.1.4 Testing: Post Deployment  
+ 10.2 Architecture ’s Role in Secure Cloud Applications  
+o 10.2.1 Cloud Impacts on Architecture -Level Security  
+o 10.2.2 Architectural Resilience  
+ 10.3 Identity & Acc ess Management and Application Security  
+o 10.3.1 Secrets Management  
+ 10.4 Dev Ops & DevSecOps  
+  
+Domain 11: Incident Response & Resilience  
+ Introduction  
+ Learning Objectives  
+ 11.1 Incident Response  
+o 11.1.1 Incident Response Lifecycle  
+ 11.2 Preparation  
+o 11.2.1 Incide nt Response Preparation & Cloud Service Providers  
+o 11.2.2 Training for Cloud Incident Responders  
+ 11.3 Detection & Analysis  
+o 11.3.1 Cloud Impact on Incident Response Analysis  
+o 11.3.2 Cloud System Forensics  
+ 11.4 Containment, Eradication, & Recovery  
+o 11.4.1 Containment  
+o 11.4.2 Eradication  
+o 11.4.3 Recovery  
+ 11.5 Post Incident Analysis  
+  
+Domain 12: Related Technologies & Strategies  
+ Introduction  
+ Learning Objectives  
+ 12.1 Zero Trust  
+o 12.1.1 Technical Objectives of Zero Trust  
+o 12.1.2 Zero Trust Pillars & Maturity Model  
+o 12.1.3 Zero Trust & Cloud Security  
+ 12.2 Artificial Intelligence  
+o 12.2.1 Characteristics of AI Workloads  
+o Next Steps.  
+ 
+ 
+ 
+ 
+CDPSE= CDPSE Course Outline  
+Upon completing this course, you will be able to:  
+ Identify the privacy program requirements  
+ Describe the types of privacy protection legal models  
+ Identify the common privacy laws and regulations  
+ Identify the various privacy standards  
+ Identify the different types of documentation necessary for data privacy 
+management  
+ Explain the requirements to address the dat a subjects ’ right 
+ Identify roles & responsibilities of various stakeholders  
+ Define & execute a privacy awareness program  
+ Apply privacy controls for the privacy risks and issues  
+ Define privacy incident management program  
+ Identify the common privacy -related vulnerabilities caused by the problematic 
+data actions  
+ Identify the methods of exploiting these vulnerabilities leading to privacy 
+breaches and harms  
+ Identify the common established PIA methodologies  
+ Describe the NIST privacy risk assessment methodology an d EU GDPR  
+ Describe Data Protection Impact Assessment (DPIA)  
+ Identify various types of computing infrastructure  
+ Identify the advantages and limitations of cloud computing  
+ Recognize the responsibilities of the Cloud Service Provider and the cloud 
+consumer in  a shared responsibility model  
+ Describe Secure Development Life Cycle  
+ List the various considerations for endpoint security  
+ Describe the elements and principles of privacy by design  
+ Identify the best practices for system hardening  
+ Explain the steps involve d in application and system hardening to protect the 
+enterprise ’s software/applications from privacy breach  
+ Describe the privacy considerations required for applications using APIs and 
+web services  
+ Recognize the risks associated with the various communicat ion protocols  
+ Explain the steps to create a data inventory & classification  
+ Describe the four process areas of data quality  
+ Illustrate the different data flow diagrams  
+ Explain data analytics and its privacy concerns  
+ Explain data minimalization  
+ Explain data  migration & storage requirements  
+ Explain data warehousing  
+ Explain data retention, archiving & destruction  
+ 
+ 
+ 
+ 
+ ISO 27001 Foundations - Introduction to the ISO/IEC 27000 family of 
+standards  
+ Introduction to management systems and the process approach  
+ Fundamen tal principles information security  
+ General requirements: presentation of the clauses 4 to 8 of ISO/IEC 27001  
+ Implementation phases of ISO/IEC 27001 framework  
+ Continual improvement of Information Security  
+ Conducting an ISO/IEC 27001 certification audit  
+ Principles and design of information security controls  
+ Documentation of an information security control environment  
+ Monitoring and reviewing the information security controls  
+ Examples of implementation of information security controls based on ISO 
+27002 best practices  
+ 
+ 
+ 
+ 
+ISO 27001 Lead Implementer  
+Introduction to ISO/IEC 27001 and initiation of an ISMS  
+Section 1: Training course objectives and structure           
+ Introduction  
+ General information  
+ Learning objectives  
+ Educational approach  
+ Examination and certification  
+Section 2: Standards and regulatory frameworks             
+ What is ISO?  
+ The ISO/IEC 27000 family of standards  
+ Advantages of ISO/IEC 27001  
+Section 3: Information Security Management System (ISMS)       
+ Definition of a management system  
+ Manageme nt system standards  
+ Integrated management systems  
+ Definition of an ISMS  
+ Process approach  
+ Overview — Clauses 4 to 10  
+ Overview — Annex A  
+Section 4: Fundamental information security concepts and principles      
+ Information and asset  
+ Information security  
+ Availa bility, confidentiality, and integrity  
+ Vulnerability, threat, and impact  
+ Information security risk  
+ Classification of security controls  
+Section 5: Initiation of the ISMS implementation               
+ Define the approach to the ISMS implementation  
+ Proposed implementation approaches  
+ Application of the proposed implementation approaches  
+ Choose a methodological framework to manage the implementation of an 
+ISMS  
+ Approach and methodology  
+ Alignment with best practices  
+Section 6: Understanding the organization and i ts context            
+ Mission, objectives, values, and strategies of the organization  
+ ISMS objectives  
+ Preliminary scope definition  
+ Internal and external environment  
+ Key processes and activities  
+ Interested parties  
+ Business requirements  
+Section 7: ISMS scope     
+ Boundary of the ISMS  
+ Organizational boundaries  
+ Information security boundaries  
+ Physical boundaries  
+ ISMS scope statement  
+Planning the implementation of an ISMS  
+Section 8: Leadership and project approval  
+ Business case  
+ Resource requirements  
+ ISMS project pl an 
+ ISMS project team  
+ Management approval  
+Section 9: Organizational structure  
+ Organizational structure  
+ Information security coordinator  
+ Roles and responsibilities of interested parties  
+ Roles and responsibilities of key committees  
+Section 10: Analysis of the  existing system  
+ Determine the current state  
+ Conduct the gap analysis  
+ Establish maturity targets  
+ Publish a gap analysis report  
+Section 11: Information security policy  
+ Types of policies  
+ Policy models  
+ Information security policy  
+ Specific security policies  
+ Management policy approval  
+ Publication and dissemination  
+ Training and awareness sessions  
+ Control, evaluation, and review  
+Section 12: Risk management  
+ ISO/IEC 27005  
+ Risk assessment approach  
+ Risk assessment methodology  
+ Risk identification  
+ Risk estimation  
+ Risk evaluation  
+ Risk treatment  
+ Residual risk  
+Section 13: Statement of Applicability  
+ Drafting the Statement of Applicability  
+ Management approval  
+ Review and selection of the applicable information security controls  
+ Justification of selected controls  
+ Justification  of excluded controls  
+Implementation of an ISMS  
+Section 14: Documented information management         
+ Value and types of documented information  
+ Master list of documented information  
+ Creation of templates  
+ Documented information management process  
+ Implementat ion of a documented information management system  
+ Management of records  
+Section 15: Selection and design of controls  
+ Organization ’s security architecture  
+ Preparation for the implementation of controls  
+ Design and description of controls  
+Section 16: Implemen tation of controls  
+ Implementation of security processes and controls  
+ Introduction of Annex A controls  
+Section 17: Trends and technologies        
+ Big data  
+ The three V ’s of big data  
+ Artificial intelligence  
+ Machine learning  
+ Cloud computing  
+ Outsourced operations  
+ The impact of new technologies in information security  
+Section 18: Communication  
+ Principles of an efficient communication strategy  
+ Information security communication process  
+ Establishing communication objectives  
+ Identifying interested parties  
+ Planning communication activities  
+ Performing a communication activity  
+ Evaluating communication  
+Section 19: Competence and awareness  
+ Competence and people development  
+ Difference between training, awareness, and communication  
+ Determine competence needs  
+ Plan th e competence development activities  
+ Define the competence development program type and structure  
+ Training and awareness programs  
+ Provide the trainings  
+ Evaluate the outcome of trainings  
+Section 20: Security operations management      
+ Change management planning  
+ Management of operations  
+ Resource management  
+ ISO/IEC 27035 -1 and ISO/IEC 27035 -2 
+ ISO/IEC 27032  
+ Information security incident management policy  
+ Process and procedure for incident management  
+ Incident response team  
+ Incident management security contro ls 
+ Forensics process  
+ Records of information security incidents  
+ Measure and review of the incident management process  
+ISMS monitoring, continual improvement, and preparation for the certification 
+audit  
+Section 21: Monitoring, measurement, analysis, and eval uation  
+ Determine measurement objectives  
+ Define what needs to be monitored and measured  
+ Establish ISMS performance indicators  
+ Report the results  
+Section 22: Internal audit  
+ What is an audit?  
+ Types of audits  
+ Create an internal audit program  
+ Designate a responsible person  
+ Establish independence, objectivity, and impartiality  
+ Plan audit activities  
+ Perform audit activities  
+ Follow up on nonconformities  
+Section 23: Management review   
+ Preparing a management review  
+ Conducting a management review  
+ Management revi ew outputs  
+ Management review follow -up activities  
+Section 24: Treatment of nonconformities            
+ Root -cause analysis process  
+ Root -cause analysis tools  
+ Corrective action procedure  
+ Preventive action procedure  
+Section 25: Continual improvement         
+ Cont inual monitoring process  
+ Maintenance and improvement of the ISMS  
+ Continual update of the documented information  
+ Documentation of the improvements  
+Section 26: Preparing for the certification audit  
+ Selecting the certification body  
+ Preparing for the certifica tion audit  
+ Stage 1 audit  
+ Stage 2 audit  
+ Follow -up audit  
+ Certification decision  
+Section 27: Practical Approach of ISMS Implementation  
+ Planning for ISMS Implementation  
+ Gap Assessment  
+ Risk Assessment  
+ Risk Treatment  
+ Creating Statement of Applicability  
+ Internal Audit Process  
+ Management Review  
+ Documentation  
+Section 28: Preparation for Exam and Interview  
+ 
+ 
+ 
+ 
+ 
+ISACA COBIT 2019 Foundation  
+Module 1: Introduction to COBIT 2019  
+Topics Covered  
+ Overview of IT Governance and Management  
+ Evolution of COBIT Framework  
+ COBIT 2019 vs COBIT 5  
+ Benefits of COBIT Implementation  
+ Key Terminologies and Concepts  
+ Governance vs Management  
+ Enterprise Governance of Information and Technology (EGIT)  
+Learning Outcomes  
+ Understand the purpose and scope of COBIT 2019  
+ Differentiate governance from management  
+ Explain the role of COBIT in enterprise IT governance  
+ 
+Module 2: COBIT 2019 Framework Principles  
+Topics Covered  
+ Governance System Principles  
+o Provide Stakeholder Value  
+o Holistic Approach  
+o Dynamic Governance Syste m  
+o Distinct Governance from Management  
+o Tailored to Enterprise Needs  
+o End-to-End Governance System  
+ Governance Framework Principles  
+o Conceptual Model  
+o Open and Flexible  
+o Aligned to Major Standards  
+Learning Outcomes  
+ Understand the six governance system pri nciples  
+ Explain governance framework principles  
+ Apply principles to governance scenarios  
+ 
+Module 3: Governance and Management Objectives  
+Topics Covered  
+ Introduction to Governance Objectives  
+ Introduction to Management Objectives  
+ COBIT Core Model  
+ Governance Domain:  
+o EDM (Evaluate, Direct and Monitor)  
+ Management Domains:  
+o APO (Align, Plan and Organize)  
+o BAI (Build, Acquire and Implement)  
+o DSS (Deliver, Service and Support)  
+o MEA (Monitor, Evaluate and Assess)  
+Learning Outcomes  
+ Understand the purpos e of governance and management objectives  
+ Identify responsibilities within each domain  
+ 
+Module 4: COBIT Governance System Components  
+Topics Covered  
+ Processes  
+ Organizational Structures  
+ Policies and Procedures  
+ Information Flows and Items  
+ Culture, Ethi cs and Behavior  
+ People, Skills and Competencies  
+ Services, Infrastructure and Applications  
+Learning Outcomes  
+ Explain governance system components  
+ Understand how components interact to support governance  
+ 
+Module 5: Governance and Management Domains Deep Dive  
+Topics Covered  
+EDM Domain  
+ EDM01 Governance Framework Setting and Maintenance  
+ EDM02 Benefits Delivery  
+ EDM03 Risk Optimization  
+ EDM04 Resource Optimization  
+ EDM05 Stakeholder Transparency  
+APO Domain  
+ APO01 Managed I&T Management Framework  
+ APO02 Managed Strategy  
+ APO03 Managed Enterprise Architecture  
+ APO12 Managed Risk  
+ APO13 Managed Security  
+Learning Outcomes  
+ Understand domain objectives and activities  
+ Map governance requirements to enterprise goals  
+ 
+Module 6: Build, Acquire and Implement (B AI) 
+Topics Covered  
+ BAI01 Managed Programs  
+ BAI02 Managed Requirements  
+ BAI03 Managed Solutions Identification  
+ BAI05 Organizational Change Enablement  
+ BAI06 Managed IT Changes  
+ BAI09 Managed Assets  
+ BAI11 Managed Projects  
+Learning Outcomes  
+ Understand project governance and implementation processes  
+ Manage enterprise IT initiatives using COBIT practices  
+ 
+Module 7: Deliver, Service and Support (DSS)  
+Topics Covered  
+ DSS01 Managed Operations  
+ DSS02 Managed Service Requests and Incidents  
+ DSS03 Managed Problems  
+ DSS04 Managed Continuity  
+ DSS05 Managed Security Services  
+ DSS06 Managed Business Process Controls  
+Learning Outcomes  
+ Explain service management concepts  
+ Understand operational governance and support functions  
+ 
+Module 8: Monitor, Evalu ate and Assess (MEA)  
+Topics Covered  
+ MEA01 Performance and Conformance  
+ MEA02 Internal Control System  
+ MEA03 Compliance with External Requirements  
+Learning Outcomes  
+ Monitor governance effectiveness  
+ Evaluate compliance and internal controls  
+ 
+Module 9: COBIT Performance Management  
+Topics Covered  
+ Introduction to Performance Management  
+ Capability Levels  
+ Maturity Measurement Concepts  
+ Process Performance Measurement  
+ Governance System Performance  
+ Metrics and KPIs  
+Learning Outcomes  
+ Measure governance pro cess performance  
+ Assess capability and maturity levels  
+ 
+Module 10: Design Factors  
+Topics Covered  
+ Enterprise Strategy  
+ Enterprise Goals  
+ Risk Profile  
+ Compliance Requirements  
+ Threat Landscape  
+ Role of IT  
+ Sourcing Model  
+ Technology Adoption Strategy  
+ Enterprise Size  
+Learning Outcomes  
+ Understand governance system customization  
+ Apply design factors to enterprise scenarios  
+ 
+Module 11: Focus Areas  
+Topics Covered  
+ Information Security  
+ Digital Transformation  
+ Small and Medium Enterprises  
+ DevOps  
+ Cloud C omputing  
+ Privacy Management  
+ Cybersecurity Governance  
+ Risk Governance  
+Learning Outcomes  
+ Tailor COBIT for specific business needs  
+ Apply focus areas to real -world governance challenges  
+ 
+Module 12: Goals Cascade Mechanism  
+Topics Covered  
+ Stakeholder Drivers  
+ Stakeholder Needs  
+ Enterprise Goals  
+ Alignment Goals  
+ Governance and Management Objectives  
+ Goal Mapping Techniques  
+Learning Outcomes  
+ Align business goals with IT objectives  
+ Perform goals cascade analysis  
+ 
+Module 13: COBIT Implemen tation Approach  
+Topics Covered  
+ Implementation Lifecycle  
+ Governance Improvement Program  
+ Change Management  
+ Continuous Improvement  
+ Governance Roadmap Development  
+ Common Implementation Challenges  
+Learning Outcomes  
+ Plan a COBIT implementation project  
+ Manage governance transformation initiatives  
+ 
+Module 14: COBIT and Other Frameworks  
+Topics Covered  
+ COBIT and ITIL  
+ COBIT and ISO/IEC 27001  
+ COBIT and NIST Cybersecurity Framework  
+ COBIT and TOGAF  
+ COBIT and PMI  
+ COBIT and COSO  
+Learning Outcomes  
+ Integrate COBIT with other governance frameworks  
+ Understand complementary framework relationships  
+ 
+Module 15: COBIT 2019 Foundation Exam Preparation  
+Topics Covered  
+ COBIT Terminology Review  
+ Governance Principles Review  
+ Domains and Objectives Revision  
+ Design Factors Review  
+ Performance Management Review  
+ Focus Areas Review  
+ Practice Questions  
+ Mock Tests  
+ Exam Strategies  
+Learning Outcomes  
+ Prepare for the COBIT 2019 Foundation Certification Exam  
+ Develop confidence in applying COBIT concepts  
+ 
+Recommended Course Duration  
+Module  Hours  
+Module 1–4 8 Hours  
+Module 5–8 12 Hours  
+Module 9–12 8 Hours  
+Module 13–14 4 Hours  
+Module 15  4 Hours  
+Total  36 Hours  
+ 
+Hands -On Activities  
+Activity 1  
+Map enterprise business goals to COBIT alignment goals.  
+Activity 2  
+Perform a governance gap assessment for a sample organization.  
+Activity 3  
+Design a governance system using COBIT design factors.  
+Activity 4  
+Assess process capability using COBIT Performance Management.  
+Activity 5  
+Develop a COBIT implementation r oadmap for a fictional enterprise.  
+Capstone Project  
+Create a complete COBIT 2019 Governance Framework for an organization, 
+including:  
+ Goals Cascade  
+ Governance Objectives  
+ Risk Assessment  
+ Performance Metrics  
+ Governance Dashboard  
+ Implementation Roadmap  
+ Compliance Mapping (ISO 27001/NIST/ITIL)  
+ 
+ 
+ 
+ 
+COBIT 2019 Design and Implementation  
+Course Overview  
+The COBIT 2019 Design & Implementation course focuses on designing a tailored 
+governance system and implementing Enterprise Governance of Information and 
+Technology (EGIT) using the COBIT 2019 framework. The curriculum aligns with the 
+official ISACA COBIT 2019 Design and Implementation  certification and prepares 
+learners to assess, design, build, and sustain governance systems within 
+organizations.  
+ 
+Module 1: Introduction to COBIT 2019 Design & Implementation  
+Topics Covered  
+ Overview of Enterprise Governanc e of Information and Technology (EGIT)  
+ COBIT 2019 Governance Framework Recap  
+ Purpose of Design & Implementation  
+ Business Drivers for Governance  
+ Governance Challenges in Modern Enterprises  
+ Relationship between Governance and Digital Transformation  
+ COB IT Design Guide and Implementation Guide Overview  
+Learning Outcomes  
+ Understand the purpose of COBIT Design & Implementation.  
+ Explain how governance contributes to business value.  
+ Identify governance challenges and opportunities.  
+ 
+Module 2: Understanding Governance System Design  
+Topics Covered  
+ Governance System Concepts  
+ Design Factors Overview  
+ Tailoring Governance Systems  
+ Governance Components  
+ Enterprise Context Assessment  
+ Stakeholder Requirements Analysis  
+ Governance Prioritization  
+Learning Outcomes  
+ Understand governance system design principles.  
+ Identify factors affecting governance design.  
+ Analyze organizational governance requirements.  
+ 
+Module 3: COBIT 2019 Design Factors  
+Topics Covered  
+1. Enterprise Strategy  
+2. Enterprise Goals  
+3. Risk Profile  
+4. IT-Related Issues  
+5. Threat Landscape  
+6. Compliance Requirements  
+7. Role of IT  
+8. Sourcing Model  
+9. IT Implementation Methods  
+10. Technology Adoption Strategy  
+11. Enterprise Size  
+Practical Exercise  
+ Assess design factors for a sample organization.  
+Learning Outcomes  
+ Evaluate enterprise characteristics.  
+ Apply design factors to governance design.  
+ 
+Module 4: Governance System Tailoring  
+Topics Covered  
+ Designing Governance Priorities  
+ Determining Governance Objectives  
+ Customizing Governance Components  
+ Mapping  Enterprise Goals  
+ Aligning IT and Business Objectives  
+ Governance System Architecture  
+Practical Exercise  
+ Create a customized governance blueprint.  
+Learning Outcomes  
+ Tailor governance systems to enterprise needs.  
+ Develop governance architectures.  
+ 
+Module 5: Focus Areas and Governance Customization  
+Topics Covered  
+ Cybersecurity Governance  
+ Digital Transformation Governance  
+ Cloud Governance  
+ DevOps Governance  
+ Privacy Governance  
+ Risk Governance  
+ SME Governance Models  
+Practical Exercise  
+ Select and in tegrate relevant focus areas.  
+Learning Outcomes  
+ Apply focus areas to governance systems.  
+ Customize governance for emerging technologies.  
+ 
+Module 6: COBIT Governance Design Workflow  
+Topics Covered  
+ Design Workflow Steps  
+ Stakeholder Analysis  
+ Governance Prioritization  
+ Design Toolkit Usage  
+ Governance Score Interpretation  
+ Target Capability Determination  
+Practical Exercise  
+ Build governance workflows using design tools.  
+Learning Outcomes  
+ Execute governance design methodologies.  
+ Prioritize governance objectives effectively.  
+ 
+Module 7: Introduction to COBIT Implementation  
+Topics Covered  
+ COBIT Implementation Guide  
+ Governance Improvement Lifecycle  
+ Organizational Readiness Assessment  
+ Change Management Fundamentals  
+ Governance Tra nsformation Programs  
+ Business Case Development  
+Learning Outcomes  
+ Understand governance implementation concepts.  
+ Develop implementation readiness assessments.  
+ 
+Module 8: COBIT Implementation Lifecycle – Phase 1 & 2  
+Phase 1: What Are the Drivers?  
+Topics  Covered  
+ Pain Points Analysis  
+ Trigger Events  
+ Stakeholder Needs  
+ Governance Challenges  
+Phase 2: Where Are We Now?  
+Topics Covered  
+ Current State Assessment  
+ Capability Assessment  
+ Gap Analysis  
+ Risk Identification  
+Practical Exercise  
+ Conduct governance maturity assessment.  
+Learning Outcomes  
+ Identify governance drivers.  
+ Assess current governance maturity.  
+ 
+Module 9: COBIT Implementation Lifecycle – Phase 3 & 4  
+Phase 3: Where Do We Want To Be?  
+Topics Covered  
+ Target State Definition  
+ Governance Goals  
+ Desired Capabilities  
+ Strategic Alignment  
+Phase 4: What Needs To Be Done?  
+Topics Covered  
+ Solution Identification  
+ Governance Improvement Initiatives  
+ Roadmap Planning  
+ Resource Planning  
+Practical Exercise  
+ Develop governance target -state roadmap.  
+Learning Outcomes  
+ Define governance objectives.  
+ Build governance implementation plans.  
+ 
+Module 10: COBIT Implementation Lifecycle – Phase 5  
+Phase 5: How Do We Get There?  
+Topics Covered  
+ Project Execution  
+ Governa nce Program Management  
+ Change Enablement  
+ Stakeholder Communication  
+ Training and Awareness  
+Practical Exercise  
+ Build implementation execution plans.  
+Learning Outcomes  
+ Execute governance transformation programs.  
+ Manage governance change initiatives.  
+ 
+Module 11: COBIT Implementation Lifecycle – Phase 6  
+Phase 6: Did We Get There?  
+Topics Covered  
+ Benefits Realization  
+ KPI Monitoring  
+ Governance Metrics  
+ Performance Evaluation  
+ Post-Implementation Review  
+Practical Exercise  
+ Develop governance scorecards.  
+Learning Outcomes  
+ Measure implementation success.  
+ Evaluate governance performance.  
+ 
+Module 12: COBIT Implementation Lifecycle – Phase 7  
+Phase 7: How Do We Keep the Momentum Going?  
+Topics Covered  
+ Continuous Improvement  
+ Governance Sustainability  
+ Lessons Learned  
+ Continuous Monitoring  
+ Governance Culture Development  
+Practical Exercise  
+ Design continuous improvement frameworks.  
+Learning Outcomes  
+ Sustain governance programs.  
+ Establish governance improvement cycles.  
+ 
+Module 13: Organizational Change Management  
+Topics Covered  
+ Governance Transformation Challenges  
+ Change Resistance  
+ Stakeholder Engagement  
+ Communication Strategy  
+ Leadership Alignment  
+ Governance Culture  
+Learning Outcomes  
+ Manage organizational resistance.  
+ Drive governance adoption.  
+ 
+Module 14: Measuring Governance Performance  
+Topics Covered  
+ COBIT Performance Management  
+ Capability Levels  
+ Maturity Models  
+ Metrics and KPIs  
+ Governance Dashboards  
+ Reporting Frameworks  
+Practical Exercise  
+ Create governance performance dashboards.  
+Learning Outcomes  
+ Assess governance effectiveness.  
+ Develop governance measurement systems.  
+ 
+Module 15: Risk, Compliance and Assurance Integration  
+Topics Covered  
+ Governance and Risk Alignment  
+ Compliance Monitoring  
+ Internal Controls  
+ Audit Readiness  
+ Assurance Activities  
+ Third -Party Governance  
+Learning Outcomes  
+ Integrate governance with risk and compliance.  
+ Prepare organizations for audits.  
+ 
+Module 16: COBIT Integration with Other Frameworks  
+Topics Covered  
+ COBIT and ITIL 4  
+ COBIT and ISO/IEC 27001  
+ COBIT and NIST Cybersecurity Framework  
+ COBIT and COSO  
+ COBIT and TOGAF  
+ COBIT and PMBOK  
+Learning Outcomes  
+ Align COBIT with enterprise frameworks.  
+ Build integrated governance ecosystems.  
+ 
+Module 17: Governance Design Workshop  
+Hands -On Activities  
+ Analyz e a Case Study Organization  
+ Identify Design Factors  
+ Create Governance Objectives Profile  
+ Prioritize Governance Components  
+ Build Governance Architecture  
+Deliverables  
+ Governance Design Document  
+ Governance Objectives Matrix  
+ Governance Capability Assess ment  
+ 
+Module 18: Governance Implementation Workshop  
+Hands -On Activities  
+ Conduct Current State Assessment  
+ Build Target State Model  
+ Create Governance Roadmap  
+ Develop Change Management Plan  
+ Define KPIs and Success Metrics  
+Deliverables  
+ Implementation Roadmap  
+ Governance Dashboard  
+ Benefits Realization Plan  
+ 
+Module 19: Capstone Project  
+Enterprise Governance Transformation Project  
+Project Tasks  
+ Analyze Enterprise Context  
+ Assess Design Factors  
+ Design Governance System  
+ Select Governance  Objectives  
+ Develop Implementation Roadmap  
+ Create Governance Metrics  
+ Establish Continuous Improvement Strategy  
+Final Deliverables  
+ COBIT Governance Design Blueprint  
+ Governance Objectives Profile  
+ Risk and Compliance Mapping  
+ Governance Dashboard  
+ Imple mentation Roadmap  
+ Executive Presentation  
+ 
+Module 20: COBIT Design & Implementation Certification Preparation  
+Topics Covered  
+ Exam Domain Review  
+ Design Factors Revision  
+ Implementation Lifecycle Revision  
+ Governance Scenarios  
+ Case Study Analysis  
+ Practice Questions  
+ Mock Exams  
+ Exam Strategies  
+Learning Outcomes  
+ Prepare for COBIT Design & Implementation certification.  
+ Apply governance concepts to real -world scenarios.  
+ 
+ 
+ 
+ CGRC - Domain 1: Security and Privacy Governance, Risk Management, 
+and Compli ance Program (16%)  
+o 1.1 – Demonstrate knowledge in security and privacy governance, risk 
+management, and compliance program  
+ Principles of governance, risk management, and compliance  
+ Risk management and compliance frameworks using national 
+and international standards and guidelines for security and 
+privacy requirements (e.g., National Institute of Standards and 
+Technology (NIST), cybersecurity framework, Control Objectives 
+for Information and Related Technology (COBIT), International 
+Organization for Standard ization/International Electrotechnical 
+Commission (ISO/IEC))  
+ System Development Life Cycle (SDLC) (e.g., requirements 
+gathering, design, development, testing, and 
+operations/maintenance/disposal)  
+ Information lifecycle for each data type processed, stored, or 
+transmitted (e.g., retaining, disposal/destruction, data flow, 
+marking)  
+ Confidentiality, integrity, availability, non -repudiation, and privacy 
+concepts  
+ System assets and boundary descriptions  
+ Security and privacy controls and requirements  
+ Roles and resp onsibilities for compliance activities and 
+associated frameworks  
+o 1.2 – Demonstrate knowledge in security and privacy governance, risk 
+management, and compliance program processes  
+ Establishment of compliance program for the applicable 
+framework 1.3 – Unders tand regulatory and legal requirements  
+o 1.3 – Demonstrate knowledge of compliance frameworks, regulations, 
+privacy, and security requirements  
+ Familiarity with compliance frameworks (e.g., International 
+Organization for Standardization/International Electrot echnical 
+Commission (ISO/IEC), Federal Risk and Authorization 
+Management Program (FedRAMP), Payment Card Industry 
+Data Security Standard (PCI -DSS), Cybersecurity Maturity 
+Model Certification)  
+ Familiarity with other national and international laws and 
+requi rements for security and privacy (e.g., Federal Information 
+Security Modernization Act (FISMA), Health Insurance 
+Portability and Accountability Act (HIPAA), executive orders, 
+General Data Protection Regulation (GDPR))  
+ Domain 2: Scope of the System (10%)  
+o 2.1 – Describe the system  
+ System name and scope documented  
+ System purpose and functionality  
+o 2.2 – Determine security compliance required  
+ Information types processed, stored, or transmitted  
+ Security objectives outlined for each information type based on 
+national and international security and privacy compliance 
+requirements (e.g., Federal Information Processing Standards 
+(FIPS), International Organization for 
+Standardization/International Electrotechnical Commission 
+(ISO/IEC), data protection impact assessme nt) 
+ Risk impact level determined for system based on the selected 
+framework  
+ Domain 3: Selection and Approval of Framework, Security, and Privacy 
+Controls (14%)  
+o 3.1 – Identify and document baseline and inherited controls  
+o 3.2 – Select and tailor controls  
+ Determination of applicable baseline and/or inherited controls  
+ Determination of appropriate control enhancements (e.g., 
+security practices, overlays, mitigating controls)  
+ Specific data handling/marking requirements identified  
+ Control selection documentation  
+ Continued compliance strategy (e.g., continuous monitoring, 
+vulnerability management)  
+ Control allocation and stakeholder agreement  
+ Domain 4: Implementation of Security and Privacy Controls (17%)  
+o 4.1 – Develop implementation strategy (e.g., resourcing, funding, 
+timeline, effectiveness)  
+ Control implementation aligned with organizational expectations, 
+national or international requirements, and compliance for 
+security and privacy controls  
+ Identification of control types (e.g., management, technical, 
+common , operational control)  
+ Frequency established for compliance documentation reviews 
+and training  
+o 4.2 – Implement selected controls  
+ Control implementation consistent with compliance requirements  
+ Compensating or alternate security controls implemented  
+o 4.3 – Document control implementation  
+ Residual security risk or planned implementations documented 
+(e.g., Plan of Action and Milestones (POA&M), risk register)  
+ Implemented controls documented consistent with the 
+organization ’s purpose, scope, and risk profile (e.g ., policies, 
+procedures, plans)  
+ Domain 5: Assessment/Audit of Security and Privacy Controls (16%)  
+o 5.1 – Prepare for assessment/audit  
+ Stakeholder roles and responsibilities established  
+ Objectives, scope, resources, schedule, deliverables, and 
+logistics outl ined 
+ Assets, methods, and level of effort scoped  
+ Evidence for demonstration of compliance audited (e.g., 
+previous assessments/audits, system documentation, policies)  
+ Assessment/audit plan finalized  
+o 5.2 – Conduct assessment/audit  
+ Compliance capabilities ver ified using appropriate assessment 
+methods: interview, examine, test (e.g., penetration, control, 
+vulnerability scanning)  
+ Evidence verified and validated  
+o 5.3 – Prepare the initial assessment/audit report  
+ Risks identified during the assessment/audit provide d 
+ Risk mitigation summaries outlined  
+ Preliminary findings recorded  
+o 5.4 – Review initial assessment/audit report and plan risk response 
+actions  
+ Risk response assigned (e.g., avoid, accept, share, mitigate, 
+transfer) based on identified vulnerabilities or deficiencies  
+ Risk response collaborated with stakeholders  
+ Non-compliant findings with newly applied corrective actions 
+reassessed and validated  
+o 5.5 – Develop final assessment/audit report  
+ Final compliance documented (e.g., compliant, non -compliant, 
+not app licable)  
+ Recommendations documented when appropriate  
+ Assessment report finalized  
+o 5.6 – Develop risk response plan  
+ Residual risks and deficiencies identified  
+ Risk prioritized  
+ Required resources identified (e.g., financial, personnel, and 
+technical) to deter mine time required to mitigate risk  
+ Domain 6: System Compliance (14%)  
+o 6.1 – Review and submit security/privacy documents  
+ Security and privacy documentation required to support a 
+compliance decision by the appropriate party (e.g., authorizing 
+official, thir d-party assessment organizations, agency) compiled, 
+reviewed, and submitted  
+o 6.2 – Determine system risk posture  
+ System risk acceptance criteria  
+ Residual risk determination  
+ Stakeholder concurrence for risk treatment options  
+ Residual risks defined in formal documentation  
+o 6.3 – Document system compliance  
+ Formal notification of compliance decision  
+ Formal notification shared with stakeholders  
+ Domain 7: Compliance Maintenance (13%)  
+o 7.1 – Perform system change management  
+ Changes weigh the impact to organizational risk, operations, 
+and/or compliance requirements (e.g., revisions to baselines)  
+ Proposed changes documented and approved by authorized 
+personnel (e.g., Change Control Board (CCB), technical review 
+board)  
+ Deploy to the environment (e.g., test, development, production) 
+with rollback plan  
+ Changes to the system tracked and compliance enforced  
+o 7.2 – Perform ongoing compliance activities based on requirements  
+ Frequency established for ongoing compliance activities review 
+with stakeholders  
+ System and assets monito red (e.g., physical and logical assets, 
+personnel, change control)  
+ Incident response and contingency activities performed  
+ Security updates performed and risks remediated/tracked  
+ Evidence collected, testing performed, documentation updated 
+(e.g., service le vel agreements, third party contracts, policies, 
+procedures), and submission/communication to stakeholders 
+when applicable  
+ Awareness and training performed, documented, and retained 
+(e.g., contingency, incident response, annual security, and 
+privacy)  
+ Revis ing monitoring strategies based on updates to legal, 
+regulatory, supplier, security and privacy requirements  
+o 7.3 – Engage in audit activities based on compliance requirements  
+ Required testing and vulnerability scanning performed  
+ Personnel interviews conduc ted 
+ Documentation reviewed and updated  
+o 7.4 – Decommission system when applicable  
+ Requirements for system decommissioning reviewed with 
+stakeholders  
+ System removed from operations and decommissioned  
+ Documentation of the decommissioned system retained and 
+shared with stakeholders  
+ 
+ 
+ 
+ISO/IEC 20000 Implementer  
+Module 1: Introduction to IT Service Management (ITSM)  
+Topics Covered  
+ Fundamentals of IT Service Management  
+ Evolution of ITSM  
+ Business Value of IT Services  
+ IT Service Management Concepts  
+ Service Lifecycle Overview  
+ Service Provider Roles and Responsibilities  
+ Relationship between ITSM and Business Strategy  
+Learning Outcomes  
+ Understand ITSM principles and terminology.  
+ Explain the value of service management in organizations.  
+ Identify the  components of an effective SMS.  
+ 
+Module 2: Introduction to ISO/IEC 20000  
+Topics Covered  
+ Overview of ISO/IEC 20000 Family  
+ Purpose and Benefits of Certification  
+ ISO/IEC 20000 -1 Requirements  
+ ISO/IEC 20000 -2 Guidance  
+ Structure of the Standard  
+ Annex SL Framework  
+ Relationship with Other Standards  
+Learning Outcomes  
+ Understand ISO/IEC 20000 requirements.  
+ Interpret clauses of the standard.  
+ Explain certification benefits.  
+ 
+Module 3: Service Management System (SMS) Fundamentals  
+Topics Covered  
+ Service Management System Architecture  
+ Scope Definition  
+ SMS Policies and Objectives  
+ Process -Based Approach  
+ Service Value Creation  
+ Stakeholder Expectations  
+ Service Governance  
+Learning Outcomes  
+ Design a Service Management System.  
+ Establish SMS scope and objectives.  
+ Align SMS with business needs.  
+ 
+Module 4: Organizational Context and Leadership  
+Topics Covered  
+Clause 4 – Context of the Organization  
+ Internal and External Issues  
+ Interested Parties  
+ Scope Determination  
+ SMS Processes  
+Clause 5 – Leader ship 
+ Leadership Commitment  
+ Service Management Policy  
+ Roles and Responsibilities  
+ Governance Structures  
+Learning Outcomes  
+ Analyze organizational context.  
+ Define leadership responsibilities.  
+ Establish governance mechanisms.  
+ 
+Module 5: Planning the Service Management System  
+Topics Covered  
+Clause 6 – Planning  
+ Risk-Based Thinking  
+ Opportunities Management  
+ Service Management Objectives  
+ Change Planning  
+ Strategic Service Planning  
+ Resource Planning  
+Practical Exercise  
+ Create an SMS implementation plan.   
+Learning Outcomes  
+ Plan SMS implementation.  
+ Identify risks and opportunities.  
+ Develop measurable objectives.  
+ 
+Module 6: Support Processes for SMS  
+Topics Covered  
+Clause 7 – Support  
+ Resource Management  
+ Competence and Training  
+ Awareness Programs  
+ Communication Management  
+ Documented Information  
+ Knowledge Management  
+ Service Documentation Control  
+Practical Exercise  
+ Develop document control procedures.  
+Learning Outcomes  
+ Establish support processes.  
+ Manage documentation and records.  
+ Develop staff competency plans.  
+ 
+Module 7: Service Portfolio and Service Level Management  
+Topics Covered  
+ Service Portfolio Management  
+ Service Catalog Management  
+ Service Level Agreements (SLAs)  
+ Operational Level Agreements (OLAs)  
+ Service Reporting  
+ Customer Relationship Management  
+ Supplier Relationship Management  
+Practical Exercise  
+ Create SLA and Service Catalog templates.  
+Learning Outcomes  
+ Manage service portfolios effectively.  
+ Define and monitor service levels.  
+ 
+Module 8: Service Design and Transition  
+Topics Covered  
+ Service Design Principles  
+ Service Transition Management  
+ Release and Deployment Management  
+ Change Enablement  
+ Configuration Management  
+ Asset Management  
+ Capacity Planning  
+Practical Exercise  
+ Design a new IT service implementati on plan.  
+Learning Outcomes  
+ Implement service design processes.  
+ Manage service transitions effectively.  
+ 
+Module 9: Incident and Service Request Management  
+Topics Covered  
+ Incident Management  
+ Service Request Fulfillment  
+ Major Incident Handling  
+ Escalation Procedures  
+ Service Desk Operations  
+ Incident Prioritization  
+ Incident Reporting  
+Practical Exercise  
+ Simulate incident response workflows.  
+Learning Outcomes  
+ Implement incident management processes.  
+ Improve service responsiveness.  
+ 
+Module 10:  Problem Management  
+Topics Covered  
+ Problem Identification  
+ Root Cause Analysis  
+ Known Error Database  
+ Preventive Actions  
+ Trend Analysis  
+ Problem Resolution Workflows  
+Practical Exercise  
+ Conduct Root Cause Analysis (RCA).  
+Learning Outcomes  
+ Reduce recurring incidents.  
+ Implement structured problem management.  
+ 
+Module 11: Availability, Capacity and Continuity Management  
+Topics Covered  
+ Availability Management  
+ Capacity Management  
+ IT Service Continuity Management  
+ Disaster Recovery Planning  
+ Business Impact Analysis  
+ Resilience Strategies  
+Practical Exercise  
+ Develop continuity and recovery plans.  
+Learning Outcomes  
+ Improve service resilience.  
+ Ensure service continuity.  
+ 
+Module 12: Information Security and Risk Management  
+Topics Covered  
+ Information Security in ITSM  
+ Service Risks  
+ Security Controls  
+ Risk Assessment Methodologies  
+ Supplier Risks  
+ Compliance Requirements  
+ Security Incident Handling  
+Practical Exercise  
+ Perform service risk assessments.  
+Learning Outcomes  
+ Integrate security into ITSM.  
+ Manage service -related risks.  
+ 
+Module 13: Performance Evaluation  
+Topics Covered  
+Clause 9 – Performance Evaluation  
+ Service Metrics and KPIs  
+ Monitoring and Measurement  
+ Internal Audits  
+ Management Reviews  
+ Customer Satisfact ion Analysis  
+ Performance Reporting  
+Practical Exercise  
+ Create KPI dashboards.  
+Learning Outcomes  
+ Measure SMS performance.  
+ Conduct management reviews.  
+ 
+Module 14: Continual Improvement  
+Topics Covered  
+Clause 10 – Improvement  
+ Continual Improvement Process  
+ Corrective Actions  
+ Nonconformity Management  
+ PDCA Cycle  
+ Service Optimization  
+ Lessons Learned Programs  
+Practical Exercise  
+ Develop continual improvement plans.  
+Learning Outcomes  
+ Implement improvement initiatives.  
+ Enhance service maturity.  
+ 
+Module 15: ISO/IEC 20000 Implementation Methodology  
+Topics Covered  
+ PECB Implementation Framework  
+ SMS Implementation Lifecycle  
+ Gap Assessment  
+ Project Planning  
+ Process Development  
+ Pilot Deployment  
+ Full-Scale Implementation  
+Practic al Exercise  
+ Build an SMS implementation roadmap.  
+Learning Outcomes  
+ Execute structured SMS implementations.  
+ Manage implementation projects effectively.  
+ 
+Module 16: ITSM Governance and Integration  
+Topics Covered  
+ ITSM Governance Framework  
+ Integration with IT Governance  
+ Service Governance Models  
+ Organizational Roles  
+ Service Ownership  
+ Governance Committees  
+Learning Outcomes  
+ Establish ITSM governance structures.  
+ Align IT services with organizational objectives.  
+ 
+Module 17: Integration with Other Standards  
+Topics Covered  
+ ISO/IEC 20000 and ISO 9001  
+ ISO/IEC 20000 and ISO/IEC 27001  
+ ISO/IEC 20000 and ISO 22301  
+ ISO/IEC 20000 and COBIT 2019  
+ ISO/IEC 20000 and ITIL 4  
+ Governance and Compliance Alignment  
+Learning Outcomes  
+ Integrate SMS with other management systems.  
+ Build unified governance models.  
+ 
+Module 18: Internal Audit and Certification Preparation  
+Topics Covered  
+ Audit Principles  
+ Audit Planning  
+ Audit Checklists  
+ Evidence Collection  
+ Nonconformity Reporting  
+ Certi fication Process  
+ Readiness Assessment  
+Practical Exercise  
+ Conduct a mock certification audit.  
+Learning Outcomes  
+ Prepare organizations for certification audits.  
+ Evaluate SMS compliance.  
+ 
+Module 19: Service Management System Implementation Workshop  
+Hand s-On Activities  
+ Define SMS Scope  
+ Conduct Gap Analysis  
+ Develop SMS Policy  
+ Create Service Catalog  
+ Design Incident Management Process  
+ Develop KPI Framework  
+ Build Audit Plan  
+Deliverables  
+ SMS Implementation Plan  
+ Service Catalog  
+ KPI Dashboard  
+ Audit Checklist  
+ 
+Module 20: Capstone Project  
+End-to-End ISO/IEC 20000 SMS Implementation  
+Project Tasks  
+ Organizational Context Analysis  
+ SMS Scope Definition  
+ Risk Assessment  
+ Service Catalog Design  
+ SLA Development  
+ Incident & Problem Management Design  
+ Performance Measurement Framework  
+ Internal Audit Planning  
+ Continual Improvement Roadmap  
+Final Deliverables  
+ Service Management System Manual  
+ SMS Policy and Objectives  
+ Service Catalog  
+ SLA Framework  
+ Risk Register  
+ KPI Dashboard  
+ Internal Audit Program  
+ Certification Readiness Report  
+ 
+Module 21: PECB ISO/IEC 20000 Lead Implementer Exam Preparation  
+Topics Covered  
+ ISO/IEC 20000 Clause Review  
+ SMS Requirements Review  
+ Implementation Lifecycle Review  
+ Service Management Processes  
+ Governance and Compliance   
+ Scenario -Based Questions  
+ Mock Examinations  
+ Exam Strategies  
+Learning Outcomes  
+ Prepare for the Lead Implementer certification exam.  
+ Apply ISO/IEC 20000 requirements in real -world scenarios.  
+  
+ 
+ 
+CGEIT - Domain 1:  Framework for the Governance of Enterprise  IT. 
+ Domain 2:  Strategic Management.  
+ Domain 3:  Benefits Realization.  
+ Domain 4:  Risk Optimization.  
+ Domain 5:  Resource Optimization.  
+ 
+ 
+ 
+ 
+ISO/IEC 27001:2022 Lead Auditor  
+Introduction to the Information Security Management System (ISMS) and 
+ISO/IEC 27001  
+Section 1: Training course objectives and structure   
+ General information  
+ Learning objectives  
+ Educational approach  
+ Examination and certification  
+  
+Section 2: Standards and regulatory frameworks   
+ What is ISO?  
+ The ISO/IEC 27000 family of standards  
+ Advantages of ISO/IEC 27001  
+  
+Section 3: Certification process   
+ Certification process  
+ Certification scheme  
+ Accreditation bodies  
+ Certification bodies  
+  
+Section 4: Fundamental concepts and principles of information security   
+ Information and asset  
+ Information security  
+ Confidentiality, integrity, and availability  
+ Vulnerability, threat, and impact  
+ Information security risk  
+ Security controls and control objectives  
+ Classification of security controls  
+  
+Section 5: Information Security Management System (ISMS)   
+ Definition of a management system  
+ Definition of ISMS  
+ Process approach  
+ ISMS implementation  
+ Overview – Clauses 4 to 10  
+ Overview – Annex A  
+ Statement of Applicability  
+  
+Audit principles, preparation, and initiation of an audit  
+Section 6: Fundamental audit concepts and princ iples   
+ Audit standards  
+ What is an audit?  
+ Types of audits  
+ Involved parties  
+ Audit objectives and criteria  
+ Combined audit  
+ Principles of auditing  
+ Competence and evaluation of auditors  
+  
+Section 7: The impact of trends and technology in auditing   
+ Big data  
+ The three V ’s of big data  
+ The use of big data in audits  
+ Artificial intelligence  
+ Machine learning  
+ Cloud computing  
+ Auditing outsourced operations  
+  
+Section 8: Evidence -based auditing   
+ Audit evidence  
+ Types of audit evidence  
+ Quality and reliability of audit ev idence  
+  
+Section 9: Risk -based auditing   
+ Audit approach based on risk  
+ Materiality and audit planning  
+ Reasonable assurance  
+  
+Section 10: Initiation of the audit process   
+ The audit offer  
+ The audit team leader  
+ The audit team  
+ Audit feasibility  
+ Audit acceptance  
+ Establishing contact with the auditee  
+ The audit schedule  
+  
+Section 11: Stage 1 audit   
+ Objectives of the stage 1 audit  
+ Pre on -site activities  
+ Preparing for on -site activities  
+ Conducting on -site activities  
+ Documenting the outputs of stage 1 audit  
+  
+On-site audit activities  
+Section 12: Preparing for stage 2 audit   
+ Setting the audit objectives  
+ Planning the audit  
+ Assigning work to the audit team  
+ Preparing audit test plans  
+ Preparing documented information for the audit  
+  
+Section 13: Stage 2 audit   
+ Conducting the  opening meeting  
+ Collecting information  
+ Conducting audit tests  
+ Determining audit findings and nonconformity reports  
+ Performing a quality review  
+  
+Section 14: Communication during the audit   
+ Behavior during on -site visits  
+ Communication during the audit  
+ Audit team meetings  
+ Guides and observers  
+ Conflict management  
+ Cultural aspects  
+ Communication with the top management  
+  
+Section 15: Audit procedures   
+ Overview of the audit process  
+ Evidence collection and analysis procedures  
+ Interview  
+ Documented information r eview  
+ Observation  
+ Analysis  
+ Sampling  
+ Technical verification  
+  
+Section 16: Creating audit test plans   
+ Audit test plans  
+ Examples of audit test plans  
+ Guidance for auditing an ISMS  
+ Corroboration  
+ Evaluation  
+ Auditing virtual activities and locations  
+  
+Closing of the audit  
+Section 17: Drafting audit findings and nonconformity reports   
+ Audit findings  
+ Types of possible audit findings  
+ Documenting the audit findings  
+ Drafting a nonconformity report  
+ The principle of the benefit of the doubt  
+  
+Section 18: Audit documentat ion and quality review  
+ Work documents  
+ Quality review  
+  
+Section 19: Closing of the audit   
+ Determining audit conclusions  
+ Discussing audit conclusions  
+ Closing meeting  
+ Preparing audit report  
+ Distributing the audit report  
+ Making the certification decision  
+ Closing the audit  
+  
+Section 20: Evaluation of action plans by the auditor   
+ Submission of action plans by the auditee  
+ Content of action plans  
+ Evaluation of action plans  
+  
+Section 21: Beyond the initial audit   
+ Audit follow -up activities  
+ Surveillance activiti es 
+ Recertification audit  
+ Use of trademarks  
+  
+Section 22: Managing an internal audit program   
+ Managing an audit program  
+ Role of the internal audit function  
+ Main internal audit services and activities  
+ Audit program resources  
+ Audit program records  
+ Follow up o n nonconformities  
+ Monitoring, evaluating, reviewing, and improving an audit program  
+  
+The above -mentioned content is delivered in 32 hours. In addition to this, we have 
+added 8 hours session.  
+8hrs dedicated session  
+ISO 27001 Practical Approach  
+ ISO 27001 (new 93 controls) Controls to Evidence Mapping  
+ Practical approach on how to collect evidence while auditing with three 
+scenarios/ case studies paragraphs  
+  
+ISO 27001 Exam Prep  
+ Revision of course and open mic session for doubts  
+ Exam Prep – mock exam  
+ Discuss ion on exam questions and answers  
+ Discussion on different exams  
+ 
+ 
+ 
+CCNA - Introduction to Networking  
+Chapter 1: Introduction to TCP/IP Networking  
+ TCP/IP Networking Model  
+ History Leading to TCP/IP  
+ Overview of the TCP/IP Networking Model  
+ TCP/IP Application La yer 
+ HTTP Overview  
+ HTTP Protocol Mechanisms  
+ TCP/IP Transport Layer  
+ TCP Error Recovery Basics  
+ Same -Layer and Adjacent -Layer Interactions  
+ TCP/IP Network Layer  
+ Internet Protocol and the Postal Service  
+  Internet Protocol Addressing Basics  
+ IP Routing Basics  
+ TCP/IP Data -Link and Physical Layers  
+ Data Encapsulation Terminology  
+ Names of TCP/IP Messages  
+ OSI Networking Model and Terminology  
+ Comparing OSI and TCP/IP Layer Names and Numbers  
+ OSI Data Encapsulation Terminology  
+Chapter 2: Fundamentals of Ethernet LANs  
+ An Overview of LANs  
+ SOHO LANs  
+ Enterprise LANs  
+ The Variety of Ethernet Physical Layer Standards  
+ Consistent Behavior over All Links Using the Ethernet Data -Link Layer  
+ Building Physical Ethernet LANs with UTP  
+ Transmitting Data Using Twisted Pairs  
+ Breaking Down  a UTP Ethernet Link  
+ UTP Cabling Pinouts for 10BASE -T and 100BASE -T 
+ Straight -Through Cable Pinout  
+ Choosing the Right Cable Pinouts  
+ UTP Cabling Pinouts for 1000BASE -T 
+ Building Physical Ethernet LANs with Fiber  
+ Fiber Cabling Transmission Concepts  
+ Using Fiber  with Ethernet  
+ Sending Data in Ethernet Networks  
+ Ethernet Data -Link Protocols  
+ Ethernet Addressing  
+ Identifying Network Layer Protocols with the Ethernet Type Field  
+ Error Detection with FCS  
+ Sending Ethernet Frames with Switches and Hubs  
+ Sending in Modern Ethernet LANs Using Full Duplex  
+ Using Half Duplex with LAN Hubs  
+Chapter 3: Fundamentals of WANs and IP Routing  
+ Wide -Area Networks  
+ Leased -Line WANs  
+ Physical Details of Leased Lines  
+ HDLC Data -Link Details of Leased Lines  
+ How Routers Use a WAN Data Link  
+ Ether net as a WAN Technology  
+ Ethernet WANs That Create a Layer 2 Service  
+ How Routers Route IP Packets Using Ethernet Emulation  
+ IP Routing  
+ Network Layer Routing (Forwarding) Logic  
+ Host Forwarding Logic: Send the Packet to the Default Router  
+ R1 and R2 ’s Logic: Ro uting Data Across the Network  
+ R3’s Logic: Delivering Data to the End Destination  
+ How Network Layer Routing Uses LANs and WAN  
+ How IP Addressing Helps IP Routing  
+ Rules for Groups of IP Addresses (Networks and Subnets)  
+ The IP Header  
+ How IP Routing Protocols H elp IP Routing  
+ Other Network Layer Features  
+ Using Names and the Domain Name System  
+ The Address Resolution Protocol  
+ ICMP Echo and the ping Command  
+Implementing Ethernet LANs  
+Chapter 4: Using the Command -Line Interface  
+ Accessing the Cisco Catalyst Switch CLI  
+ Cisco Catalyst Switches  
+ Accessing the Cisco IOS CLI  
+ Cabling the Console Connection  
+ Accessing the CLI with Telnet and SSH  
+ User and Enable (Privileged) Modes  
+ Password Security for CLI Access from the Console  
+ CLI Help Features  
+ The debug and show Commands  
+ Configuring Cisco IOS Software  
+ Configuration Submodels and Contexts  
+ Storing Switch Configuration Files  
+ Copying and Erasing Configuration Files  
+Chapter 5: Analysing Ethernet LAN Switching  
+ LAN Switching Concepts  
+ Overview of Switching Logic  
+ Forwarding Known Unic ast Frames  
+ Learning MAC Addresses  
+ Flooding Unknown Unicast and Broadcast Frames  
+ Avoiding Loops Using Spanning Tree Protocol  
+ LAN Switching Summary  
+ Verifying and Analyzing Ethernet Switching  
+ Demonstrating MAC Learning  
+ Switch Interfaces  
+ Finding Entries in the  MAC Address Table  
+ Managing the MAC Address Table (Aging, Clearing)  
+ MAC Address Tables with Multiple Switches  
+Chapter 6: Configuring Basic Switch Management  
+ Securing the Switch CLI  
+ Securing User Mode and Privileged Mode with Simple Passwords  
+ Securing User Mode Access with Local Usernames and Passwords  
+ Securing User Mode Access with External Authentication Servers  
+ Securing Remote Access with Secure Shell  
+ Enabling IPv4 for Remote Access  
+ Host and Switch IP Settings  
+ Configuring IPv4 on a Switch  
+ Configuring a Sw itch to Learn Its IP Address with DHCP  
+ Verifying IPv4 on a Switch  
+ Miscellaneous Settings Useful in the Lab  
+ History Buffer Commands  
+ The logging synchronous, exec -timeout, and no ip domain -lookup Commands  
+Chapter 7: Configuring and Verifying Switch Interface s 
+ Configuring Switch Interfaces  
+ Configuring Speed, Duplex, and Description  
+ Configuring Multiple Interfaces with the interface range Command  
+ Administratively Controlling Interface State with shutdown  
+ Removing Configuration with the no Command  
+ Auto-negotiati on 
+ Auto-negotiation Under Working Conditions  
+ Auto-negotiation Results When Only One Node Uses Autonegotiation  
+ Auto-negotiation and LAN Hubs  
+ Analyzing Switch Interface Status and Statistics  
+ Interface Status Codes and Reasons for Nonworking States  
+ Interface Speed and Duplex Issues  
+ Common Layer 1 Problem on Working Interfaces  
+Implementing VLANs and STP  
+Chapter 8: Implementing Ethernet Virtual LANs  
+ Virtual LAN Concepts  
+ Creating Multiswitch VLANs Using Trunking  
+ VLAN Tagging Concepts  
+ The 802.1Q and ISL VLAN Trunk ing Protocols  
+ Forwarding Data Between VLANs  
+ The Need for Routing Between VLANs  
+ Routing Packets Between VLANs with a Router  
+ VLAN and VLAN Trunking Configuration and Verification  
+ Creating VLANs and Assigning Access VLANs to an Interface  
+ VLAN Configuration Ex ample 1: Full VLAN Configuration  
+ VLAN Configuration Example 2: Shorter VLAN Configuration  
+ VLAN Trunking Protocol  
+ VLAN Trunking Configuration  
+ Implementing Interfaces Connected to Phones  
+ Data and Voice VLAN Concepts  
+ Data and Voice VLAN Configuration and Veri fication  
+ Summary: IP Telephony Ports on Switches  
+ Troubleshooting VLANs and VLAN Trunks  
+ Access VLANs Undefined or Disabled  
+ Mismatched Trunking Operational State  
+ The Supported VLAN List on Trunks  
+ Mismatched Native VLAN on a Trunk  
+Chapter 9: Spanning Tree Protocol Concepts  
+ STP and RSTP Basics  
+ The Need for Spanning Tree  
+ What Spanning Tree Does  
+ How Spanning Tree Works  
+ The STP Bridge ID and Hello BPDU  
+ Electing the Root Switch  
+ Choosing Each Switch ’s Root Port  
+ Choosing the Designated Port on Each LAN Segment  
+ Configuring to Influence the STP Topology  
+ Details Specific to STP (and Not RSTP)  
+ STP Activity When the Network Remains Stable  
+ STP Timers That Manage STP Convergence  
+ Changing Interface States with STP  
+ Rapid STP Concepts  
+ Comparing STP and RSTP  
+ RSTP and the Alte rnate (Root) Port Role  
+ RSTP States and Processes  
+ RSTP and the Backup (Designated) Port Role  
+ RSTP Port Types  
+ Optional STP Features  
+ EtherChannel  
+ PortFast  
+ BPDU Guard  
+Chapter 10: RSTP and EtherChannel Configuration  
+ Understanding RSTP Through Configuration  
+ The Need for Multiple Spanning Trees  
+ STP Modes and Standards  
+ The Bridge ID and System ID Extension  
+ How Switches Use the Priority and System ID Extension  
+ RSTP Methods to Support Multiple Spanning Trees  
+ Other RSTP Configuration Options  
+ Configuring Layer 2 EtherChannel  
+ Configuring a Manual Layer 2 EtherChannel  
+ Configuring Dynamic EtherChannels  
+ Physical Interface Configuration and EtherChannels  
+ EtherChannel Load Distribution  
+ Configuration Options for EtherChannel Load Distribution  
+ The Effects of the EtherChan nel Load Distribution Algorithm  
+IPv4 Addressing  
+Chapter 11: Perspectives on IPv4 Subnetting  
+ Introduction to Subnetting  
+ Subnetting Defined Through a Simple Example  
+ Operational View Versus Design View of Subnetting  
+ Analyze Subnetting and Addressing Needs  
+ Rules About Which Hosts Are in Which Subnet  
+ Determining the Number of Subnets  
+ Determining the Number of Hosts per Subnet  
+ One Size Subnet Fits All —Or Not  
+ Defining the Size of a Subnet  
+ One Size Subnet Fits All  
+ Multiple Subnet Sizes (Variable -Length Subnet Masks ) 
+ One Mask for All Subnets, or More Than One  
+ Make Design Choices  
+ Choose a Classful Network  
+ Public IP Networks  
+ Growth Exhausts the Public IP Address Space  
+ Private IP Networks  
+ Choosing an IP Network During the Design Phase  
+ Choose the Mask  
+ Classful IP Networks Before Subnetting  
+ Borrowing Host Bits to Create Subnet Bits  
+ Choosing Enough Subnet and Host Bits  
+ Example Design: 172.16.0.0, 200 Subnets, 200 Hosts  
+ Masks and Mask Formats  
+ Build a List of All Subnets  
+ Plan the Implementation  
+ Assigning Subnets to Dif ferent Locations  
+ Choose Static and Dynamic Ranges per Subnet  
+Chapter 12: Analysing Classful IPv4 Networks  
+ Classful Network Concepts  
+ IPv4 Network Classes and Related Facts  
+ The Number and Size of Class A, B, and C Networks  
+ Address Formats  
+ Default Masks  
+ Numbe r of Hosts per Network  
+ Deriving the Network ID and Related Numbers  
+ Unusual Network IDs and Network Broadcast Addresses  
+ Practice with Classful Networks  
+ Practice Deriving Key Facts Based on an IP Address  
+ Practice Remembering the Details of Address Classes  
+Chapter 13: Analyzing Subnet Masks  
+ Subnet Mask Conversion  
+ Three Mask Formats  
+ Converting Between Binary and Prefix Masks  
+ Converting Between Binary and DDN Masks  
+ Converting Between Prefix and DDN Masks  
+ Practice Converting Subnet Masks  
+ Identifying Subnet Desi gn Choices Using Masks  
+ Masks Divide the Subnet ’s Addresses into Two Parts  
+ Masks and Class Divide Addresses into Three Parts  
+ Classless and Classful Addressing  
+ Calculations Based on the IPv4 Address Format  
+ Practice Analyzing Subnet Masks  
+Chapter 14: Analyzin g Existing Subnets  
+ Defining a Subnet  
+ An Example with Network 172.16.0.0 and Four Subnets  
+ Subnet ID Concepts  
+ Subnet Broadcast Address  
+ Range of Usable Addresses  
+ Analyzing Existing Subnets: Binary  
+ Finding the Subnet ID: Binary  
+ Finding the Subnet Broadcast Add ress: Binary  
+ Binary Practice Problems  
+ Shortcut for the Binary Process  
+ Brief Note About Boolean Math  
+ Finding the Range of Addresses  
+ Analyzing Existing Subnets: Decimal  
+ Analysis with Easy Masks  
+ Predictability in the Interesting Octet  
+ Finding the Subnet ID: Difficult Masks  
+ Resident Subnet Example 1  
+ Resident Subnet Example 2  
+ Resident Subnet Practice Problems  
+ Finding the Subnet Broadcast Address: Difficult Masks  
+ Subnet Broadcast Example 1  
+ Subnet Broadcast Example 2  
+ Subnet Broadcast Address Practice Problems  
+ Practice Analyzing Existing Subnets  
+ A Choice: Memorize or Calculate  
+IPv4 Routing  
+Chapter 15: Operating Cisco Routers  
+ Installing Cisco Routers  
+ Installing Enterprise Routers  
+ Cisco Integrated Services Routers  
+ Physical Installation  
+ Installing SOHO Routers  
+ Enablin g IPv4 Support on Cisco Router Interfaces  
+ Accessing the Router CLI  
+ Router Interfaces  
+ Interface Status Codes  
+ Router Interface IP Addresses  
+ Bandwidth and Clock Rate on Serial Interfaces  
+ Router Auxiliary Port  
+Chapter 16: Configuring IPv4 Addresses and Static Routes  
+ IP Routing  
+ IPv4 Routing Process Reference  
+ An Example of IP Routing  
+ Host Forwards the IP Packet to the Default Router (Gateway)  
+ Routing Step 1: Decide Whether to Process the Incoming Frame  
+ Routing Step 2: De -encapsulation of the IP Packet  
+ Routing Step 3: Choosing Where to Forward the Packet  
+ Routing Step 4: Encapsulating the Packet in a New Frame  
+ Routing Step 5: Transmitting the Frame  
+ Configuring IP Addresses and Connected Routes  
+ Connected Routes and the ip address Command  
+ The ARP Table on a Cisco R outer  
+ Configuring Static Routes  
+ Static Network Routes  
+ Static Host Routes  
+ Floating Static Routes  
+ Static Default Routes  
+ Troubleshooting Static Routes  
+ Troubleshooting Incorrect Static Routes That Appear in the IP Routing Table  
+ The Static Route Does Not Appear  in the IP Routing Table  
+ The Correct Static Route Appears but Works Poorly  
+ IP Forwarding with the Longest Prefix Match  
+ Using show ip route to Find the Best Route  
+ Using show ip route address to Find the Best Route  
+ Interpreting the IP Routing Table  
+Chapter 1 7: IP Routing in the LAN  
+ VLAN Routing with Router 802.1Q Trunks  
+ Configuring ROAS  
+ Verifying ROAS  
+ Troubleshooting ROAS  
+ VLAN Routing with Layer 3 Switch SVIs  
+ Configuring Routing Using Switch SVIs  
+ Verifying Routing with SVIs  
+ Troubleshooting Routing with SVIs  
+ VLAN Routing with Layer 3 Switch Routed Ports  
+ Implementing Routed Interfaces on Switches  
+ Implementing Layer 3 EtherChannels  
+ Troubleshooting Layer 3 EtherChannels  
+Chapter 18: Troubleshooting IPv4 Routing  
+ Problem Isolation Using the Ping Command  
+ Ping Command  Basics  
+ Strategies and Results When Testing with the Ping Command  
+ Testing Longer Routes from Near the Source of the Problem  
+ Using Extended Ping to Test the Reverse Route  
+ Testing LAN Neighbors with Standard Ping  
+ Testing LAN Neighbors with Extended Ping  
+ Testing WAN Neighbors with Standard Ping  
+ Using Ping with Names and with IP Addresses  
+ Problem Isolation Using the Traceroute Command  
+ Traceroute Basics  
+ How the Traceroute Command Works  
+ Standard and Extended Traceroute  
+ Telnet and SSH  
+ Common Reasons to Use the IOS  Telnet and SSH Client  
+ IOS Telnet and SSH Examples  
+OSPF  
+Chapter 19: Understanding OSPF Concepts  
+ Comparing Dynamic Routing Protocol Features  
+ Routing Protocol Functions  
+ Interior and Exterior Routing Protocols  
+ Comparing IGPs  
+ IGP Routing Protocol Algorithms  
+ Metrics  
+ Other IGP Comparisons  
+ Administrative Distance  
+ OSPF Concepts and Operation  
+ OSPF Overview  
+ Topology Information and LSAs  
+ Applying Dijkstra SPF Math to Find the Best Routes  
+ Becoming OSPF Neighbors  
+ The Basics of OSPF Neighbors  
+ Meeting Neighbors and Lear ning Their Router ID  
+ Exchanging the LSDB Between Neighbors  
+ Fully Exchanging LSAs with Neighbors  
+ Maintaining Neighbors and the LSDB  
+ Using Designated Routers on Ethernet Links  
+ Calculating the Best Routes with SPF  
+ OSPF Areas and LSAs  
+ OSPF Areas  
+ How Areas Redu ce SPF Calculation Time  
+ (OSPFv2) Link -State Advertisements  
+ Router LSAs Build Most of the Intra -Area Topology  
+ Network LSAs Complete the Intra -Area Topology  
+Chapter 20: Implementing OSPF  
+ Implementing Single -Area OSPFv2  
+ OSPF Single -Area Configuration  
+ Wildcard  Matching with the network Command  
+ Verifying OSPF Operation  
+ Verifying OSPF Configuration  
+ Configuring the OSPF Router ID  
+ Implementing Multiarea OSPF  
+ Using OSPFv2 Interface Subcommands  
+ OSPF Interface Configuration Example  
+ Verifying OSPF Interface Configurati on 
+ Additional OSPFv2 Features  
+ OSPF Passive Interfaces  
+ OSPF Default Routes  
+ OSPF Metrics (Cost)  
+ Setting the Cost Directly  
+ Setting the Cost Based on Interface and Reference Bandwidth  
+ OSPF Load Balancing  
+Chapter 21: OSPF Network Types and Neighbors  
+ OSPF Networ k Types  
+ The OSPF Broadcast Network Type  
+ Verifying Operations with Network Type Broadcast  
+ Configuring to Influence the DR/BDR Election  
+ The OSPF Point -to-Point Network Type  
+ OSPF Neighbor Relationships  
+ OSPF Neighbor Requirements  
+ Issues That Prevent Neighbor Adjacencies  
+ Finding Area Mismatches  
+ Finding Duplicate OSPF Router IDs  
+ Finding OSPF Hello and Dead Timer Mismatches  
+ Shutting Down the OSPF Process  
+ Issues That Allow Adjacencies but Prevent IP Routes  
+ Mismatched MTU Settings  
+ Mismatched OSPF Network Types  
+IP Version 6  
+Chapter 22: Fundamentals of IP Version 6  
+ Introduction to IPv6  
+ The Historical Reasons for IPv6  
+ The IPv6 Protocols  
+ IPv6 Routing  
+ IPv6 Routing Protocols  
+ IPv6 Addressing Formats and Conventions  
+ Representing Full (Unabbreviated) IPv6 Addresses  
+ Abbreviat ing and Expanding IPv6 Addresses  
+ Abbreviating IPv6 Addresses  
+ Expanding Abbreviated IPv6 Addresses  
+ Representing the Prefix Length of an Address  
+ Calculating the IPv6 Prefix (Subnet ID)  
+ Finding the IPv6 Prefix  
+ Working with More Difficult IPv6 Prefix Lengths  
+Chapter 23: IPv6 Addressing and Subnetting  
+ Global Unicast Addressing Concepts  
+ Public and Private IPv6 Addresses  
+ The IPv6 Global Routing Prefix  
+ Address Ranges for Global Unicast Addresses  
+ IPv6 Subnetting Using Global Unicast Addresses  
+ Deciding Where IPv6 Subnets Are Needed  
+ The Mechanics of Subnetting IPv6 Global Unicast Addresses  
+ Listing the IPv6 Subnet Identifier  
+ List All IPv6 Subnets  
+ Assign Subnets to the Internetwork Topology  
+ Assigning Addresses to Hosts in a Subnet  
+ Unique Local Unicast Addresses  
+ Subnet ting with Unique Local IPv6 Addresses  
+ The Need for Globally Unique Local Addresses  
+Chapter 24: Implementing IPv6 Addressing Routers  
+ Implementing Unicast IPv6 Addresses on Routers  
+ Static Unicast Address Configuration  
+ Configuring the Full 128 -Bit Address  
+ Enabling IPv6 Routing  
+ Verifying the IPv6 Address Configuration  
+ Generating a Unique Interface ID Using Modified EUI -64 
+ Dynamic Unicast Address Configuration  
+ Special Addresses Used by Routers  
+ Link-Local Addresses  
+ Link-Local Address Concepts  
+ Creating Link -Local Addresses on Routers  
+ Routing IPv6 with Only Link -Local Addresses on an Interface  
+ IPv6 Multicast Addresses  
+ Reserved Multicast Addresses  
+ Multicast Address Scopes  
+ Solicited -Node Multicast Addresses  
+ Miscellaneous IPv6 Addresses  
+ Anycast Addresses  
+ IPv6 Addressing Configuration Summary  
+Chapter 25: Implementing IPv6 Routing  
+ Connected and Local IPv6 Routes  
+ Rules for Connected and Local Routes  
+ Example of Connected IPv6 Routes  
+ Examples of Local IPv6 Routes  
+ Static IPv6 Routes  
+ Static Routes Using the Outgoing I nterface  
+ Static Routes Using Next -Hop IPv6 Address  
+ Example Static Route with a Global Unicast Next -Hop Address  
+ Example Static Route with a Link -Local Next -Hop Address  
+ Static Routes over Ethernet Links  
+ Static Default Routes  
+ Static IPv6 Host Routes  
+ Floating Static IPv6 Routes  
+ Troubleshooting Static IPv6 Routes  
+ Troubleshooting Incorrect Static Routes That Appear in the IPv6 Routing 
+Table  
+ The Static Route Does Not Appear in the IPv6 Routing Table  
+ The Neighbor Discovery Protocol  
+ Discovering Neighbor Link Address es with NDP NS and NA  
+ Discovering Routers with NDP RS and RA  
+ Using SLAAC with NDP RS and RA  
+ Discovering Duplicate Addresses Using NDP NS and NA  
+ NDP Summary  
+Wireless LANs  
+Chapter 26: Fundamentals of Wireless Network s 
+ Comparing Wired and Wireless Networks  
+ Wireless LAN Topologies  
+ Basic Service Set  
+ Distribution System  
+ Extended Service Set  
+ Independent Basic Service Set  
+ Other Wireless Topologies  
+ Repeater  
+ Workgroup Bridge  
+ Outdoor Bridge  
+ Mesh Network  
+ RF Overview  
+ Wireless Bands and Channels  
+ APs and Wireless Standa rds 
+Chapter 27: Analysing Cisco Wireless Architectures  
+ Autonomous AP Architecture  
+ Cloud -based AP Architecture  
+ Split-MAC Architectures  
+ Comparing Wireless LAN Controller Deployments  
+ Cisco AP Modes  
+Chapter 28: Securing Wireless Networks  
+ Anatomy of a Secure Connection  
+ Authentication  
+ Message Privacy  
+ Message Integrity  
+ Wireless Client Authentication Methods  
+ Open Authentication  
+ WEP  
+ 802.1x/EAP  
+ LEAP  
+ EAP-FAST  
+ PEAP  
+ EAP-TLS 
+ Wireless Privacy and Integrity Methods  
+ TKIP  
+ CCMP  
+ GCMP  
+ WPA, WPA2, and WPA3  
+Chapter 29: Building a Wireless LAN  
+ Connecting a Cisco AP  
+ Accessing a Cisco WLC  
+ Connecting a Cisco WLC  
+ Using WLC Ports  
+ Using WLC Interfaces  
+ Configuring a WLAN  
+ Step 1. Configure a RADIUS Server  
+ Step 2. Create a Dynamic Interface  
+ Step 3. Create a New WLAN  
+ Configuring WLAN Security  
+ Configuring WLAN QoS  
+ Configuring Advanced WLAN Settings  
+ Finalizing WLAN Configuration  
+IP Access Control Lists  
+Chapter 30: Introduction to TCP/IP Transport and Applications  
+ TCP/IP Layer 4 Protocols: TCP and UDP  
+ Transmission Control Protocol  
+ Multipl exing Using TCP Port Numbers  
+ Popular TCP/IP Applications  
+ Connection Establishment and Termination  
+ Error Recovery and Reliability  
+ Flow Control Using Windowing  
+ User Datagram Protocol  
+ TCP/IP Applications  
+ Uniform Resource Identifiers  
+ Finding the Web Server Usi ng DNS  
+ Transferring Files with HTTP  
+ How the Receiving Host Identifies the Correct Receiving Application  
+Chapter 31: Basic IPv4 Access Control Lists  
+ IPv4 Access Control List Basics  
+ ACL Location and Direction  
+ Matching Packets  
+ Taking Action When a Match Occur s 
+ Types of IP ACLs  
+ Standard Numbered IPv4 ACLs  
+ List Logic with IP ACLs  
+ Matching Logic and Command Syntax  
+ Matching the Exact IP Address  
+ Matching a Subset of the Address with Wildcards  
+ Binary Wildcard Masks  
+ Finding the Right Wildcard Mask to Match a Subnet  
+ Matching Any/All Addresses  
+ Implementing Standard IP ACLs  
+ Standard Numbered ACL Example 1  
+ Standard Numbered ACL Example 2  
+ Troubleshooting and Verification Tip  
+ Practice Applying Standard IP ACLs  
+ Practice Building access -list Commands  
+ Reverse Engineering from  ACL to Address Range  
+Chapter 32: Advanced IPv4 Access Control Lists  
+ Extended Numbered IP Access Control Lists  
+ Matching the Protocol, Source IP, and Destination IP  
+ Matching TCP and UDP Port Numbers  
+ Extended IP ACL Configuration  
+ Extended IP Access Lists: Ex ample 1  
+ Extended IP Access Lists: Example 2  
+ Practice Building access -list Commands  
+ Named ACLs and ACL Editing  
+ Named IP Access Lists  
+ Editing ACLs Using Sequence Numbers  
+ Numbered ACL Configuration Versus Named ACL Configuration  
+ ACL Implementation Considerati ons 
+ Additional Reading on ACLs  
+Security Services  
+Chapter 33: Security Architectures  
+ Security Terminology  
+ Common Security Threats  
+ Attacks That Spoof Addresses  
+ Denial -of-Service Attacks  
+ Reflection and Amplification Attacks  
+ Man-in-the-Middle Attacks  
+ Address Spoofing Attack Summary  
+ Reconnaissance Attacks  
+ Buffer Overflow Attacks  
+ Malware  
+ Human Vulnerabilities  
+ Password Vulnerabilities  
+ Password Alternatives  
+ Controlling and Monitoring User Access  
+ Developing a Security Program to Educate Users  
+Chapter 34: Securing N etwork Devices  
+ Securing IOS Passwords  
+ Encrypting Older IOS Passwords with service password -encryption  
+ Encoding the Enable Passwords with Hashes  
+ Interactions Between Enable Password and Enable Secret  
+ Making the Enable Secret Truly Secret with a Hash  
+ Improve d Hashes for Cisco ’s Enable Secret  
+ Encoding the Passwords for Local Usernames  
+ Controlling Password Attacks with ACLs  
+ Firewalls and Intrusion Prevention Systems  
+ Traditional Firewalls  
+ Security Zones  
+ Intrusion Prevention Systems (IPS)  
+ Cisco Next -Generation Firewalls  
+ Cisco Next -Generation IPS  
+Chapter 35: Implementing Switch Port Security  
+ Port Security Concepts and Configuration  
+ Configuring Port Security  
+ Verifying Port Security  
+ Port Security MAC Addresses  
+ Port Security Violation Modes  
+ Port Security Shutdown Mo de 
+ Port Security Protect and Restrict Modes  
+Chapter 36: Implementing DHCP  
+ Dynamic Host Configuration Protocol  
+ DHCP Concepts  
+ Supporting DHCP for Remote Subnets with DHCP Relay  
+ Information Stored at the DHCP Server  
+ Configuring DHCP Features on Routers and Sw itches  
+ Configuring DHCP Relay  
+ Configuring a Switch as DHCP Client  
+ Configuring a Router as DHCP Client  
+ Identifying Host IPv4 Settings  
+ Host Settings for IPv4  
+ Host IP Settings on Windows  
+ Host IP Settings on macOS  
+ Host IP Settings on Linux  
+Chapter 37: DHCP Snooping and ARP Inspection  
+ DHCP Snooping Concepts  
+ A Sample Attack: A Spurious DHCP Server  
+ DHCP Snooping Logic  
+ Filtering DISCOVER Messages Based on MAC Address  
+ Filtering Messages that Release IP Addresses  
+ DHCP Snooping Configuration  
+ Configuring DHCP Snoopi ng on a Layer 2 Switch  
+ Limiting DHCP Message Rates  
+ DHCP Snooping Configuration Summary  
+ Dynamic ARP Inspection  
+ DAI Concepts  
+ Review of Normal IP ARP  
+ Gratuitous ARP as an Attack Vector  
+ Dynamic ARP Inspection Logic  
+ Dynamic ARP Inspection Configuration  
+ Configur ing ARP Inspection on a Layer 2 Switch  
+ Limiting DAI Message Rates  
+ Configuring Optional DAI Message Checks  
+ IP ARP Inspection Configuration Summary  
+IP Services  
+Chapter 38: Device Management Protocols  
+ System Message Logging (Syslog)  
+ Sending Messages in Real Time to Current Users  
+ Storing Log Messages for Later Review  
+ Log Message Format  
+ Log Message Severity Levels  
+ Configuring and Verifying System Logging  
+ The debug Command and Log Messages  
+ Network Time Protocol (NTP)  
+ Setting the Time and Timezone  
+ Basic NTP Confi guration  
+ NTP Reference Clock and Stratum  
+ Redundant NTP Configuration  
+ NTP Using a Loopback Interface for Better Availability  
+ Analyzing Topology Using CDP and LLDP  
+ Examining Information Learned by CDP  
+ Configuring and Verifying CDP  
+ Examining Information Learn ed by LLDP  
+ Configuring and Verifying LLDP  
+Chapter 39: Network Address Translation  
+ Perspectives on IPv4 Address Scalability  
+ CIDR  
+ Private Addressing  
+ Network Address Translation Concepts  
+ Static NAT  
+ Dynamic NAT  
+ Overloading NAT with Port Address Translation  
+ NAT Configuration and Troubleshooting  
+ Static NAT Configuration  
+ Dynamic NAT Configuration  
+ Dynamic NAT Verification  
+ NAT Overload (PAT) Configuration  
+ NAT Troubleshooting  
+Chapter 40: Quality of Service (QoS)  
+ Introduction to QoS  
+ QoS: Managing Bandwidth, Delay, Jitter, and Loss  
+ Types of Traffic  
+ Data Applications  
+ Voice and Video Applications  
+ QoS, as mentioned in The Book  
+ QoS on Switches and Routers  
+ Classification and Marking  
+ Classification Basics  
+ Matching (Classification) Basics  
+ Classification of Routers with ACLs  and NBAR  
+ Marking IP DSCP and Ethernet CoS  
+ Marking the IP Header  
+ Marking the Ethernet 802.1Q Header  
+ Other Marking Fields  
+ Defining Trust Boundaries  
+ DiffServ Suggested Marking Values  
+ Expedited Forwarding (EF)  
+ Assured Forwarding (AF)  
+ Class Selector (CS)  
+ Guide lines for DSCP Marking Values  
+ Queuing  
+ Round -Robin Scheduling (Prioritization)  
+ Low Latency Queuing  
+ A Prioritization Strategy for Data, Voice, and Video  
+ Shaping and Policing  
+ Policing  
+ Where to Use Policing  
+ Shaping  
+ Setting a Good Shaping Time Interval for Voice and Video  
+ Congestion Avoidance  
+ TCP Windowing Basics  
+ Congestion Avoidance Tools  
+Chapter 41: Miscellaneous IP Services  
+ First Hop Redundancy Protocol  
+ The Need for Redundancy in Networks  
+ The Need for a First Hop Redundancy Protocol  
+ The Three Solutions for First -Hop Redundancy  
+ HSRP Concepts  
+ HSRP Failover  
+ HSRP Load Balancing  
+ Simple Network Management Protocol  
+ SNMP Variable Reading and Writing: SNMP Get and Set  
+ SNMP Notifications: Traps and Informs  
+ The Management Information Base  
+ Securing SNMP FTP and TFTP  
+ Managing Cisco IOS Images with  
+ FTP/TFTP  
+ The IOS File System  
+ Upgrading IOS Images  
+ Copying a New iOS Image to a Local iOS File System Using TFTP  
+ Verifying IOS Code Integrity with MD5  
+ Copying Images with FTP  
+ The FTP and TFTP Protocols  
+ FTP Protocol Basics  
+ FTP Active and Passive Modes  
+ FTP over TLS (FTP Secure)  
+ TFTP Protocol Basics  
+Network Architecture  
+Chapter 42: LAN Architecture  
+ Analyzing Campus LAN Topologies  
+ Two-Tier Campus Design (Collapsed Core)  
+ The Two -Tier Campus Design  
+ Topology Terminology Seen Within a  Two-Tier Design  
+ Three -Tier Campus Design (Core)  
+ Topology Design Terminology  
+ Small Office/Home Office  
+ Power over Ethernet (PoE)  
+ PoE Basics  
+ PoE Operation  
+ PoE and LAN Design  
+Chapter 43: WAN Architecture  
+ Metro Ethernet  
+ Metro Ethernet Physical Design and Topol ogy 
+ Ethernet WAN Services and Topologies  
+ Ethernet Line Service (Point -to-Point)  
+ Ethernet LAN Service (Full Mesh)  
+ Ethernet Tree Service (Hub and Spoke)  
+ Layer 3 Design Using Metro Ethernet  
+ Layer 3 Design with E -Line Service  
+ Layer 3 Design with E -LAN Service  
+ Multiprotocol Label Switching (MPLS)  
+ MPLS VPN Physical Design and Topology  
+ MPLS and Quality of Service  
+ Layer 3 with MPLS VPN  
+ Internet VPNs  
+ Internet Access  
+ Digital Subscriber Line  
+ Cable Internet  
+ Wireless WAN (3G, 4G, LTE, 5G)  
+ Fiber (Ethernet) Internet Acces s 
+ Internet VPN Fundamentals  
+ Site-to-Site VPNs with IPsec  
+ Remote Access VPNs with TLS  
+ VPN Comparisons  
+Chapter 44: Cloud Architecture  
+ Server Virtualization  
+ Cisco Server Hardware  
+ Server Virtualization Basics  
+ Networking with Virtual Switches on a  
+ Virtualized H ost 
+ The Physical Data Center Network  
+ Workflow with a Virtualized Data Center  
+ Cloud Computing Services  
+ Private Cloud (On -Premise)  
+ Public Cloud  
+ Cloud and the “Software as a Service ” Model  
+ Infrastructure as a Service  
+ Software as a Service  
+ (Development) Platform as a Service  
+ WAN Traffic Paths to Reach Cloud Services  
+ Enterprise WAN Connections to Public Cloud  
+ Accessing Public Cloud Services Using the Internet  
+ Pros and Cons of Connecting to Public Cloud with Internet  
+ Private WAN and Internet VPN Access to P ublic Cloud  
+ Pros and Cons of Connecting to the Cloud with Private WANs  
+ Intercloud Exchanges  
+ Summarizing the Pros and Cons of Public Cloud WAN Options  
+ A Scenario: Branch Offices and the Public Cloud  
+ Migrating Traffic Flows When Migrating to Email SaaS  
+ Branc h Of ices with Internet and Private WAN  
+Network Automation  
+Chapter 45: Introduction to Controller -Based Networking  
+ SDN and Controller -Based Networks  
+ The Data, Control, and Management Planes  
+ The Data Plane  
+ The Control Plane  
+ The Management Plane  
+ Cisco Switch  Data Plane Internals  
+ Controllers and Software -Defined Architecture  
+ Controllers and Centralized Control  
+ The Southbound Interface  
+ The Northbound Interface  
+ Software Defined Architecture Summary  
+ Examples of Network Programmability and SDN  
+ OpenDaylight and OpenFlow  
+ The OpenDaylight Controller  
+ The Cisco Open SDN Controller (OSC)  
+ Cisco Application Centric Infrastructure (ACI)  
+ ACI Physical Design: Spine and Leaf  
+ ACI Operating Model with Intent -Based Networking  
+ Cisco APIC Enterprise Domain  
+ APIC -EM Basics  
+ APIC -EM Replacement  
+ Summary of the SDN Examples  
+ Comparing Traditional Versus Controller -Based Networks  
+ How Automation Impacts Network Management  
+ Comparing Traditional Networks with Controller -Based Networks  
+Chapter 46: Cisco Software -Defined Access (SDA)  
+ SDA Fabr ic, Underlay, and Overlay  
+ The SDA Underlay  
+ Using Existing Gear for the SDA Underlay  
+ Using New Gear for the SDA Underlay  
+ The SDA Overlay  
+ VXLAN Tunnels in the Overlay (Data Plane)  
+ LISP for Overlay Discovery and Location (Control Plane)  
+ DNA Center and SDA Operation  
+ Cisco DNA Center  
+ Cisco DNA Center and Scalable Groups  
+ Issues with Traditional IP -Based Security  
+ SDA Security Based on User Groups  
+ DNA Center as a Network Management Platform  
+ DNA Center Similarities to Traditional Management  
+ DNA Center Differences  with Traditional Management  
+Chapter 47: Understanding REST and JSON  
+ REST -Based APIs  
+ REST -Based (RESTful) APIs  
+ Client/Server Architecture  
+ Stateless Operation  
+ Cacheable (or not)  
+ Background: Data and Variables  
+ Simple Variables  
+ List and Dictionary Variables  
+ REST APIs and HTTP  
+ Software CRUD Actions and HTTP Verbs  
+ Using URIs with HTTP to Specify the Resource  
+ Example of REST API Call to DNA Center  
+ Data Serialization and JSON  
+ The Need for a Data Model with APIs  
+ Data Serialization Languages  
+ JSON  
+ XML 
+ YAML  
+ Summary of  Data Serialization  
+ Interpreting JSON  
+ Interpreting JSON Key: Value Pairs  
+ Interpreting JSON Objects and Arrays  
+ Minified and Beautified JSON  
+Chapter 48: Understanding Ansible, Puppet, and Chef  
+ Device Configuration Challenges and Solutions  
+ Configuration Drift  
+ Centralized Configuration Files and Version Control  
+ Configuration Monitoring and Enforcement  
+ Configuration Provisioning  
+ Configuration Templates and Variables  
+ Files That Control Configuration Automation  
+ Ansible, Puppet, and Chef Basics  
+ Ansible  
+ Puppet  
+ Chef  
+ Summary of Configuration Management Tool  
+ 
+ 
+ 
+CCNP ENCOR - Module 1: Enterprise Network Architecture  
+Topics Covered  
+ Enterprise Campus Architecture  
+ Three -Tier Architecture  
+ Spine -Leaf Architecture  
+ High Availability Design  
+ Redundancy Models  
+ FHRP Overview  
+ Stateful Switch Over (SSO)  
+ Enterprise Network Design Principles  
+ Capacity Planning  
+Practical Labs  
+ Design a hierarchical enterprise network  
+ Configure high availability architecture  
+Learning Outcomes  
+ Design scalable enterprise networks  
+ Implement redunda ncy and resiliency solutions  
+ 
+Module 2: Software Defined Architecture  
+Topics Covered  
+ Software Defined Networking (SDN)  
+ Cisco SD -Access Architecture  
+ Cisco SD -WAN Architecture  
+ Control Plane vs Data Plane  
+ DNA Center Fundamentals  
+ Fabric Networks  
+ Underl ay and Overlay Networks  
+Practical Labs  
+ Analyze SD -WAN topology  
+ SD-Access fabric design exercises  
+Learning Outcomes  
+ Understand Cisco's modern enterprise architectures  
+ Compare traditional and software -defined networks  
+ 
+Module 3: Network Virtualization  
+Topics Covered  
+ Virtual Machines  
+ Hypervisors (Type 1 & Type 2)  
+ Device Virtualization  
+ VRF Lite  
+ Overlay Technologies  
+ GRE Tunnels  
+ IPSec Tunnels  
+ VXLAN Fundamentals  
+ LISP Overview  
+Practical Labs  
+ Configure VRF Lite  
+ Configure GRE Tunnels  
+ Implement VXLAN concepts  
+Learning Outcomes  
+ Deploy virtualization technologies  
+ Separate traffic using virtual routing instances  
+ 
+Module 4: Advanced Layer 2 Technologies  
+Topics Covered  
+ VLAN Design  
+ 802.1Q Trunking  
+ EtherChannel  
+ LACP and PAgP  
+ Rapid STP (RSTP)  
+ Multiple STP (MST)  
+ STP Optimization  
+ Root Guard  
+ BPDU Guard  
+ Loop Prevention  
+Practical Labs  
+ Configure EtherChannel  
+ Troubleshoot STP  
+ Configure MST  
+Learning Outcomes  
+ Implement resilient Layer 2 networks  
+ Troubleshoot switching issues  
+ 
+Module 5: Advanc ed Routing Concepts  
+Topics Covered  
+ Routing Fundamentals Review  
+ Administrative Distance  
+ Route Selection  
+ Route Redistribution Concepts  
+ Policy -Based Routing (PBR)  
+ Route Maps  
+ Prefix Lists  
+ Bidirectional Forwarding Detection (BFD)  
+Practical Labs  
+ Configure PBR  
+ Implement route filtering  
+Learning Outcomes  
+ Control traffic paths  
+ Implement advanced routing policies  
+ 
+Module 6: OSPF Enterprise Routing  
+Topics Covered  
+ OSPFv2 and OSPFv3  
+ Multi -Area OSPF  
+ LSA Types  
+ DR/BDR Election  
+ OSPF Authentication  
+ Route Summarization  
+ Stub Areas  
+ NSSA  
+ OSPF Troubleshooting  
+Practical Labs  
+ Configure Multi -Area OSPF  
+ Configure Stub Areas  
+ Troubleshoot OSPF Adjacencies  
+Learning Outcomes  
+ Deploy enterprise OSPF environments  
+ Optimize OSPF routing design  
+ 
+Module 7: EIGRP Enterprise Routing  
+Topics Covered  
+ EIGRP Operations  
+ DUAL Algorithm  
+ Neighbor Relationships  
+ Metric Calculation  
+ Route Summarization  
+ Stub Routing  
+ Authentication  
+ Wide Metrics  
+Practical Labs  
+ Configure EIGRP  
+ Verify DUAL Operations  
+Learning Outcomes  
+ Implement and troubleshoot EIGRP networks  
+ 
+Module 8: BGP Fundamentals for Enterprise Networks  
+Topics Covered  
+ eBGP Configuration  
+ iBGP Configuration  
+ BGP Attributes  
+ Best Path Selection  
+ Route Advertisement  
+ Route Filtering  
+ Communities  
+ AS Path Manipulation  
+ Multi -Homing Design  
+Practical Labs  
+ Configure eBGP  
+ Manipulate BGP Path Selection  
+Learning Outcomes  
+ Deploy enterprise BGP solutions  
+ Control routing decisions  
+ 
+Module 9: Multicast Technologies  
+Topics Covered  
+ Multicast Fundamentals  
+ IGMP v2/v3  
+ IGMP Snooping  
+ PIM Dense Mode  
+ PIM Sparse Mode  
+ Source Specific Multicast (SSM)  
+ Bidirectional PIM  
+ MSDP  
+ Reverse Path Forwarding (RPF)  
+Practical Labs  
+ Configure PIM Sparse Mode  
+ Verify Multicast Trees  
+Learning Outcomes  
+ Deploy scalable multicast solutions  
+ 
+Module 10: Enterprise IP Services  
+Topics Covered  
+ NAT  
+ PAT  
+ HSRP  
+ VRRP  
+ GLBP  
+ NTP  
+ Precision Time Protocol (PTP)  
+ DHCP Services  
+ DNS Fundamentals  
+Practical Labs  
+ Configure HSRP  
+ Configure NAT/PAT  
+ Configure NTP  
+Learning Outcomes  
+ Implement enterprise network services  
+ 
+Module 11: Quality of Service (QoS)  
+Topics Covered  
+ QoS Models  
+ Traffic Classification  
+ Marking and Trust Boundaries  
+ DSCP and CoS  
+ Congestion Management  
+ Queuing Mechanisms  
+ Policing  
+ Shaping  
+ Low Latency Queuing (LLQ)  
+Practical Labs  
+ Configure QoS Policies  
+ Implement Traffic Shaping  
+Learning Outcomes  
+ Prioritize business -critical traffic  
+ 
+Module 12: Wireless Enterprise Fundamentals  
+Topics Covered  
+ Wireless Architectures  
+ WLAN Design  
+ Wireless Controllers  
+ CAPWAP  
+ Wireless Roaming  
+ RF Fundamentals  
+ Wireless Troubleshooting  
+ Wireless Deployment Models  
+Practical Labs  
+ Configure Wireless LAN Controllers  
+ Analyze WLAN Design  
+Learning Outcomes  
+ Understand enterprise wireless infrastructure  
+ 
+Module 13: Network Assurance and Monitoring  
+Topics Covered  
+ SNMP  
+ Syslog  
+ Flexible NetFlow  
+ SPAN  
+ RSPAN  
+ ERSPAN  
+ IP SLA  
+ Performance Monitoring  
+ Troubleshooting Methodologies  
+Practical Labs  
+ Configure NetFlow  
+ Configure SPAN Sessions  
+ Configure IP SLA  
+Learning Outcomes  
+ Monitor network performance and availability  
+ 
+Module 14: Infrastructure Security  
+Topics Covered  
+ Device Hardening  
+ Secure Management Access  
+ SSH  
+ AAA  
+ TACACS+  
+ RADIUS  
+ 802.1X  
+ Network Access Control  
+ Control Plane Policing (CoPP)  
+ Manage ment Plane Protection (MPP)  
+Practical Labs  
+ Configure AAA  
+ Configure 802.1X  
+ Implement CoPP  
+Learning Outcomes  
+ Secure enterprise infrastructure  
+ 
+Module 15: Enterprise Security Technologies  
+Topics Covered  
+ Access Control Lists  
+ IPSec VPN  
+ GRE over IPSec  
+ MACsec  
+ TrustSec  
+ Web Authentication  
+ MAC Authentication Bypass (MAB)  
+ Next-Generation Firewall Concepts  
+ Endpoint Security  
+Practical Labs  
+ Configure IPSec VPN  
+ Configure ACL Policies  
+Learning Outcomes  
+ Implement enterprise -grade security controls  
+ 
+Modul e 16: Automation and Programmability  
+Topics Covered  
+ Network Automation Fundamentals  
+ Python Basics for Networking  
+ JSON  
+ YAML  
+ REST APIs  
+ RESTCONF  
+ NETCONF  
+ YANG Data Models  
+ Cisco DNA APIs  
+ Cisco vManage APIs  
+Practical Labs  
+ Parse JSON with Python  
+ Use REST APIs  
+ Automate device configurations  
+Learning Outcomes  
+ Automate network operations and management  
+ 
+Module 17: AI and Modern Network Operations  
+Topics Covered  
+ AI-Assisted Network Management  
+ Cisco AI Features  
+ Intent -Based Networking  
+ Predictive  Analytics  
+ Automated Troubleshooting  
+ Telemetry and Observability  
+Practical Labs  
+ Analyze AI -driven network workflows  
+ Telemetry data interpretation  
+Learning Outcomes  
+ Understand AI integration in enterprise networking  
+ 
+Module 18: Enterprise Troubleshooting Workshop  
+Topics Covered  
+ Layer 2 Troubleshooting  
+ Routing Troubleshooting  
+ OSPF Issues  
+ BGP Issues  
+ Wireless Troubleshooting  
+ Security Troubleshooting  
+ Performance Analysis  
+Practical Labs  
+ Real-world troubleshooting scenarios  
+ Enterprise fau lt isolation exercises  
+Learning Outcomes  
+ Apply systematic troubleshooting methodologies  
+ 
+Module 19: CCNP ENCOR Enterprise Lab  
+Hands -On Activities  
+ Configure Enterprise Campus Network  
+ Implement OSPF and BGP  
+ Configure Multicast  
+ Configure QoS  
+ Implement AAA  
+ Configure VPNs  
+ Implement Automation Scripts  
+ Troubleshoot Complex Scenarios  
+Deliverables  
+ Configuration Files  
+ Network Diagrams  
+ Verification Reports  
+ 
+Module 20: Enterprise Network Design Capstone  
+End-to-End Enterprise Deployment  
+Project Tasks  
+ Design Campus Architecture  
+ Create Routing Architecture  
+ Implement Security Controls  
+ Configure High Availability  
+ Deploy Monitoring Systems  
+ Implement Automation Framework  
+Deliverables  
+ Enterprise Network Design Document  
+ Routing Design  
+ Security Architec ture  
+ Automation Scripts  
+ Monitoring Dashboard  
+ 
+ 
+ 
+CCNP ENARSI  
+Module 1: Advanced Enterprise Routing Architecture  
+Topics Covered  
+ Enterprise Routing Design Principles  
+ Routing Table Processing  
+ Forwarding Information Base (FIB)  
+ Cisco Express Forwarding (CEF)  
+ Control Plane vs Data Plane  
+ Routing Scalability  
+ High Availability Design  
+Practical Labs  
+ Analyze routing table behavior  
+ Verify CEF operations  
+Learning Outcomes  
+ Understand enterprise routing architecture.  
+ Analyze packet forwarding decisions.  
+ 
+Module 2: Advanced OSPF  
+Topics Covered  
+ OSPFv2 Deep Dive  
+ OSPFv3 Deep Dive  
+ LSA Types and Functions  
+ Multi -Area OSPF  
+ Stub Areas  
+ Totally Stubby Areas  
+ NSSA  
+ Virtual Links  
+ OSPF Summarization  
+ OSPF Authentication  
+ Fast Convergence Techniques  
+Practical Labs  
+ Configure Multi -Area OSPF  
+ Implement NSSA and Stub Areas  
+ Troubleshoot OSPF Adjacencies  
+Learning Outcomes  
+ Deploy scalable OSPF networks.  
+ Troubleshoot OSPF routing issues.  
+ 
+Module 3: Advanced EIGRP  
+Topics Cove red 
+ DUAL Algorithm  
+ Feasible Successor Selection  
+ Route Summarization  
+ Stub Routing  
+ Authentication  
+ Wide Metrics  
+ Named EIGRP Configuration  
+ Load Balancing  
+ Query Boundaries  
+Practical Labs  
+ Configure Named EIGRP  
+ Implement EIGRP Authentication  
+ Analyze DUAL Operations  
+Learning Outcomes  
+ Optimize EIGRP deployments.  
+ Troubleshoot EIGRP convergence issues.  
+ 
+Module 4: Advanced BGP  
+Topics Covered  
+ eBGP and iBGP  
+ BGP Neighbor Relationships  
+ BGP Path Selection Process  
+ BGP Attributes  
+ Local Preference  
+ MED  
+ Weight  
+ Communities  
+ Route Reflectors  
+ Confederations  
+ Route Aggregation  
+ Route Filtering  
+ Prefix Lists  
+ Route Maps  
+Practical Labs  
+ Configure Enterprise BGP  
+ Manipulate Best Path Selection  
+ Configure Route Reflectors  
+Learning Outcomes  
+ Deploy enterprise BGP architectures.  
+ Implement routing policies.  
+ 
+Module 5: Route Redistribution  
+Topics Covered  
+ Redistribution Concepts  
+ OSPF to EIGRP Redistribution  
+ EIGRP to OSPF Redistribution  
+ BGP Redistribution  
+ Seed Metrics  
+ Route Tagging  
+ Redistr ibution Loops  
+ Filtering Redistribution  
+Practical Labs  
+ Configure Mutual Redistribution  
+ Prevent Routing Loops  
+Learning Outcomes  
+ Implement route sharing across protocols.  
+ Troubleshoot redistribution problems.  
+ 
+Module 6: Route Manipulation and Policy Control  
+Topics Covered  
+ Route Maps  
+ Prefix Lists  
+ Distribute Lists  
+ Administrative Distance Manipulation  
+ Policy -Based Routing (PBR)  
+ Object Tracking  
+ Conditional Routing  
+ Traffic Engineering  
+Practical Labs  
+ Configure PBR  
+ Implement Route Filtering  
+Learnin g Outcomes  
+ Control traffic flow and routing decisions.  
+ 
+Module 7: MPLS Fundamentals  
+Topics Covered  
+ MPLS Architecture  
+ Label Switching  
+ LER and LSR  
+ MPLS Labels  
+ Label Distribution Protocol (LDP)  
+ MPLS VPN Concepts  
+ Service Provider Fundamentals  
+Practical Labs  
+ MPLS Traffic Flow Analysis  
+ Label Distribution Verification  
+Learning Outcomes  
+ Understand MPLS operations.  
+ Analyze MPLS -based networks.  
+ 
+Module 8: VPN Technologies  
+Topics Covered  
+ Site-to-Site VPN  
+ GRE Tunnels  
+ IPSec VPN  
+ DMVPN  
+ FlexVPN  
+ Remote Access VPN  
+ VPN Design Considerations  
+ Encryption Fundamentals  
+Practical Labs  
+ Configure GRE Tunnel  
+ Configure IPSec VPN  
+ Implement DMVPN  
+Learning Outcomes  
+ Secure enterprise communications.  
+ Deploy VPN technologies.  
+ 
+Module 9: Infrastructure Security  
+Topics Covered  
+ AAA Architecture  
+ TACACS+  
+ RADIUS  
+ Device Hardening  
+ Control Plane Protection (CoPP)  
+ Management Plane Protection  
+ Secure Device Access  
+ Role-Based Access Control (RBAC)  
+Practical Labs  
+ Configure AAA  
+ Implement TACACS+  
+ Secure Route r Access  
+Learning Outcomes  
+ Strengthen network infrastructure security.  
+ 
+Module 10: First Hop Redundancy Protocols (FHRP)  
+Topics Covered  
+ HSRP  
+ VRRP  
+ GLBP  
+ Object Tracking  
+ FHRP Optimization  
+ Load Balancing Strategies  
+Practical Labs  
+ Configure HSRP  
+ Configure GLBP  
+ Verify Failover Operations  
+Learning Outcomes  
+ Implement gateway redundancy solutions.  
+ 
+Module 11: Enterprise Infrastructure Services  
+Topics Covered  
+ DHCP  
+ DHCP Relay  
+ DNS  
+ NTP  
+ SNMPv3  
+ Syslog  
+ SLA Operations  
+ Infrastructure Monitoring  
+Practical Labs  
+ Configure DHCP Relay  
+ Configure NTP  
+ Configure SNMPv3  
+Learning Outcomes  
+ Deploy critical enterprise services.  
+ 
+Module 12: Quality of Service (QoS)  
+Topics Covered  
+ QoS Models  
+ Classification and Marking  
+ DSCP  
+ CoS  
+ Policing  
+ Traffic Shaping  
+ Congestion Avoidance  
+ Low Latency Queuing  
+Practical Labs  
+ Configure QoS Policies  
+ Verify Traffic Prioritization  
+Learning Outcomes  
+ Optimize network performance.  
+ 
+Module 13: Multicast Routing  
+Topics Covered  
+ Multicast Concepts  
+ IGMP  
+ IGMP Snooping  
+ PIM Den se Mode  
+ PIM Sparse Mode  
+ RP Configuration  
+ Source Specific Multicast (SSM)  
+ Reverse Path Forwarding (RPF)  
+Practical Labs  
+ Configure PIM -SM  
+ Verify Multicast Trees  
+Learning Outcomes  
+ Deploy multicast solutions.  
+ 
+Module 14: Enterprise Network Monitoring  
+Topics Covered  
+ NetFlow  
+ Flexible NetFlow  
+ SPAN  
+ RSPAN  
+ ERSPAN  
+ IP SLA  
+ SNMP Monitoring  
+ Telemetry Concepts  
+Practical Labs  
+ Configure NetFlow  
+ Configure SPAN  
+ Implement IP SLA  
+Learning Outcomes  
+ Monitor and troubleshoot network performance.  
+ 
+Module 15: Troubleshooting Enterprise Networks  
+Topics Covered  
+ Structured Troubleshooting Methodology  
+ OSPF Troubleshooting  
+ EIGRP Troubleshooting  
+ BGP Troubleshooting  
+ VPN Troubleshooting  
+ QoS Troubleshooting  
+ Security Troubleshooting  
+Practical Labs  
+ Real-world fault  isolation exercises  
+ Routing protocol troubleshooting  
+Learning Outcomes  
+ Resolve enterprise network issues efficiently.  
+ 
+Module 16: Advanced Troubleshooting Workshop  
+Topics Covered  
+ Multi -Protocol Routing Failures  
+ Redistribution Issues  
+ VPN Connectivity  Problems  
+ High Availability Failures  
+ Route Filtering Problems  
+ Convergence Analysis  
+Practical Labs  
+ Complex enterprise troubleshooting scenarios  
+Learning Outcomes  
+ Diagnose advanced networking problems.  
+ 
+Module 17: Enterprise Routing Lab Workshop  
+Hands -On Activities  
+ Multi -Area OSPF Deployment  
+ EIGRP Optimization  
+ Enterprise BGP Configuration  
+ Route Redistribution  
+ VPN Deployment  
+ FHRP Configuration  
+ QoS Policy Creation  
+Deliverables  
+ Configuration Files  
+ Routing Verification Reports  
+ Troubleshooting  Documentation  
+ 
+Module 18: Enterprise Routing Capstone Project  
+End-to-End Enterprise WAN Deployment  
+Project Tasks  
+ Design Enterprise Routing Architecture  
+ Implement OSPF, EIGRP, and BGP  
+ Configure Route Redistribution  
+ Deploy VPN Technologies  
+ Implement Security Controls  
+ Configure Monitoring Solutions  
+ Validate High Availability  
+Deliverables  
+ Network Design Document  
+ Routing Architecture Diagram  
+ Security Implementation Plan  
+ VPN Design Guide  
+ Troubleshooting Runbook  
+ 
+ 
+ 
+ 
+ 
+SailPoint IIQ  
+Module 1 : Introduction to Identity and Access Management (IAM)  
+Topics Covered  
+ Fundamentals of Identity and Access Management  
+ Authentication vs Authorization  
+ Identity Governance and Administration (IGA)  
+ Identity Lifecycle Management  
+ IAM Components and Architect ure  
+ Access Control Models  
+o RBAC  
+o ABAC  
+o PBAC  
+ Regulatory Compliance Requirements  
+Learning Outcomes  
+ Understand IAM fundamentals.  
+ Explain the role of Identity Governance in enterprises.  
+ 
+Module 2: Introduction to SailPoint IdentityIQ  
+Topics Covered  
+ IdentityIQ Overview  
+ IdentityIQ Architecture  
+ Core Components  
+ Identity Cube Concept  
+ Governance Framework  
+ SailPoint Product Ecosystem  
+ IdentityIQ vs Identity Security Cloud  
+Practical Labs  
+ Navigate IdentityIQ Interface  
+ Explore Administrative Console  
+Learning Outcomes  
+ Understand IdentityIQ architecture and functionality.  
+ Navigate the IdentityIQ environment.  
+ 
+Module 3: IdentityIQ Architecture and Components  
+Topics Covered  
+ Application Server Architecture  
+ Database Components  
+ Identity Warehouse  
+ Identity Cubes  
+ Aggregation Engine  
+ Provisioning Engine  
+ Workflow Engine  
+ Task Scheduler  
+ Audit Framework  
+Practical Labs  
+ Analyze IdentityIQ architecture  
+ Review identity warehouse structure  
+Learning Outcomes  
+ Understand how IdentityIQ components interact.   
+ 
+Module 4: Identity Lifecycle Management  
+Topics Covered  
+ Joiner Process  
+ Mover Process  
+ Leaver Process  
+ Identity Creation  
+ Identity Updates  
+ Identity Termination  
+ Automated Lifecycle Events  
+ Lifecycle Event Triggers  
+Practical Labs  
+ Configure lifecycle events  
+ Test identity onboarding workflows  
+Learning Outcomes  
+ Automate identity lifecycle processes.  
+ 
+Module 5: Application Onboarding and Connectors  
+Topics Covered  
+ Application Integration Concepts  
+ Direct Connectors  
+ Delimited File C onnectors  
+ JDBC Connectors  
+ Active Directory Integration  
+ LDAP Integration  
+ SAP Integration  
+ Cloud Application Integration  
+Practical Labs  
+ Configure Active Directory Connector  
+ Perform Application Aggregation  
+Learning Outcomes  
+ Integrate enterprise applications with IdentityIQ.  
+ 
+Module 6: Identity Aggregation and Correlation  
+Topics Covered  
+ Identity Aggregation  
+ Account Aggregation  
+ Correlation Rules  
+ Identity Mapping  
+ Identity Cube Creation  
+ Data Normalization  
+ Aggregation Trou bleshooting  
+Practical Labs  
+ Configure correlation rules  
+ Perform account aggregation  
+Learning Outcomes  
+ Build and maintain accurate identity repositories.  
+ 
+Module 7: Access Request Management  
+Topics Covered  
+ Access Request Framework  
+ Shopping Cart Model  
+ Request Approval Workflows  
+ Multi -Level Approvals  
+ Access Fulfillment  
+ Self-Service Access Requests  
+ Request Auditing  
+Practical Labs  
+ Create access request workflows  
+ Configure approval chains  
+Learning Outcomes  
+ Manage access requests and approvals.  
+ 
+Module 8: Provisioning and Deprovisioning  
+Topics Covered  
+ Provisioning Concepts  
+ Provisioning Policies  
+ Automated Provisioning  
+ Birthright Access  
+ Deprovisioning Workflows  
+ Provisioning Plans  
+ Provisioning Troubleshooting  
+Practical Labs  
+ Configure provision ing policies  
+ Test automated provisioning  
+Learning Outcomes  
+ Automate access assignment and removal.  
+ 
+Module 9: Role Management  
+Topics Covered  
+ Business Roles  
+ IT Roles  
+ Role Hierarchies  
+ Role Mining  
+ Role Modeling  
+ Role Assignment  
+ Role Governance  
+Practical Labs  
+ Create business roles  
+ Build role hierarchies  
+Learning Outcomes  
+ Design scalable role -based access models.  
+ 
+Module 10: Access Certifications and Reviews  
+Topics Covered  
+ Certification Concepts  
+ Manager Certifications  
+ Application Owner Certifications  
+ Role Certifications  
+ Identity Certifications  
+ Campaign Management  
+ Certification Remediation  
+Practical Labs  
+ Create certification campaigns  
+ Execute access reviews  
+Learning Outcomes  
+ Conduct governance -based access reviews.  
+ 
+Module 11: Policy Management and Compliance  
+Topics Covered  
+ Segregation of Duties (SoD)  
+ Policy Violations  
+ Risk Scoring  
+ Compliance Monitoring  
+ Policy Enforcement  
+ Regulatory Mapping  
+ Audit Readiness  
+Practical L abs 
+ Configure SoD Policies  
+ Analyze policy violations  
+Learning Outcomes  
+ Implement governance and compliance controls.  
+ 
+Module 12: Workflow Management  
+Topics Covered  
+ Workflow Fundamentals  
+ Workflow Components  
+ Approval Workflows  
+ Provisioning Workflows  
+ Escalation Workflows  
+ Workflow Variables  
+ Workflow Debugging  
+Practical Labs  
+ Create custom workflows  
+ Troubleshoot workflow execution  
+Learning Outcomes  
+ Design and manage IdentityIQ workflows.  
+ 
+Module 13: Rules and Customization  
+Topics Covered  
+ Rule Frame work  
+ BeanShell Scripting  
+ Rule Types  
+o Correlation Rules  
+o Provisioning Rules  
+o Validation Rules  
+o Policy Rules  
+ Custom Logic Development  
+ Debugging Rules  
+Practical Labs  
+ Create custom rules  
+ Debug rule execution  
+Learning Outcomes  
+ Extend IdentityIQ functionality through customization.  
+ 
+Module 14: Reporting and Auditing  
+Topics Covered  
+ Audit Logs  
+ Compliance Reports  
+ Certification Reports  
+ Provisioning Reports  
+ Custom Reports  
+ Report Scheduling  
+ Governance Dashboards  
+Practical Labs  
+ Generate audit reports  
+ Build custom reports  
+Learning Outcomes  
+ Monitor governance activities effectively.  
+ 
+Module 15: IdentityIQ Administration  
+Topics Covered  
+ System Configuration  
+ Task Management  
+ Task Scheduling  
+ User Administration  
+ Backup and Recovery  
+ Performance Tuning  
+ Troubleshooting Techniques  
+Practical Labs  
+ Configure scheduled tasks  
+ Monitor system performance  
+Learning Outcomes  
+ Administer and maintain IdentityIQ environments.  
+ 
+Module 16: IdentityIQ Security  
+Topics Covered  
+ Security Architecture  
+ Authentication Integration  
+ Authorization Controls  
+ Encryption Mechanisms  
+ Secure Configuration Practices  
+ Access Control Policies  
+ Security Monitoring  
+Practical Labs  
+ Configure authentication methods  
+ Secure administrative access  
+Learning Outcomes  
+ Secure IdentityIQ deployments.  
+ 
+Module 17: IdentityIQ Advanced Development  
+Topics Covered  
+ Object Model  
+ XML Configuration  
+ Form Development  
+ Custom UI Development  
+ Plugin Development  
+ API Integration  
+ Advanced Troubleshooting  
+Practical  Labs  
+ Develop custom forms  
+ Create custom plugins  
+Learning Outcomes  
+ Develop advanced IdentityIQ customizations.  
+ 
+Module 18: IdentityIQ Integration and APIs  
+Topics Covered  
+ REST APIs  
+ Web Services Integration  
+ SCIM Integration  
+ Third -Party Integrations  
+ HR System Integration  
+ ServiceNow Integration  
+ Enterprise Application Integration  
+Practical Labs  
+ Integrate external systems  
+ Configure API -based provisioning  
+Learning Outcomes  
+ Extend IdentityIQ through integrations.  
+ 
+Module 19: SailPoint IdentityIQ Imp lementation Workshop  
+Hands -On Activities  
+ Configure Identity Sources  
+ Integrate Active Directory  
+ Create Roles  
+ Configure Provisioning  
+ Launch Certification Campaigns  
+ Build Workflows  
+ Configure Policies  
+Deliverables  
+ Identity Governance Configuration  
+ Acce ss Request Workflow  
+ Certification Campaign  
+ Governance Reports  
+ 
+ 

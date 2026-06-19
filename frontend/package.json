@@ -8,6 +8,9 @@
     "start": "next start -p 3000",
     "lint": "eslint"
   },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "dependencies": {
     "@base-ui/react": "^1.2.0",
     "@phosphor-icons/react": "^2.1.10",
@@ -53,8 +56,10 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
+    "pdf-parse": "^2.4.5",
     "prisma": "^7.5.0",
     "tailwindcss": "^4.2.2",
+    "tsx": "^4.22.4",
     "typescript": "^5"
   }
 }

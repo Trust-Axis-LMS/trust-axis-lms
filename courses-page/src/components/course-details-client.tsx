@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   CheckCircle, ArrowRight, Clock, Monitor, Calendar, Award, ChevronDown, ChevronUp,
@@ -13,6 +13,8 @@ import {
   LayoutDashboard, Mail, Globe, Link as LinkIcon, Send, Pen, Wind, ScanSearch,
   FolderSearch, FileCode, X, Download, Phone, Twitter, Linkedin, UserCircle, ChevronLeft, ChevronRight,
 } from "lucide-react";
+
+import { motion, AnimatePresence } from "framer-motion";
 
 // ─── Icon Map ────────────────────────────────────────────────────────────────
 const iconMap: Record<string, React.ElementType> = {
@@ -113,7 +115,38 @@ function BrochureModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+function groupSubtopics(subtopics: {title: string}[]) {
+  const parentRegex = /^(\d+\.\d+)/;
+  const groups: { parent: string, children: string[] }[] = [];
+  let currentGroup: { parent: string, children: string[] } | null = null;
+  
+  const hasNumberedParents = subtopics.some(sub => parentRegex.test(sub.title));
+  
+  if (!hasNumberedParents) {
+    return subtopics.map(sub => ({ parent: sub.title, children: [] }));
+  }
+  
+  subtopics.forEach(sub => {
+    if (parentRegex.test(sub.title)) {
+      currentGroup = { parent: sub.title, children: [] };
+      groups.push(currentGroup);
+    } else {
+      if (currentGroup) {
+        currentGroup.children.push(sub.title);
+      } else {
+        groups.push({ parent: sub.title, children: [] });
+      }
+    }
+  });
+  
+  return groups;
+}
+
 export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [activeTab, setActiveTab] = useState<TabKey>("about");
   const [expandedModules, setExpandedModules] = useState<number[]>([1]);
   const [showBrochureModal, setShowBrochureModal] = useState(false);
@@ -275,18 +308,25 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
         {/* Sticky Tab Bar */}
         <div className="sticky top-[90px] z-30 bg-white border-b border-[#E5E7EB] shadow-sm">
           <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-            <div className="flex overflow-x-auto scrollbar-hide gap-0">
+            <div className="flex overflow-x-auto scrollbar-hide gap-0 relative">
               {tabs.map((tab) => (
                 <button
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
-                  className={`shrink-0 px-4 md:px-6 py-4 md:py-5 text-[11px] md:text-xs font-bold uppercase tracking-widest border-b-2 transition-all duration-200 ${
+                  className={`relative shrink-0 px-4 md:px-6 py-4 md:py-5 text-[11px] md:text-xs font-bold uppercase tracking-widest transition-colors duration-200 ${
                     activeTab === tab.key
-                      ? "border-black text-black"
-                      : "border-transparent text-[#6C757D] hover:text-[#212529]"
+                      ? "text-black font-extrabold"
+                      : "text-[#6C757D] hover:text-[#212529]"
                   }`}
                 >
-                  {tab.label}
+                  <span className="relative z-10">{tab.label}</span>
+                  {activeTab === tab.key && (
+                    <motion.div
+                      layoutId="activeTabUnderline"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-black z-0"
+                      transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    />
+                  )}
                 </button>
               ))}
             </div>
@@ -361,18 +401,40 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
                         </div>
                         {isExpanded ? <ChevronUp className="h-5 w-5 text-[#6C757D] shrink-0" /> : <ChevronDown className="h-5 w-5 text-[#6C757D] shrink-0" />}
                       </button>
-                      {isExpanded && mod.subtopics.length > 0 && (
-                        <div className="border-t border-[#F4F4F5] px-5 md:px-6 py-4 bg-[#FAFAFA]">
-                          <ul className="space-y-3">
-                            {mod.subtopics.map((sub, si) => (
-                              <li key={si} className="flex items-center gap-3 text-sm text-[#4A5568]">
-                                <CheckCircle className="h-4 w-4 text-[#212529] fill-black text-white shrink-0" />
-                                {sub.title}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                      <AnimatePresence initial={false}>
+                        {isExpanded && mod.subtopics.length > 0 && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                            className="overflow-hidden border-t border-[#F4F4F5]"
+                          >
+                            <div className="px-5 md:px-6 py-4 bg-[#FAFAFA]">
+                              <ul className="space-y-4">
+                                {groupSubtopics(mod.subtopics).map((group, gi) => (
+                                  <li key={gi} className="flex flex-col gap-3">
+                                    <div className="flex items-start gap-3 text-sm text-[#212529] font-medium">
+                                      <CheckCircle className="h-4 w-4 text-[#212529] fill-black text-white shrink-0 mt-0.5" />
+                                      <span>{group.parent}</span>
+                                    </div>
+                                    {group.children.length > 0 && (
+                                      <ul className="pl-7 space-y-3">
+                                        {group.children.map((child, ci) => (
+                                          <li key={ci} className="flex items-start gap-3 text-sm text-[#4A5568]">
+                                            <CheckCircle className="h-4 w-4 text-[#212529] fill-black text-white shrink-0 mt-0.5" />
+                                            <span>{child}</span>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    )}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   );
                 })}
@@ -419,8 +481,16 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
                       </div>
                       <div className="flex flex-wrap gap-3">
                         <div className="bg-[#F4F4F5] rounded-sm px-4 py-2">
+                          <p className="text-[10px] text-[#6C757D] uppercase tracking-widest font-bold mb-0.5">Duration</p>
+                          <p className="text-[#212529] font-bold text-sm">{exam.duration || "N/A"}</p>
+                        </div>
+                        <div className="bg-[#F4F4F5] rounded-sm px-4 py-2">
+                          <p className="text-[10px] text-[#6C757D] uppercase tracking-widest font-bold mb-0.5">Format</p>
+                          <p className="text-[#212529] font-bold text-sm">{exam.format || "N/A"}</p>
+                        </div>
+                        <div className="bg-[#F4F4F5] rounded-sm px-4 py-2">
                           <p className="text-[10px] text-[#6C757D] uppercase tracking-widest font-bold mb-0.5">Pass Score</p>
-                          <p className="text-[#212529] font-bold text-sm">{exam.passScore}</p>
+                          <p className="text-[#212529] font-bold text-sm">{exam.passScore || "N/A"}</p>
                         </div>
                         <div className={`rounded-sm px-4 py-2 ${exam.prepIncluded ? "bg-black text-white" : "bg-[#F4F4F5]"}`}>
                           <p className={`text-[10px] uppercase tracking-widest font-bold mb-0.5 ${exam.prepIncluded ? "text-white/70" : "text-[#6C757D]"}`}>Exam Prep</p>
