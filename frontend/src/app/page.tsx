@@ -569,28 +569,28 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              {/* Tile 1: Cybersecurity & Data Privacy */}
+              {/* Tile 1: Banking & Credit Card Services */}
               <Link
-                href="/consultancy/cybersecurity-advisory"
-                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-blue-300 rounded-[2rem] hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300"
+                href="/consultancy/fintech-strategic-services"
+                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-orange-300 rounded-[2rem] hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-300"
               >
                 <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
-                  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 to-transparent mix-blend-multiply"></div>
+                  <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=800&q=80" alt="Banking" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#f97316]/40 to-transparent mix-blend-multiply"></div>
                   <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
-                    <ShieldCheck className="h-6 w-6" strokeWidth={2} />
+                    <Landmark className="h-6 w-6" strokeWidth={2} />
                   </div>
                 </div>
                 
                 <div className="px-2 md:px-4 flex flex-col flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
-                    Cybersecurity & Data Privacy
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors duration-300">
+                    Banking & Credit Card Services
                   </h3>
                   <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
-                    Cyber governance, risk management, controls assessment, AI risk, privacy, and GRC advisory.
+                    Strategic advisory across payments, open banking, digital transformation, lending, compliance, and credit card services.
                   </p>
                   
-                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-colors duration-300">
+                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-orange-500 group-hover:border-orange-500 group-hover:text-white transition-colors duration-300">
                     <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
@@ -625,28 +625,28 @@ export default function Home() {
                 </div>
               </Link>
 
-              {/* Tile 3: Banking & Credit Card Services */}
+              {/* Tile 3: Cybersecurity & Data Privacy */}
               <Link
-                href="/consultancy/fintech-strategic-services"
-                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-orange-300 rounded-[2rem] hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-300"
+                href="/consultancy/cybersecurity-advisory"
+                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-blue-300 rounded-[2rem] hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300"
               >
                 <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
-                  <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=800&q=80" alt="Banking" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#f97316]/40 to-transparent mix-blend-multiply"></div>
+                  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 to-transparent mix-blend-multiply"></div>
                   <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
-                    <Landmark className="h-6 w-6" strokeWidth={2} />
+                    <ShieldCheck className="h-6 w-6" strokeWidth={2} />
                   </div>
                 </div>
                 
                 <div className="px-2 md:px-4 flex flex-col flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors duration-300">
-                    Banking & Credit Card Services
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
+                    Cybersecurity & Data Privacy
                   </h3>
                   <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
-                    Strategic advisory across payments, open banking, digital transformation, lending, compliance, and credit card services.
+                    Cyber governance, risk management, controls assessment, AI risk, privacy, and GRC advisory.
                   </p>
                   
-                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-orange-500 group-hover:border-orange-500 group-hover:text-white transition-colors duration-300">
+                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-colors duration-300">
                     <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>

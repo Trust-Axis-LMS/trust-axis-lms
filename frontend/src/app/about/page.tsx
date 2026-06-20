@@ -110,7 +110,7 @@ export default function AboutPage() {
         {/* ── 3. WHAT WE BELIEVE ───────────────────────────────────── */}
         <section className="bg-[#F9FAFB] py-16 md:py-24 border-b border-[#F4F4F5]">
           <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-            <span className="inline-block bg-black text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-sm mb-6">
+            <span className="inline-block bg-green-500 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-sm mb-6">
               What We Believe
             </span>
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-[#212529] max-w-3xl mb-10">
@@ -150,7 +150,7 @@ export default function AboutPage() {
         {/* ── 4. CORE CAPABILITIES ─────────────────────────────────── */}
         <section id="capabilities" className="bg-white py-16 md:py-24 border-b border-[#F4F4F5]">
           <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-            <span className="inline-block bg-black text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-sm mb-6">
+            <span className="inline-block bg-orange-500 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-sm mb-6">
               Core Capabilities
             </span>
             <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-[#212529] mb-10">
@@ -303,24 +303,28 @@ export default function AboutPage() {
 
               {/* Bio */}
               <div>
-                <span className="inline-block bg-black text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-sm mb-6">
+                <span className="inline-block bg-blue-500 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-sm mb-6">
                   Founder &amp; Leadership
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#212529] mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#212529] mb-10">
                   Led by practitioners with experience across cybersecurity, technology risk, banking,
                   cloud, AI governance, and enterprise transformation.
                 </h2>
-                <p className="text-sm text-[#4A5568] leading-relaxed mb-3">
-                  <strong className="text-[#212529]">Founder Name Placeholder</strong>
+                <p className="text-xl md:text-2xl text-[#4A5568] leading-relaxed mb-3">
+                  <strong className="text-[#212529]">Dhruv Panchal</strong>
+                  <span className="text-sm md:text-base font-light italic text-[#4A5568]">, CEO and Founder of Trust Axis Group</span>
                 </p>
                 <p className="text-sm text-[#4A5568] leading-relaxed mb-3">
-                  Founder biography placeholder. This section can include professional background,
-                  certifications, consulting experience, industry expertise, leadership achievements,
-                  and the reason Trust Axis was established.
+                  Dhruv Panchal is a transformation leader with extensive experience across technology
+                  strategy, digital transformation, banking and financial services, cloud adoption,
+                  cybersecurity, and AI-driven innovation. Throughout his career, he has led large-scale
+                  transformation initiatives, advised organizations on business and technology modernization,
+                  and helped enterprises navigate complex digital ecosystems.
                 </p>
                 <p className="text-sm text-[#4A5568] leading-relaxed">
-                  Additional placeholders can be added for co-founders, advisors, trainers, and
-                  subject matter experts as the leadership team grows.
+                  His expertise spans enterprise architecture, financial technology, emerging technologies,
+                  governance, and operational transformation, bringing together strategic vision and practical
+                  execution to drive measurable business outcomes.
                 </p>
               </div>
 
