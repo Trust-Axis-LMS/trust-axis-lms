@@ -228,7 +228,7 @@ export default function CheckoutClient({ course }: CheckoutClientProps) {
                     </div>
                   </a>
                   <a
-                    href="tel:+15551234567"
+                    href="tel:+6566909262"
                     className="flex items-center gap-3 p-3 rounded-lg border border-[#E5E7EB] hover:bg-[#F9FAFB] hover:border-gray-300 transition-all group"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-black group-hover:scale-105 transition-transform">
@@ -236,11 +236,11 @@ export default function CheckoutClient({ course }: CheckoutClientProps) {
                     </div>
                     <div>
                       <p className="text-[10px] font-bold uppercase tracking-widest text-[#6C757D]">Call Us</p>
-                      <p className="text-sm font-bold text-[#212529]">+1 (555) 123-4567</p>
+                      <p className="text-sm font-bold text-[#212529]">+65 66909262</p>
                     </div>
                   </a>
                   <p className="text-[11px] text-[#6C757D] px-1">
-                    Available Mon–Fri, 9 AM – 6 PM EST. We typically respond within 2 hours.
+                    Available Mon–Fri, 9 AM – 6 PM SGT. We typically respond within 2 hours.
                   </p>
                 </div>
               </div>

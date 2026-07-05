@@ -19,22 +19,22 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+1 (555) 123-4567",
-    sub: "Mon–Fri, 9 AM – 6 PM EST",
-    href: "tel:+15551234567",
+    value: "+65 66909262",
+    sub: "Mon–Fri, 9 AM – 6 PM SGT",
+    href: "tel:+6566909262",
   },
   {
     icon: MapPin,
     label: "Our Office",
-    value: "New York, NY 10001",
-    sub: "United States",
-    href: "#",
+    value: "51 GOLDHILL PLAZA #07-07",
+    sub: "SINGAPORE 308900",
+    href: "https://maps.google.com/?q=51+GOLDHILL+PLAZA+%2307-07+SINGAPORE+308900",
   },
   {
     icon: Clock,
     label: "Business Hours",
     value: "Mon – Fri",
-    sub: "9:00 AM – 6:00 PM EST",
+    sub: "9:00 AM – 6:00 PM SGT",
     href: "#",
   },
 ];
@@ -158,7 +158,7 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="tel"
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+65 66909262"
                           className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary/20 transition-all"
                         />
                       </div>

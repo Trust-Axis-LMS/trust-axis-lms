@@ -545,7 +545,7 @@ export default function ArchiveHomePage() {
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
                   <Label htmlFor="phone" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-500 mb-1 ml-1">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" className="h-12 md:h-14 bg-white border-gray-200 rounded-md shadow-sm focus-visible:ring-black" />
+                  <Input id="phone" type="tel" placeholder="+65 66909262" className="h-12 md:h-14 bg-white border-gray-200 rounded-md shadow-sm focus-visible:ring-black" />
                 </div>
                 <div className="space-y-1.5 md:space-y-2">
                   <Label htmlFor="message" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-gray-500 mb-1 ml-1">Message</Label>

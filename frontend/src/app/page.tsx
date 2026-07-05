@@ -891,7 +891,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                   <div className="space-y-1.5 md:space-y-2">
                     <Label htmlFor="phone" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
+                    <Input id="phone" type="tel" placeholder="+65 66909262" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
                   </div>
                   <div className="space-y-1.5 md:space-y-2">
                     <Label htmlFor="organization" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Organization</Label>

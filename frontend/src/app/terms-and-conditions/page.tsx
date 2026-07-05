@@ -26,8 +26,8 @@ export default function TermsAndConditionsPage() {
               <li>Submit your request via our contact form.</li>
               <li>Engage with our live chat support.</li>
               <li>Purchase through an authorized reseller or partner.</li>
-              <li>Send your request to hello@Trust Axis Group.</li>
-              <li>Contact us by phone at [Insert Phone Number].</li>
+              <li>Send your request to hello@trustacg.com.</li>
+              <li>Contact us by phone at +65 66909262.</li>
             </ul>
           </section>
 

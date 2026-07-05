@@ -95,7 +95,7 @@ function BrochureModal({ onClose }: { onClose: () => void }) {
             <label className="block text-[10px] font-bold uppercase tracking-widest text-[#6C757D] mb-1.5">Phone Number</label>
             <input
               type="tel"
-              placeholder="+1 (555) 000-0000"
+              placeholder="+65 66909262"
               required
               className="w-full h-11 px-4 rounded-md border border-gray-200 text-sm text-[#212529] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-gray-400 transition-colors"
             />

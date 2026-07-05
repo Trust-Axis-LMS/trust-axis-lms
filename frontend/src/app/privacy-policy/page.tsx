@@ -89,9 +89,9 @@ export default function PrivacyPolicyPage() {
             <p className="mb-4">If you have any questions or concerns about this Privacy and Cookie Consent Policy, please contact us at:</p>
             <address className="not-italic formatting leading-relaxed">
               <strong>Trust Axis Group</strong><br />
-              [Your Address]<br />
-              [Your Email Address]<br />
-              [Your Phone Number]
+              51 GOLDHILL PLAZA #07-07 SINGAPORE 308900<br />
+              hello@trustacg.com<br />
+              +65 66909262
             </address>
           </section>
         </div>
