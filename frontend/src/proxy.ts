@@ -33,7 +33,7 @@ function mobileBlockResponse(): NextResponse {
   });
 }
 
-export async function proxy(request: NextRequest) {
+async function handleProxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ── Admin panel routes ───────────────────────────────────────────────────────
@@ -89,7 +89,7 @@ export default async function middleware(request: NextRequest) {
     return passfortResponse;
   }
   
-  return proxy(request);
+  return handleProxy(request);
 }
 
 export const config = {

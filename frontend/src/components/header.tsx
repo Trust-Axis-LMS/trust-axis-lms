@@ -168,7 +168,7 @@ function LearningMegaMenu({
                 {activeMain?.id === 'vendor' ? 'Official Vendors' : activeMain?.id === 'domain' ? 'Expertise Domains' : 'Select Pathway'}
               </h4>
             </div>
-            <div className="flex-1 overflow-y-auto py-4 px-4 space-y-1.5 custom-scrollbar">
+            <div className="flex-1 overflow-y-auto py-4 px-4 space-y-1.5 custom-scrollbar overscroll-contain">
               {activeMain?.subcategories ? (
                 activeMain.subcategories.map((subCat) => {
                   const isActive = activeSubId === subCat.id;
@@ -178,19 +178,32 @@ function LearningMegaMenu({
                       onMouseEnter={() => handleSubEnter(subCat.id)}
                       onClick={() => handleSubEnter(subCat.id)}
                       className={cn(
-                        "w-full flex items-center justify-between px-5 py-3.5 rounded-xl text-[14px] transition-all duration-300 group",
+                        "w-full flex items-start px-5 py-3.5 rounded-xl text-left transition-all duration-300 group",
                         isActive
-                          ? "bg-slate-50 text-blue-600 font-bold shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] ring-1 ring-slate-200/50"
-                          : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                          ? "bg-slate-50 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)] ring-1 ring-slate-200/50"
+                          : "hover:bg-slate-50"
                       )}
                     >
-                      <span className="flex items-center gap-3">
-                        <div className={cn(
-                          "w-1.5 h-1.5 rounded-full transition-all duration-300",
-                          isActive ? "bg-blue-600 scale-125" : "bg-slate-200 group-hover:bg-slate-300"
-                        )} />
-                        {subCat.label}
-                      </span>
+                      <div className={cn(
+                        "w-1.5 h-1.5 rounded-full transition-all duration-300 mt-2 shrink-0 mr-3",
+                        isActive ? "bg-blue-600 scale-125" : "bg-slate-200 group-hover:bg-slate-300"
+                      )} />
+                      <div className="flex flex-col gap-0.5">
+                        <span className={cn(
+                          "font-bold text-[14px] transition-colors duration-300",
+                          isActive ? "text-blue-600" : "text-slate-700 group-hover:text-slate-900"
+                        )}>
+                          {subCat.label.split(':')[0].trim()}
+                        </span>
+                        {subCat.label.includes(':') && (
+                          <span className={cn(
+                            "text-[11px] font-medium leading-snug transition-colors duration-300",
+                            isActive ? "text-blue-500/80" : "text-slate-500 group-hover:text-slate-600"
+                          )}>
+                            {subCat.label.split(':').slice(1).join(':').trim()}
+                          </span>
+                        )}
+                      </div>
                     </button>
                   );
                 })
@@ -208,15 +221,26 @@ function LearningMegaMenu({
             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl -z-10 pointer-events-none -translate-y-1/2 translate-x-1/3" />
 
             <div className="px-10 py-6 border-b border-slate-200/50 flex items-center justify-between bg-white/40 sticky top-0 backdrop-blur-xl z-10">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-100 text-blue-600 ring-1 ring-blue-500/20">
-                  <BookOpen className="w-4 h-4" />
+              <div className="flex items-start gap-4 max-w-[400px]">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-100 text-blue-600 ring-1 ring-blue-500/20 shrink-0">
+                  <BookOpen className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-none mb-1">
-                    {activeSub ? activeSub.label : activeMain?.label}
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-base font-extrabold text-slate-900 tracking-tight leading-tight mb-1">
+                    {activeSub ? (
+                      <>
+                        {activeSub.label.split(':')[0].trim()}
+                        {activeSub.label.includes(':') && (
+                          <span className="block text-xs font-semibold text-slate-500 mt-0.5 leading-snug">
+                            {activeSub.label.split(':').slice(1).join(':').trim()}
+                          </span>
+                        )}
+                      </>
+                    ) : (
+                      activeMain?.label
+                    )}
                   </h3>
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Featured Programs</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-blue-600/80 mt-1">Featured Programs</p>
                 </div>
               </div>
 
@@ -231,7 +255,7 @@ function LearningMegaMenu({
               )}
             </div>
 
-            <div className="flex-1 overflow-y-auto py-6 px-10 relative custom-scrollbar">
+            <div className="flex-1 overflow-y-auto py-6 px-10 relative custom-scrollbar overscroll-contain">
               <div className="grid grid-cols-1 xl:grid-cols-2 gap-3 pb-8">
                 {displayCourses.map((course) => (
                   <a
@@ -303,6 +327,15 @@ export function Header() {
     setMobileOpen(false);
   }, []);
 
+  useEffect(() => {
+    if (activeMega || mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [activeMega, mobileOpen]);
+
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b bg-slate-950/45 backdrop-blur-md border-white/10">
@@ -373,6 +406,16 @@ export function Header() {
               )}
             </div>
 
+            {/* Consultancy */}
+            <Link href="/#consultancy" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+              Consultancy
+            </Link>
+
+            {/* Resources */}
+            <Link href="/resources" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+              Knowledge Base
+            </Link>
+
             {/* About Us */}
             <Link href="/about" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
               About Us
@@ -381,16 +424,6 @@ export function Header() {
             {/* Contact Us */}
             <Link href="/contact" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
               Contact Us
-            </Link>
-
-            {/* Resources */}
-            <Link href="/resources" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
-              Knowledge Base
-            </Link>
-
-            {/* Consultancy */}
-            <Link href="/#consultancy" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
-              Consultancy
             </Link>
 
           </nav>
@@ -444,17 +477,6 @@ export function Header() {
 
           {/* Mobile nav content */}
           <div className="flex-1 overflow-y-auto px-5 py-6 space-y-1">
-            {/* Company links */}
-            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 px-2 mb-2">Company</p>
-            <Link href="/about" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-              <Info className="h-4 w-4 text-gray-400" /> About Us
-            </Link>
-            <Link href="/contact" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-              <Phone className="h-4 w-4 text-gray-400" /> Contact Us
-            </Link>
-
-            <div className="h-px bg-gray-100 my-3" />
-
             {/* Courses by domain */}
             <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 px-2 mb-2">Academy</p>
             {megaMenuData.map((mainCat) => {
@@ -477,11 +499,23 @@ export function Header() {
             <div className="h-px bg-gray-100 my-3" />
 
             {/* Other nav */}
+            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 px-2 mb-2">Explore</p>
+            <Link href="/#consultancy" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+              <Shield className="h-4 w-4 text-gray-400" /> Consultancy
+            </Link>
             <Link href="/resources" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
               <Building2 className="h-4 w-4 text-gray-400" /> Knowledge Base
             </Link>
-            <Link href="/#consultancy" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-              <Shield className="h-4 w-4 text-gray-400" /> Consultancy
+
+            <div className="h-px bg-gray-100 my-3" />
+
+            {/* Company links */}
+            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 px-2 mb-2">Company</p>
+            <Link href="/about" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+              <Info className="h-4 w-4 text-gray-400" /> About Us
+            </Link>
+            <Link href="/contact" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+              <Phone className="h-4 w-4 text-gray-400" /> Contact Us
             </Link>
           </div>
 
