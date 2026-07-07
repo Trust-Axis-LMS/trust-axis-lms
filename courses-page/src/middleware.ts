@@ -1,13 +1,5 @@
-import { type NextRequest, NextResponse } from 'next/server'
+import { withPasswordProtect } from '@tommyvez/passfort/next';
 
-// Courses-page middleware: passthrough for static assets only.
-// Auth is managed by the frontend app (trustacg.com). This app has no auth-gated routes.
-export function middleware(_request: NextRequest) {
-  return NextResponse.next()
-}
+export default withPasswordProtect({ protectAll: true });
 
-export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-  ],
-}
+export const config = { matcher: ['/((?!api|_next|favicon.ico).*)'] };

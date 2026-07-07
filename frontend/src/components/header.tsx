@@ -9,129 +9,9 @@ import {
   Globe, Layers
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useSession, signOut } from "@/lib/auth-client";
 import Link from "next/link";
 import { COURSES_SITE_URL } from "@/lib/url";
 import { motion, AnimatePresence } from "framer-motion";
-
-// ─── Auth Buttons ─────────────────────────────────────────────────────────────
-function AuthSection({ isMobile = false }: { isMobile?: boolean }) {
-  const { data: session, isPending } = useSession();
-  const router = useRouter();
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  if (isPending) {
-    return <div className={cn("w-24 h-9 rounded-sm bg-gray-100 animate-pulse", !isMobile && "bg-white/10")} />;
-  }
-
-  if (session?.user) {
-    if (isMobile) {
-      return (
-        <div className="flex flex-col space-y-1 w-full pb-2">
-          <div className="flex items-center gap-3 px-4 py-3 mb-2 rounded-xl bg-gray-50 border border-gray-200">
-            <div className="w-10 h-10 rounded-full bg-blue-100 overflow-hidden text-blue-700 flex items-center justify-center text-sm font-bold shrink-0">
-              {session.user.image ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={session.user.image} alt={session.user.name ?? "User"} className="w-full h-full object-cover" />
-              ) : (
-                session.user.name?.charAt(0).toUpperCase() ?? "U"
-              )}
-            </div>
-            <div className="flex flex-col flex-1 min-w-0">
-              <span className="text-sm font-bold text-gray-900 truncate">{session.user.name}</span>
-              <span className="text-xs text-gray-500 truncate">{session.user.email}</span>
-            </div>
-          </div>
-          <Link href="/profile" className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition-colors">
-            <User size={16} className="text-gray-400" /> My Profile
-          </Link>
-          <button
-            onClick={async () => { await signOut(); router.push("/"); }}
-            className="w-full flex items-center gap-3 px-4 py-3 text-sm font-semibold text-red-600 hover:bg-red-50 rounded-xl transition-colors"
-          >
-            <LogOut size={16} /> Sign Out
-          </button>
-        </div>
-      );
-    }
-
-    return (
-      <div className="relative">
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className={cn(
-            "flex items-center gap-2 px-3 py-2 rounded-lg transition-colors",
-            isMobile ? "hover:bg-gray-100" : "hover:bg-white/10"
-          )}
-        >
-          <div className="w-8 h-8 rounded-full bg-blue-100 overflow-hidden text-blue-700 flex items-center justify-center text-sm font-bold shrink-0">
-            {session.user.image ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={session.user.image} alt={session.user.name ?? "User"} className="w-full h-full object-cover" />
-            ) : (
-              session.user.name?.charAt(0).toUpperCase() ?? "U"
-            )}
-          </div>
-          <ChevronDown size={14} className={isMobile ? "text-gray-500" : "text-slate-300"} />
-        </button>
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.15 }}
-              className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-1.5 z-50"
-            >
-              {/* Click-away backdrop overlay */}
-              <div className="fixed inset-0 z-[-1] cursor-default" onClick={() => setMenuOpen(false)} />
-              <div className="px-4 py-3 border-b border-gray-50">
-                <p className="text-sm font-bold text-gray-900 truncate">{session.user.name}</p>
-                <p className="text-xs text-gray-500 truncate">{session.user.email}</p>
-              </div>
-              <Link href="/profile" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors mt-1">
-                <User size={15} /> My Profile
-              </Link>
-              <button
-                onClick={async () => { await signOut(); setMenuOpen(false); router.push("/"); }}
-                className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-red-600 hover:bg-red-50 transition-colors mb-1 cursor-pointer"
-              >
-                <LogOut size={15} /> Sign Out
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    );
-  }
-
-  return (
-    <div className={cn("flex items-center gap-4", isMobile && "w-full")}>
-      <Link
-        href="/login"
-        className={cn(
-          "text-[12px] font-semibold uppercase tracking-widest transition-colors",
-          isMobile 
-            ? "text-gray-500 hover:text-black flex-1 text-center py-3 border border-gray-200 rounded-xl"
-            : "text-slate-300 hover:text-white"
-        )}
-      >
-        Login
-      </Link>
-      <Link
-        href="/signup"
-        className={cn(
-          "px-5 h-[38px] text-[12px] font-bold transition-all shadow-md active:scale-95 uppercase tracking-widest flex items-center justify-center shrink-0",
-          isMobile 
-            ? "flex-1 h-12 rounded-xl text-white bg-black hover:bg-black/90"
-            : "rounded-full text-slate-950 bg-white hover:bg-white/90"
-        )}
-      >
-        Sign Up
-      </Link>
-    </div>
-  );
-}
 
 // ─── Domain-based Mega-Menu Data ─────────────────────────────────────────────
 interface CourseItem {
@@ -390,18 +270,7 @@ function LearningMegaMenu({
 function CompanyDropdown({ onClose }: { onClose: () => void }) {
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden py-2">
-        <Link href="/about" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors group">
-          <div className="h-7 w-7 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-blue-50">
-            <Info className="h-3.5 w-3.5 text-gray-500 group-hover:text-[#007BFF]" />
-          </div>
-          About Us
-        </Link>
-        <Link href="/contact" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors group">
-          <div className="h-7 w-7 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-blue-50">
-            <Phone className="h-3.5 w-3.5 text-gray-500 group-hover:text-[#007BFF]" />
-          </div>
-          Contact Us
-        </Link>
+
         <Link href="/value-proposition" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors group">
           <div className="h-7 w-7 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-blue-50">
             <Globe className="h-3.5 w-3.5 text-gray-500 group-hover:text-[#007BFF]" />
@@ -504,9 +373,19 @@ export function Header() {
               )}
             </div>
 
+            {/* About Us */}
+            <Link href="/about" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+              About Us
+            </Link>
+
+            {/* Contact Us */}
+            <Link href="/contact" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+              Contact Us
+            </Link>
+
             {/* Resources */}
             <Link href="/resources" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
-              Resources
+              Knowledge Base
             </Link>
 
             {/* Consultancy */}
@@ -518,9 +397,6 @@ export function Header() {
 
           {/* Right: Auth + Mobile Toggle */}
           <div className="flex items-center gap-3">
-            <div className="hidden lg:flex items-center">
-              <AuthSection />
-            </div>
             <button
               type="button"
               className="lg:hidden flex items-center justify-center h-10 w-10 rounded-xl hover:bg-white/10 text-white transition-colors"
@@ -602,17 +478,13 @@ export function Header() {
 
             {/* Other nav */}
             <Link href="/resources" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-              <Building2 className="h-4 w-4 text-gray-400" /> Resources
+              <Building2 className="h-4 w-4 text-gray-400" /> Knowledge Base
             </Link>
             <Link href="/#consultancy" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
               <Shield className="h-4 w-4 text-gray-400" /> Consultancy
             </Link>
           </div>
 
-          {/* Mobile auth footer */}
-          <div className="flex-shrink-0 px-5 py-5 border-t border-gray-100">
-            <AuthSection isMobile={true} />
-          </div>
         </div>
       )}
     </>

@@ -1,6 +1,28 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
+const abbreviationMap: Record<string, string> = {
+  "isc2": "ISC2: International Information System Security Certification Consortium",
+  "isaca": "ISACA: Information Systems Audit and Control Association",
+  "ec-council": "EC-Council: International Council of E-Commerce Consultants",
+  "aws": "AWS: Amazon Web Services",
+  "gcp": "GCP: Google Cloud Platform",
+  "comptia": "CompTIA: Computing Technology Industry Association",
+  "ceh": "CEH: Certified Ethical Hacker",
+  "cism": "CISM: Certified Information Security Manager",
+  "cisa": "CISA: Certified Information Systems Auditor",
+  "cissp": "CISSP: Certified Information Systems Security Professional",
+  "ai": "AI: Artificial Intelligence",
+  "ml": "ML: Machine Learning",
+  "iot": "IoT: Internet of Things",
+  "it": "IT: Information Technology"
+};
+
+function formatLabel(label: string): string {
+  const key = label.toLowerCase();
+  return abbreviationMap[key] || label;
+}
+
 export async function GET() {
   try {
     const dbCourses = await prisma.course.findMany({
@@ -32,7 +54,7 @@ export async function GET() {
         label: "Courses by Vendor",
         subcategories: Object.entries(vendorMap).map(([vendor, courses]) => ({
           id: vendor.toLowerCase().replace(/\s+/g, "-"),
-          label: vendor,
+          label: formatLabel(vendor),
           courses,
         })),
       },
@@ -41,7 +63,7 @@ export async function GET() {
         label: "Courses by Domain",
         subcategories: Object.entries(domainMap).map(([domain, courses]) => ({
           id: domain.toLowerCase().replace(/\s+/g, "-"),
-          label: domain,
+          label: formatLabel(domain),
           courses,
         })),
       },
