@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
 import { verifyAdminToken } from "@/lib/admin-auth";
+import { withPasswordProtect } from '@tommyvez/passfort/next';
 
 const ADMIN_COOKIE  = "xp_cms_token";
 const ADMIN_PREFIX  = "/xp-cms";
@@ -63,7 +64,7 @@ export async function proxy(request: NextRequest) {
     return adminResponse;
   }
 
-  // ── Standard app auth (better-auth) ─────────────────────────────────────────
+// ── Standard app auth (better-auth) ─────────────────────────────────────────
   if (pathname === "/" || PUBLIC_PATHS.some((p) => pathname.startsWith(p))) {
     return NextResponse.next();
   }
@@ -76,6 +77,19 @@ export async function proxy(request: NextRequest) {
   }
 
   return NextResponse.next();
+}
+
+const passfortMiddleware = withPasswordProtect({ protectAll: true });
+
+export default async function middleware(request: NextRequest) {
+  const passfortResponse = await passfortMiddleware(request);
+  
+  // If passfort intercepted the request (e.g. login form or redirect)
+  if (passfortResponse.headers.get("x-middleware-next") !== "1") {
+    return passfortResponse;
+  }
+  
+  return proxy(request);
 }
 
 export const config = {
