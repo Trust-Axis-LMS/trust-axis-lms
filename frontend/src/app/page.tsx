@@ -183,7 +183,7 @@ export default function Home() {
                 
                 <div className="space-y-6">
                   {/* Category breadcrumbs */}
-                  <div className="flex items-center gap-3 text-[10px] md:text-[11px] font-bold text-blue-500 uppercase tracking-widest">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] md:text-[11px] font-bold text-blue-500 uppercase tracking-widest">
                     <span>CYBERSECURITY</span> <span className="text-slate-600">•</span> <span>TECHNOLOGY</span> <span className="text-slate-600">•</span> <span>BANKING</span> <span className="text-slate-600">•</span> <span>TRANSFORMATION</span>
                   </div>
 
@@ -741,56 +741,82 @@ export default function Home() {
         {/* ════════════════════════════════════════════════════════════════════
             7. ADVISORY APPROACH — 5-Step Stepper
         ════════════════════════════════════════════════════════════════════ */}
-        <section className="bg-white py-16 md:py-24 border-b border-[#F4F4F5]">
-          <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-            <div className="text-center mb-12 md:mb-16">
-              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF] mb-3">How We Work</p>
-              <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight">Practical Advisory for Modern Digital Risk</h2>
-              <div className="mt-4 text-[#6C757D] text-sm md:text-base max-w-2xl mx-auto">
+        <section className="relative py-20 md:py-32 overflow-hidden bg-slate-50 border-y border-slate-200">
+          {/* Subtle mesh background for light mode */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-400/10 blur-[120px]" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-indigo-400/10 blur-[120px]" />
+          </div>
+
+          <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-6xl">
+            <div className="text-center mb-16 md:mb-24">
+              <div className="inline-flex items-center gap-2 mb-4">
+                 <div className="h-px w-8 bg-blue-500/50" />
+                 <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-blue-600">How We Work</p>
+                 <div className="h-px w-8 bg-blue-500/50" />
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">Practical Advisory for Modern Digital Risk</h2>
+              <div className="mt-6 text-slate-600 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
                 <p>
                   Our advisory approach brings clarity to complex digital risk. We help clients identify the most critical gaps, prioritize what matters most, and define practical steps that create real improvements — not just reports.
                 </p>
               </div>
             </div>
 
-            <div className="hidden md:flex items-start gap-0 relative">
-              <div className="absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#E5E7EB] to-transparent z-0" />
+            <div className="hidden md:flex items-start gap-4 relative">
+              {/* Connector line (clipped horizontally, overflows vertically for glow) */}
+              <div className="absolute top-[2.5rem] left-[10%] right-[10%] h-[2px] bg-slate-200 z-0">
+                <div className="absolute -top-10 -bottom-10 left-0 right-0 overflow-hidden pointer-events-none">
+                  <div className="absolute top-10 left-0 h-[2px] w-full animate-pulse-travel bg-[linear-gradient(90deg,transparent_0%,transparent_60%,#3b82f6_100%)]">
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 h-1.5 w-6 rounded-full bg-blue-500 shadow-[0_0_14px_4px_rgba(59,130,246,0.6)]" />
+                  </div>
+                </div>
+              </div>
               {advisorySteps.map((step, i) => (
-                <div key={i} className="flex-1 flex flex-col items-center text-center z-10 px-4">
+                <div key={i} className="flex-1 flex flex-col items-center text-center z-10 px-2 group">
                   <div
-                    className="flex h-20 w-20 items-center justify-center rounded-full text-white font-bold text-xl mb-5 shadow-lg"
-                    style={{ background: `linear-gradient(135deg, ${step.color}, ${step.color}cc)` }}
+                    className="relative z-10 flex h-20 w-20 items-center justify-center rounded-2xl text-white font-bold text-2xl mb-6 shadow-xl transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-white/50"
+                    style={{ background: `linear-gradient(135deg, ${step.color}, ${step.color}dd)` }}
                   >
                     {step.step}
                   </div>
-                  <h3 className="text-lg font-bold text-[#212529] mb-2">{step.title}</h3>
-                  <p className="text-xs text-[#6C757D] leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">{step.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">{step.description}</p>
                 </div>
               ))}
             </div>
 
-            <div className="md:hidden space-y-4">
+            <div className="md:hidden space-y-8 relative">
+              {/* Vertical connector line (clipped vertically, overflows horizontally for glow) */}
+              <div className="absolute top-8 bottom-8 left-[2rem] w-[2px] -translate-x-1/2 bg-slate-200 z-0">
+                <div className="absolute -left-10 -right-10 top-0 bottom-0 overflow-hidden pointer-events-none">
+                  <div className="absolute left-10 top-0 w-[2px] h-full animate-pulse-travel-vertical bg-[linear-gradient(180deg,transparent_0%,transparent_60%,#3b82f6_100%)]">
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-1.5 rounded-full bg-blue-500 shadow-[0_0_14px_4px_rgba(59,130,246,0.6)]" />
+                  </div>
+                </div>
+              </div>
               {advisorySteps.map((step, i) => (
-                <div key={i} className="flex gap-4 p-5 rounded-xl border border-[#E5E7EB] bg-white">
+                <div key={i} className="relative flex items-start gap-6 group z-10">
                   <div
-                    className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full text-white font-bold text-base shadow-md"
-                    style={{ background: step.color }}
+                    className="relative z-10 flex-shrink-0 flex h-16 w-16 items-center justify-center rounded-2xl text-white font-bold text-xl shadow-lg border border-white/50 transition-transform group-hover:scale-105"
+                    style={{ background: `linear-gradient(135deg, ${step.color}, ${step.color}dd)` }}
                   >
                     {step.step}
                   </div>
-                  <div>
-                    <h3 className="text-base font-bold text-[#212529] mb-1">{step.title}</h3>
-                    <p className="text-sm text-[#6C757D] leading-relaxed">{step.description}</p>
+                  <div className="pt-2 bg-white/60 backdrop-blur-sm p-4 rounded-xl border border-slate-100 shadow-sm group-hover:shadow-md group-hover:border-blue-100 transition-all flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{step.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 md:mt-14 text-center">
-              <p className="text-sm text-[#6C757D] italic max-w-2xl mx-auto font-medium">
+            <div className="mt-16 md:mt-24 text-center">
+              <p className="text-sm text-slate-500 italic max-w-2xl mx-auto font-medium">
                 We provide advisory that is structured enough for leadership, practical enough for teams, and relevant enough for real-world execution.
               </p>
-              <Link href="/contact" className="mt-6 inline-flex items-center gap-2 px-6 h-12 rounded-sm border border-[#212529] text-[#212529] font-bold text-xs uppercase tracking-widest hover:bg-[#212529] hover:text-white transition-all">
+              <Link href="/contact" className="mt-8 inline-flex items-center gap-2 px-8 h-14 rounded-full bg-slate-900 text-white font-bold text-xs uppercase tracking-widest hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-600/20 transition-all hover:-translate-y-0.5">
                 REQUEST A DIGITAL RISK REVIEW <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -800,107 +826,53 @@ export default function Home() {
         {/* ════════════════════════════════════════════════════════════════════
             8. WHO WE SUPPORT
         ════════════════════════════════════════════════════════════════════ */}
-        <section className="bg-white py-16 md:py-24 border-b border-[#F4F4F5]">
-          <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-            <div className="text-center mb-12 md:mb-16">
-              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF] mb-3">Our Clients</p>
-              <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight">
+        <section className="bg-[#F8FAFC] py-20 md:py-32 relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+          
+          <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+            <div className="text-center mb-16 md:mb-20">
+              <div className="inline-flex items-center gap-2 mb-4">
+                 <div className="h-px w-8 bg-blue-500/50" />
+                 <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-blue-600">Our Clients</p>
+                 <div className="h-px w-8 bg-blue-500/50" />
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight max-w-3xl mx-auto leading-tight">
                 Built for Organizations, Professionals, and Decision-Makers Across Industries
               </h2>
-              <p className="mt-4 text-[#6C757D] text-sm md:text-base max-w-xl mx-auto">
+              <p className="mt-6 text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                 From enterprises and financial institutions to government bodies, tech companies, and early-career professionals — our advisory and training services adapt to your maturity level and priorities.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
               {whoWeSupport.map(({ icon: Icon, label, sub, color }, i) => (
                 <div
                   key={i}
-                  className="group flex flex-col items-center text-center gap-3 p-5 rounded-xl border bg-white hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
-                  style={{ borderColor: `${color}30` }}
+                  className="group relative flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-xl hover:border-transparent transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                 >
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-300" style={{ backgroundColor: color }} />
                   <div
-                    className="flex h-12 w-12 items-center justify-center rounded-xl transition-all group-hover:scale-110"
-                    style={{ backgroundColor: `${color}15` }}
+                    className="relative flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm"
+                    style={{ backgroundColor: `${color}10`, border: `1px solid ${color}20` }}
                   >
-                    <Icon className="h-5 w-5 transition-colors" style={{ color }} />
+                    <Icon className="h-6 w-6 transition-colors" style={{ color }} />
                   </div>
-                  <div>
-                    <p className="text-sm font-bold text-[#212529]">{label}</p>
-                    <p className="text-[11px] text-[#6C757D] mt-0.5 leading-tight">{sub}</p>
+                  <div className="flex-1 flex flex-col justify-center">
+                    <p className="text-sm md:text-[15px] font-bold text-slate-900 mb-1 leading-snug group-hover:text-slate-800">{label}</p>
+                    <p className="text-xs text-slate-500 leading-relaxed">{sub}</p>
                   </div>
-                  <div
-                    className="h-0.5 w-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                    style={{ backgroundColor: color }}
-                  />
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 text-center">
-              <p className="text-sm text-[#212529] font-semibold italic max-w-2xl mx-auto mb-6">
-                Whether the need is awareness, advisory, capability building, or transformation, our focus remains the same: practical outcomes, clearer decisions, and stronger digital confidence.
+            <div className="mt-16 md:mt-24 text-center bg-white rounded-3xl p-8 md:p-12 border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] max-w-4xl mx-auto relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-2 h-full bg-blue-500" />
+              <p className="text-base md:text-lg text-slate-700 font-medium leading-relaxed mb-8">
+                &ldquo;Whether the need is awareness, advisory, capability building, or transformation, our focus remains the same: practical outcomes, clearer decisions, and stronger digital confidence.&rdquo;
               </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 px-8 h-12 rounded-sm bg-[#007BFF] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#0056b3] transition-colors">
-                FIND THE RIGHT SOLUTION FOR YOUR ORGANIZATION <ArrowRight className="h-4 w-4" />
+              <Link href="/contact" className="inline-flex items-center gap-2 px-8 h-14 rounded-full bg-blue-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 transition-all hover:-translate-y-0.5">
+                FIND THE RIGHT SOLUTION <ArrowRight className="h-4 w-4" />
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ════════════════════════════════════════════════════════════════════
-            9. DIGITAL TRUST CTA STRIP
-        ════════════════════════════════════════════════════════════════════ */}
-        <section className="py-16 md:py-24 border-b border-blue-200/60 relative overflow-hidden" style={{ background: 'linear-gradient(145deg, #dbeafe 0%, #eff6ff 30%, #f8faff 60%, #edf4ff 100%)' }}>
-          {/* Layered blue gradient orbs */}
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-[480px] h-[480px] rounded-full bg-blue-300/25 blur-[110px]" />
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-blue-400/20 blur-[100px]" />
-            <div className="absolute top-1/2 right-0 w-[300px] h-[300px] rounded-full bg-indigo-300/15 blur-[90px]" />
-          </div>
-          {/* Diagonal shimmer line */}
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/80 to-transparent" />
-
-          <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-7xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <div className="space-y-6">
-                <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-[#007BFF]">Why It Matters</p>
-                <h2 className="text-2xl md:text-4xl font-bold text-[#1a2744] tracking-tight leading-[1.15]">
-                  Cybersecurity and Privacy Are Business Trust Enablers
-                </h2>
-                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                  Trust is now a business differentiator. Customers, regulators, partners, and leadership all expect responsible handling of data, secure digital systems, and clear governance — before risks become disruptions.
-                </p>
-                <div className="pt-2">
-                  <p className="text-slate-700 font-semibold italic border-l-2 border-[#007BFF] pl-4">
-                    Cybersecurity protects the business. Privacy protects trust. Together, they create the foundation for responsible digital growth.
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 h-13 py-4 rounded-full bg-[#007BFF] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#0062cc] transition-all shadow-lg shadow-blue-300/40 hover:shadow-blue-400/50"
-                >
-                  STRENGTHEN YOUR CYBERSECURITY AND PRIVACY PROGRAM <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  "Greater customer and stakeholder confidence",
-                  "Reduced cyber and data protection risk",
-                  "Stronger readiness for audits and regulatory reviews",
-                  "Better protection of sensitive business and personal data",
-                  "Improved employee awareness and accountability",
-                  "Safer use of cloud, AI, and digital platforms",
-                  "Stronger third-party and vendor risk management",
-                  "More resilient business operations",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white/70 border border-blue-200/60 shadow-sm hover:shadow-md hover:bg-white/90 transition-all duration-200">
-                    <CheckCircle className="h-4 w-4 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-slate-600 leading-snug">{item}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>

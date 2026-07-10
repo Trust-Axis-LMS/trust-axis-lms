@@ -138,3 +138,48 @@
     );
   animation: driftLines 14s linear infinite;
 }
+
+/* ── Stepper pulse animations ── */
+@keyframes pulse-travel {
+  0% { transform: translateX(-100%); opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { transform: translateX(0%); opacity: 0; }
+}
+
+@keyframes pulse-travel-vertical {
+  0% { transform: translateY(-100%); opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { transform: translateY(0%); opacity: 0; }
+}
+
+.animate-pulse-travel {
+  animation: pulse-travel 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse-travel-vertical {
+  animation: pulse-travel-vertical 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ── Matrix Background ── */
+@keyframes matrixRain {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.bg-matrix {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(99, 155, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 100%;
+}
+.bg-matrix::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(180deg, transparent 0%, rgba(99, 155, 255, 0.15) 50%, transparent 100%);
+  background-size: 100% 200px;
+  background-repeat: repeat-y;
+  animation: matrixRain 8s linear infinite;
+}

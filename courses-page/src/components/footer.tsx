@@ -7,12 +7,10 @@ export function Footer() {
     <footer className="border-t border-black bg-black pb-8 pt-16 text-white md:pt-20">
       <div className="container mx-auto px-4 md:px-8">
         <div className="mb-16 grid grid-cols-1 gap-10 md:mb-20 md:grid-cols-5 md:gap-12">
-          <div className="col-span-1 space-y-6 md:col-span-2">
-            <div className="flex items-center gap-3 md:gap-4">
-            <Link href={MAIN_SITE_URL} className="flex items-center cursor-pointer group">
-                <img src="/logo.png" alt="Trust Axis Logo" className="h-12 md:h-14 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
-              </Link>
-            </div>
+          <div className="col-span-1 space-y-6 md:col-span-2 flex flex-col items-center text-center md:items-start md:text-left">
+            <Link href={MAIN_SITE_URL} className="inline-flex items-center cursor-pointer group">
+              <img src="/logo.png" alt="Trust Axis Logo" className="h-12 md:h-14 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
+            </Link>
             <p className="max-w-sm text-sm leading-relaxed text-gray-400 md:text-[15px]">
               Cybersecurity, AI governance, privacy advisory, and practical
               training to help organizations build digital trust.
@@ -96,11 +94,11 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="col-span-1 md:ml-auto">
-            <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-white md:mb-6 md:text-[11px]">
+          <div className="col-span-1 flex flex-col items-center md:items-start md:ml-auto">
+            <h4 className="mb-5 text-[10px] font-bold uppercase tracking-widest text-white md:mb-6 md:text-[11px] text-center md:text-left">
               Connect
             </h4>
-            <div className="flex gap-4">
+            <div className="flex justify-center md:justify-start gap-4">
               <a
                 href="https://www.linkedin.com/company/trust-axis-conulting-group-pvt-ltd/"
                 target="_blank"
