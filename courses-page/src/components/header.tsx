@@ -140,26 +140,122 @@ interface MainCategory {
 }
 
 // ─── Dynamic Mega Menu Data Fetching ──────────────────────────────────────────
+import { buildMegaMenuData, FALLBACK_COURSES } from "@/lib/courses-catalog";
+
 let cachedMenuData: MainCategory[] | null = null;
-const defaultMenuData: MainCategory[] = [
-  { id: "vendor", label: "Courses by Vendor", subcategories: [] },
-  { id: "domain", label: "Courses by Domain", subcategories: [] }
-];
+const defaultMenuData: MainCategory[] = buildMegaMenuData(FALLBACK_COURSES);
 
 function useMegaMenu() {
   const [data, setData] = useState<MainCategory[]>(cachedMenuData || defaultMenuData);
+  const [isLoading, setIsLoading] = useState<boolean>(!cachedMenuData);
+
   useEffect(() => {
     if (!cachedMenuData) {
+      let isMounted = true;
       fetch("/api/courses/menu")
-        .then((r) => r.json())
-        .then((d) => {
-          cachedMenuData = d;
-          setData(d);
+        .then((r) => {
+          if (!r.ok) throw new Error("Status " + r.status);
+          return r.json();
         })
-        .catch(console.error);
+        .then((d) => {
+          if (Array.isArray(d) && d.length > 0) {
+            cachedMenuData = d;
+            if (isMounted) {
+              setData(d);
+              setIsLoading(false);
+            }
+          } else {
+            if (isMounted) setIsLoading(false);
+          }
+        })
+        .catch((err) => {
+          console.warn("Could not fetch mega menu data dynamically, using fallback catalog:", err);
+          if (isMounted) {
+            setData(defaultMenuData);
+            setIsLoading(false);
+          }
+        });
+
+      return () => {
+        isMounted = false;
+      };
+    } else {
+      setIsLoading(false);
     }
   }, []);
-  return data;
+
+  return { data, isLoading };
+}
+
+function MegaMenuSkeleton({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="flex h-[560px]">
+      {/* ── Column 1 Skeleton: Categories ── */}
+      <div className="w-[300px] bg-slate-50/50 border-r border-slate-200/60 flex-shrink-0 flex flex-col relative z-10">
+        <div className="px-8 py-6 border-b border-slate-200/50">
+          <div className="h-3 w-20 bg-slate-200 rounded animate-pulse" />
+        </div>
+        <div className="py-4 px-4 flex-1 space-y-2">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="w-full h-12 rounded-xl bg-slate-200/70 animate-pulse flex items-center justify-between px-5">
+              <div className="h-4 w-32 bg-slate-300/70 rounded" />
+              <div className="h-4 w-4 bg-slate-300/50 rounded-full" />
+            </div>
+          ))}
+        </div>
+        <div className="p-6 bg-slate-200/60 m-4 rounded-2xl animate-pulse space-y-2.5">
+          <div className="h-4 w-28 bg-slate-300 rounded" />
+          <div className="h-3 w-40 bg-slate-300/70 rounded" />
+          <div className="h-6 w-24 bg-slate-300/50 rounded-lg mt-2" />
+        </div>
+      </div>
+
+      {/* ── Column 2 Skeleton: Subcategories ── */}
+      <div className="w-[340px] bg-white border-r border-slate-200/60 flex-shrink-0 flex flex-col relative">
+        <div className="px-8 py-6 border-b border-slate-200/50 flex justify-between items-center bg-white/50 sticky top-0 backdrop-blur-md z-10">
+          <div className="h-3 w-28 bg-slate-200 rounded animate-pulse" />
+        </div>
+        <div className="flex-1 overflow-y-auto py-4 px-4 space-y-2.5">
+          {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+            <div key={i} className="flex items-start px-5 py-3 rounded-xl gap-3 animate-pulse">
+              <div className="w-2 h-2 rounded-full bg-slate-300 mt-2 shrink-0" />
+              <div className="flex-1 space-y-1.5">
+                <div className="h-4 bg-slate-200 rounded w-4/5" />
+                <div className="h-3 bg-slate-100 rounded w-1/2" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Column 3 Skeleton: Courses ── */}
+      <div className="flex-1 bg-slate-50/30 flex flex-col overflow-hidden relative">
+        <div className="px-10 py-6 border-b border-slate-200/50 flex items-center justify-between bg-white/40 sticky top-0 backdrop-blur-xl z-10">
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 rounded-lg bg-blue-100/60 animate-pulse shrink-0" />
+            <div className="space-y-1.5">
+              <div className="h-4 w-36 bg-slate-200 rounded animate-pulse" />
+              <div className="h-2.5 w-24 bg-blue-200/50 rounded animate-pulse" />
+            </div>
+          </div>
+          <div className="h-3.5 w-16 bg-slate-200 rounded animate-pulse" />
+        </div>
+        <div className="flex-1 overflow-y-auto py-6 px-10 relative">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-3 pb-8">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm animate-pulse space-y-2.5">
+                <div className="h-4 bg-slate-200 rounded w-5/6" />
+                <div className="h-3 bg-slate-100 rounded w-1/3" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="p-5 bg-white/80 border-t border-slate-200/50 backdrop-blur-md flex justify-center sticky bottom-0 z-10">
+          <div className="h-11 w-64 bg-slate-900/30 animate-pulse rounded-xl" />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // ─── Learning & Development Mega-Menu Component ───────────────────────────────
@@ -172,7 +268,8 @@ function LearningMegaMenu({
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }) {
-  const megaMenuData = useMegaMenu();
+  const { data: rawMegaMenuData, isLoading } = useMegaMenu();
+  const megaMenuData = Array.isArray(rawMegaMenuData) && rawMegaMenuData.length > 0 ? rawMegaMenuData : defaultMenuData;
   const [activeMainId, setActiveMainId] = useState(megaMenuData[0]?.id);
   const [activeSubId, setActiveSubId] = useState(megaMenuData[0]?.subcategories?.[0]?.id ?? "");
 
@@ -224,7 +321,10 @@ function LearningMegaMenu({
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        <div className="flex h-[560px]">
+        {isLoading ? (
+          <MegaMenuSkeleton onClose={onClose} />
+        ) : (
+          <div className="flex h-[560px]">
 
           {/* ── Column 1: Main Categories ── */}
           <div className="w-[300px] bg-slate-50/50 border-r border-slate-200/60 flex-shrink-0 flex flex-col relative z-10">
@@ -393,6 +493,7 @@ function LearningMegaMenu({
           </div>
 
         </div>
+        )}
       </motion.div>
     </div>
   );
@@ -413,7 +514,8 @@ function CompanyDropdown({ onClose }: { onClose: () => void }) {
 
 // ─── Main Header ──────────────────────────────────────────────────────────────
 export function Header() {
-  const megaMenuData = useMegaMenu();
+  const { data: rawMegaMenuData } = useMegaMenu();
+  const megaMenuData = Array.isArray(rawMegaMenuData) && rawMegaMenuData.length > 0 ? rawMegaMenuData : defaultMenuData;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMega, setActiveMega] = useState<"learning" | "company" | null>(null);
 
