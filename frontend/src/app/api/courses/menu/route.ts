@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { buildMegaMenuData, FALLBACK_COURSES } from "@/lib/courses-catalog";
 
-export const dynamic = "force-dynamic";
+// Menu data changes rarely — cache the response instead of hitting the DB on every page load
+export const revalidate = 300;
 
 export async function GET() {
   try {

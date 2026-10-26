@@ -6,6 +6,11 @@ import type { Metadata } from "next";
 
 export const revalidate = 60;
 
+// Render each post on first request, then serve it from cache
+export function generateStaticParams() {
+  return [];
+}
+
 interface Props { params: Promise<{ slug: string }> }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

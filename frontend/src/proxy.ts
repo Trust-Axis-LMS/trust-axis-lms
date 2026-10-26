@@ -6,13 +6,10 @@ const ADMIN_COOKIE  = "xp_cms_token";
 const ADMIN_PREFIX  = "/xp-cms";
 const ADMIN_LOGIN   = "/xp-cms";
 
-const PUBLIC_PATHS = [
-  "/login",
-  "/signup",
-  "/api/auth",
-  "/",
-  "/_next",
-  "/favicon.ico",
+// Pages that require a signed-in user. Everything else is public marketing content.
+const PROTECTED_PATHS = [
+  "/profile",
+  "/onboarding",
 ];
 
 // ── Mobile UA detector ───────────────────────────────────────────────────────
@@ -64,14 +61,16 @@ async function handleProxy(request: NextRequest) {
   }
 
 // ── Standard app auth (better-auth) ─────────────────────────────────────────
-  if (pathname === "/" || PUBLIC_PATHS.some((p) => pathname.startsWith(p))) {
+  const isProtected = PROTECTED_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
+  if (!isProtected) {
     return NextResponse.next();
   }
 
   const sessionCookie = getSessionCookie(request);
   if (!sessionCookie) {
     const loginUrl = new URL("/login", request.url);
-    loginUrl.searchParams.set("callbackUrl", pathname);
+    // Must match the param name the login page reads
+    loginUrl.searchParams.set("callbackURL", pathname + request.nextUrl.search);
     return NextResponse.redirect(loginUrl);
   }
 

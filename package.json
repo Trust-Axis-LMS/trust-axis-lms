@@ -16,8 +16,7 @@
   },
   "overrides": {
     "@hono/node-server": "1.19.13",
-    "kysely": "0.28.17",
-    "postcss": "8.5.15"
+    "kysely": "0.28.17"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"

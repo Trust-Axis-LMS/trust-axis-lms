@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { optimizeImageUrl } from "@/lib/image-url";
 import {
   ArrowLeft,
   ArrowRight,
@@ -105,7 +106,7 @@ export function ResourcePageShell({
         <section className={cn("py-16 md:py-20", config.heroClassName)}>
           <div className="container mx-auto max-w-6xl px-4 md:px-8">
             <Link
-              href="/#resources"
+              href="/resources"
               className={cn(
                 "mb-8 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] transition-colors",
                 variant === "whitepapers"
@@ -214,7 +215,7 @@ export function ResourcePageShell({
                         <div className="h-52 w-full bg-[#F4F4F5] overflow-hidden">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img 
-                            src={item.coverImageUrl} 
+                            src={optimizeImageUrl(item.coverImageUrl, 800)} 
                             alt={item.title} 
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                           />

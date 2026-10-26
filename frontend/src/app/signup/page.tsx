@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Eye, EyeOff, AlertCircle } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
+import { safeCallbackURL } from "@/lib/safe-redirect";
 
 function GoogleIcon() {
   return (
@@ -20,7 +21,7 @@ function GoogleIcon() {
 function SignupForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackURL = searchParams.get("callbackURL");
+  const callbackURL = safeCallbackURL(searchParams.get("callbackURL"), "") || null;
   
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Eye, EyeOff, AlertCircle } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
+import { safeCallbackURL } from "@/lib/safe-redirect";
 
 // Google icon SVG
 function GoogleIcon() {
@@ -21,7 +22,7 @@ function GoogleIcon() {
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackURL = searchParams.get("callbackURL") || "/";
+  const callbackURL = safeCallbackURL(searchParams.get("callbackURL"));
 
   const [activeTab, setActiveTab] = useState<"student" | "trainer">("student");
   const [email, setEmail] = useState("");
