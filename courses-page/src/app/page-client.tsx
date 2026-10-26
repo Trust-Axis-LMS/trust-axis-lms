@@ -11,8 +11,9 @@ import { getCourseCategoryMeta } from "@/lib/course-category-meta";
 import { cn } from "@/lib/utils";
 import { MAIN_SITE_URL } from "@/lib/url";
 import { PixelAnimation } from "@/components/ui/pixel-animation";
+import type { Course } from "@/lib/courses-data";
 
-export function CoursesPageClient({ courses }: { courses: any[] }) {
+export function CoursesPageClient({ courses }: { courses: Course[] }) {
   // Dynamically compute categories from actual database courses
   const uniqueCategories = Array.from(new Set(courses.map(c => c.category))).filter(Boolean).sort();
   const categories = ["All", ...uniqueCategories];

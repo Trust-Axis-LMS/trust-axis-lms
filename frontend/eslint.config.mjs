@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // One-off local scripts — not part of the app bundle
+    "scripts/**",
+    "check.ts",
+    "check_curriculum.js",
+    "prisma/seed.ts",
   ]),
 ]);
 

@@ -4,9 +4,15 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { generateToc } from "@/lib/generate-toc";
 import { TipTapRenderer } from "@/components/tiptap-renderer";
+import { optimizeImageUrl } from "@/lib/image-url";
 import type { Metadata } from "next";
 
 export const revalidate = 60;
+
+// Render each post on first request, then serve it from cache
+export function generateStaticParams() {
+  return [];
+}
 
 interface Props { params: Promise<{ slug: string }> }
 
@@ -35,7 +41,7 @@ export default async function BlogPostPage({ params }: Props) {
         {post.coverImageUrl && (
           <div style={{ width: "100%", maxHeight: "420px", overflow: "hidden" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={post.coverImageUrl} alt={post.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <img src={optimizeImageUrl(post.coverImageUrl)} alt={post.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
         )}
 

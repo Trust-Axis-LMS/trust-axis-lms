@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminSession } from "@/lib/admin-auth";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
 import { deleteFromCloudinary } from "@/lib/cloudinary";
 import { z } from "zod";
 
@@ -65,12 +66,28 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
     }
   }
 
-  const post = await prisma.contentPost.update({
-    where: { id },
-    data: updateData,
-  });
+  if (data.slug !== undefined) {
+    const clash = await prisma.contentPost.findFirst({
+      where: { slug: data.slug, NOT: { id } },
+      select: { id: true },
+    });
+    if (clash) {
+      return NextResponse.json({ error: "Slug already exists. Choose a different one." }, { status: 409 });
+    }
+  }
 
-  return NextResponse.json(post);
+  try {
+    const post = await prisma.contentPost.update({
+      where: { id },
+      data: updateData,
+    });
+    return NextResponse.json(post);
+  } catch (e) {
+    if (e instanceof Prisma.PrismaClientKnownRequestError && e.code === "P2025") {
+      return NextResponse.json({ error: "Not found" }, { status: 404 });
+    }
+    throw e;
+  }
 }
 
 // ── DELETE /api/xp-cms/content/[id] ──────────────────────────────────────────

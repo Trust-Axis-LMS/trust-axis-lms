@@ -3,6 +3,13 @@ import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 
+// Non-numeric input would otherwise reach Prisma as NaN and fail the whole save
+function toInt(value: unknown): number | undefined {
+  if (value === null || value === undefined || value === "") return undefined;
+  const n = parseInt(String(value), 10);
+  return Number.isFinite(n) ? n : undefined;
+}
+
 export async function POST(req: NextRequest) {
   const session = await auth.api.getSession({ headers: await headers() });
 
@@ -22,9 +29,9 @@ export async function POST(req: NextRequest) {
       studyHoursPerWeek, learningMode,
     } = body;
 
-    const gradYear = graduationYear ? parseInt(graduationYear, 10) : undefined;
-    const yearsExp = yearsExperience ? parseInt(yearsExperience, 10) : undefined;
-    const hoursWeek = studyHoursPerWeek ? parseInt(studyHoursPerWeek, 10) : undefined;
+    const gradYear = toInt(graduationYear);
+    const yearsExp = toInt(yearsExperience);
+    const hoursWeek = toInt(studyHoursPerWeek);
 
     await prisma.studentProfile.upsert({
       where: { userId: session.user.id },

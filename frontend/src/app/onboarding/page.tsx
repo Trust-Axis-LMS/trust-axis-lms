@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 import OnboardingClient from "./OnboardingClient";
+import { safeCallbackURL } from "@/lib/safe-redirect";
 
 type OnboardingSearchParams = {
   callbackURL?: string | string[];
@@ -16,10 +17,9 @@ export default async function OnboardingPage({
   const session = await auth.api.getSession({ headers: await headers() });
 
   const resolvedSearchParams = await searchParams;
-  const callbackURL =
-    typeof resolvedSearchParams.callbackURL === "string"
-      ? resolvedSearchParams.callbackURL
-      : "/";
+  const callbackURL = safeCallbackURL(
+    typeof resolvedSearchParams.callbackURL === "string" ? resolvedSearchParams.callbackURL : null
+  );
 
   if (!session) {
     redirect("/login");

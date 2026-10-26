@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { MAIN_SITE_URL } from "@/lib/url";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,8 +17,13 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(MAIN_SITE_URL),
   title: "Trust Axis | Explore World-Class Programs",
   description: "Discover industry-aligned courses designed by experts.",
+  openGraph: {
+    siteName: "Trust Axis",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

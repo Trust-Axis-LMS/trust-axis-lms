@@ -1,48 +1,77 @@
-"use client";
-
 /**
- * Renders TipTap JSON content as HTML on the client.
- * Uses the @tiptap/react generateHTML utility for SSR-safe rendering.
+ * Renders TipTap JSON content on the server.
+ * Uses @tiptap/static-renderer, which needs no DOM, so the article body is
+ * present in the initial HTML (crawlable, no hydration mismatch).
  */
 
-import { generateHTML } from "@tiptap/react";
+import { renderToReactElement } from "@tiptap/static-renderer/pm/react";
 import StarterKit from "@tiptap/starter-kit";
+import Heading from "@tiptap/extension-heading";
 import Image from "@tiptap/extension-image";
 import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import Underline from "@tiptap/extension-underline";
-import { useMemo } from "react";
+import { addHeadingIds, type TipTapNode } from "@/lib/generate-toc";
+import { optimizeImageUrl } from "@/lib/image-url";
+
+// Heading with an `id` attribute so the Table of Contents anchors resolve
+const AnchoredHeading = Heading.extend({
+  addAttributes() {
+    return {
+      ...this.parent?.(),
+      id: {
+        default: null,
+        renderHTML: (attrs) => (attrs.id ? { id: attrs.id } : {}),
+      },
+    };
+  },
+}).configure({ levels: [1, 2, 3, 4] });
 
 const EXTENSIONS = [
-  StarterKit.configure({ heading: { levels: [1, 2, 3, 4] } }),
+  StarterKit.configure({ heading: false, link: false, underline: false }),
+  AnchoredHeading,
   Image,
   Link,
   TextAlign.configure({ types: ["heading", "paragraph"] }),
   Underline,
 ];
 
+function optimizeImages(node: TipTapNode): void {
+  if (node.type === "image" && typeof node.attrs?.src === "string") {
+    node.attrs = { ...node.attrs, src: optimizeImageUrl(node.attrs.src) };
+  }
+  node.content?.forEach(optimizeImages);
+}
+
 interface TipTapRendererProps {
   content: string; // JSON string
 }
 
+function renderContent(content: string): React.ReactNode | null {
+  try {
+    const json = JSON.parse(content) as TipTapNode;
+    addHeadingIds(json);
+    optimizeImages(json);
+    return renderToReactElement({ content: json, extensions: EXTENSIONS });
+  } catch {
+    return null;
+  }
+}
+
 export function TipTapRenderer({ content }: TipTapRendererProps) {
-  const html = useMemo(() => {
-    try {
-      const json = JSON.parse(content);
-      return generateHTML(json, EXTENSIONS);
-    } catch {
-      return content;
-    }
-  }, [content]);
+  const rendered = renderContent(content);
 
   return (
     <>
-      <div
-        className="tiptap-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      {rendered !== null ? (
+        <div className="tiptap-content">{rendered}</div>
+      ) : (
+        // Legacy / non-JSON content is stored as HTML
+        <div className="tiptap-content" dangerouslySetInnerHTML={{ __html: content }} />
+      )}
       <style>{`
         .tiptap-content { font-size: 16px; line-height: 1.85; color: #1F2937; }
+        .tiptap-content h1, .tiptap-content h2, .tiptap-content h3, .tiptap-content h4 { scroll-margin-top: 100px; }
         .tiptap-content h1 { font-size: 32px; font-weight: 800; color: #111; margin: 32px 0 16px; line-height: 1.2; }
         .tiptap-content h2 { font-size: 24px; font-weight: 700; color: #111; margin: 28px 0 12px; line-height: 1.3; }
         .tiptap-content h3 { font-size: 20px; font-weight: 700; color: #1F2937; margin: 22px 0 10px; }

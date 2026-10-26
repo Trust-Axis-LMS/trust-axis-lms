@@ -9,9 +9,9 @@ export interface TocItem {
   level: number;
 }
 
-interface TipTapNode {
+export interface TipTapNode {
   type: string;
-  attrs?: { level?: number };
+  attrs?: Record<string, unknown> & { level?: number };
   content?: TipTapNode[];
   text?: string;
 }
@@ -31,17 +31,14 @@ function slugify(text: string): string {
     .replace(/--+/g, "-");
 }
 
-export function generateToc(contentJson: string): TocItem[] {
-  let doc: { content?: TipTapNode[] };
-  try {
-    doc = JSON.parse(contentJson);
-  } catch {
-    return [];
-  }
-
+/**
+ * Walks top-level headings and assigns each a unique anchor ID.
+ * Shared by the ToC and the renderer so the links always match the headings.
+ */
+function collectHeadings(doc: { content?: TipTapNode[] }): (TocItem & { node: TipTapNode })[] {
   if (!doc.content) return [];
 
-  const items: TocItem[] = [];
+  const items: (TocItem & { node: TipTapNode })[] = [];
   const idCounts: Record<string, number> = {};
 
   for (const node of doc.content) {
@@ -57,9 +54,27 @@ export function generateToc(contentJson: string): TocItem[] {
         idCounts[id] = 0;
       }
 
-      items.push({ id, text: text.trim(), level: node.attrs.level });
+      items.push({ id, text: text.trim(), level: node.attrs.level, node });
     }
   }
 
   return items;
+}
+
+export function generateToc(contentJson: string): TocItem[] {
+  let doc: { content?: TipTapNode[] };
+  try {
+    doc = JSON.parse(contentJson);
+  } catch {
+    return [];
+  }
+
+  return collectHeadings(doc).map(({ id, text, level }) => ({ id, text, level }));
+}
+
+/** Mutates the doc so every ToC heading carries its anchor ID in `attrs.id`. */
+export function addHeadingIds(doc: { content?: TipTapNode[] }): void {
+  for (const { node, id } of collectHeadings(doc)) {
+    node.attrs = { ...node.attrs, id };
+  }
 }

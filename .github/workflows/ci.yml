@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NEXT_TELEMETRY_DISABLED: 1
+
+jobs:
+  # Fails on any high/critical vulnerability in production dependencies
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - run: npm audit --omit=dev --audit-level=high
+
+  # Mirrors the Vercel build for each app: clean install, type-check, production build.
+  # Runs on Linux (case-sensitive paths, like Vercel) with no secrets — DB-backed
+  # pages fall back to static data, so a green build here means Vercel can build too.
+  build:
+    name: Build ${{ matrix.app }} (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [frontend, courses-page]
+        node: [22.x, 24.x]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - name: Type-check
+        run: npx tsc --noEmit
+        working-directory: ${{ matrix.app }}
+      - name: Lint (report-only until existing errors are fixed)
+        run: npx eslint .
+        working-directory: ${{ matrix.app }}
+        continue-on-error: true
+      - name: Production build
+        run: npm run build
+        working-directory: ${{ matrix.app }}
+
+  # Blocks PRs that add dependencies with known high/critical vulnerabilities
+  dependency-review:
+    name: Dependency review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/dependency-review-action@v5
+        with:
+          fail-on-severity: high
+
+  # Scans new commits for leaked credentials (API keys, DB URLs, tokens)
+  secret-scan:
+    name: Secret scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: trufflesecurity/trufflehog@v3.99.4
+        with:
+          extra_args: --results=verified,unknown
