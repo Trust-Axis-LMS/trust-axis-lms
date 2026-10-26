@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
 import { verifyAdminToken } from "@/lib/admin-auth";
+import { SITE_LOCKED, siteLockedResponse } from "../../site-lock";
 
 const ADMIN_COOKIE  = "xp_cms_token";
 const ADMIN_PREFIX  = "/xp-cms";
@@ -79,6 +80,7 @@ async function handleProxy(request: NextRequest) {
 }
 
 export default async function middleware(request: NextRequest) {
+  if (SITE_LOCKED) return siteLockedResponse();
   return handleProxy(request);
 }
 
