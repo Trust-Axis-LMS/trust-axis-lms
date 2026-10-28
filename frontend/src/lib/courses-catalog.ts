@@ -16,26 +16,57 @@ export interface MainCategory {
   allCourses?: CourseItem[];
 }
 
-const abbreviationMap: Record<string, string> = {
-  "isc2": "ISC2: International Information System Security Certification Consortium",
-  "isaca": "ISACA: Information Systems Audit and Control Association",
-  "ec-council": "EC-Council: International Council of E-Commerce Consultants",
-  "aws": "AWS: Amazon Web Services",
-  "gcp": "GCP: Google Cloud Platform",
-  "comptia": "CompTIA: Computing Technology Industry Association",
-  "ceh": "CEH: Certified Ethical Hacker",
-  "cism": "CISM: Certified Information Security Manager",
-  "cisa": "CISA: Certified Information Systems Auditor",
-  "cissp": "CISSP: Certified Information Systems Security Professional",
-  "ai": "AI: Artificial Intelligence",
-  "ml": "ML: Machine Learning",
-  "iot": "IoT: Internet of Things",
-  "it": "IT: Information Technology"
+// ─── Vendors (issuing bodies) ────────────────────────────────────────────────
+// Each catalog course belongs to the body that issues its certification. The
+// slug is the /vendors/{slug} landing page on the academy.
+export interface VendorInfo {
+  slug: string;
+  name: string;
+  fullName: string;
+  description: string;
+  website: string;
+}
+
+export const VENDORS: VendorInfo[] = [
+  { slug: "ec-council", name: "EC-Council", fullName: "International Council of E-Commerce Consultants", description: "Creator of the Certified Ethical Hacker (C|EH) and a family of offensive security, network defence and incident handling certifications.", website: "https://www.eccouncil.org" },
+  { slug: "isc2", name: "ISC2", fullName: "International Information System Security Certification Consortium", description: "Non-profit member association behind CISSP, CCSP, SSCP, CGRC and the entry-level Certified in Cybersecurity (CC).", website: "https://www.isc2.org" },
+  { slug: "isaca", name: "ISACA", fullName: "Information Systems Audit and Control Association", description: "Global association for IT audit, governance, risk and privacy professionals, issuing CISA, CISM, CRISC, CGEIT and CDPSE.", website: "https://www.isaca.org" },
+  { slug: "iapp", name: "IAPP", fullName: "International Association of Privacy Professionals", description: "The largest global privacy community and issuer of the CIPP, CIPM and CIPT privacy certifications.", website: "https://iapp.org" },
+  { slug: "cloud-security-alliance", name: "Cloud Security Alliance", fullName: "Cloud Security Alliance (CSA)", description: "Non-profit that defines cloud security best practice and issues the Certificate of Cloud Security Knowledge (CCSK).", website: "https://cloudsecurityalliance.org" },
+  { slug: "cisco", name: "Cisco", fullName: "Cisco Systems", description: "Networking vendor whose CCNA and CCNP certifications are the industry benchmark for enterprise network engineering.", website: "https://www.cisco.com" },
+  { slug: "peoplecert", name: "PeopleCert", fullName: "PeopleCert (owner of AXELOS and ITIL)", description: "Global certification body that owns ITIL, the most widely adopted framework for IT service management.", website: "https://www.peoplecert.org" },
+  { slug: "pecb", name: "PECB", fullName: "Professional Evaluation and Certification Board", description: "Certification body for ISO/IEC standards-based credentials, including ISO/IEC 27001, ISO/IEC 20000 and ISO/IEC 27035.", website: "https://pecb.com" },
+  { slug: "the-open-group", name: "The Open Group", fullName: "The Open Group", description: "Vendor-neutral consortium behind the TOGAF Standard for enterprise architecture.", website: "https://www.opengroup.org" },
+  { slug: "comptia", name: "CompTIA", fullName: "Computing Technology Industry Association", description: "Vendor-neutral IT certification body, issuing Network+, Security+ and PenTest+.", website: "https://www.comptia.org" },
+  { slug: "sailpoint", name: "SailPoint", fullName: "SailPoint Technologies", description: "Identity security platform vendor, certifying practitioners on SailPoint IdentityIQ.", website: "https://www.sailpoint.com" },
+  { slug: "cyberark", name: "CyberArk", fullName: "CyberArk Software", description: "Privileged access management vendor, certifying practitioners on the CyberArk platform.", website: "https://www.cyberark.com" },
+];
+
+// Older or alternative names that appear in course data
+const VENDOR_ALIASES: Record<string, string> = {
+  csa: "cloud-security-alliance",
+  axelos: "peoplecert",
+  "isc²": "isc2",
+  "isaca/csa": "isaca",
 };
 
-export function formatLabel(label: string): string {
-  const key = label.toLowerCase();
-  return abbreviationMap[key] || label;
+function slugify(value: string): string {
+  return value.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+export function vendorSlug(name: string): string {
+  const key = name.trim().toLowerCase();
+  return VENDOR_ALIASES[key] ?? slugify(name);
+}
+
+export function getVendorInfo(slugOrName: string): VendorInfo | undefined {
+  const slug = vendorSlug(slugOrName);
+  return VENDORS.find((v) => v.slug === slug);
+}
+
+/** Domain (catalog category) → /topics/{slug} */
+export function topicSlug(category: string): string {
+  return slugify(category);
 }
 
 export function getVendor(name: string): string {
@@ -45,13 +76,14 @@ export function getVendor(name: string): string {
   if (n.includes('CISA') || n.includes('CISM') || n.includes('CRISC') || n.includes('CGEIT') || n.includes('CDPSE') || n.includes('COBIT') || n.includes('CCOA')) return 'ISACA';
   if (n.includes('IAPP') || n.includes('CIPP') || n.includes('CIPT') || n.includes('CIPM')) return 'IAPP';
   if (n.includes('COMPTIA') || n.includes('NETWORK+') || n.includes('PENTEST+')) return 'CompTIA';
-  if (n.includes('CCNA') || n.includes('CCNP') || n.includes('CISCO') || n.includes('APIC')) return 'Cisco';
-  if (n.includes('CSA') || n.includes('CCZT')) return 'CSA';
+  if (n.includes('CCNA') || n.includes('CCNP') || n.includes('CISCO')) return 'Cisco';
+  if (n.includes('CSA') || n.includes('CCZT') || n.includes('CCSK')) return 'Cloud Security Alliance';
   if (n.includes('SAILPOINT')) return 'SailPoint';
   if (n.includes('CYBERARK')) return 'CyberArk';
   if (n.includes('PECB') || n.includes('ISO')) return 'PECB';
-  if (n.includes('ITIL')) return 'AXELOS';
-  return 'Global Providers';
+  if (n.includes('ITIL')) return 'PeopleCert';
+  if (n.includes('TOGAF')) return 'The Open Group';
+  return 'Other Providers';
 }
 
 export const FALLBACK_COURSES: { slug: string; title: string; category: string; vendor: string }[] = [
@@ -68,7 +100,7 @@ export const FALLBACK_COURSES: { slug: string; title: string; category: string; 
   { slug: "cobit-2019-design", title: "ISACA COBIT 2019 Design & Implementation Certification Training", category: "Governance, Risk and Compliance", vendor: "ISACA" },
   { slug: "crisc", title: "ISACA - Certified Risk and Information Systems Control (CRISC) - Certification Training", category: "Governance, Risk and Compliance", vendor: "ISACA" },
   { slug: "cgrc", title: "ISC2 CGRC - Certified in Governance, Risk, and Compliance - Certification Training", category: "Governance, Risk and Compliance", vendor: "ISC2" },
-  { slug: "iso-20000", title: "PECB - ISO/IEC 20000 (ITSM) Lead Implementer - Certification Training", category: "Governance, Risk and Compliance", vendor: "PECB" },
+  { slug: "iso-iec-20000", title: "PECB - ISO/IEC 20000 (ITSM) Lead Implementer - Certification Training", category: "Governance, Risk and Compliance", vendor: "PECB" },
   { slug: "cgeit", title: "ISACA - CGEIT - Certified in the Governance of Enterprise IT - Certification Training", category: "Governance, Risk and Compliance", vendor: "ISACA" },
 
   // Data Privacy
@@ -78,7 +110,7 @@ export const FALLBACK_COURSES: { slug: string; title: string; category: string; 
   { slug: "cipm", title: "IAPP - CIPM - Certified Information Privacy Manager - Certification Training", category: "Data Privacy", vendor: "IAPP" },
 
   // Cloud Security
-  { slug: "ccsk", title: "CSA - CCSK - Certificate of Cloud Security Knowledge - Certification Training", category: "Cloud Security", vendor: "CSA" },
+  { slug: "csa-ccsk", title: "CSA - CCSK - Certificate of Cloud Security Knowledge - Certification Training", category: "Cloud Security", vendor: "CSA" },
   { slug: "ccsp", title: "ISC2 - CCSP – Certified Cloud Security Professional - Certification Training", category: "Cloud Security", vendor: "ISC2" },
 
   // IT and Information Security Audit
@@ -123,16 +155,11 @@ export function buildMegaMenuData(coursesList: { title: string; slug: string; ve
     const courseItem: CourseItem = { title: c.title, slug: c.slug };
     allCourses.push(courseItem);
 
-    const vendor = c.vendor || getVendor(c.title);
-    if (vendor) {
-      if (!vendorMap[vendor]) vendorMap[vendor] = [];
-      vendorMap[vendor].push(courseItem);
-    }
+    const vendor = vendorSlug(c.vendor || getVendor(c.title));
+    (vendorMap[vendor] ??= []).push(courseItem);
 
-    const category = c.category;
-    if (category) {
-      if (!domainMap[category]) domainMap[category] = [];
-      domainMap[category].push(courseItem);
+    if (c.category) {
+      (domainMap[c.category] ??= []).push(courseItem);
     }
   });
 
@@ -140,18 +167,21 @@ export function buildMegaMenuData(coursesList: { title: string; slug: string; ve
     {
       id: "vendor",
       label: "Courses by Vendor",
-      subcategories: Object.entries(vendorMap).map(([vendor, courses]) => ({
-        id: vendor.toLowerCase().replace(/\s+/g, "-"),
-        label: formatLabel(vendor),
-        courses,
-      })),
+      subcategories: Object.entries(vendorMap).map(([slug, courses]) => {
+        const info = getVendorInfo(slug);
+        return {
+          id: slug,
+          label: info ? (info.fullName === info.name ? info.name : `${info.name}: ${info.fullName}`) : slug,
+          courses,
+        };
+      }),
     },
     {
       id: "domain",
       label: "Courses by Domain",
       subcategories: Object.entries(domainMap).map(([domain, courses]) => ({
-        id: domain.toLowerCase().replace(/\s+/g, "-"),
-        label: formatLabel(domain),
+        id: topicSlug(domain),
+        label: domain,
         courses,
       })),
     },

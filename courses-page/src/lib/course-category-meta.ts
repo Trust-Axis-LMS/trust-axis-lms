@@ -11,7 +11,8 @@ import {
   Key,
   Crosshair,
   Layers,
-  LayoutGrid
+  LayoutGrid,
+  Server,
 } from "lucide-react";
 
 type CourseCategoryMeta = {
@@ -88,6 +89,12 @@ const courseCategoryMeta: Record<string, CourseCategoryMeta> = {
     shortLabel: "Offensive",
     bandClassName:
       "bg-[linear-gradient(135deg,rgba(50,10,10,1)_0%,rgba(255,50,50,0.8)_100%)]",
+  },
+  "IT Service Management": {
+    icon: Server,
+    shortLabel: "ITSM",
+    bandClassName:
+      "bg-[linear-gradient(135deg,rgba(33,37,41,1)_0%,rgba(14,165,233,0.8)_100%)]",
   },
   "Security Architecture": {
     icon: Layers,

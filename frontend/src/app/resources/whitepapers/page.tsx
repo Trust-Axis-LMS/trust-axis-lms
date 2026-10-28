@@ -1,7 +1,13 @@
 import { prisma } from "@/lib/prisma";
+import type { Metadata } from "next";
 import { ResourcePageShell } from "@/components/resource-page-shell";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "Whitepapers",
+  description: "Research and frameworks from Trust Axis for security, risk and technology leaders.",
+};
 
 export default async function WhitepapersPage() {
   const posts = await prisma.contentPost.findMany({
@@ -26,12 +32,7 @@ export default async function WhitepapersPage() {
       badge="Whitepapers"
       title="Research And Decision Support For Program Leaders"
       intro="Access longer-form whitepapers designed to support education strategy, vendor evaluation, and technical workforce planning."
-      items={items.length > 0 ? items : defaultItems}
+      items={items}
     />
   );
 }
-
-const defaultItems = [
-  { title: "State Of Technical Upskilling In High-Trust Industries", description: "A research-led perspective on how regulated and security-sensitive sectors are approaching workforce capability building.", category: "Research", readTime: "12 Min Read" },
-  { title: "A Framework For Enterprise Training Program Selection", description: "A whitepaper outlining the decision model enterprises can use to compare external learning vendors.", category: "Enterprise Learning", readTime: "14 Min Read" },
-];

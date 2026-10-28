@@ -46,6 +46,7 @@ export interface Tool {
 export interface Course {
   slug: string;
   category: string;
+  vendor?: string;
   title: string;
   subtitle: string;
   highlights: string[];
@@ -53,8 +54,6 @@ export interface Course {
   mode: string;
   weeklyHours: string;
   certificate: string;
-  rating: number;
-  students: string;
   thumbnailUrl?: string;
   programHighlights: ProgramHighlight[];
   aboutCourse: string[];
@@ -67,15 +66,17 @@ export interface Course {
 }
 
 export function mapDbCourseToFrontend(dbCourse: any): Course {
+  // Ratings and student counts are not real figures yet, so they never leave the server
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { rating, students, ...course } = dbCourse;
   return {
-    ...dbCourse,
+    ...course,
     subtitle: dbCourse.subtitle || "",
     duration: dbCourse.duration || "Flexible",
     mode: dbCourse.mode || "Online",
     weeklyHours: dbCourse.weeklyHours || "10-15 hrs",
     certificate: dbCourse.certificate || "Upon Completion",
-    rating: dbCourse.rating || 4.8,
-    students: dbCourse.students || "1K+",
+    vendor: dbCourse.vendor || undefined,
     directorQuote: {
       text: dbCourse.directorQuoteText || "",
       author: dbCourse.directorQuoteAuthor || "",
@@ -108,64 +109,26 @@ export const categories = [
   "Security Architecture",
 ];
 
+// Static fallback used when the database is unreachable. It carries only the
+// catalog facts; sections without real content are hidden on the course page.
 const generateMockCourse = (slug: string, title: string, category: string): Course => ({
   slug,
   category,
   title,
-  subtitle: "Comprehensive training and preparation for specialized certification.",
-  highlights: [
-    "Focuses on advanced strategies and implementation principles.",
-    "Covers comprehensive enterprise frameworks and best practices.",
-    "Expert-led guidance towards passing the certification exam."
-  ],
+  subtitle: "Instructor-led preparation for the official certification exam.",
+  highlights: [],
   duration: "Flexible",
   mode: "Online / Hybrid",
   weeklyHours: "10-15 hrs",
   certificate: "Upon Completion",
-  rating: 4.8,
-  students: "1.2K+",
-  thumbnailUrl: "/images/courses/cdpse.webp",
-  programHighlights: [
-    { icon: "Shield", title: "Core Fundamentals", description: "Comprehensive training on foundational concepts." },
-    { icon: "Briefcase", title: "Real-world Implementation", description: "Learn how to implement practices effectively." },
-    { icon: "Lock", title: "Enterprise Strategies", description: "Understand complex protection and structural methodologies." },
-    { icon: "Activity", title: "Risk Management", description: "Learn how to assess and manage risks." },
-    { icon: "CheckSquare", title: "Compliance Training", description: "In-depth regulatory and standards compliance." },
-    { icon: "Award", title: "Exam Preparation", description: "Robust materials to earn a globally recognized certification." }
-  ],
-  aboutCourse: [
-    `The ${title} program provides specialized instruction and hands-on preparation to solidify your skills in the ${category} domain. Participants will master various industry frameworks, standards, and practical controls.`
-  ],
-  directorQuote: {
-    text: "This program equips professionals with the necessary expertise required to succeed in top-tier enterprise environments.",
-    author: "Trust Axis Leadership"
-  },
-  objectives: [
-    { number: 1, title: "Master Core Frameworks", description: "Develop an understanding of key processes." },
-    { number: 2, title: "Risk and Mitigation", description: "Identify and manage enterprise risks." },
-    { number: 3, title: "Regulatory Compliance", description: "Ensure compliance with global standards." },
-    { number: 4, title: "Strategic Implementation", description: "Implement leading practices efficiently." },
-    { number: 5, title: "Operational Continuity", description: "Focus on continuous improvement of services." },
-    { number: 6, title: "Advanced Architecture", description: "Integrate solutions seamlessly." }
-  ],
-  curriculum: [
-    { number: 1, title: "Domain Foundations", duration: "Flexible", modules: 3, subtopics: [{ title: "Overview and Frameworks" }, { title: "Governance Structure" }, { title: "Policy Development" }] },
-    { number: 2, title: "Process & Operations", duration: "Flexible", modules: 3, subtopics: [{ title: "Strategic Management" }, { title: "Risk Mitigation" }, { title: "Monitoring" }] },
-    { number: 3, title: "Implementation Controls", duration: "Flexible", modules: 3, subtopics: [{ title: "Infrastructure Design" }, { title: "Security Layers" }, { title: "Access Policies" }] },
-    { number: 4, title: "Exam Preparation", duration: "Flexible", modules: 3, subtopics: [{ title: "Review Sessions" }, { title: "Practice Tests" }, { title: "Final Assessment" }] }
-  ],
-  targetAudience: [
-    { icon: "Users", title: "IT Professionals", description: "Professionals looking to specialize and validate their expertise." },
-    { icon: "Briefcase", title: "Managers and Leaders", description: "Leaders aiming to govern and structure organization protocols." }
-  ],
-  examDetails: [
-    { name: "Certification Exam", provider: "Industry recognized provider", passScore: "Dependent on vendor", prepIncluded: true }
-  ],
-  toolsCovered: [
-    { name: "Global Standard", icon: "BookOpen", category: "Framework" },
-    { name: "Industry Protocols", icon: "Layers", category: "Standard" },
-    { name: "Assessment Toolkit", icon: "Activity", category: "Audit" },
-  ],
+  programHighlights: [],
+  aboutCourse: [],
+  directorQuote: { text: "", author: "" },
+  objectives: [],
+  curriculum: [],
+  targetAudience: [],
+  examDetails: [],
+  toolsCovered: [],
 });
 
 export const courses: Course[] = [
@@ -182,7 +145,7 @@ export const courses: Course[] = [
   generateMockCourse("cobit-2019-design", "ISACA COBIT 2019 Design & Implementation Certification Training", "Governance, Risk and Compliance"),
   generateMockCourse("crisc", "ISACA - Certified Risk and Information Systems Control (CRISC) - Certification Training", "Governance, Risk and Compliance"),
   generateMockCourse("cgrc", "ISC2 CGRC - Certified in Governance, Risk, and Compliance - Certification Training", "Governance, Risk and Compliance"),
-  generateMockCourse("iso-20000", "PECB - ISO/IEC 20000 (ITSM) Lead Implementer - Certification Training", "Governance, Risk and Compliance"),
+  generateMockCourse("iso-iec-20000", "PECB - ISO/IEC 20000 (ITSM) Lead Implementer - Certification Training", "Governance, Risk and Compliance"),
   generateMockCourse("cgeit", "ISACA - CGEIT - Certified in the Governance of Enterprise IT - Certification Training", "Governance, Risk and Compliance"),
 
   // Data Privacy
@@ -192,7 +155,7 @@ export const courses: Course[] = [
   generateMockCourse("cipm", "IAPP - CIPM - Certified Information Privacy Manager - Certification Training", "Data Privacy"),
 
   // Cloud Security
-  generateMockCourse("ccsk", "CSA - CCSK - Certificate of Cloud Security Knowledge - Certification Training", "Cloud Security"),
+  generateMockCourse("csa-ccsk", "CSA - CCSK - Certificate of Cloud Security Knowledge - Certification Training", "Cloud Security"),
   generateMockCourse("ccsp", "ISC2 - CCSP – Certified Cloud Security Professional - Certification Training", "Cloud Security"),
 
   // IT and Information Security Audit

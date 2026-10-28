@@ -3,7 +3,7 @@ import { Compass, BookOpen } from "lucide-react";
 import { MAIN_SITE_URL } from "@/lib/url";
 
 export const metadata = {
-  title: "Page Not Found — Trust Axis",
+  title: "Page Not Found",
 };
 
 export default function NotFound() {

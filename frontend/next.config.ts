@@ -19,6 +19,14 @@ const nextConfig: NextConfig = {
   // Disable React Compiler in development to drastically reduce HMR memory use/lag
   // Only enable it during production builds where speed/V8 limits don't overlap with IDEs
   reactCompiler: process.env.NODE_ENV === "production" ? true : false,
+  async redirects() {
+    return [
+      // The old academy home duplicated the course catalog
+      { source: "/archive", destination: coursesOrigin, permanent: true },
+      // Practice areas now have a hub page instead of a Home anchor
+      { source: "/services", destination: "/consultancy", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

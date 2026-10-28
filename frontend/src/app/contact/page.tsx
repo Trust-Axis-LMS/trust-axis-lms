@@ -1,45 +1,53 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { Mail, Phone, MapPin, Clock, MessageSquare, Send, ChevronDown, Shield } from "lucide-react";
-import { COURSES_SITE_URL } from "@/lib/url";
+import { Mail, Phone, MapPin, Clock, Shield } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF, OFFICE_ADDRESS, isContactSubject } from "@/lib/site";
 
 export const metadata = {
-  title: "Contact Us — Trust Axis",
-  description: "Get in touch with the Trust Axis team for enrollment, consultancy, or any inquiries.",
+  title: "Contact Us",
+  description: "Contact Trust Axis about consultancy, certification training, corporate programs or any other enquiry. Office at Goldhill Plaza, Singapore.",
 };
 
 const contactDetails = [
   {
     icon: Mail,
     label: "Email Us",
-    value: "hello@trustacg.com",
-    sub: "We respond within 24 hours",
-    href: "mailto:hello@trustacg.com",
+    value: CONTACT_EMAIL,
+    sub: "We respond within one business day",
+    href: `mailto:${CONTACT_EMAIL}`,
   },
   {
     icon: Phone,
     label: "Call Us",
-    value: "+65 66909262",
+    value: CONTACT_PHONE,
     sub: "Mon–Fri, 9 AM – 6 PM SGT",
-    href: "tel:+6566909262",
+    href: CONTACT_PHONE_HREF,
   },
   {
     icon: MapPin,
     label: "Our Office",
     value: "51 GOLDHILL PLAZA #07-07",
     sub: "SINGAPORE 308900",
-    href: "https://maps.google.com/?q=51+GOLDHILL+PLAZA+%2307-07+SINGAPORE+308900",
+    href: `https://maps.google.com/?q=${encodeURIComponent(OFFICE_ADDRESS)}`,
   },
   {
     icon: Clock,
     label: "Business Hours",
     value: "Mon – Fri",
     sub: "9:00 AM – 6:00 PM SGT",
-    href: "#",
+    href: undefined,
   },
 ];
 
-export default function ContactPage() {
+interface Props {
+  searchParams: Promise<{ subject?: string; topic?: string }>;
+}
+
+export default async function ContactPage({ searchParams }: Props) {
+  const { subject, topic } = await searchParams;
+  const defaultSubject = isContactSubject(subject) ? subject : undefined;
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
@@ -51,7 +59,7 @@ export default function ContactPage() {
               Let&apos;s Start a Conversation
             </h1>
             <p className="text-[#6C757D] text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-              Questions about our programs or corporate training? We&apos;d love to hear from you.
+              Questions about our consultancy, programs or corporate training? We&apos;d love to hear from you.
             </p>
           </div>
         </section>
@@ -72,8 +80,9 @@ export default function ContactPage() {
                   <div className="space-y-6 relative z-10 flex-1">
                     {contactDetails.map((detail, i) => {
                       const Icon = detail.icon;
+                      const Wrapper = detail.href ? "a" : "div";
                       return (
-                        <a
+                        <Wrapper
                           key={i}
                           href={detail.href}
                           className="flex items-start gap-4 transition-opacity hover:opacity-80"
@@ -88,7 +97,7 @@ export default function ContactPage() {
                             <p className="font-bold text-sm md:text-base">{detail.value}</p>
                             <p className="text-[11px] text-gray-400">{detail.sub}</p>
                           </div>
-                        </a>
+                        </Wrapper>
                       );
                     })}
                   </div>
@@ -96,13 +105,13 @@ export default function ContactPage() {
                   <div className="mt-8 pt-8 border-t border-white/10 relative z-10">
                     <h3 className="text-lg font-bold mb-2">Quick Chat?</h3>
                     <p className="text-gray-400 text-[13px] leading-relaxed mb-6 max-w-sm">
-                      Book a 15-min call with our advisor for personalized guidance.
+                      Call an advisor during business hours for personalized guidance.
                     </p>
                     <a
-                      href={COURSES_SITE_URL}
+                      href={CONTACT_PHONE_HREF}
                       className="inline-flex items-center justify-center w-full sm:w-auto px-6 h-12 rounded-full bg-white text-black font-bold text-xs uppercase tracking-widest hover:bg-gray-100 transition-all border border-transparent shadow-lg"
                     >
-                      Book a Free Call
+                      Call {CONTACT_PHONE}
                     </a>
                   </div>
                 </div>
@@ -117,87 +126,7 @@ export default function ContactPage() {
                     </h2>
                   </div>
                   
-                  <form className="space-y-4 flex-1 flex flex-col">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <label className="block text-[9px] font-bold uppercase tracking-widest text-[#6C757D] ml-1">
-                          First Name
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="John"
-                          className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary/20 transition-all"
-                        />
-                      </div>
-                      <div className="space-y-1.5">
-                        <label className="block text-[9px] font-bold uppercase tracking-widest text-[#6C757D] ml-1">
-                          Last Name
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="Doe"
-                          className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary/20 transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <label className="block text-[9px] font-bold uppercase tracking-widest text-[#6C757D] ml-1">
-                          Email Address
-                        </label>
-                        <input
-                          type="email"
-                          placeholder="john@company.com"
-                          className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary/20 transition-all"
-                        />
-                      </div>
-                      <div className="space-y-1.5">
-                        <label className="block text-[9px] font-bold uppercase tracking-widest text-[#6C757D] ml-1">
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          placeholder="+65 66909262"
-                          className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary/20 transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="block text-[9px] font-bold uppercase tracking-widest text-[#6C757D] ml-1">
-                        Subject
-                      </label>
-                      <div className="relative">
-                        <select className="w-full h-12 px-4 rounded-xl border border-gray-200 bg-white text-sm appearance-none cursor-pointer focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary/20 transition-all">
-                          <option value="">Select a topic</option>
-                          <option value="enrollment">Program Enrollment</option>
-                          <option value="corporate">Corporate Training</option>
-                          <option value="consultancy">Consultancy Services</option>
-                          <option value="general">General Inquiry</option>
-                        </select>
-                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
-                      </div>
-                    </div>
-
-                    <div className="space-y-1.5 flex-1 flex flex-col">
-                      <label className="block text-[9px] font-bold uppercase tracking-widest text-[#6C757D] ml-1">
-                        Message
-                      </label>
-                      <textarea
-                        placeholder="How can we help?"
-                        className="w-full flex-1 h-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-4 focus:ring-primary/5 focus:border-primary/20 transition-all resize-none"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full h-14 flex items-center justify-center gap-3 rounded-full bg-black text-white font-bold text-xs uppercase tracking-[0.2em] hover:bg-primary transition-all active:scale-[0.98] shadow-lg mt-2"
-                    >
-                      Send Message 
-                      <Send className="h-4 w-4" />
-                    </button>
-                  </form>
+                  <ContactForm defaultSubject={defaultSubject} topic={topic} />
                 </div>
               </div>
             </div>

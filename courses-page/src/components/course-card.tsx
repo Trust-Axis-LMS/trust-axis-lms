@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, Clock3, Monitor, Star, Users } from "lucide-react";
+import { ArrowRight, Building2, Clock3, Monitor } from "lucide-react";
 import type { Course } from "@/lib/courses-data";
 import { getCourseCategoryMeta } from "@/lib/course-category-meta";
+import { getVendor, getVendorInfo } from "@/lib/courses-catalog";
 import { cn } from "@/lib/utils";
 
 interface CourseCardProps {
@@ -11,6 +12,8 @@ interface CourseCardProps {
 export function CourseCard({ course }: CourseCardProps) {
   const categoryMeta = getCourseCategoryMeta(course.category);
   const CategoryIcon = categoryMeta.icon;
+  const vendorName = course.vendor || getVendor(course.title);
+  const vendor = getVendorInfo(vendorName)?.name ?? vendorName;
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card shadow-[0_18px_55px_rgba(33,37,41,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(33,37,41,0.12)]">
@@ -41,11 +44,6 @@ export function CourseCard({ course }: CourseCardProps) {
                 {categoryMeta.shortLabel}
               </p>
             </div>
-          </div>
-
-          <div className="inline-flex items-center gap-1 rounded-full border border-white/15 bg-black/15 px-3 py-1.5 text-xs font-bold text-white">
-            <Star className="h-3.5 w-3.5 fill-current text-white/90" />
-            {course.rating}
           </div>
         </div>
       </div>
@@ -94,13 +92,13 @@ export function CourseCard({ course }: CourseCardProps) {
 
           <div className="rounded-sm border border-border bg-secondary/40 p-3">
             <div className="flex items-center gap-2 text-muted">
-              <Users className="h-4 w-4" />
+              <Building2 className="h-4 w-4" />
               <span className="text-[10px] font-bold uppercase tracking-[0.18em]">
-                Students
+                Vendor
               </span>
             </div>
             <p className="mt-2.5 text-sm font-semibold text-foreground">
-              {course.students}
+              {vendor}
             </p>
           </div>
         </div>

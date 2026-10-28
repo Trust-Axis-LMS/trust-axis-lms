@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const metadata = {
-  title: "About Us — Trust Axis Consulting Group",
+  title: "About Us",
   description:
     "Trust Axis helps organizations strengthen cybersecurity, govern AI, manage digital risk, and build workforce capability through practical advisory and training.",
 };
@@ -345,7 +345,7 @@ export default function AboutPage() {
                 practical guidance designed to create measurable outcomes.
               </p>
               <a
-                href="mailto:contact@trustacg.com"
+                href="/contact?subject=consultancy"
                 className="inline-flex h-14 items-center justify-center gap-2 px-10 rounded-sm bg-[#007BFF] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#007BFF]/90 transition-colors shadow-[0_12px_24px_rgba(0,123,255,0.28)]"
               >
                 Schedule a Consultation

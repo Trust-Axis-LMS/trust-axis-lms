@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Compass, Home } from "lucide-react";
 
 export const metadata = {
-  title: "Page Not Found — Trust Axis",
+  title: "Page Not Found",
 };
 
 export default function NotFound() {

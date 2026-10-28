@@ -1,5 +1,9 @@
 import { use } from "react";
 import { consultancies } from "@/lib/consultancy-data";
+import { contactHref } from "@/lib/site";
+import { JsonLd } from "@/components/json-ld";
+import { ORGANIZATION_ID, truncate } from "@/lib/seo";
+import { MAIN_SITE_URL } from "@/lib/url";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/header";
@@ -94,10 +98,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const c = consultancies.find((c) => c.slug === slug);
-  if (!c) return { title: "Not Found | Trust Axis" };
+  if (!c) return { title: "Not Found" };
   return {
-    title: `${c.title} | Trust Axis Consultancy`,
-    description: c.excerpt,
+    title: `${c.title} | Consultancy`,
+    description: truncate(c.excerpt),
   };
 }
 
@@ -114,6 +118,17 @@ function ConsultancyDetailsView({ slug }: { slug: string }) {
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: c.title,
+          serviceType: c.category,
+          description: truncate(c.excerpt, 300),
+          url: `${MAIN_SITE_URL}/consultancy/${c.slug}`,
+          provider: { "@id": ORGANIZATION_ID },
+        }}
+      />
       <Header />
 
       {/* ═══════════════════════════════════════════════════════════════════
@@ -166,7 +181,7 @@ function ConsultancyDetailsView({ slug }: { slug: string }) {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/contact"
+                    href={contactHref("", "consultancy", c.title)}
                     className="inline-flex items-center justify-center px-6 h-12 rounded-xl text-xs font-bold uppercase tracking-wider text-white transition-all hover:opacity-90"
                     style={{ backgroundColor: c.color }}
                   >
@@ -570,7 +585,7 @@ function ConsultancyDetailsView({ slug }: { slug: string }) {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href={contactHref("", "consultancy", c.title)}
               className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full text-white font-bold text-sm uppercase tracking-widest hover:opacity-90 transition-all shadow-lg hover:-translate-y-0.5"
               style={{ background: c.color }}
             >

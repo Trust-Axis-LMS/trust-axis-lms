@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { CONTACT_EMAIL, CONTACT_PHONE, LEGAL_NAME, OFFICE_ADDRESS, POLICY_EFFECTIVE_DATE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Privacy & Cookie Policy",
+  description: `How ${LEGAL_NAME} collects, uses, protects and discloses personal data under Singapore's Personal Data Protection Act 2012.`,
+};
+
+const sectionClass = "mb-10";
+const h2Class = "text-2xl font-semibold mb-4";
+const listClass = "list-disc pl-6 space-y-2 mb-4";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -7,92 +18,147 @@ export default function PrivacyPolicyPage() {
       <Header />
       <main className="flex-1 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl prose prose-slate">
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">Privacy and Cookie Consent Policy</h1>
-          <p className="text-muted-foreground font-medium mb-12">Effective Date: [Insert Date]</p>
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">Privacy and Cookie Policy</h1>
+          <p className="text-muted-foreground font-medium mb-12">Effective date: {POLICY_EFFECTIVE_DATE}</p>
 
           <p className="mb-8 leading-relaxed">
-            Welcome to <strong>Trust Axis Group</strong> (“we,” “our,” “us”). We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy and Cookie Consent Policy outlines how we collect, use, and protect your information when you visit our website.
+            This policy explains how <strong>{LEGAL_NAME}</strong> (&ldquo;Trust Axis&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) collects, uses,
+            discloses and protects personal data when you use trustacg.com and train.trustacg.com (the &ldquo;Sites&rdquo;),
+            contact us, or enrol in our programs. We handle personal data in accordance with Singapore&apos;s Personal Data
+            Protection Act 2012 (&ldquo;PDPA&rdquo;).
           </p>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">1. Information We Collect</h2>
-            <p className="mb-4">We may collect the following types of information when you use our website:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Personal Information:</strong> This includes information that can identify you personally, such as your name, email address, phone number, and any other details you provide through forms on our website.</li>
-              <li><strong>Non-Personal Information:</strong> This includes information that does not identify you personally, such as your IP address, browser type, operating system, and usage data.</li>
-              <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar tracking technologies to enhance your experience on our website and to understand how you use our services.</li>
+          <section className={sectionClass}>
+            <h2 className={h2Class}>1. Who We Are</h2>
+            <p className="mb-4">
+              {LEGAL_NAME} is the organisation responsible for your personal data. Our office is at {OFFICE_ADDRESS}.
+            </p>
+            <p className="mb-4">
+              We have appointed a Data Protection Officer (&ldquo;DPO&rdquo;) who oversees our compliance with the PDPA. You can
+              reach the DPO at <a href={`mailto:${CONTACT_EMAIL}?subject=Attn%3A%20Data%20Protection%20Officer`}>{CONTACT_EMAIL}</a> with
+              the subject line &ldquo;Attn: Data Protection Officer&rdquo;.
+            </p>
+          </section>
+
+          <section className={sectionClass}>
+            <h2 className={h2Class}>2. Personal Data We Collect</h2>
+            <ul className={listClass}>
+              <li><strong>Enquiries:</strong> your name, email address, phone number, organisation and message when you contact us by email, phone or through our enquiry form.</li>
+              <li><strong>Account data:</strong> your name, email address and profile photo when you sign in with Google.</li>
+              <li><strong>Learner profile:</strong> details you choose to add to your profile, such as phone number, education, current role and company, experience, skills, career goals, learning preferences, LinkedIn URL and résumé.</li>
+              <li><strong>Enrolment and billing:</strong> the programs you enrol in, invoicing details and payment confirmations. We do not collect or store card numbers on the Sites; payments are processed by our payment provider.</li>
+              <li><strong>Technical data:</strong> IP address, browser type and request logs created by our hosting provider when you visit the Sites.</li>
             </ul>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">2. How We Use Your Information</h2>
-            <p className="mb-4">We use the information we collect for the following purposes:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>To Provide and Improve Our Services:</strong> We use your information to operate, maintain, and improve our website and the services we offer.</li>
-              <li><strong>To Communicate with You:</strong> We may use your contact information to send you updates, respond to your inquiries, and provide customer support.</li>
-              <li><strong>To Personalize Your Experience:</strong> We use cookies and other tracking technologies to remember your preferences and to show you content that is relevant to you.</li>
-              <li><strong>To Analyze Usage:</strong> We analyze how users interact with our website to improve our content and services.</li>
-              <li><strong>To Comply with Legal Obligations:</strong> We may use your information to comply with applicable laws and regulations.</li>
+          <section className={sectionClass}>
+            <h2 className={h2Class}>3. How We Use Your Personal Data</h2>
+            <p className="mb-4">We use personal data, with your consent or as otherwise permitted by the PDPA, to:</p>
+            <ul className={listClass}>
+              <li>respond to enquiries and provide consultancy proposals;</li>
+              <li>create and manage your account and learner profile;</li>
+              <li>process enrolments, invoices and payments, and deliver our programs;</li>
+              <li>register you for certification exams where you ask us to;</li>
+              <li>send updates about programs or services you have asked to hear about;</li>
+              <li>keep the Sites secure and working properly; and</li>
+              <li>meet our legal, regulatory and accounting obligations.</li>
             </ul>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">3. Cookies and Tracking Technologies</h2>
-            <h3 className="text-xl font-medium mb-2">What Are Cookies?</h3>
-            <p className="mb-4">Cookies are small text files that are stored on your device when you visit a website. They help us understand how you interact with our website, remember your preferences, and improve your user experience.</p>
-            <h3 className="text-xl font-medium mb-2">Types of Cookies We Use:</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Essential Cookies:</strong> These cookies are necessary for the website to function and cannot be switched off in our systems.</li>
-              <li><strong>Performance Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</li>
-              <li><strong>Functionality Cookies:</strong> These cookies allow the website to remember choices you make and provide enhanced features and personalization.</li>
-              <li><strong>Targeting/Advertising Cookies:</strong> These cookies are used to deliver content and advertisements that are more relevant to you and your interests.</li>
-            </ul>
-            <h3 className="text-xl font-medium mb-2">Managing Cookies:</h3>
-            <p className="mb-4">You can control and manage cookies through your browser settings. However, please note that disabling cookies may affect the functionality of our website and your ability to use certain features.</p>
+          <section className={sectionClass}>
+            <h2 className={h2Class}>4. Consent and Withdrawal</h2>
+            <p className="mb-4">
+              You may withdraw your consent to our use of your personal data at any time by contacting our DPO. We will
+              process your request within a reasonable time and tell you about any likely consequences, for example that we
+              can no longer deliver a program you are enrolled in. We will not send you marketing messages by phone call,
+              SMS or fax unless you have given clear consent, in line with Singapore&apos;s Do Not Call rules.
+            </p>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">4. Sharing Your Information</h2>
-            <p className="mb-4">We do not sell, trade, or otherwise transfer your personal information to outside parties, except as described below:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Service Providers:</strong> We may share your information with trusted third-party service providers who assist us in operating our website and providing services to you.</li>
-              <li><strong>Legal Compliance:</strong> We may disclose your information when required to do so by law or in response to legal requests.</li>
-              <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of our assets, your information may be transferred to the new owner.</li>
+          <section className={sectionClass}>
+            <h2 className={h2Class}>5. Disclosure to Third Parties</h2>
+            <p className="mb-4">We do not sell personal data. We share it only as needed with:</p>
+            <ul className={listClass}>
+              <li><strong>Service providers</strong> that host and operate the Sites and our database, provide Google sign-in, and process payments, under contracts that require them to protect your data;</li>
+              <li><strong>Certification bodies</strong> (for example ISC2, ISACA or EC-Council) when you ask us to register you for their exam;</li>
+              <li><strong>Your employer</strong> where your enrolment is sponsored by your organisation; and</li>
+              <li><strong>Authorities</strong> where disclosure is required or permitted by law.</li>
             </ul>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">5. Your Rights and Choices</h2>
-            <p className="mb-4">You have the following rights regarding your personal information:</p>
-            <ul className="list-disc pl-6 space-y-2 mb-4">
-              <li><strong>Access:</strong> You can request access to the personal information we hold about you.</li>
-              <li><strong>Correction:</strong> You can request that we correct any inaccuracies in your personal information.</li>
-              <li><strong>Deletion:</strong> You can request that we delete your personal information, subject to certain legal restrictions.</li>
-              <li><strong>Objection:</strong> You can object to the processing of your personal information for direct marketing purposes.</li>
-              <li><strong>Withdrawal of Consent:</strong> If you have given consent to the use of your personal information, you can withdraw it at any time.</li>
+          <section className={sectionClass}>
+            <h2 className={h2Class}>6. Transfers Outside Singapore</h2>
+            <p className="mb-4">
+              Some of our service providers store or process data outside Singapore. When we transfer personal data overseas
+              we take steps to ensure it receives a standard of protection comparable to the PDPA, such as contractual
+              safeguards with the recipient.
+            </p>
+          </section>
+
+          <section className={sectionClass}>
+            <h2 className={h2Class}>7. Cookies</h2>
+            <p className="mb-4">
+              The Sites use only cookies that are strictly necessary for them to work. We do not use advertising or
+              analytics cookies.
+            </p>
+            <ul className={listClass}>
+              <li><strong>Sign-in session cookies</strong> keep you signed in across trustacg.com and train.trustacg.com. They are set only when you sign in and expire when your session ends or you sign out.</li>
+              <li><strong>Security cookies</strong> protect the sign-in process and our content management area from misuse.</li>
             </ul>
-            <p className="mb-4">To exercise these rights, please contact us at [Your Contact Information].</p>
+            <p className="mb-4">
+              You can block or delete cookies in your browser settings, but you will not be able to sign in without them.
+            </p>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">6. Security of Your Information</h2>
-            <p className="mb-4">We take the security of your personal information seriously and implement appropriate technical and organizational measures to protect it from unauthorized access, disclosure, alteration, or destruction.</p>
+          <section className={sectionClass}>
+            <h2 className={h2Class}>8. Protection and Retention</h2>
+            <p className="mb-4">
+              We protect personal data with reasonable security arrangements, including encrypted connections, access
+              controls and restricted administrative access. We keep personal data only for as long as it is needed for the
+              purposes above or for legal and business reasons (for example, financial records), and then delete or
+              anonymise it.
+            </p>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">7. Changes to This Policy</h2>
-            <p className="mb-4">We may update this Privacy and Cookie Consent Policy from time to time to reflect changes in our practices or legal obligations. Any changes will be posted on this page with an updated effective date.</p>
+          <section className={sectionClass}>
+            <h2 className={h2Class}>9. Accuracy, Access and Correction</h2>
+            <p className="mb-4">
+              You can update most profile details yourself after signing in. You may also ask our DPO for access to the
+              personal data we hold about you, information about how it has been used or disclosed in the past year, or a
+              correction. We aim to respond within 30 days; if we need longer, we will tell you when to expect a response.
+              We may charge a reasonable fee for access requests and will tell you the amount first.
+            </p>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4">8. Contact Us</h2>
-            <p className="mb-4">If you have any questions or concerns about this Privacy and Cookie Consent Policy, please contact us at:</p>
-            <address className="not-italic formatting leading-relaxed">
-              <strong>Trust Axis Group</strong><br />
-              51 GOLDHILL PLAZA #07-07 SINGAPORE 308900<br />
-              hello@trustacg.com<br />
-              +65 66909262
+          <section className={sectionClass}>
+            <h2 className={h2Class}>10. Data Breaches</h2>
+            <p className="mb-4">
+              If a data breach is likely to result in significant harm to you, or affects a significant number of people, we
+              will notify the Personal Data Protection Commission (&ldquo;PDPC&rdquo;) and, where required, the affected
+              individuals, as the PDPA requires.
+            </p>
+          </section>
+
+          <section className={sectionClass}>
+            <h2 className={h2Class}>11. Changes to This Policy</h2>
+            <p className="mb-4">
+              We may update this policy from time to time. Changes are posted on this page with a new effective date.
+            </p>
+          </section>
+
+          <section className={sectionClass}>
+            <h2 className={h2Class}>12. Contact Us</h2>
+            <p className="mb-4">For questions, requests or complaints about your personal data, contact our Data Protection Officer:</p>
+            <address className="not-italic leading-relaxed mb-4">
+              <strong>Data Protection Officer, {LEGAL_NAME}</strong><br />
+              {OFFICE_ADDRESS}<br />
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a><br />
+              {CONTACT_PHONE}
             </address>
+            <p className="mb-4">
+              If you are not satisfied with our response, you may contact the Personal Data Protection Commission at{" "}
+              <a href="https://www.pdpc.gov.sg" target="_blank" rel="noopener noreferrer">www.pdpc.gov.sg</a>.
+            </p>
           </section>
         </div>
       </main>

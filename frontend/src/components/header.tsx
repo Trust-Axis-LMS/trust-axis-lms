@@ -11,6 +11,10 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { COURSES_SITE_URL } from "@/lib/url";
+import { PRACTICE_AREAS, contactHref } from "@/lib/site";
+
+// Links are prefixed so the same header works on both domains.
+const BASE = "";
 import { motion, AnimatePresence } from "framer-motion";
 
 // ─── Domain-based Mega-Menu Data ─────────────────────────────────────────────
@@ -143,7 +147,7 @@ function MegaMenuSkeleton({ onClose }: { onClose: () => void }) {
             ))}
           </div>
         </div>
-        <div className="p-5 bg-white/80 border-t border-slate-200/50 backdrop-blur-md flex justify-center sticky bottom-0 z-10">
+        <div className="p-5 bg-white/80 border-t border-slate-200/50 backdrop-blur-md flex justify-center gap-3 sticky bottom-0 z-10">
           <div className="h-11 w-64 bg-slate-900/30 animate-pulse rounded-xl" />
         </div>
       </div>
@@ -251,14 +255,14 @@ function LearningMegaMenu({
                 );
               })}
             </div>
-            <div className="p-6 bg-gradient-to-br from-blue-600 to-indigo-700 m-4 rounded-2xl shadow-lg relative overflow-hidden group cursor-pointer" onClick={onClose}>
+            <a href={contactHref(BASE, "enrollment")} className="block p-6 bg-gradient-to-br from-blue-600 to-indigo-700 m-4 rounded-2xl shadow-lg relative overflow-hidden group cursor-pointer" onClick={onClose}>
               <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors" />
               <h5 className="text-white font-bold text-sm mb-1">Need Guidance?</h5>
               <p className="text-blue-100 text-xs mb-3">Talk to our advisors to find the perfect career path.</p>
               <div className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 px-3 py-1.5 rounded-lg hover:bg-white/30 transition-colors">
                 Book a Call <ArrowRight className="w-3 h-3" />
               </div>
-            </div>
+            </a>
           </div>
 
           {/* ── Column 2: Subcategories ── */}
@@ -344,9 +348,9 @@ function LearningMegaMenu({
                 </div>
               </div>
 
-              {activeMain?.subcategories && (
+              {activeMain?.subcategories && activeSub && (
                 <a
-                  href={`${COURSES_SITE_URL}?category=${encodeURIComponent(activeMain.label)}`}
+                  href={`${COURSES_SITE_URL}/${activeMain.id === "vendor" ? "vendors" : "topics"}/${activeSub.id}`}
                   onClick={onClose}
                   className="text-[11px] font-bold uppercase tracking-widest text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1 group"
                 >
@@ -374,13 +378,20 @@ function LearningMegaMenu({
               </div>
             </div>
 
-            <div className="p-5 bg-white/80 border-t border-slate-200/50 backdrop-blur-md flex justify-center sticky bottom-0 z-10">
+            <div className="p-5 bg-white/80 border-t border-slate-200/50 backdrop-blur-md flex justify-center gap-3 sticky bottom-0 z-10">
               <a
                 href={COURSES_SITE_URL}
                 onClick={onClose}
                 className="inline-flex items-center justify-center gap-2 px-8 py-3 text-[13px] font-bold text-white bg-slate-900 rounded-xl hover:bg-blue-600 shadow-md hover:shadow-blue-600/25 transition-all duration-300 active:scale-95"
               >
                 Browse Full Course Catalog <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href={`${COURSES_SITE_URL}/corporate`}
+                onClick={onClose}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-[13px] font-bold text-slate-700 rounded-xl border border-slate-200 bg-white hover:border-blue-400 hover:text-blue-600 transition-all duration-300"
+              >
+                Corporate Training
               </a>
             </div>
           </div>
@@ -392,17 +403,34 @@ function LearningMegaMenu({
   );
 }
 
-function CompanyDropdown({ onClose }: { onClose: () => void }) {
+interface DropdownItem {
+  href: string;
+  label: string;
+}
+
+const companyItems: DropdownItem[] = [
+  { href: `${BASE}/about`, label: "About Us" },
+  { href: `${BASE}/value-proposition`, label: "Value Proposition" },
+  { href: `${BASE}/contact`, label: "Contact Us" },
+];
+
+const consultancyItems: DropdownItem[] = [
+  ...PRACTICE_AREAS.map((area) => ({ href: `${BASE}/consultancy/${area.slug}`, label: area.label })),
+  { href: `${BASE}/consultancy`, label: "All Practice Areas" },
+];
+
+function NavDropdown({ items, onClose }: { items: DropdownItem[]; onClose: () => void }) {
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden py-2">
-
-        <Link href="/value-proposition" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors group">
+      {items.map((item) => (
+        <Link key={item.href} href={item.href} onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors group">
           <div className="h-7 w-7 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-blue-50">
             <Globe className="h-3.5 w-3.5 text-gray-500 group-hover:text-[#007BFF]" />
           </div>
-          Value Proposition
+          {item.label}
         </Link>
-      </div>
+      ))}
+    </div>
   );
 }
 
@@ -411,11 +439,11 @@ export function Header() {
   const { data: rawMegaMenuData } = useMegaMenu();
   const megaMenuData = Array.isArray(rawMegaMenuData) && rawMegaMenuData.length > 0 ? rawMegaMenuData : defaultMenuData;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeMega, setActiveMega] = useState<"learning" | "company" | null>(null);
+  const [activeMega, setActiveMega] = useState<"learning" | "company" | "consultancy" | null>(null);
 
   const megaTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const handleEnter = (key: "learning" | "company") => {
+  const handleEnter = (key: "learning" | "company" | "consultancy") => {
     if (megaTimerRef.current) clearTimeout(megaTimerRef.current);
     setActiveMega(key);
   };
@@ -440,11 +468,11 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b bg-slate-950/45 backdrop-blur-md border-white/10">
+      <header className="sticky top-0 z-50 w-full border-b bg-white/85 backdrop-blur-md border-slate-200/80 shadow-[0_1px_12px_rgba(15,23,42,0.04)]">
         <div className="container mx-auto flex h-[68px] items-center justify-between px-4 md:px-6 relative">
           {/* Logo */}
           <Link href="/" className="flex items-center cursor-pointer group -ml-3 md:-ml-5 flex-shrink-0">
-            <img src="/logo.png" alt="Trust Axis Logo" className="h-12 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
+            <img src="/logo.png" alt="Trust Axis Logo" className="h-12 w-auto object-contain transition-transform group-hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation — centred */}
@@ -456,17 +484,16 @@ export function Header() {
               onMouseEnter={() => handleEnter("company")}
               onMouseLeave={handleLeave}
             >
-              <button
-                type="button"
+              <Link
+                href={`${BASE}/about`}
                 className={cn(
                   "flex items-center gap-1 px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest transition-colors",
-                  activeMega === "company" ? "text-white bg-white/10" : "text-slate-300 hover:text-white hover:bg-white/5"
+                  activeMega === "company" ? "text-slate-900 bg-slate-100" : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                 )}
-                onClick={() => setActiveMega(activeMega === "company" ? null : "company")}
               >
                 Company
                 <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", activeMega === "company" ? "rotate-180" : "")} />
-              </button>
+              </Link>
 
               <AnimatePresence>
                 {activeMega === "company" && (
@@ -479,7 +506,7 @@ export function Header() {
                     onMouseLeave={handleLeave}
                     className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-52"
                   >
-                    <CompanyDropdown onClose={() => setActiveMega(null)} />
+                    <NavDropdown items={companyItems} onClose={() => setActiveMega(null)} />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -491,40 +518,68 @@ export function Header() {
               onMouseEnter={() => handleEnter("learning")}
               onMouseLeave={handleLeave}
             >
-              <button
-                type="button"
+              <a
+                href={COURSES_SITE_URL}
                 className={cn(
                   "flex items-center gap-1 px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest transition-colors whitespace-nowrap",
-                  activeMega === "learning" ? "text-white bg-white/10" : "text-slate-300 hover:text-white hover:bg-white/5"
+                  activeMega === "learning" ? "text-slate-900 bg-slate-100" : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                 )}
-                onClick={() => setActiveMega(activeMega === "learning" ? null : "learning")}
               >
                 Academy
                 <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", activeMega === "learning" ? "rotate-180" : "")} />
-              </button>
+              </a>
 
               {activeMega === "learning" && (
                 <div className="absolute inset-0 pointer-events-none" />
               )}
             </div>
 
-            {/* Consultancy */}
-            <Link href="/#consultancy" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
-              Consultancy
-            </Link>
+            {/* Consultancy Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleEnter("consultancy")}
+              onMouseLeave={handleLeave}
+            >
+              <Link
+                href={`${BASE}/consultancy`}
+                className={cn(
+                  "flex items-center gap-1 px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest transition-colors whitespace-nowrap",
+                  activeMega === "consultancy" ? "text-slate-900 bg-slate-100" : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                )}
+              >
+                Consultancy
+                <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", activeMega === "consultancy" ? "rotate-180" : "")} />
+              </Link>
+
+              <AnimatePresence>
+                {activeMega === "consultancy" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    onMouseEnter={() => handleEnter("consultancy")}
+                    onMouseLeave={handleLeave}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50 w-72"
+                  >
+                    <NavDropdown items={consultancyItems} onClose={() => setActiveMega(null)} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Resources */}
-            <Link href="/resources" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+            <Link href="/resources" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors whitespace-nowrap">
               Knowledge Base
             </Link>
 
             {/* About Us */}
-            <Link href="/about" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+            <Link href="/about" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors whitespace-nowrap">
               About Us
             </Link>
 
             {/* Contact Us */}
-            <Link href="/contact" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-300 hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">
+            <Link href="/contact" className="px-3.5 py-2 rounded-lg text-[11px] font-bold uppercase tracking-widest text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors whitespace-nowrap">
               Contact Us
             </Link>
 
@@ -534,7 +589,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-xl hover:bg-white/10 text-white transition-colors"
+              className="lg:hidden flex items-center justify-center h-10 w-10 rounded-xl hover:bg-slate-100 text-slate-900 transition-colors"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
@@ -585,7 +640,7 @@ export function Header() {
               return (
                 <a
                   key={mainCat.id}
-                  href={`${COURSES_SITE_URL}?category=${encodeURIComponent(mainCat.label)}`}
+                  href={mainCat.id === "vendor" ? `${COURSES_SITE_URL}/vendors` : mainCat.id === "domain" ? `${COURSES_SITE_URL}/topics` : COURSES_SITE_URL}
                   onClick={closeAll}
                   className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-[#007BFF] transition-colors group"
                 >
@@ -598,13 +653,30 @@ export function Header() {
               );
             })}
 
+            <a
+              href={`${COURSES_SITE_URL}/corporate`}
+              onClick={closeAll}
+              className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-[#007BFF] transition-colors group"
+            >
+              <div className="h-7 w-7 rounded-lg bg-gray-100 group-hover:bg-[#007BFF]/15 flex items-center justify-center flex-shrink-0 transition-colors">
+                <Building2 className="h-3.5 w-3.5 text-gray-500 group-hover:text-[#007BFF] transition-colors" />
+              </div>
+              Corporate Training
+              <ArrowRight className="h-3.5 w-3.5 ml-auto text-gray-300 group-hover:text-[#007BFF] transition-colors" />
+            </a>
+
             <div className="h-px bg-gray-100 my-3" />
 
             {/* Other nav */}
             <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 px-2 mb-2">Explore</p>
-            <Link href="/#consultancy" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+            <Link href={`${BASE}/consultancy`} onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
               <Shield className="h-4 w-4 text-gray-400" /> Consultancy
             </Link>
+            {PRACTICE_AREAS.map((area) => (
+              <Link key={area.slug} href={`${BASE}/consultancy/${area.slug}`} onClick={closeAll} className="flex items-center gap-3 pl-10 pr-3 py-2.5 rounded-xl text-[13px] font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 transition-colors">
+                {area.label}
+              </Link>
+            ))}
             <Link href="/resources" onClick={closeAll} className="flex items-center gap-3 px-3 py-3.5 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
               <Building2 className="h-4 w-4 text-gray-400" /> Knowledge Base
             </Link>

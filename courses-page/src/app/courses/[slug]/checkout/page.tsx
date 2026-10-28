@@ -4,6 +4,7 @@ import { getCourse } from "@/lib/course-queries";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import CheckoutClient from "./checkout-client";
+import { shortCourseName } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,8 +22,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const course = await getCourse(slug).catch(() => null);
   if (!course) return { title: "Course Not Found" };
   return {
-    title: `Enroll in ${course.title} — Trust Axis`,
-    description: `Complete your enrollment for ${course.title}. Secure your spot in the next cohort.`,
+    title: `Enrol in ${shortCourseName(course.title)}`,
+    description: `Request a place in the next ${shortCourseName(course.title)} cohort with Trust Axis Academy.`,
+    // Transactional step: kept out of search (also disallowed in robots.txt)
+    robots: { index: false, follow: true },
   };
 }
 
