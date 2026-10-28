@@ -11,8 +11,10 @@ import {
   Megaphone, GraduationCap, Cpu, Terminal, Zap, Search, Network, Bell, Lock, Wifi,
   Flame, Cog, Box, Table, PieChart, BookOpen, FileText, Layers, CheckSquare,
   LayoutDashboard, Mail, Globe, Link as LinkIcon, Send, Pen, Wind, ScanSearch,
-  FolderSearch, FileCode, X, Download, Phone, Twitter, Linkedin, UserCircle, ChevronLeft, ChevronRight,
+  FolderSearch, FileCode, Download,
 } from "lucide-react";
+import { MAIN_SITE_URL } from "@/lib/url";
+import { contactHref } from "@/lib/site";
 
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -42,77 +44,10 @@ const tabs: { key: TabKey; label: string }[] = [
   { key: "tools", label: "Tools Covered" },
 ];
 
-// ─── Sample Instructors ───────────────────────────────────────────────────────
-const instructors = [
-  { name: "Dr. James Patterson", title: "Information Security Expert", exp: "20+ Years", certs: ["CISSP", "CEH", "CISM"] },
-  { name: "Emily Rodriguez", title: "Cybersecurity Specialist", exp: "15+ Years", certs: ["CompTIA Security+", "OSCP"] },
-  { name: "David Kumar", title: "Network Security Architect", exp: "18+ Years", certs: ["CCNA Security", "CCIE"] },
-  { name: "Lisa Thompson", title: "Penetration Testing Lead", exp: "12+ Years", certs: ["GPEN", "CEH Master"] },
-  { name: "Michael Chen", title: "Cloud Security Specialist", exp: "10+ Years", certs: ["AWS Security", "CCSP"] },
-];
-
 import type { Course } from "@/lib/courses-data";
 
 interface CourseDetailsClientProps {
   course: Course;
-}
-
-// ─── Brochure Modal ───────────────────────────────────────────────────────────
-function BrochureModal({ onClose }: { onClose: () => void }) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden">
-        <div className="bg-[#212529] text-white px-6 py-5 flex items-center justify-between">
-          <div>
-            <h3 className="font-bold text-base">Download Brochure</h3>
-            <p className="text-gray-400 text-xs mt-0.5">Get the full program details sent to you</p>
-          </div>
-          <button onClick={onClose} className="rounded-full p-1 hover:bg-white/10 transition-colors">
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-        <form className="p-6 space-y-4" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
-          <div>
-            <label className="block text-[10px] font-bold uppercase tracking-widest text-[#6C757D] mb-1.5">Full Name</label>
-            <input
-              type="text"
-              placeholder="John Doe"
-              required
-              className="w-full h-11 px-4 rounded-md border border-gray-200 text-sm text-[#212529] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-gray-400 transition-colors"
-            />
-          </div>
-          <div>
-            <label className="block text-[10px] font-bold uppercase tracking-widest text-[#6C757D] mb-1.5">Email Address</label>
-            <input
-              type="email"
-              placeholder="john@company.com"
-              required
-              className="w-full h-11 px-4 rounded-md border border-gray-200 text-sm text-[#212529] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-gray-400 transition-colors"
-            />
-          </div>
-          <div>
-            <label className="block text-[10px] font-bold uppercase tracking-widest text-[#6C757D] mb-1.5">Phone Number</label>
-            <input
-              type="tel"
-              placeholder="+65 66909262"
-              required
-              className="w-full h-11 px-4 rounded-md border border-gray-200 text-sm text-[#212529] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-gray-400 transition-colors"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full h-12 flex items-center justify-center gap-2 rounded-md bg-black text-white font-bold text-sm uppercase tracking-widest hover:bg-black/90 transition-colors mt-2"
-          >
-            <Download className="h-4 w-4" /> Send Brochure
-          </button>
-          <p className="text-center text-[11px] text-[#6C757D]">
-            We&apos;ll email the brochure within a few minutes.
-          </p>
-        </form>
-      </div>
-    </div>
-  );
 }
 
 function groupSubtopics(subtopics: {title: string}[]) {
@@ -147,10 +82,20 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
     window.scrollTo(0, 0);
   }, []);
 
-  const [activeTab, setActiveTab] = useState<TabKey>("about");
+  // Only show tabs that have real content for this course
+  const tabHasContent: Record<TabKey, boolean> = {
+    about: course.aboutCourse.length > 0,
+    objectives: course.objectives.length > 0,
+    curriculum: course.curriculum.length > 0,
+    audience: course.targetAudience.length > 0,
+    exam: course.examDetails.length > 0,
+    tools: course.toolsCovered.length > 0,
+  };
+  const visibleTabs = tabs.filter((tab) => tabHasContent[tab.key]);
+
+  const [activeTab, setActiveTab] = useState<TabKey>(visibleTabs[0]?.key ?? "about");
   const [expandedModules, setExpandedModules] = useState<number[]>([1]);
-  const [showBrochureModal, setShowBrochureModal] = useState(false);
-  const [instructorIndex, setInstructorIndex] = useState(0);
+  const brochureHref = contactHref(MAIN_SITE_URL, "brochure", course.title);
 
   const toggleModule = (num: number) => {
     setExpandedModules((prev) =>
@@ -158,22 +103,9 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
     );
   };
 
-  const showCarousel = instructors.length > 2;
-  const maxIndex = instructors.length - 2; // Subtracting 2 because we show 2 at a time
-
-  const nextInstructor = () => {
-    setInstructorIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
-
-  const prevInstructor = () => {
-    setInstructorIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-  };
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Brochure Modal */}
-      {showBrochureModal && <BrochureModal onClose={() => setShowBrochureModal(false)} />}
-
       {/* SECTION 1: Banner Hero */}
       <section className="relative overflow-hidden bg-[#18181B] border-b border-[#F4F4F5]">
         {/* Background overlay */}
@@ -220,21 +152,15 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
             >
               Enroll Now <ArrowRight className="h-4 w-4" />
             </Link>
-            <button
-              onClick={() => setShowBrochureModal(true)}
+            <a
+              href={brochureHref}
               className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-sm border border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors"
             >
-              <Download className="h-4 w-4" /> Download Brochure
-            </button>
+              <Download className="h-4 w-4" /> Request Brochure
+            </a>
           </div>
         </div>
 
-        {/* Bottom label */}
-        <div className="relative z-20 bg-black/40 border-t border-white/10">
-          <div className="container mx-auto px-4 md:px-8 max-w-5xl py-3">
-            <p className="text-[10px] font-bold text-white/50 uppercase tracking-widest">Sample course banner image — will be replaced</p>
-          </div>
-        </div>
       </section>
 
       {/* SECTION 2: Course Info Stats */}
@@ -271,6 +197,7 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
       </section>
 
       {/* SECTION 3: Program Highlights */}
+      {course.programHighlights.length > 0 && (
       <section className="bg-[#F9FAFB] border-b border-[#F4F4F5] py-14 md:py-20">
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <div className="text-center mb-10 md:mb-14">
@@ -302,14 +229,16 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
           </div>
         </div>
       </section>
+      )}
 
       {/* SECTION 4: Tabbed Content */}
+      {visibleTabs.length > 0 && (
       <section className="bg-white">
         {/* Sticky Tab Bar */}
         <div className="sticky top-[90px] z-30 bg-white border-b border-[#E5E7EB] shadow-sm">
           <div className="container mx-auto px-4 md:px-8 max-w-6xl">
             <div className="flex overflow-x-auto scrollbar-hide gap-0 relative">
-              {tabs.map((tab) => (
+              {visibleTabs.map((tab) => (
                 <button
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
@@ -348,6 +277,7 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
                   </p>
                 ))}
               </div>
+              {course.directorQuote.text && (
               <blockquote className="mt-10 border-l-4 border-[#212529] pl-6 py-4 bg-[#F9FAFB] rounded-r-lg">
                 <p className="text-[#212529] text-sm md:text-base italic leading-relaxed mb-3">
                   &ldquo;{course.directorQuote.text}&rdquo;
@@ -356,6 +286,7 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
                   — {course.directorQuote.author}
                 </cite>
               </blockquote>
+              )}
             </div>
           )}
 
@@ -530,92 +461,7 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
           )}
         </div>
       </section>
-
-      {/* SECTION 5: Instructor Carousel */}
-      <section className="bg-[#F9FAFB] border-t border-[#F4F4F5] py-14 md:py-20">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-          <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#212529] tracking-tight mb-3">
-              Your Instructors
-            </h2>
-            <p className="text-[#6C757D] text-sm md:text-base">
-              Learn from certified practitioners with real-world expertise
-            </p>
-          </div>
-
-          <div className="relative">
-            {/* Navigation Controls — Only show if more than 2 instructors */}
-            {showCarousel && (
-              <>
-                <button
-                  onClick={prevInstructor}
-                  className="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full border border-gray-200 bg-white shadow-sm hover:shadow-md hover:bg-gray-50 text-[#212529] transition-all"
-                  aria-label="Previous instructors"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-
-                <button
-                  onClick={nextInstructor}
-                  className="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full border border-gray-200 bg-white shadow-sm hover:shadow-md hover:bg-gray-50 text-[#212529] transition-all"
-                  aria-label="Next instructors"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </>
-            )}
-
-            <div className="mx-0 md:mx-4 overflow-hidden">
-              <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${instructorIndex * (100 / (showCarousel ? 2 : instructors.length))}%)` }}
-              >
-                {instructors.map((instructor, i) => (
-                  <div key={i} className="w-full md:w-1/2 flex-shrink-0 px-2 md:px-4">
-                    <div className="rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white flex flex-col h-full">
-                      <div className="aspect-[16/9] bg-gradient-to-b from-[#5c5c5c] to-[#2a2a2a] flex items-center justify-center">
-                        <UserCircle className="w-16 h-16 text-white/10" strokeWidth={0.5} />
-                      </div>
-                      <div className="p-5 text-center flex flex-col items-center flex-1">
-                        <h3 className="font-bold text-[#212529] text-base mb-1">{instructor.name}</h3>
-                        <p className="text-xs text-[#6C757D] mb-2">{instructor.title}</p>
-                        <div className="flex items-center gap-1.5 text-xs font-medium text-[#4A5568] mb-3">
-                          <Briefcase className="h-3 w-3 text-[#6C757D]" /> {instructor.exp}
-                        </div>
-                        <div className="flex flex-wrap justify-center gap-1.5 mb-4">
-                          {instructor.certs.map((cert, j) => (
-                            <span key={j} className="inline-flex items-center gap-1 rounded-sm bg-[#F4F4F5] px-2 py-1 text-[8px] font-bold uppercase tracking-wider text-[#212529]">
-                              <Award className="h-2 w-2" /> {cert}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex justify-center gap-4 text-[#8C8C8C] mt-auto">
-                          <Linkedin className="h-4 w-4 hover:text-[#0a66c2] cursor-pointer transition-colors" />
-                          <Twitter className="h-4 w-4 hover:text-black cursor-pointer transition-colors" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Dots — Only show if carousel is active */}
-          {showCarousel && (
-            <div className="flex justify-center gap-2 mt-8">
-              {Array.from({ length: instructors.length - 1 }).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setInstructorIndex(i)}
-                  className={`h-2 rounded-full transition-all duration-300 ${i === instructorIndex ? "w-6 bg-[#212529]" : "w-2 bg-gray-300 hover:bg-gray-400"}`}
-                  aria-label={`View set ${i + 1}`}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+      )}
 
       {/* SECTION 6: Enroll CTA */}
       <section id="contact" className="bg-black text-white py-16 md:py-20">
@@ -624,7 +470,7 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
             Ready to Start?
           </h2>
           <p className="text-gray-400 text-base md:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-            Join {course.students}+ students already enrolled in {course.title}. The next cohort starts soon.
+            Speak with an advisor about upcoming {course.title} cohorts, schedules and corporate options.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -633,12 +479,12 @@ export function CourseDetailsClient({ course }: CourseDetailsClientProps) {
             >
               Enroll Now <ArrowRight className="h-4 w-4" />
             </Link>
-            <button
-              onClick={() => setShowBrochureModal(true)}
+            <a
+              href={brochureHref}
               className="inline-flex items-center justify-center gap-2 px-8 h-14 rounded-sm border border-white/20 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors"
             >
-              <Download className="h-4 w-4" /> Download Brochure
-            </button>
+              <Download className="h-4 w-4" /> Request Brochure
+            </a>
           </div>
           <div className="mt-10 flex justify-center">
             <Link

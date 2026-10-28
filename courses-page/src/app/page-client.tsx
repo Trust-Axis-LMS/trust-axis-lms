@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { ArrowRight, BookOpen, Search, SlidersHorizontal, X } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -10,17 +12,53 @@ import { Badge } from "@/components/ui/badge";
 import { getCourseCategoryMeta } from "@/lib/course-category-meta";
 import { cn } from "@/lib/utils";
 import { MAIN_SITE_URL } from "@/lib/url";
+import { contactHref } from "@/lib/site";
+import { getVendor, getVendorInfo, topicSlug, vendorSlug } from "@/lib/courses-catalog";
 import { PixelAnimation } from "@/components/ui/pixel-animation";
 import type { Course } from "@/lib/courses-data";
 
-export function CoursesPageClient({ courses }: { courses: Course[] }) {
+/** Reads deep-link filters from the URL; rendered inside a Suspense boundary. */
+export function CoursesPageWithParams({ courses }: { courses: Course[] }) {
+  const searchParams = useSearchParams();
+  return (
+    <CoursesPageClient
+      courses={courses}
+      initialCategory={searchParams.get("category")}
+      initialVendor={searchParams.get("vendor")}
+    />
+  );
+}
+
+export function CoursesPageClient({
+  courses,
+  initialCategory = null,
+  initialVendor = null,
+}: {
+  courses: Course[];
+  initialCategory?: string | null;
+  initialVendor?: string | null;
+}) {
   // Dynamically compute categories from actual database courses
   const uniqueCategories = Array.from(new Set(courses.map(c => c.category))).filter(Boolean).sort();
   const categories = ["All", ...uniqueCategories];
   const domainCategories = categories.filter((c) => c !== "All");
 
+  const courseVendor = (course: Course) => vendorSlug(course.vendor || getVendor(course.title));
+  const vendorOptions = Array.from(new Set(courses.map(courseVendor)))
+    .map((slug) => ({ slug, label: getVendorInfo(slug)?.name ?? slug }))
+    .sort((a, b) => a.label.localeCompare(b.label));
+
+  // Deep links: ?category=<domain name or topic slug> and ?vendor=<vendor slug or name>
+  const initialCategories = initialCategory
+    ? domainCategories.filter((c) => topicSlug(c) === topicSlug(initialCategory))
+    : [];
+  const initialVendors = initialVendor
+    ? vendorOptions.filter((v) => v.slug === vendorSlug(initialVendor)).map((v) => v.slug)
+    : [];
+
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(initialCategories);
+  const [selectedVendors, setSelectedVendors] = useState<string[]>(initialVendors);
   const [filterOpen, setFilterOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileSheetRef = useRef<HTMLDivElement>(null);
@@ -33,35 +71,49 @@ export function CoursesPageClient({ courses }: { courses: Course[] }) {
         : [...prev, category]
     );
 
+  const toggleVendor = (vendor: string) =>
+    setSelectedVendors((prev) =>
+      prev.includes(vendor) ? prev.filter((v) => v !== vendor) : [...prev, vendor]
+    );
+
   const resetFilters = () => {
     setSearchQuery("");
     setSelectedCategories([]);
+    setSelectedVendors([]);
   };
 
-  const clearCategories = () => setSelectedCategories([]);
+  const clearCategories = () => {
+    setSelectedCategories([]);
+    setSelectedVendors([]);
+  };
 
   /* ── derived ─────────────────────────────────────── */
   const filteredCourses = courses.filter((course) => {
     const matchesCategory =
       selectedCategories.length === 0 ||
       selectedCategories.includes(course.category);
+    const matchesVendor =
+      selectedVendors.length === 0 ||
+      selectedVendors.includes(courseVendor(course));
     const matchesSearch =
       searchQuery === "" ||
       course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       course.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
       course.category.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesVendor && matchesSearch;
   });
 
-  const activeCount = selectedCategories.length;
+  const activeCount = selectedCategories.length + selectedVendors.length;
 
   // Short heading label — always fits on mobile
   const headingLabel =
     activeCount === 0
       ? "All Programs"
-      : activeCount === 1
-      ? getCourseCategoryMeta(selectedCategories[0]).shortLabel
-      : `${activeCount} Domains`;
+      : activeCount > 1
+      ? `${activeCount} Filters`
+      : selectedVendors.length === 1
+      ? getVendorInfo(selectedVendors[0])?.name ?? selectedVendors[0]
+      : getCourseCategoryMeta(selectedCategories[0]).shortLabel;
 
   /* ── close panel on outside click (desktop dropdown only) ── */
   useEffect(() => {
@@ -92,7 +144,7 @@ export function CoursesPageClient({ courses }: { courses: Course[] }) {
     const el = document.getElementById("catalog-grid");
     if (!el) return;
     window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 110, behavior: "smooth" });
-  }, [selectedCategories]);
+  }, [selectedCategories, selectedVendors]);
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -137,7 +189,7 @@ export function CoursesPageClient({ courses }: { courses: Course[] }) {
                     Explore Programs <ArrowRight className="h-4 w-4" />
                   </a>
                   <a
-                    href={`${MAIN_SITE_URL}/#contact`}
+                    href={contactHref(MAIN_SITE_URL, "enrollment")}
                     className="inline-flex h-14 items-center justify-center gap-2 rounded-sm border border-border bg-background px-8 text-sm font-bold uppercase tracking-[0.14em] text-foreground transition-colors hover:bg-secondary"
                   >
                     Book Consultation
@@ -217,6 +269,9 @@ export function CoursesPageClient({ courses }: { courses: Course[] }) {
                 <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-30 hidden rounded-xl border border-border bg-white shadow-[0_20px_60px_rgba(33,37,41,0.14)] lg:block">
                   <FilterPanel
                     domainCategories={domainCategories}
+                    vendorOptions={vendorOptions}
+                    selectedVendors={selectedVendors}
+                    onToggleVendor={toggleVendor}
                     selectedCategories={selectedCategories}
                     filteredCount={filteredCourses.length}
                     onToggle={toggleCategory}
@@ -239,6 +294,9 @@ export function CoursesPageClient({ courses }: { courses: Course[] }) {
                 <div ref={mobileSheetRef} className="fixed bottom-0 left-0 right-0 z-50 max-h-[80vh] overflow-y-auto rounded-t-2xl bg-white lg:hidden">
                   <FilterPanel
                     domainCategories={domainCategories}
+                    vendorOptions={vendorOptions}
+                    selectedVendors={selectedVendors}
+                    onToggleVendor={toggleVendor}
                     selectedCategories={selectedCategories}
                     filteredCount={filteredCourses.length}
                     onToggle={toggleCategory}
@@ -305,11 +363,17 @@ export function CoursesPageClient({ courses }: { courses: Course[] }) {
               Speak with an enrollment advisor to compare programs and find the best fit for your goals.
             </p>
             <a
-              href={`${MAIN_SITE_URL}/#contact`}
+              href={contactHref(MAIN_SITE_URL, "enrollment")}
               className="inline-flex h-14 items-center justify-center gap-2 rounded-sm bg-black px-8 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80"
             >
               Speak to an Advisor
             </a>
+            <p className="mt-6 text-sm text-[#6C757D]">
+              Training a team?{" "}
+              <Link href="/corporate" className="font-semibold text-primary hover:underline">
+                See corporate programs
+              </Link>
+            </p>
           </div>
         </section>
       </main>
@@ -321,6 +385,9 @@ export function CoursesPageClient({ courses }: { courses: Course[] }) {
 /* ── Shared filter panel content (used in both sheet + dropdown) ── */
 function FilterPanel({
   domainCategories,
+  vendorOptions,
+  selectedVendors,
+  onToggleVendor,
   selectedCategories,
   filteredCount,
   onToggle,
@@ -328,6 +395,9 @@ function FilterPanel({
   onClose,
 }: {
   domainCategories: string[];
+  vendorOptions: { slug: string; label: string }[];
+  selectedVendors: string[];
+  onToggleVendor: (vendor: string) => void;
   selectedCategories: string[];
   filteredCount: number;
   onToggle: (cat: string) => void;
@@ -338,14 +408,14 @@ function FilterPanel({
     <div className="flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between border-b border-border px-5 py-4">
-        <p className="text-sm font-bold uppercase tracking-widest text-foreground">Filter by Domain</p>
+        <p className="text-sm font-bold uppercase tracking-widest text-foreground">Filter Programs</p>
         <div className="flex items-center gap-4">
-          {selectedCategories.length > 0 && (
+          {selectedCategories.length + selectedVendors.length > 0 && (
             <button
               onClick={onClear}
               className="text-xs font-semibold text-muted hover:text-foreground"
             >
-              Clear ({selectedCategories.length})
+              Clear ({selectedCategories.length + selectedVendors.length})
             </button>
           )}
           <button onClick={onClose} className="text-muted hover:text-foreground" aria-label="Close">
@@ -354,8 +424,32 @@ function FilterPanel({
         </div>
       </div>
 
+      {/* Vendor chips */}
+      <p className="px-5 pt-5 text-[10px] font-bold uppercase tracking-widest text-muted">By Vendor</p>
+      <div className="flex flex-wrap gap-2 px-5 pt-3">
+        {vendorOptions.map((vendor) => {
+          const isActive = selectedVendors.includes(vendor.slug);
+          return (
+            <button
+              key={vendor.slug}
+              onClick={() => onToggleVendor(vendor.slug)}
+              className={cn(
+                "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition-all",
+                isActive
+                  ? "border-primary bg-primary text-white"
+                  : "border-border bg-background text-foreground hover:border-primary/40 hover:bg-secondary"
+              )}
+            >
+              {vendor.label}
+              {isActive && <X className="h-3 w-3 opacity-70" />}
+            </button>
+          );
+        })}
+      </div>
+
       {/* Category grid */}
-      <div className="grid grid-cols-2 gap-2 p-5 sm:grid-cols-3">
+      <p className="px-5 pt-5 text-[10px] font-bold uppercase tracking-widest text-muted">By Domain</p>
+      <div className="grid grid-cols-2 gap-2 p-5 pt-3 sm:grid-cols-3">
         {domainCategories.map((category) => {
           const meta = getCourseCategoryMeta(category);
           const CategoryIcon = meta.icon;

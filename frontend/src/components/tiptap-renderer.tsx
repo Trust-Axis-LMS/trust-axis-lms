@@ -43,6 +43,14 @@ function optimizeImages(node: TipTapNode): void {
   node.content?.forEach(optimizeImages);
 }
 
+// The post page already renders the title as the page's only <h1>
+function demoteTopHeadings(node: TipTapNode): void {
+  if (node.type === "heading" && node.attrs?.level === 1) {
+    node.attrs = { ...node.attrs, level: 2 };
+  }
+  node.content?.forEach(demoteTopHeadings);
+}
+
 interface TipTapRendererProps {
   content: string; // JSON string
 }
@@ -50,6 +58,7 @@ interface TipTapRendererProps {
 function renderContent(content: string): React.ReactNode | null {
   try {
     const json = JSON.parse(content) as TipTapNode;
+    demoteTopHeadings(json);
     addHeadingIds(json);
     optimizeImages(json);
     return renderToReactElement({ content: json, extensions: EXTENSIONS });

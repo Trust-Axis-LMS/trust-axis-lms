@@ -6,6 +6,8 @@ import { generateToc } from "@/lib/generate-toc";
 import { TipTapRenderer } from "@/components/tiptap-renderer";
 import { optimizeImageUrl } from "@/lib/image-url";
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/json-ld";
+import { articleJsonLd, postMetadata } from "@/lib/seo";
 
 export const revalidate = 60;
 
@@ -16,11 +18,13 @@ export function generateStaticParams() {
 
 interface Props { params: Promise<{ slug: string }> }
 
+const SEO_SELECT = { title: true, excerpt: true, content: true, coverImageUrl: true, author: true, publishedAt: true, updatedAt: true } as const;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = await prisma.contentPost.findUnique({ where: { slug, type: "BLOG", status: "PUBLISHED" }, select: { title: true, excerpt: true } }).catch(() => null);
-  if (!post) return { title: "Blog — Trust Axis" };
-  return { title: `${post.title} — Trust Axis`, description: post.excerpt ?? undefined };
+  const post = await prisma.contentPost.findUnique({ where: { slug, type: "BLOG", status: "PUBLISHED" }, select: SEO_SELECT }).catch(() => null);
+  if (!post) return { title: "Blog" };
+  return postMetadata(post, `/resources/blogs/${slug}`);
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -35,6 +39,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      <JsonLd data={articleJsonLd(post, `/resources/blogs/${slug}`, "BlogPosting")} />
       <Header />
       <main className="flex-1">
         {/* Cover */}

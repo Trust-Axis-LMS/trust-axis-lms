@@ -24,7 +24,7 @@ type ResourceItem = {
   description: string;
   category: string;
   readTime: string;
-  href?: string;
+  href: string;
   coverImageUrl?: string;
   author?: string;
   date?: string;
@@ -161,7 +161,7 @@ export function ResourcePageShell({
                         )}
                       >
                         <FileText className="h-3.5 w-3.5" />
-                        {items.length} Featured Pieces
+                        {items.length} {items.length === 1 ? "Piece" : "Pieces"} Published
                       </div>
                       <div
                         className={cn(
@@ -200,12 +200,25 @@ export function ResourcePageShell({
 
               {filteredItems.length === 0 ? (
                 <div className="py-16 text-center text-[#6C757D]">
-                  <p className="text-lg">No resources found matching &quot;{searchQuery}&quot;.</p>
+                  {items.length === 0 ? (
+                    <>
+                      <p className="text-lg">Nothing has been published here yet.</p>
+                      <p className="mt-2 text-sm">
+                        Want to hear when it is?{" "}
+                        <Link href="/contact?subject=general" className="font-semibold text-[#007BFF] hover:underline">
+                          Get in touch
+                        </Link>
+                        .
+                      </p>
+                    </>
+                  ) : (
+                    <p className="text-lg">No resources found matching &quot;{searchQuery}&quot;.</p>
+                  )}
                 </div>
               ) : (
                 <div className={cn("grid gap-6 md:gap-8", config.gridClassName)}>
                   {filteredItems.map((item) => (
-                  <Link key={item.title} href={item.href ?? "#"} className="outline-none flex flex-col h-full">
+                  <Link key={item.href} href={item.href} className="outline-none flex flex-col h-full">
                     <Card className={config.cardClassName}>
                       {config.cardBandClassName !== "hidden" && (
                         <div className={config.cardBandClassName} />

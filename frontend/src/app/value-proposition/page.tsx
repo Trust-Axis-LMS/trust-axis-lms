@@ -1,6 +1,12 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import type { Metadata } from "next";
 import { Shield, Settings, Users, LineChart } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Value Proposition",
+  description: "How Trust Axis combines strategic advisory, technology, training and assessments to strengthen digital resilience.",
+};
 
 export default function ValuePropositionPage() {
   return (

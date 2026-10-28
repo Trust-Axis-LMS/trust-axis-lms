@@ -1,7 +1,13 @@
 import { prisma } from "@/lib/prisma";
+import type { Metadata } from "next";
 import { ResourcePageShell } from "@/components/resource-page-shell";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "Blogs",
+  description: "Commentary from Trust Axis on cybersecurity, AI governance, privacy and workforce capability.",
+};
 
 export default async function BlogsPage() {
   const posts = await prisma.contentPost.findMany({
@@ -26,12 +32,7 @@ export default async function BlogsPage() {
       badge="Blogs"
       title="Current Thinking For Technical Teams"
       intro="Explore blog posts focused on practical upskilling, workforce development, and the operating realities behind high-quality technical training."
-      items={items.length > 0 ? items : defaultItems}
+      items={items}
     />
   );
 }
-
-const defaultItems = [
-  { title: "How Training Teams Should Evaluate Technical Programs", description: "A practical framework for comparing curriculum depth, delivery format, instructor quality, and learner outcomes before committing budget.", category: "Program Strategy", readTime: "6 Min Read" },
-  { title: "What Employers Actually Look For In Cybersecurity Candidates", description: "A breakdown of the technical, communication, and certification signals hiring teams use when evaluating early and mid-career security talent.", category: "Cybersecurity", readTime: "5 Min Read" },
-];

@@ -1,7 +1,13 @@
 import { prisma } from "@/lib/prisma";
+import type { Metadata } from "next";
 import { ResourcePageShell } from "@/components/resource-page-shell";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "Articles",
+  description: "Practical articles from Trust Axis on security architecture, data and technology risk.",
+};
 
 export default async function ArticlesPage() {
   const posts = await prisma.contentPost.findMany({
@@ -26,12 +32,7 @@ export default async function ArticlesPage() {
       badge="Articles"
       title="Technical Deep-Dives For Modern Teams"
       intro="Explore technical articles on security architecture, data engineering, cloud platforms, and digital risk from Trust Axis experts."
-      items={items.length > 0 ? items : defaultItems}
+      items={items}
     />
   );
 }
-
-const defaultItems = [
-  { title: "Zero Trust Architecture in Practice", description: "A technical walkthrough of implementing zero trust across enterprise environments.", category: "Cybersecurity", readTime: "8 Min Read" },
-  { title: "Data Mesh vs. Data Lake: When to Use Each", description: "A practical comparison of modern data architecture patterns and their tradeoffs.", category: "Data Science", readTime: "6 Min Read" },
-];

@@ -5,11 +5,11 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { AnimatedCounter } from "@/components/animated-counter";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import { ContactForm } from "@/components/contact-form";
+import { GridPulse } from "@/components/ui/grid-pulse";
+import { EdgeLines } from "@/components/ui/edge-lines";
+import { PRACTICE_AREAS } from "@/lib/site";
 import {
   ArrowRight,
   Shield,
@@ -54,6 +54,77 @@ const iconMap: Record<string, React.ElementType> = {
   KeyRound,
   Globe,
 };
+
+// ─── Practice areas (order and labels follow PRACTICE_AREAS) ─────────────────
+const practiceVisuals: Record<string, {
+  icon: React.ElementType;
+  image: string;
+  description: string;
+  cardClass: string;
+  overlayClass: string;
+  titleClass: string;
+  buttonClass: string;
+}> = {
+  "cybersecurity-advisory": {
+    icon: ShieldCheck,
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+    description: "Cyber governance, maturity assessments, control reviews, incident readiness, and security roadmaps.",
+    cardClass: "hover:border-blue-300 hover:shadow-blue-900/10",
+    overlayClass: "from-[#0f172a]/60",
+    titleClass: "group-hover:text-blue-600",
+    buttonClass: "group-hover:bg-blue-600 group-hover:border-blue-600",
+  },
+  "ai-technology-advisory": {
+    icon: Brain,
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+    description: "AI readiness, AI governance frameworks, responsible AI policy, and technology risk assessment.",
+    cardClass: "hover:border-violet-300 hover:shadow-violet-900/10",
+    overlayClass: "from-[#8b5cf6]/40",
+    titleClass: "group-hover:text-violet-600",
+    buttonClass: "group-hover:bg-violet-600 group-hover:border-violet-600",
+  },
+  "privacy-data-protection": {
+    icon: Lock,
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    description: "Privacy readiness, data protection gap reviews, breach response readiness, and privacy-by-design.",
+    cardClass: "hover:border-teal-300 hover:shadow-teal-900/10",
+    overlayClass: "from-[#10b981]/40",
+    titleClass: "group-hover:text-teal-600",
+    buttonClass: "group-hover:bg-teal-600 group-hover:border-teal-600",
+  },
+  "cloud-technology-risk": {
+    icon: Cpu,
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+    description: "Cloud security posture, technology and third-party risk, secure architecture, and transformation risk reviews.",
+    cardClass: "hover:border-sky-300 hover:shadow-sky-900/10",
+    overlayClass: "from-[#0ea5e9]/40",
+    titleClass: "group-hover:text-sky-600",
+    buttonClass: "group-hover:bg-sky-500 group-hover:border-sky-500",
+  },
+  "fintech-strategic-services": {
+    icon: Landmark,
+    image: "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=800&q=80",
+    description: "Strategic advisory across payments, open banking, digital transformation, lending, compliance, and credit card services.",
+    cardClass: "hover:border-orange-300 hover:shadow-orange-900/10",
+    overlayClass: "from-[#f97316]/40",
+    titleClass: "group-hover:text-orange-600",
+    buttonClass: "group-hover:bg-orange-500 group-hover:border-orange-500",
+  },
+  "esg-consulting-advisory": {
+    icon: Leaf,
+    image: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=800&q=80",
+    description: "Environmental, social, and governance strategy, measurable actions, and credible reporting frameworks for responsible growth.",
+    cardClass: "hover:border-emerald-300 hover:shadow-emerald-900/10",
+    overlayClass: "from-[#10b981]/40",
+    titleClass: "group-hover:text-emerald-600",
+    buttonClass: "group-hover:bg-emerald-500 group-hover:border-emerald-500",
+  },
+};
+
+const practiceTiles = PRACTICE_AREAS.map((area) => ({ ...area, ...practiceVisuals[area.slug] }));
+
+// A halo in the page colour so the background lines never crowd the letters
+const textGuard = "[text-shadow:0_0_6px_#fff,0_0_14px_#fff,0_0_30px_#fff]";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 const challengesList = [
@@ -153,55 +224,44 @@ export default function Home() {
       <main className="flex-1">
 
         {/* ════════════════════════════════════════════════════════════════════
-            1. HERO SECTION (Spaceship Manual / Technical Blueprint)
+            1. HERO SECTION (Technical Blueprint on an animated colour grid)
         ════════════════════════════════════════════════════════════════════ */}
-        <section className="relative w-full min-h-screen bg-[#070a14] font-sans -mt-[68px] pt-[68px] pb-16 flex items-center justify-center border-b border-slate-800">
-          
-          {/* Background Video */}
-          <div className="absolute inset-0 z-0 overflow-hidden">
-            <video
-              src="/hero-video.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-            {/* Darken overlay to make text box pop and ensure proper contrast */}
-            <div className="absolute inset-0 bg-[#070a14]/80"></div>
-          </div>
+        <section className="relative w-full min-h-[100svh] bg-white font-sans -mt-[68px] pt-[68px] pb-6 flex items-center justify-center border-b border-slate-200 overflow-hidden">
 
-          <div className="container relative z-10 px-4 md:px-6 max-w-[1300px] mx-auto w-full h-full pt-10 md:pt-16">
+          {/* Coloured blocks fading in and out across a fine grid, on their own */}
+          <GridPulse cell={32} hues={[210, 216, 222, 24, 30]} interactive={false} ambient={5} pace={420} maxLit={90} className="z-0" />
+
+          <div className="container relative z-10 px-4 md:px-6 max-w-[1300px] mx-auto w-full h-full pt-6 md:pt-8">
             
             {/* ─── Technical Frame ─── */}
-            <div className="relative bg-[#070a14]/60 backdrop-blur-md border border-slate-800/80 rounded-2xl shadow-2xl flex flex-col lg:flex-row min-h-[600px] overflow-hidden">
+            <div className="relative bg-white/85 border border-slate-200 rounded-2xl shadow-[0_30px_80px_-30px_rgba(15,23,42,0.25)] flex flex-col lg:flex-row overflow-hidden">
               
               {/* ─── LEFT PANEL: Main Display ─── */}
-              <div className="flex-1 p-8 md:p-12 lg:p-14 flex flex-col justify-between relative z-10">
+              <div className="flex-1 p-8 md:p-10 flex flex-col justify-between relative z-10">
                 {/* Subtle blue glow behind text */}
-                <div className="absolute top-0 left-0 w-full h-full bg-blue-900/10 blur-[100px] -z-10 pointer-events-none rounded-full" />
+                <div className="absolute top-0 left-0 w-full h-full bg-blue-100/40 blur-[100px] -z-10 pointer-events-none rounded-full" />
                 
-                <div className="space-y-6">
+                <div className="space-y-5">
                   {/* Category breadcrumbs */}
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] md:text-[11px] font-bold text-blue-500 uppercase tracking-widest">
-                    <span>CYBERSECURITY</span> <span className="text-slate-600">•</span> <span>TECHNOLOGY</span> <span className="text-slate-600">•</span> <span>BANKING</span> <span className="text-slate-600">•</span> <span>TRANSFORMATION</span>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] md:text-[11px] font-bold text-blue-600 uppercase tracking-widest">
+                    <span>CYBERSECURITY</span> <span className="text-slate-300">•</span> <span>TECHNOLOGY</span> <span className="text-slate-300">•</span> <span>BANKING</span> <span className="text-slate-300">•</span> <span>TRANSFORMATION</span>
                   </div>
 
                   {/* Headline */}
-                  <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white tracking-tight leading-[1.1]">
-                    Trusted Advisors <br /> for a Complex <br /> <span className="text-blue-500">Digital World</span>
+                  <h1 className="text-4xl md:text-5xl lg:text-[3.15rem] font-bold text-slate-900 tracking-tight leading-[1.1]">
+                    Trusted Advisors <br /> for a Complex <br /> <span className="text-blue-600">Digital World</span>
                   </h1>
 
                   {/* Primary Statement */}
-                  <div className="max-w-xl mt-6">
-                    <p className="text-slate-300 text-sm md:text-[15px] leading-relaxed">
+                  <div className="max-w-xl mt-5">
+                    <p className="text-slate-600 text-sm md:text-[15px] leading-relaxed">
                       We help organizations navigate complex business and technology challenges across cybersecurity, AI and emerging technology, digital transformation, banking, ESG, and workforce capability. Our advisory and training services combine strategic insight with practical execution to strengthen resilience, accelerate transformation, and build lasting organizational capability.
                     </p>
                   </div>
                 </div>
 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4 mt-10">
+                <div className="flex flex-col sm:flex-row gap-4 mt-8">
                   <Link
                     href="#services"
                     className="inline-flex items-center justify-center gap-2 px-8 h-[46px] bg-blue-600 rounded-[4px] text-white font-bold text-[11px] uppercase tracking-widest hover:bg-blue-500 transition-colors"
@@ -210,91 +270,91 @@ export default function Home() {
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 px-8 h-[46px] bg-transparent border border-slate-700 rounded-[4px] text-white font-bold text-[11px] uppercase tracking-widest hover:bg-white/5 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-8 h-[46px] bg-white border border-slate-300 rounded-[4px] text-slate-900 font-bold text-[11px] uppercase tracking-widest hover:bg-slate-50 transition-colors"
                   >
                     TALK TO AN ADVISOR
                   </Link>
                 </div>
                 
                 {/* 4 Pillars Bottom Left */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-800">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-slate-200 [@media(min-width:1024px)_and_(max-height:800px)]:hidden">
                   <div className="flex flex-col items-center text-center">
                     <ShieldCheck className="w-6 h-6 text-blue-500 mb-2 stroke-[1.5]" />
-                    <span className="text-[10px] font-bold text-slate-200 uppercase tracking-wider leading-tight mb-1">TRUSTED<br/>BY LEADERS</span>
+                    <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider leading-tight mb-1">TRUSTED<br/>BY LEADERS</span>
                     <span className="text-[10px] text-slate-500">Across Industries</span>
                   </div>
                   <div className="flex flex-col items-center text-center">
                     <Globe className="w-6 h-6 text-blue-500 mb-2 stroke-[1.5]" />
-                    <span className="text-[10px] font-bold text-slate-200 uppercase tracking-wider leading-tight mb-1">GLOBAL<br/>PERSPECTIVE</span>
+                    <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider leading-tight mb-1">GLOBAL<br/>PERSPECTIVE</span>
                     <span className="text-[10px] text-slate-500">Local Relevance</span>
                   </div>
                   <div className="flex flex-col items-center text-center">
                     <Users className="w-6 h-6 text-blue-500 mb-2 stroke-[1.5]" />
-                    <span className="text-[10px] font-bold text-slate-200 uppercase tracking-wider leading-tight mb-1">EXPERT<br/>CONSULTANTS</span>
+                    <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider leading-tight mb-1">EXPERT<br/>CONSULTANTS</span>
                     <span className="text-[10px] text-slate-500">Practical Insights</span>
                   </div>
                   <div className="flex flex-col items-center text-center">
                     <Target className="w-6 h-6 text-blue-500 mb-2 stroke-[1.5]" />
-                    <span className="text-[10px] font-bold text-slate-200 uppercase tracking-wider leading-tight mb-1">MEASURABLE<br/>IMPACT</span>
+                    <span className="text-[10px] font-bold text-slate-800 uppercase tracking-wider leading-tight mb-1">MEASURABLE<br/>IMPACT</span>
                     <span className="text-[10px] text-slate-500">Sustainable Results</span>
                   </div>
                 </div>
               </div>
 
               {/* ─── RIGHT PANEL: Grid of Cards ─── */}
-              <div className="w-full lg:w-[600px] p-6 md:p-8 flex flex-col gap-4 bg-slate-900/40">
+              <div className="w-full lg:w-[600px] p-5 md:p-6 flex flex-col gap-4 bg-slate-50/40 border-t lg:border-t-0 lg:border-l border-slate-200">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
                   {/* Card 1 */}
-                  <div className="bg-[#0b101e]/90 border border-slate-800/80 rounded-xl p-6 flex flex-col hover:border-blue-500/50 transition-colors group">
-                    <div className="flex justify-between items-start mb-6">
+                  <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex flex-col hover:border-blue-500/50 transition-colors group">
+                    <div className="flex justify-between items-start mb-4">
                       <Shield className="w-8 h-8 text-blue-500 stroke-[1.5] group-hover:scale-110 transition-transform" />
                       <span className="text-xl font-mono font-bold text-blue-500">01</span>
                     </div>
-                    <h3 className="text-[13px] font-bold text-white uppercase tracking-wider leading-snug mb-3">CYBERSECURITY &<br/>DIGITAL TRUST</h3>
-                    <div className="w-6 h-px bg-slate-700 group-hover:bg-blue-500 mb-4 transition-colors" />
-                    <p className="text-[12px] md:text-[13px] text-slate-300 leading-relaxed font-medium">
+                    <h3 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider leading-snug mb-2">CYBERSECURITY &<br/>DIGITAL TRUST</h3>
+                    <div className="w-6 h-px bg-slate-200 group-hover:bg-blue-500 mb-3 transition-colors" />
+                    <p className="text-[12px] md:text-[13px] text-slate-600 leading-relaxed font-medium">
                       Strengthen cyber resilience, governance, risk, compliance, privacy, third-party risk, cloud security, and operational resilience.
                     </p>
                   </div>
                   {/* Card 2 */}
-                  <div className="bg-[#0b101e]/90 border border-slate-800/80 rounded-xl p-6 flex flex-col hover:border-blue-500/50 transition-colors group">
-                    <div className="flex justify-between items-start mb-6">
+                  <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex flex-col hover:border-blue-500/50 transition-colors group">
+                    <div className="flex justify-between items-start mb-4">
                       <Brain className="w-8 h-8 text-blue-500 stroke-[1.5] group-hover:scale-110 transition-transform" />
                       <span className="text-xl font-mono font-bold text-blue-500">02</span>
                     </div>
-                    <h3 className="text-[13px] font-bold text-white uppercase tracking-wider leading-snug mb-3">AI, TECHNOLOGY &<br/>TRANSFORMATION</h3>
-                    <div className="w-6 h-px bg-slate-700 group-hover:bg-blue-500 mb-4 transition-colors" />
-                    <p className="text-[12px] md:text-[13px] text-slate-300 leading-relaxed font-medium">
+                    <h3 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider leading-snug mb-2">AI, TECHNOLOGY &<br/>TRANSFORMATION</h3>
+                    <div className="w-6 h-px bg-slate-200 group-hover:bg-blue-500 mb-3 transition-colors" />
+                    <p className="text-[12px] md:text-[13px] text-slate-600 leading-relaxed font-medium">
                       Adopt AI responsibly, modernize technology, automate operations, strengthen digital governance, and build scalable operating models.
                     </p>
                   </div>
                   {/* Card 3 */}
-                  <div className="bg-[#0b101e]/90 border border-slate-800/80 rounded-xl p-6 flex flex-col hover:border-blue-500/50 transition-colors group">
-                    <div className="flex justify-between items-start mb-6">
+                  <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex flex-col hover:border-blue-500/50 transition-colors group">
+                    <div className="flex justify-between items-start mb-4">
                       <Landmark className="w-8 h-8 text-blue-500 stroke-[1.5] group-hover:scale-110 transition-transform" />
                       <span className="text-xl font-mono font-bold text-blue-500">03</span>
                     </div>
-                    <h3 className="text-[13px] font-bold text-white uppercase tracking-wider leading-snug mb-3">BANKING &<br/>BUSINESS ADVISORY</h3>
-                    <div className="w-6 h-px bg-slate-700 group-hover:bg-blue-500 mb-4 transition-colors" />
-                    <p className="text-[12px] md:text-[13px] text-slate-300 leading-relaxed font-medium">
+                    <h3 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider leading-snug mb-2">BANKING &<br/>BUSINESS ADVISORY</h3>
+                    <div className="w-6 h-px bg-slate-200 group-hover:bg-blue-500 mb-3 transition-colors" />
+                    <p className="text-[12px] md:text-[13px] text-slate-600 leading-relaxed font-medium">
                       Transform lending, payments, cards, customer journeys, financial operations, and technology-enabled banking capabilities.
                     </p>
                   </div>
                   {/* Card 4 */}
-                  <div className="bg-[#0b101e]/90 border border-slate-800/80 rounded-xl p-6 flex flex-col hover:border-blue-500/50 transition-colors group">
-                    <div className="flex justify-between items-start mb-6">
+                  <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex flex-col hover:border-blue-500/50 transition-colors group">
+                    <div className="flex justify-between items-start mb-4">
                       <Leaf className="w-8 h-8 text-green-500 stroke-[1.5] group-hover:scale-110 transition-transform" />
                       <span className="text-xl font-mono font-bold text-green-500">04</span>
                     </div>
-                    <h3 className="text-[13px] font-bold text-white uppercase tracking-wider leading-snug mb-3">ESG &<br/>SUSTAINABILITY</h3>
-                    <div className="w-6 h-px bg-slate-700 group-hover:bg-green-500 mb-4 transition-colors" />
-                    <p className="text-[12px] md:text-[13px] text-slate-300 leading-relaxed font-medium">
+                    <h3 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider leading-snug mb-2">ESG &<br/>SUSTAINABILITY</h3>
+                    <div className="w-6 h-px bg-slate-200 group-hover:bg-green-500 mb-3 transition-colors" />
+                    <p className="text-[12px] md:text-[13px] text-slate-600 leading-relaxed font-medium">
                       Turn ESG priorities into practical strategies through governance, maturity assessments, reporting readiness, and responsible growth.
                     </p>
                   </div>
                 </div>
                 {/* Card 5 (Full Width) */}
-                <div className="bg-[#0b101e]/90 border border-slate-800/80 rounded-xl p-6 flex flex-col md:flex-row gap-6 items-start hover:border-purple-500/50 transition-colors group">
+                <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex flex-col md:flex-row gap-6 items-start hover:border-purple-500/50 transition-colors group">
                   <div className="flex-1">
                     <div className="flex justify-between items-start md:hidden mb-4">
                       <GraduationCap className="w-8 h-8 text-purple-500 stroke-[1.5] group-hover:scale-110 transition-transform" />
@@ -303,14 +363,14 @@ export default function Home() {
                     <div className="hidden md:flex justify-between items-center mb-3">
                       <div className="flex items-center gap-4">
                         <GraduationCap className="w-8 h-8 text-purple-500 stroke-[1.5] group-hover:scale-110 transition-transform" />
-                        <h3 className="text-[13px] font-bold text-white uppercase tracking-wider">IT & CYBERSECURITY TRAINING</h3>
+                        <h3 className="text-[13px] font-bold text-slate-900 uppercase tracking-wider">IT & CYBERSECURITY TRAINING</h3>
                       </div>
                       <span className="text-xl font-mono font-bold text-purple-500">05</span>
                     </div>
-                    <h3 className="md:hidden text-[13px] font-bold text-white uppercase tracking-wider leading-snug mb-3">IT & CYBERSECURITY<br/>TRAINING</h3>
-                    <div className="hidden md:block w-6 h-px bg-slate-700 group-hover:bg-purple-500 mb-3 transition-colors" />
-                    <div className="md:hidden w-6 h-px bg-slate-700 group-hover:bg-purple-500 mb-4 transition-colors" />
-                    <p className="text-[12px] md:text-[13px] text-slate-300 leading-relaxed font-medium">
+                    <h3 className="md:hidden text-[13px] font-bold text-slate-900 uppercase tracking-wider leading-snug mb-2">IT & CYBERSECURITY<br/>TRAINING</h3>
+                    <div className="hidden md:block w-6 h-px bg-slate-200 group-hover:bg-purple-500 mb-3 transition-colors" />
+                    <div className="md:hidden w-6 h-px bg-slate-200 group-hover:bg-purple-500 mb-4 transition-colors" />
+                    <p className="text-[12px] md:text-[13px] text-slate-600 leading-relaxed font-medium">
                       Build workforce capability through practical programs in cybersecurity, cloud, AI, governance, risk, compliance, and digital leadership.
                     </p>
                   </div>
@@ -320,10 +380,10 @@ export default function Home() {
             </div>
             
             {/* Scroll Down */}
-            <div className="flex justify-center mt-12 mb-4">
+            <div className="flex justify-center mt-5 [@media(min-width:1024px)_and_(max-height:800px)]:hidden">
               <button
                 onClick={() => statsRef.current?.scrollIntoView({ behavior: "smooth" })}
-                className="flex flex-col items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-blue-500 hover:text-blue-400 transition-colors cursor-pointer"
+                className="flex flex-col items-center gap-2 text-[10px] uppercase tracking-widest font-bold text-blue-600 hover:text-blue-500 transition-colors cursor-pointer"
                 aria-label="Scroll down to stats"
               >
                 <span>Scroll Down</span>
@@ -619,120 +679,39 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {practiceTiles.map((tile) => {
+                const Icon = tile.icon;
+                return (
+                  <Link
+                    key={tile.slug}
+                    href={`/consultancy/${tile.slug}`}
+                    className={`group flex flex-col p-4 bg-white border border-slate-200 rounded-[2rem] hover:shadow-2xl transition-all duration-300 ${tile.cardClass}`}
+                  >
+                    <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
+                      <img src={tile.image} alt={tile.label} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                      <div className={`absolute inset-0 bg-gradient-to-t to-transparent mix-blend-multiply ${tile.overlayClass}`}></div>
+                      <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
+                        <Icon className="h-6 w-6" strokeWidth={2} />
+                      </div>
+                    </div>
 
-              {/* Tile 1: Banking & Credit Card Services */}
-              <Link
-                href="/consultancy/fintech-strategic-services"
-                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-orange-300 rounded-[2rem] hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-300"
-              >
-                <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
-                  <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=800&q=80" alt="Banking" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#f97316]/40 to-transparent mix-blend-multiply"></div>
-                  <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
-                    <Landmark className="h-6 w-6" strokeWidth={2} />
-                  </div>
-                </div>
-                
-                <div className="px-2 md:px-4 flex flex-col flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-orange-600 transition-colors duration-300">
-                    Banking & Credit Card Services
-                  </h3>
-                  <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
-                    Strategic advisory across payments, open banking, digital transformation, lending, compliance, and credit card services.
-                  </p>
-                  
-                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-orange-500 group-hover:border-orange-500 group-hover:text-white transition-colors duration-300">
-                    <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
-              </Link>
+                    <div className="px-2 md:px-4 flex flex-col flex-1">
+                      <h3 className={`text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight transition-colors duration-300 ${tile.titleClass}`}>
+                        {tile.label}
+                      </h3>
+                      <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
+                        {tile.description}
+                      </p>
 
-              {/* Tile 2: Digital Transformation */}
-              <Link
-                href="/consultancy/cloud-technology-risk"
-                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-sky-300 rounded-[2rem] hover:shadow-2xl hover:shadow-sky-900/10 transition-all duration-300"
-              >
-                <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
-                  <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Digital Transformation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0ea5e9]/40 to-transparent mix-blend-multiply"></div>
-                  <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
-                    <Cpu className="h-6 w-6" strokeWidth={2} />
-                  </div>
-                </div>
-                
-                <div className="px-2 md:px-4 flex flex-col flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-sky-600 transition-colors duration-300">
-                    Digital Transformation
-                  </h3>
-                  <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
-                    Cloud migration, platform modernisation, technology risk, third-party risk management, and digital strategy advisory.
-                  </p>
-                  
-                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-sky-500 group-hover:border-sky-500 group-hover:text-white transition-colors duration-300">
-                    <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
-              </Link>
-
-              {/* Tile 3: Cybersecurity & Data Privacy */}
-              <Link
-                href="/consultancy/cybersecurity-advisory"
-                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-blue-300 rounded-[2rem] hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300"
-              >
-                <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
-                  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/60 to-transparent mix-blend-multiply"></div>
-                  <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
-                    <ShieldCheck className="h-6 w-6" strokeWidth={2} />
-                  </div>
-                </div>
-                
-                <div className="px-2 md:px-4 flex flex-col flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
-                    Cybersecurity & Data Privacy
-                  </h3>
-                  <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
-                    Cyber governance, risk management, controls assessment, AI risk, privacy, and GRC advisory.
-                  </p>
-                  
-                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:text-white transition-colors duration-300">
-                    <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
-              </Link>
-
-              {/* Tile 4: ESG Advisory */}
-              <Link
-                href="/consultancy/esg-consulting-advisory"
-                className="group flex flex-col p-4 bg-white border border-slate-200 hover:border-emerald-300 rounded-[2rem] hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-300"
-              >
-                <div className="relative w-full h-48 md:h-56 rounded-[1.5rem] overflow-hidden mb-6">
-                  <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=800&q=80" alt="ESG" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#10b981]/40 to-transparent mix-blend-multiply"></div>
-                  <div className="absolute bottom-4 left-4 h-12 w-12 bg-white/20 backdrop-blur-md border border-white/30 rounded-xl flex items-center justify-center text-white shadow-lg">
-                    <Leaf className="h-6 w-6" strokeWidth={2} />
-                  </div>
-                </div>
-                
-                <div className="px-2 md:px-4 flex flex-col flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 tracking-tight group-hover:text-emerald-600 transition-colors duration-300">
-                    ESG Advisory
-                  </h3>
-                  <p className="text-[15px] text-slate-600 leading-relaxed mb-8 flex-1">
-                    Environmental, social, and governance strategies, measurable actions, and credible reporting frameworks for responsible growth.
-                  </p>
-                  
-                  <div className="mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:bg-emerald-500 group-hover:border-emerald-500 group-hover:text-white transition-colors duration-300">
-                    <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
-              </Link>
-
+                      <div className={`mt-auto w-full flex items-center justify-between px-6 py-4 bg-slate-50 border border-slate-100 rounded-xl group-hover:text-white transition-colors duration-300 ${tile.buttonClass}`}>
+                        <span className="text-[13px] font-bold tracking-widest uppercase">Explore Practice</span>
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -880,56 +859,19 @@ export default function Home() {
         {/* ════════════════════════════════════════════════════════════════════
             10. CONTACT FORM
         ════════════════════════════════════════════════════════════════════ */}
-        <section id="contact" className="relative py-16 md:py-24 scroll-mt-[90px] overflow-hidden">
-          {/* Darkened gradient background */}
-          <div
-            className="absolute inset-0 z-0"
-            style={{ background: 'linear-gradient(135deg, #0A0A0F 0%, #0d1b2a 40%, #0f2044 100%)' }}
-          />
-          {/* Gradient orbs */}
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-blue-700/20 blur-[120px]" />
-            <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-purple-700/15 blur-[100px]" />
-            <div className="absolute top-1/2 right-0 w-[200px] h-[200px] rounded-full bg-blue-500/10 blur-[80px]" />
-          </div>
+        <section id="contact" className="relative py-12 md:py-14 scroll-mt-[68px] overflow-hidden bg-white border-t border-slate-200 text-slate-900">
+          {/* Subtle blue and orange lines along the left and right edges */}
+          <EdgeLines colors={["#2563eb", "#f97316", "#60a5fa", "#fb923c"]} count={18} className="z-0" />
 
           <div className="container relative z-10 mx-auto px-4 md:px-8 max-w-4xl">
-            <div className="text-center mb-10 md:mb-16 space-y-2 md:space-y-4">
-              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-blue-400">Get In Touch</p>
-              <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight">Ready to Start the Conversation?</h2>
-              <p className="text-white/60 text-sm md:text-lg">Tell us about your organization and how we can help. We&apos;ll get back to you promptly.</p>
+            <div className="text-center mb-8 space-y-2 md:space-y-3">
+              <p className={`text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-blue-600 ${textGuard}`}>Get In Touch</p>
+              <h2 className={`text-2xl md:text-4xl font-bold text-slate-900 tracking-tight ${textGuard}`}>Ready to Start the Conversation?</h2>
+              <p className={`text-slate-600 text-sm md:text-lg ${textGuard}`}>Tell us about your organization and how we can help. We&apos;ll get back to you promptly.</p>
             </div>
 
-            <Card className="rounded-2xl border border-white/10 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)] bg-white/5 backdrop-blur-md p-6 md:p-12">
-              <form className="space-y-5 md:space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
-                  <div className="space-y-1.5 md:space-y-2">
-                    <Label htmlFor="fullName" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Full Name</Label>
-                    <Input id="fullName" placeholder="Your full name" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
-                  </div>
-                  <div className="space-y-1.5 md:space-y-2">
-                    <Label htmlFor="email" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Email Address</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
-                  <div className="space-y-1.5 md:space-y-2">
-                    <Label htmlFor="phone" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Phone Number</Label>
-                    <Input id="phone" type="tel" placeholder="+65 66909262" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
-                  </div>
-                  <div className="space-y-1.5 md:space-y-2">
-                    <Label htmlFor="organization" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">Organization</Label>
-                    <Input id="organization" placeholder="Your organization name" className="h-12 md:h-14 bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm focus-visible:ring-blue-400" />
-                  </div>
-                </div>
-                <div className="space-y-1.5 md:space-y-2">
-                  <Label htmlFor="message" className="text-[10px] md:text-xs uppercase tracking-widest font-bold text-white/60 mb-1 ml-1">How Can We Help?</Label>
-                  <Textarea id="message" placeholder="Tell us about your cybersecurity, AI, or digital risk challenges..." className="min-h-[140px] md:min-h-[180px] bg-white/10 border-white/20 text-white placeholder:text-white/30 rounded-md shadow-sm resize-y focus-visible:ring-blue-400 p-4 text-sm" />
-                </div>
-                <Button className="w-full h-12 md:h-14 text-xs md:text-sm uppercase tracking-widest font-bold rounded-md bg-blue-600 text-white hover:bg-blue-700 mt-2 shadow-md transition-all">
-                  Send Message
-                </Button>
-              </form>
+            <Card className="rounded-2xl border border-slate-200 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.25)] bg-white p-6 md:p-8">
+              <ContactForm compact />
             </Card>
           </div>
         </section>

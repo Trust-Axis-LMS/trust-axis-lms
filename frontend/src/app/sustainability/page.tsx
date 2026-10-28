@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { LEGAL_NAME, POLICY_EFFECTIVE_DATE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Sustainability (ESG) Policy",
+  description: `How ${LEGAL_NAME} integrates environmental, social and governance considerations into its business.`,
+};
 
 export default function SustainabilityPolicyPage() {
   return (
@@ -8,11 +15,11 @@ export default function SustainabilityPolicyPage() {
       <main className="flex-1 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl prose prose-slate">
           <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-8">Environmental, Social, and Governance (ESG) Policy</h1>
-          <p className="text-muted-foreground font-medium mb-6">Effective Date: [Insert Date]</p>
+          <p className="text-muted-foreground font-medium mb-6">Effective date: {POLICY_EFFECTIVE_DATE}</p>
 
           <h2 className="text-2xl font-semibold mb-4 mt-8">Introduction</h2>
           <p className="mb-8 leading-relaxed">
-            At <strong>Trust Axis Group</strong>, we recognize the importance of Environmental, Social, and Governance (ESG) factors in creating long-term value for our stakeholders, including employees, customers, partners, investors, and the broader community. We are committed to integrating ESG considerations into our business strategies and operations to contribute to a sustainable future.
+            At <strong>{LEGAL_NAME}</strong>, we recognize the importance of Environmental, Social, and Governance (ESG) factors in creating long-term value for our stakeholders, including employees, customers, partners, investors, and the broader community. We are committed to integrating ESG considerations into our business strategies and operations to contribute to a sustainable future.
           </p>
 
           <section className="mb-10">
@@ -61,7 +68,7 @@ export default function SustainabilityPolicyPage() {
 
           <section className="mb-10">
             <h2 className="text-2xl font-semibold mb-4">5. Conclusion</h2>
-            <p className="mb-4">At <strong>Trust Axis Group</strong>, our commitment to ESG principles is fundamental to our mission and values. We believe that by integrating environmental, social, and governance considerations into our business, we can drive positive change, create long-term value, and contribute to a more sustainable and equitable world.</p>
+            <p className="mb-4">At <strong>{LEGAL_NAME}</strong>, our commitment to ESG principles is fundamental to our mission and values. We believe that by integrating environmental, social, and governance considerations into our business, we can drive positive change, create long-term value, and contribute to a more sustainable and equitable world.</p>
           </section>
         </div>
       </main>

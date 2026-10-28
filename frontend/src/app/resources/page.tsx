@@ -2,50 +2,36 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Library, Newspaper, FileText, BookOpen, Video, Headphones } from "lucide-react";
+import { ArrowRight, Library, Newspaper, FileText } from "lucide-react";
+import { prisma } from "@/lib/prisma";
 
 export const metadata = {
-  title: "Resources — Trust Axis",
+  title: "Knowledge Base",
   description: "Explore blogs, articles, whitepapers, and research by Trust Axis experts.",
 };
 
-const featured = [
-  {
-    tag: "Cybersecurity",
-    title: "Understanding Zero Trust Architecture in Enterprise Environments",
-    excerpt:
-      "A deep dive into zero trust principles, how they differ from traditional perimeter-based security, and a practical framework for implementation across your organization.",
-    readTime: "8 min read",
-    date: "March 2026",
-  },
-  {
-    tag: "Data Science",
-    title: "The Future of AI in Financial Services: Risks and Opportunities",
-    excerpt:
-      "How leading financial institutions are leveraging machine learning for fraud detection, risk modeling, and automated advisory services — and what guardrails must be in place.",
-    readTime: "12 min read",
-    date: "March 2026",
-  },
-  {
-    tag: "Cloud",
-    title: "FinOps: Controlling Cloud Spend Without Slowing Innovation",
-    excerpt:
-      "Practical strategies for cloud cost optimization used by modern engineering teams — from tagging policies to reserved instances and rightsizing workloads.",
-    readTime: "6 min read",
-    date: "February 2026",
-  },
-];
+const POST_PATHS = {
+  BLOG: "/resources/blogs",
+  ARTICLE: "/resources/articles",
+  WHITEPAPER: "/resources/whitepapers",
+} as const;
 
 const categories = [
-  { icon: Library, label: "Blogs", count: "40+ articles", description: "Expert commentary, industry news, and practical how-to guides from our faculty and alumni.", href: "/resources/blogs" },
-  { icon: Newspaper, label: "Articles", count: "25+ deep-dives", description: "Technical deep-dives on security, cloud architecture, data engineering, and product management.", href: "/resources/articles" },
-  { icon: FileText, label: "Whitepapers", count: "12+ reports", description: "Research-backed reports and frameworks intended for practitioners and organizational decision-makers.", href: "/resources/whitepapers" },
-  { icon: BookOpen, label: "Guides", count: "18+ guides", description: "Step-by-step learning guides aligned with certification tracks and real-world skill building.", href: "#" },
-  { icon: Video, label: "Webinars", count: "30+ sessions", description: "Recorded and upcoming live sessions with industry experts on in-demand technical topics.", href: "#" },
-  { icon: Headphones, label: "Podcasts", count: "Coming soon", description: "Conversations with practitioners, founders, and educators shaping the future of the industry.", href: "#" },
+  { icon: Library, label: "Blogs", description: "Commentary on cybersecurity, AI governance, privacy and building capable security teams.", href: "/resources/blogs" },
+  { icon: Newspaper, label: "Articles", description: "Practical deep-dives on security architecture, data and technology risk.", href: "/resources/articles" },
+  { icon: FileText, label: "Whitepapers", description: "Research and frameworks for security, risk and technology decision-makers.", href: "/resources/whitepapers" },
 ];
 
-export default function ResourcesPage() {
+export const revalidate = 60;
+
+export default async function ResourcesPage() {
+  const latest = await prisma.contentPost.findMany({
+    where: { status: "PUBLISHED" },
+    orderBy: { publishedAt: "desc" },
+    take: 3,
+    select: { type: true, slug: true, title: true, excerpt: true, category: true, readTime: true, publishedAt: true },
+  }).catch(() => []);
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
@@ -60,8 +46,8 @@ export default function ResourcesPage() {
               Insights, Research &<br />Learning Resources
             </h1>
             <p className="text-[#6C757D] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-              Explore curated content from Trust Axis experts — from technical deep-dives to strategic
-              frameworks across cybersecurity, data, cloud, and leadership domains.
+              Perspectives from Trust Axis on cybersecurity, AI governance, privacy, and technology risk —
+              from practical deep-dives to strategic frameworks.
             </p>
           </div>
         </section>
@@ -72,7 +58,7 @@ export default function ResourcesPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-[#212529] tracking-tight mb-10 md:mb-12">
               Browse by Type
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
               {categories.map((cat, i) => {
                 const Icon = cat.icon;
                 return (
@@ -81,11 +67,10 @@ export default function ResourcesPage() {
                       className="rounded-xl border border-[#E5E7EB] bg-white p-6 md:p-8 hover:shadow-md transition-all duration-300 group-hover:-translate-y-0.5 cursor-pointer h-full"
                     >
                       <CardContent className="p-0">
-                        <div className="flex items-center justify-between mb-5">
+                        <div className="mb-5">
                           <div className="h-12 w-12 bg-[#F4F4F5] group-hover:bg-black rounded-lg flex items-center justify-center transition-colors duration-300">
                             <Icon className="h-6 w-6 text-[#212529] group-hover:text-white transition-colors duration-300" />
                           </div>
-                          <span className="text-[10px] font-bold text-[#6C757D] uppercase tracking-widest">{cat.count}</span>
                         </div>
                         <h3 className="text-base md:text-lg font-bold text-[#212529] mb-2">{cat.label}</h3>
                         <p className="text-sm text-[#6C757D] leading-relaxed">{cat.description}</p>
@@ -98,45 +83,49 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Featured Content */}
+        {/* Latest Content */}
+        {latest.length > 0 && (
         <section className="bg-[#F9FAFB] py-16 md:py-24 border-b border-[#F4F4F5]">
           <div className="container mx-auto px-4 md:px-8 max-w-6xl">
             <h2 className="text-2xl md:text-3xl font-bold text-[#212529] tracking-tight mb-10 md:mb-12">
-              Featured This Month
+              Latest From Trust Axis
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {featured.map((post, i) => (
-                <Card
-                  key={i}
-                  className="rounded-xl border border-[#E5E7EB] bg-white hover:shadow-md transition-all duration-300 flex flex-col"
-                >
-                  <div className="h-2 bg-[#212529] rounded-t-xl" />
-                  <CardContent className="p-6 md:p-8 flex flex-col flex-1">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="inline-block bg-[#F4F4F5] text-[#212529] text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">
-                        {post.tag}
-                      </span>
-                      <span className="text-[11px] text-[#6C757D]">{post.date}</span>
-                    </div>
-                    <h3 className="text-base md:text-lg font-bold text-[#212529] leading-snug mb-3 tracking-tight">
-                      {post.title}
-                    </h3>
-                    <p className="text-sm text-[#6C757D] leading-relaxed flex-1">{post.excerpt}</p>
-                    <div className="flex items-center justify-between mt-6 pt-4 border-t border-[#F4F4F5]">
-                      <span className="text-[11px] text-[#6C757D]">{post.readTime}</span>
-                      <a
-                        href="#"
-                        className="flex items-center gap-1.5 text-[11px] font-bold text-[#212529] uppercase tracking-widest hover:text-blue-600 transition-colors"
-                      >
-                        Read <ArrowRight className="h-3.5 w-3.5" />
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
+              {latest.map((post) => (
+                <Link key={post.slug} href={`${POST_PATHS[post.type]}/${post.slug}`} className="group outline-none">
+                  <Card className="rounded-xl border border-[#E5E7EB] bg-white hover:shadow-md transition-all duration-300 flex flex-col h-full">
+                    <div className="h-2 bg-[#212529] rounded-t-xl" />
+                    <CardContent className="p-6 md:p-8 flex flex-col flex-1">
+                      <div className="flex items-center gap-3 mb-4">
+                        {post.category && (
+                          <span className="inline-block bg-[#F4F4F5] text-[#212529] text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">
+                            {post.category}
+                          </span>
+                        )}
+                        {post.publishedAt && (
+                          <span className="text-[11px] text-[#6C757D]">
+                            {post.publishedAt.toLocaleDateString("en-SG", { month: "long", year: "numeric" })}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-base md:text-lg font-bold text-[#212529] leading-snug mb-3 tracking-tight">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm text-[#6C757D] leading-relaxed flex-1 line-clamp-4">{post.excerpt}</p>
+                      <div className="flex items-center justify-between mt-6 pt-4 border-t border-[#F4F4F5]">
+                        <span className="text-[11px] text-[#6C757D]">{post.readTime}</span>
+                        <span className="flex items-center gap-1.5 text-[11px] font-bold text-[#212529] uppercase tracking-widest group-hover:text-blue-600 transition-colors">
+                          Read <ArrowRight className="h-3.5 w-3.5" />
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
         </section>
+        )}
 
         {/* Newsletter CTA */}
         <section className="bg-black text-white py-16 md:py-20">
